@@ -50,12 +50,12 @@ export default function SignUp() {
 </div> */}
 
             <button className="login-btn" type="submit">
-              Log In
+              Sign Up
             </button>
 
             <div className="login-link">
               <p>
-                New to our website? <a href="">Sign UP</a>
+                Already have an account? <Link to="/Login">Log In</Link>
               </p>
             </div>
           </div>

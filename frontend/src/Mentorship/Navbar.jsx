@@ -30,7 +30,7 @@ export default function Navbar() {
                 <Link to="/Mentorship">Mentorship</Link>
               </li>
               <li>
-                <Link to="/Logout">Logout</Link>
+                <Link to="/Login">Login</Link>
               </li>
             </ul>
           </div>

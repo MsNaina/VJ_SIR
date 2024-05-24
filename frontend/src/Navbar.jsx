@@ -27,7 +27,7 @@ export default function Navbar() {
                 <a href="#">Mentorship</a>
               </li>
               <li>
-                <a href="#">Log Out</a>
+                <a href="#">Login</a>
               </li>
             </ul>
           </div>

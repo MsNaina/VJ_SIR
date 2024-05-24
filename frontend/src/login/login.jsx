@@ -48,12 +48,12 @@ export default function Login() {
             {/* <a id="forgot" href="#forgot">Forgot Password ?</a> */}
 
             <button className="signup-btn" type="submit">
-              Start
+              Log In
             </button>
 
             <div className="register-link">
               <p>
-                Already have an account? <Link to="/login">Log In</Link>
+                New to our website? <Link to="/Signup">Sign Up</Link>
               </p>
             </div>
           </div>
