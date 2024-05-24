@@ -1,0 +1,89 @@
+#Passionate {
+  background-color: lightcyan;
+  /* height: 65vw; */
+  width: 100%;
+  overflow: hidden;
+  font-family: poppins;
+  padding: 8vw 0vw 0vw 2vw;
+}
+.passionate-heading h1 {
+  font-size: 4vw;
+  font-weight: 700;
+}
+.passionate-heading span {
+  color: #0c6205;
+  font-size: 4vw;
+  font-weight: 700;
+}
+.passionate-heading h2 {
+  font-size: 4vw;
+  font-weight: 500;
+}
+.passionate-pera {
+  display: flex;
+  width: 30%;
+  padding-top: 4vw;
+  gap: 1vw;
+}
+.passionate-line {
+  width: 0.1vw;
+  height: 4.5vw;
+  background-color: rgba(0, 0, 0, 1);
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.card {
+  transition: all 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 30rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+.card-overlay {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: linear-gradient(to top, rgb(78, 128, 78), rgb(32, 87, 32));
+}
+.card-title {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: fit-content;
+  text-align: center;
+  transform: rotateZ(-90deg) translateX(50%);
+  white-space: nowrap;
+}
+.card-description {
+  transition: all 0.3s ease-in-out;
+  color: black;
+  z-index: 10;
+  font-size: 2rem;
+  font-weight: 700;
+  bottom: 1rem;
+  right: 2px;
+  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+}
+.card-college {
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  width: fit-content;
+  text-align: center;
+}

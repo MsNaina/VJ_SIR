@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.carousel{
+    height: 600px;
+}
+.carousel .carousel-item{
+    width: 250px;
+}
+.carousel-item img{
+    height: 23vw;
+    
+}

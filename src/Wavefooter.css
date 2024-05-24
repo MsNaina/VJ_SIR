@@ -1,0 +1,61 @@
+#Wave-footer{
+    /* background-color:lightgreen ; */
+    width: 100%;
+    height: 27.5vw;
+}
+
+.Wave-footer{
+    font-family: Red Hat Display;
+    background-color: lightcyan;
+}
+.wave-footer svg{
+    position: absolute;
+
+}
+.wave-content{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    top: 10vw;
+}
+.part1{
+    width: 25%;
+}
+.part11{
+    display: flex;
+}
+.part11 img{
+    position: relative;
+scale: .6;
+top: -1.5vw;
+}
+.wave-content h3{
+    font-weight: 600;
+    font-size: 1.5vw;
+    padding-bottom: 3vw;
+}
+.wave-content p{
+    font-weight: 400;
+    font-size: 1vw;
+}
+.part3 p{
+    line-height: 2vw;
+}
+.part41{
+    display: flex;
+    justify-content: space-between;
+}
+@media(max-width:1270px){
+    .wave-content p{
+        font-weight: 400;
+        font-size: 1.2vw;
+    }
+}
+@media(max-width:1200px){
+    .wave-content p{
+        font-weight: 400;
+        font-size: 1vw;
+        
+    }
+}

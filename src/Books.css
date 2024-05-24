@@ -1,0 +1,75 @@
+#Books{
+    /* background-color: lightgreen; */
+    overflow: hidden;
+}
+.Books{
+    width: 100%;
+    height: 55vw;
+    font-family: Red Hat Display;
+    
+}
+.Books-text h1{
+    font-family: Red Hat Display;
+    font-size: 7vw;
+    font-weight: 700;
+}
+.Books-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Books-text img{
+    scale: .5;
+}
+.Books-text-img2{
+    position: relative;
+    top: 3vw;
+    right: 3vw;
+}
+.Books-text-img1{
+    position: relative;
+    bottom: 3vw;
+    left: 3vw;
+}
+.carousel{
+   height: 45vw;
+}
+.carousel .carousel-item{
+  width: 15vw;
+  margin-top: -10vw;
+}
+.carousel-item img{
+  height: 23vw;
+    
+}
+.carousel .indicators {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 7vw;
+    margin: 0;
+}
+@media(max-width:1497px){
+    .carousel .indicators {
+        bottom: 9vw;       
+}
+}
+@media(max-width:1445px) {
+
+    .Books-text img{
+        scale: .4;
+    }
+    .Books-text h1{
+        font-size: 6vw;
+    }
+}
+@media(max-width:1300px){
+
+    .carousel .indicators {
+        bottom: 8vw;       
+}
+.Books{
+    height: 60vw;
+}
+}

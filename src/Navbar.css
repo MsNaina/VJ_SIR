@@ -1,0 +1,34 @@
+#Navbar{
+    margin: 2vw 0vw;
+}
+.logo{
+    scale: .7;
+}
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   padding: 0vw 1vw;
+   font-family:Red Hat Display;
+font-weight: 500;
+font-size: 1vw;
+width: 100%;
+    height: 5vw;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+.profile img{
+    scale: .7;
+}
+.Nav-items ul{
+    display: flex;
+    gap: 1vw;
+}
+.Nav-items ul li{
+ background-color: white;
+ opacity: .6;
+ padding: .5vw 1vw;
+ border-radius: 3vw;
+}
