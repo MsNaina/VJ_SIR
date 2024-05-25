@@ -1,23 +1,10 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import "./Header.css";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Autoplay from "./autoplay";
+import Typewriter from "./typewriter";
 
 export default function Header() {
-  const [text] = useTypewriter({
-    words: [
-      " Educator",
-      "Mentor",
-      "Author",
-      "Motivational Speaker",
-      "God of Inorganic Chemistry",
-    ],
-    loop: true,
-    typeSpeed: 90,
-    deleteSpeed: 50,
-  });
-
   return (
     <>
       <section id="Header">
@@ -41,14 +28,7 @@ export default function Header() {
                 <p className="p1">Embark on your JEE Main & Advanced</p>
                 <h1>VJ Sir - Your</h1>
 
-                <h2 className="header-typewriter">
-                  <span style={{ fontWeight: "bold", color: "green" }}>
-                    {text}
-                  </span>
-                  <span>
-                    <Cursor />
-                  </span>
-                </h2>
+                <Typewriter />
 
                 <p className="p2">
                   With his expert guidance and AI-driven matching, you'll be
