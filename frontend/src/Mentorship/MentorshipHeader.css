@@ -1,7 +1,7 @@
 .Mentorship-Header{
     display: flex;
     width: 100%;
-    height: 45vw;
+    height: 50vw;
     font-family:poppins;
     box-sizing: border-box;
     overflow: hidden;
@@ -50,17 +50,23 @@
     display: flex;
     margin: 2vw 0vw;
 }
+.Mentorship-header-discount {
+    position: relative;
+}
 .Mentorship-header-discount img{
-    scale: 1;
+    scale: .6;
    
+}
+.mentorship-header-discount img{
+    scale: .6;
 }
 .mentorship-header-discount{
     display: flex;
     align-items: center;
-    position: relative;
-    bottom: 2.5vw;
-    left: 1.5vw;
-    gap: 1vw;
+    position: absolute;
+    bottom: 1.4vw;
+    left: 7.5vw;
+
 }
 .mentorship-header-discount p{
    font-weight: 600;

@@ -73,6 +73,7 @@ width: 40vw;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    width: 50%;
 }
 .signup-top{
     width: 100%;
@@ -127,7 +128,7 @@ padding: .5vw;
     font-weight: 500;
 }
 .signup-btn{
-    width: 105%;
+    width: 106%;
     height: 3vw;
     border: none;
     outline: none;

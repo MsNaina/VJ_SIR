@@ -27,7 +27,10 @@ export default function MentorshipHeader() {
             </div>
 
             <div className="Mentorship-header-discount">
-              <img src="images\discount.png" alt="" />
+              <img
+                src="images\mentorshipdiscount.png"
+                alt=""
+              />
 
               <div className="mentorship-header-discount">
                 <img src="images\pencil.png" alt="" />

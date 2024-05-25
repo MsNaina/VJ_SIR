@@ -1,10 +1,8 @@
 #Passionate {
-  background-color: lightcyan;
-  /* height: 65vw; */
   width: 100%;
   overflow: hidden;
   font-family: poppins;
-  padding: 8vw 0vw 0vw 2vw;
+  padding: 4vw 2vw 0vw 2vw;
 }
 .passionate-heading h1 {
   font-size: 4vw;
@@ -30,7 +28,14 @@
   height: 4.5vw;
   background-color: rgba(0, 0, 0, 1);
 }
-
+.mentorship-footer{
+  margin-top: 8vw;
+  display: flex;
+  justify-content: space-between;
+}
+.mentorship-footer h1{
+  font-size: 6vw;
+}
 .card-container {
   display: flex;
   justify-content: center;

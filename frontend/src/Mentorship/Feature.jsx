@@ -17,8 +17,8 @@ export default function Feature() {
         <h2>Features</h2>
 
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
+          slidesPerView={2.5}
+          spaceBetween={50}
           freeMode={true}
           //  pagination={{
           //    clickable: true,

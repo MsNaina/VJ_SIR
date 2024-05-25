@@ -1,22 +1,24 @@
 #FAQ{
     width: 100%;
     font-family: Red Hat Display;
-    /* background-color: lightblue; */
+    height: 35vw;
 }
 .faq h1{
     text-align: center;
     font-weight: 700;
     font-size: 5vw;
+    margin-bottom:60px ;
 
 }
 .FAQs{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    
 }
 .FAQ-left h2{
     font-weight: 700;
     font-size: 5vw;
+    
 }
 .FAQ-left span{
     color:#0C6205;
@@ -26,11 +28,10 @@
     height: 40vw;
     /* width: 40vw; */
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 .accordion{
     width: 500px;
-
 }
 .item{
     background-color: white;
@@ -51,7 +52,6 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0,1,0,1);
-   
 }
 .content.show{
     height: auto;

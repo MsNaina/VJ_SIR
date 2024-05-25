@@ -26,7 +26,7 @@ export default function Header() {
             <div className="header-bottom">
               <div className="header-text">
                 <p className="p1">Embark on your JEE Main & Advanced</p>
-                <h1>VJ Sir - Your</h1>
+                <h1>VJ Sir - <span>Your</span> </h1>
 
                 <Typewriter />
 
