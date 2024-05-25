@@ -4,28 +4,29 @@ import React from "react";
 import "./Navbar.css";
 export default function Navbar() {
 
-var btncontainer=document.getElementsByClassName('Nav-item')
-var links=btncontainer.getElementsByClassName('links')
+// var btncontainer=document.getElementsByClassName('Nav-item')
+// var links=btncontainer.getElementsByClassName('links')
 
-for (var i=0; i < links.length; i++){
-  links[i].addEventListener('click', function(){
+// for (var i=0; i < links.length; i++){
+//   links[i].addEventListener('click', function(){
 
-    var current=document.getElementsByClassName('active');
-    current[0].className=current[0].className.replace('active')
-    this.className += "active"
-  } )
-}
+//     var current=document.getElementsByClassName('active');
+//     current[0].className=current[0].className.replace('active')
+//     this.className += "active"
+//   } )
+// }
 
   return (
     <>
       <section id="Navbar">
         <div className="Navbar">
+
           <div className="logo">
             <img src="images\logo.png" alt="" />
           </div>
 
           <div className="profile">
-            <div profile-img>
+            <div className="profile-img">
               <img src="images\profile.png" alt="" />
             </div>
             <div>Profile</div>
@@ -44,12 +45,12 @@ for (var i=0; i < links.length; i++){
                 </Link>
               </li>
               <li>
-                <Link className="active links" to="/Mentorship">
+                <Link className="links" to="/Mentorship">
                   Mentorship
                 </Link>
               </li>
               <li>
-                <Link className="links" to="/Aboutus">
+                <Link className="links" to="/AboutUs">
                   About Us
                 </Link>
               </li>
@@ -60,6 +61,7 @@ for (var i=0; i < links.length; i++){
               </li>
             </ul>
           </div>
+          
         </div>
       </section>
     </>

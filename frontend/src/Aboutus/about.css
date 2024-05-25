@@ -5,3 +5,35 @@
 #aboutus img{
     width: 100%;
 }
+.aboutus-logo {
+  scale: 0.7;
+}
+.aboutus-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Red Hat Display;
+  font-weight: 500;
+  font-size: 1vw;
+  width: 100%;
+  height: 5vw;
+  padding: 0vw 2vw;
+}
+.aboutus-profile {
+  display: flex;
+  align-items: center;
+}
+.aboutus-profile img {
+  scale: 0.7;
+}
+.aboutus-Nav-item ul {
+  display: flex;
+  gap: 1vw;
+}
+.aboutus-Nav-item ul li {
+  background-color: white;
+  opacity: 0.6;
+  border-radius: 30px;
+  padding: 0.5vw 0.7vw;
+  background: rgba(240, 240, 240, 0.5);
+}
