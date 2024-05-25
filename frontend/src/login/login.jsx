@@ -47,7 +47,7 @@ export default function Login() {
 
             {/* <a id="forgot" href="#forgot">Forgot Password ?</a> */}
 
-            <button className="signup-btn" type="submit">
+            <button className="login-btn" type="submit">
               Log In
             </button>
 

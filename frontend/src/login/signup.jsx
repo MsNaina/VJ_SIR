@@ -49,7 +49,7 @@ export default function SignUp() {
     <a href="#">Forgot Password ?</a>
 </div> */}
 
-            <button className="login-btn" type="submit">
+            <button className="signup-btn" type="submit">
               Sign Up
             </button>
 

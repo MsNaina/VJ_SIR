@@ -126,8 +126,8 @@ padding: .5vw;
     color: black;
     font-weight: 500;
 }
-.login-btn{
-    width: 100%;
+.signup-btn{
+    width: 105%;
     height: 3vw;
     border: none;
     outline: none;

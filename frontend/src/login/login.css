@@ -42,7 +42,7 @@ width: 40vw;
     width: 10vw;
     position: relative;
     border-radius: 20px;
-    bottom: 35vw;
+    bottom: 25vw;
     left: 26vw;
     padding: 1vw .5vw;
     font-size: .9vw;
@@ -126,8 +126,8 @@ padding: .5vw;
     color: black;
     font-weight: 500;
 }
-.signup-btn{
-    width: 100%;
+.login-btn{
+    width: 105%;
     height: 3vw;
     border: none;
     outline: none;
