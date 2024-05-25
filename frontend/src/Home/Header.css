@@ -1,8 +1,8 @@
 #Header{
     width: 100%;
     height: 60vw;
-    /* background-color: lightblue; */
     overflow: hidden;
+     font-family:Red Hat Display;
 }
 .Header{
     display: flex;
@@ -33,10 +33,9 @@
     font-size: 1vw;
 }
 .header-bottom{
-    margin: 6vw 0vw 2vw 1.5vw;
+    margin: 6vw 0vw 2vw 2vw;
 }
 .header-text{
-    font-family:Red Hat Display;
     width: 80%;
 }
 .header-text h1{
@@ -69,6 +68,14 @@ margin: 1vw 0vw;
     font-size: 1.2vw;
 }
 
+.btn1:hover{
+    background-color: black;
+    color: white;
+}
+.btn2:hover{
+     background-color: black;
+    color: white;
+}
 .btn2{
     border: 2px solid black;
     padding: .5vw 1vw;
@@ -91,11 +98,13 @@ margin: 1vw 0vw;
     justify-content: end;
 }
 .Nav-items ul li{
- background-color:#f9f5f5cb;
+  background: rgba(240, 240, 240, 0.5);
+  /* opacity: .9; */
  padding: .5vw 1vw;
  border-radius: 30px;
  font-weight: 500;
  font-size: 1vw;
+ backdrop-filter: blur(10px);
 }
 .header-img{
  position: absolute;
@@ -140,6 +149,7 @@ margin: 1vw 0vw;
     padding: 15px;
     perspective: 100px;
     background-color: rgba(255, 255, 255, 0.5);
+  
 }
 
 @media(max-width:1385px)and (min-width:1230px) {

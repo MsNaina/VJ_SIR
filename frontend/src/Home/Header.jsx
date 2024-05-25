@@ -26,7 +26,9 @@ export default function Header() {
             <div className="header-bottom">
               <div className="header-text">
                 <p className="p1">Embark on your JEE Main & Advanced</p>
-                <h1>VJ Sir - <span>Your</span> </h1>
+                <h1>
+                  VJ Sir - <span>Your</span>{" "}
+                </h1>
 
                 <Typewriter />
 
@@ -57,6 +59,9 @@ export default function Header() {
                   </li>
                   <li>
                     <Link to="/Mentorship">Mentorship</Link>
+                  </li>
+                  <li>
+                    <Link to="/Aboutus">About Us</Link>
                   </li>
                   <li>
                     <Link to="/Login">Login</Link>

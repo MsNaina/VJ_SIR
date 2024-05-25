@@ -26,7 +26,7 @@ export default function SignUp() {
           </div>
 
           <div className="signup-bottom">
-            {/* <input type="text" name="" id="input" required placeholder="Name" /> */}
+            <input type="text" name="" id="input" required placeholder="Name" />
 
             <input
               type="email"

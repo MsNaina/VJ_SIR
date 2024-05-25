@@ -2,11 +2,7 @@
     /* background-color:lightgreen ; */
     width: 100%;
     height: 27.5vw;
-}
-
-.Wave-footer{
     font-family: Red Hat Display;
-    background-color: lightcyan;
 }
 .wave-footer svg{
     position: absolute;
@@ -24,11 +20,15 @@
 }
 .part11{
     display: flex;
+align-items: center;
+gap: 1vw;   
 }
 .part11 img{
     position: relative;
-scale: .6;
+/* scale: .6; */
 top: -1.5vw;
+width: 3vw;
+height: 3vw;
 }
 .wave-content h3{
     font-weight: 600;

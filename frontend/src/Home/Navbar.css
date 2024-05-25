@@ -1,5 +1,6 @@
 #Navbar{
     margin: 2vw 0vw;
+     font-family:Red Hat Display;
 }
 .logo{
     scale: .7;
@@ -27,7 +28,7 @@ width: 100%;
     gap: 1vw;
 }
 .Nav-items ul li{
- background-color: white;
+ background: rgba(240, 240, 240, 0.5);
  opacity: .6;
  padding: .5vw 1vw;
  border-radius: 3vw;

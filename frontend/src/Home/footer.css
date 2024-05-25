@@ -6,14 +6,15 @@
 }
 .footer-content{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     text-decoration: underline;
+    height: 100%;
+    padding: 0vw 5vw;
     
 }
 .footer-left{
     width: 30%;
     display: flex;
     justify-content: space-between;
-  
 }

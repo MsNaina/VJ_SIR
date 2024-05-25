@@ -27,6 +27,9 @@ export default function Navbar() {
                 <a href="#">Mentorship</a>
               </li>
               <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
                 <a href="#">Login</a>
               </li>
             </ul>

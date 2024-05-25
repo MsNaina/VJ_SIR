@@ -40,33 +40,44 @@ scale: .92;
 }
 .mentorship-price{
     position: relative;
-    top: -32%;
-    left: 5vw;
     display: flex;
     justify-content: center;
+    align-items: center;
+    bottom: 30%;
+   
 }
 .price{
     display: flex;
 }
+.discount{
+    position: relative;
+}
 .discount img{
-    scale: .8;
+    scale: .9;
+    width: 13vw;
 }
 .Discount{
     display: flex;
-    position: relative;
-    bottom: 48%;
-    left: 15%;
-    gap: .3vw;
+    gap: 1vw;
     color: #0C6205;
     font-size: .9vw;
     font-weight: 600;
 }
+.Discount img{
+position: absolute;
+ top: .5vw;
+ left: 2vw;
+ /* scale: .09; */
+ width: 1.5vw;
+}
 .Discount p{
-    position: relative;
-    top: .1vw;
+    position: absolute;
+    top: 0.7vw;
+    left: 4vw;
+    font-size: .65vw;
 }
 .price h3{
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 700;
     font-family:Red Hat Display;
     color:#FFFFFF;
@@ -80,8 +91,9 @@ text-decoration-color: white;
 .mentorship-btn{
     display: flex;
     position: relative;
-    top: -30%;
+    top: -26%;
    justify-content: center;
+   gap: 2vw;
 }
 .btn3{
     background-color: white;
@@ -89,7 +101,6 @@ text-decoration-color: white;
     padding: .4vw 3vw;
     font-weight: 400;
     font-size: 1.2vw;
-    margin: 0vw 4vw 0vw 4vw;
 }
 .btn4{
     background-color: black;
@@ -97,7 +108,6 @@ text-decoration-color: white;
     padding: .4vw 3vw;
     font-size: 1.2vw;
     color: white;
-    margin: 0vw -2vw 0vw 4vw;
 }
 @media(max-width:1365px){
     .discount img{
@@ -116,12 +126,11 @@ text-decoration-color: white;
     .btn3{
         padding: .4vw 3vw;
         font-size: 1.4vw;
-        margin: 0vw 2vw 0vw 4vw;
+      
     }
     .btn4{
         padding: .4vw 3vw;
         font-size: 1.4vw;
-        margin: 0vw 0vw 0vw 4vw;
     }
 }
 @media(max-width:1365px){

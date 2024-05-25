@@ -3,6 +3,19 @@ import React from "react";
 
 import "./Navbar.css";
 export default function Navbar() {
+
+var btncontainer=document.getElementsByClassName('Nav-item')
+var links=btncontainer.getElementsByClassName('links')
+
+for (var i=0; i < links.length; i++){
+  links[i].addEventListener('click', function(){
+
+    var current=document.getElementsByClassName('active');
+    current[0].className=current[0].className.replace('active')
+    this.className += "active"
+  } )
+}
+
   return (
     <>
       <section id="Navbar">
@@ -21,16 +34,29 @@ export default function Navbar() {
           <div className="Nav-item">
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link className="links" to="/">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="#">Resources</a>
+                <Link className="links" to="#">
+                  Resource
+                </Link>
               </li>
               <li>
-                <Link to="/Mentorship">Mentorship</Link>
+                <Link className="active links" to="/Mentorship">
+                  Mentorship
+                </Link>
               </li>
               <li>
-                <Link to="/Login">Login</Link>
+                <Link className="links" to="/Aboutus">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link className="links" to="/Login">
+                  Login
+                </Link>
               </li>
             </ul>
           </div>

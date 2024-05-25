@@ -27,7 +27,7 @@ export default function Login() {
           </div>
 
           <div className="login-bottom">
-            <input type="text" name="" id="input" required placeholder="Name" />
+            {/* <input type="text" name="" id="input" required placeholder="Name" /> */}
 
             <input
               type="email"

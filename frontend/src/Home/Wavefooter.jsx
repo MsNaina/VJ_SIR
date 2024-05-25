@@ -12,17 +12,12 @@ export default function WaveFooter() {
             ></path>
           </svg>
 
-          {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500">
-
-<path fill="#B0E3B5" fill-opacity="1" d="M0,160L80,160C160,160,320,160,480,133.3C640,107,800,75,960,68C1120,61,1280,85,1360,98.7L1440,112L1440,500L1360,500C1280,500,1120,500,960,500C800,500,640,500,480,500C320,500,160,500,80,500L0,500Z"></path> 
-
-</svg> */}
-
+          
           <div className="wave-content">
             <div className="part1">
               <div className="part11">
                 <img src="images\logo.png" alt="" />
-                <h3>VishalJoshi,VJ Sir</h3>
+                <h3>Vishal Joshi (VJ) Sir</h3>
               </div>
               <p>
                 Embark on a transformative journey with VJ Sir’s Mentorship

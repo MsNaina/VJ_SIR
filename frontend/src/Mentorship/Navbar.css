@@ -37,3 +37,7 @@ padding: 0vw 2vw;
  background: rgba(240, 240, 240, 0.5);
 
 }
+.Nav-item ul li .active{
+    font-weight: 900;
+
+}
