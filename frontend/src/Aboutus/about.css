@@ -2,8 +2,15 @@
     width: 100%;
     height: screen;
 }
-#aboutus img{
+.aboutus-img{
     width: 100%;
+    height: 310vw;
+}
+.aboutus{
+    position: relative;
+}
+.aboutus-navbar{
+    position: absolute;
 }
 .aboutus-logo {
   scale: 0.7;

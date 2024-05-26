@@ -37,7 +37,7 @@
 }
 .mentorship-header-price h3{
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 3vw;
 }
 .mentorship-header-price h4{
     font-weight: 400;
@@ -54,18 +54,19 @@
     position: relative;
 }
 .Mentorship-header-discount img{
-    scale: .6;
+    /* scale: .6; */
+    width: 18vw;
    
 }
 .mentorship-header-discount img{
-    scale: .6;
+    width: 1.5vw;
 }
 .mentorship-header-discount{
     display: flex;
-    align-items: center;
     position: absolute;
-    bottom: 1.4vw;
-    left: 7.5vw;
+    bottom: 1vw;
+    left: 2vw;
+    gap: 1vw;
 
 }
 .mentorship-header-discount p{

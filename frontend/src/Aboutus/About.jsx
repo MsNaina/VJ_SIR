@@ -1,14 +1,12 @@
 import "./about.css"
+import { Link } from "react-router-dom";
  function AboutUs(){
     return (
       <>
         <section id="aboutus">
           <div className="aboutus">
 
-            <img src="images\ABOUT US (1).png" alt="" />
-
             <div className="aboutus-navbar">
-
               <div className="aboutus-logo">
                 <img src="images\logo.png" alt="" />
               </div>
@@ -49,9 +47,10 @@ import "./about.css"
                   </li>
                 </ul>
               </div>
-
             </div>
-            
+
+            <img className="aboutus-img" src="images\ABOUT US (1).png" alt="" />
+
           </div>
         </section>
       </>

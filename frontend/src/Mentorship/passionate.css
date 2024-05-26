@@ -93,3 +93,26 @@
   width: fit-content;
   text-align: center;
 }
+.mentorship-footerimg{
+  position: relative;
+  width: 30vw;
+  left: 16vw;
+  top: 2vw;
+  z-index: 10;
+}
+
+.mentorship-footerimg h2{
+  position: absolute;
+  top: 2.5vw;
+  left: 2vw;
+}
+.mentorship-footerimg h2{
+  font-family: poppins;
+  font-size: 1.3vw;
+  font-weight: 500;
+}
+.mentorship-footerimg span{
+  font-weight: 700;
+  position: relative;
+  left: 3vw;
+}

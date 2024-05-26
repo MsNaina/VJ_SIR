@@ -26,6 +26,12 @@ export default function Passionate() {
               Connect <br /> and <br />
               Grow.
             </h1>
+
+            <div className="mentorship-footerimg">
+              <img src="images\mentorship-footer.png" alt="" />
+
+              <h2>Find your compatible mentor <span>G0!!</span></h2>
+            </div>
           </div>
 
           <CardsCollection />
