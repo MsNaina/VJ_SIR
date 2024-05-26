@@ -4,11 +4,11 @@
 .aboutus {
   position: relative;
   width: 100%;
-  height: 12152px;
-  /* background-color: lightblue; */
-  background-image: url("images/aboutus.png");
-  /* background-position: center; */
-  background-size: contain;
+  background: url("images/aboutus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* overflow: hidden; */
+  aspect-ratio: 0.23074391;
 }
 
 .aboutus-navbar {
