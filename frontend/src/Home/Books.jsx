@@ -48,6 +48,10 @@ export default function Books() {
               <img src="images\NEET_II.png" alt="" />
             </a>
           </div>
+
+          <div className="books-btn">
+            <button>Buy Now</button>
+          </div>
         </div>
       </section>
     </>

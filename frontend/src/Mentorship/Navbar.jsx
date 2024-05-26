@@ -4,17 +4,17 @@ import React from "react";
 import "./Navbar.css";
 export default function Navbar() {
 
-// var btncontainer=document.getElementsByClassName('Nav-item')
-// var links=btncontainer.getElementsByClassName('links')
+var btncontainer=document.getElementsByClassName('Nav-item')
+var links=document.getElementsByClassName('links')
 
-// for (var i=0; i < links.length; i++){
-//   links[i].addEventListener('click', function(){
+for (var i=0; i < links.length; i++){
+  links[i].addEventListener('click', function(){
 
-//     var current=document.getElementsByClassName('active');
-//     current[0].className=current[0].className.replace('active')
-//     this.className += "active"
-//   } )
-// }
+    var current=document.getElementsByClassName('active');
+    current[0].className=current[0].className.replace('active')
+    this.className += "active"
+  } )
+}
 
   return (
     <>
@@ -45,7 +45,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link className="links" to="/Mentorship">
+                <Link className=" active links" to="/Mentorship">
                   Mentorship
                 </Link>
               </li>
@@ -61,7 +61,7 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          
+
         </div>
       </section>
     </>

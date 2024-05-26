@@ -3,6 +3,7 @@ export default function IITs() {
   return (
     <>
       <section className="IITs-logo">
+
         <h2>India’s Top 1% IITian Mentors from</h2>
 
         <div className="iits-logo">
@@ -14,6 +15,9 @@ export default function IITs() {
           <img src="images\IITM.png" alt="" />
           <img src="images\IITG.png" alt="" />
         </div>
+
+       
+
       </section>
     </>
   );

@@ -35,7 +35,10 @@
   padding: 0.5vw 0.7vw;
   background: rgba(240, 240, 240, 0.5);
 }
-/* .Nav-item ul li .active{
+.Nav-item ul li .active{
     font-weight: 900;
 
-} */
+}
+.Nav-item ul li:hover{
+  font-weight: 900;
+}

@@ -1,13 +1,12 @@
 #aboutus{
     width: 100%;
-    height: screen;
-}
-.aboutus-img{
-    width: 100%;
-    height: 310vw;
+    background-color: lightcoral;
+
 }
 .aboutus{
     position: relative;
+    width: 100%;
+    background-color: lightblue;
 }
 .aboutus-navbar{
     position: absolute;
@@ -38,9 +37,8 @@
   gap: 1vw;
 }
 .aboutus-Nav-item ul li {
-  background-color: white;
-  opacity: 0.6;
+  background: rgba(240, 240, 240, 0.5);
+opacity: 0.6;
   border-radius: 30px;
   padding: 0.5vw 0.7vw;
-  background: rgba(240, 240, 240, 0.5);
 }

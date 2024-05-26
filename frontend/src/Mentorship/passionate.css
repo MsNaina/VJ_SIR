@@ -95,24 +95,24 @@
 }
 .mentorship-footerimg{
   position: relative;
-  width: 30vw;
-  left: 16vw;
-  top: 2vw;
+  width: 25vw;
+  left: 20vw;
+  top: 3vw;
   z-index: 10;
 }
 
 .mentorship-footerimg h2{
   position: absolute;
-  top: 2.5vw;
-  left: 2vw;
+  top: 2vw;
+  left: 1vw;
 }
 .mentorship-footerimg h2{
   font-family: poppins;
-  font-size: 1.3vw;
+  font-size: 1.14vw;
   font-weight: 500;
 }
 .mentorship-footerimg span{
   font-weight: 700;
   position: relative;
-  left: 3vw;
+  left: 2vw;
 }

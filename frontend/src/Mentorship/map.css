@@ -1,0 +1,52 @@
+#Map{
+   /* background-color: lightcoral; */
+   width: 100%;
+}
+.map{
+    position: relative;
+    align-items: center;
+}
+.map-img{
+ width: 50vw;
+ margin: 0vw 25vw;
+ 
+}
+.IIT{
+/* scale: .4; */
+width: 3vw;
+}
+.IITB{
+    position: absolute;
+    top: 22vw;
+    left: 35vw;
+}
+.IITM{
+    position: absolute;
+    top: 29vw;
+    left: 44vw;
+}
+.IITKGP{
+    position: absolute;
+    top: 16vw;
+    left: 56vw;
+}
+.IITG{
+    position: absolute;
+    top: 12vw;
+    left: 62vw;
+}
+.IITR{
+    position: absolute;
+    top: 7vw;
+    left: 44vw;
+}
+.IITD{
+    position: absolute;
+    top:9vw;
+    left: 40vw;
+}
+.IITK{
+    position: absolute;
+    top:13vw;
+    left: 45vw;
+}

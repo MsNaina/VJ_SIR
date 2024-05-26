@@ -5,6 +5,7 @@ import MentorshipHeader from './MentorshipHeader'
 import IITs from './IITs'
 import Feature from './Feature'
 import Passionate from './Passionate'
+import Map from './map'
 
 function MentorshipPage() {
   
@@ -13,6 +14,7 @@ function MentorshipPage() {
 <Navbar/>
 <MentorshipHeader/>
 <IITs/>
+<Map/>
 <Feature/>
 <Passionate/>
 </>

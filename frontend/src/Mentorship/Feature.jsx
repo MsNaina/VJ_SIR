@@ -101,6 +101,8 @@ export default function Feature() {
             </div>
           </SwiperSlide>
         </Swiper>
+
+       
       </section>
     </>
   );
