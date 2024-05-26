@@ -49,7 +49,7 @@ import { Link } from "react-router-dom";
               </div>
             </div>
 
-            <img className="aboutus-img" src="images\ABOUT US (1).png" alt="" />
+            {/* <img className="aboutus-img" src="images\ABOUT US (1).png" alt="" /> */}
 
           </div>
         </section>

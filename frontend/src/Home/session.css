@@ -1,0 +1,49 @@
+#Session{
+    width: 100%;
+    overflow: hidden;
+}
+.session{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0vw 2vw;
+}
+.session img{
+width: 32vw;
+}
+.session-right{
+width: 40%;
+}
+.session-right h2{
+    font-size: 3vw;
+    font-family: poppins;
+    font-weight: 500;
+    margin: 5vw 0vw;
+    color: rgba(0, 0, 0, 1);
+
+}
+.session-right h3{
+    font-size: 2vw;
+    font-family: poppins;
+    font-weight: 500;
+    color: rgba(34, 37, 39, 1);
+    margin-bottom: 2vw;
+}
+.session-right p{
+    font-size: 1vw;
+    font-family: poppins;
+    font-weight: 400;
+    color: rgba(138, 145, 156, 1);
+
+}
+.session-btn{
+     font-family: Red Hat Display;
+     background: rgba(12, 98, 5, 1);
+     font-size: 1vw;
+     color: white;
+     font-weight: 800;
+     padding: .5vw 2.5vw;
+     border-radius: 30px;
+     margin-top: 3vw;
+
+}

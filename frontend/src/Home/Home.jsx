@@ -3,6 +3,7 @@ import Header from "./Header";
 import Mentorship from "./Mentorship batch";
 import PODJEE from "./PODJEE";
 import Books from "./Books";
+import  Session from "./session"
 import FAQ from "./FAQ";
 import Contact from "./contact";
 import WaveFooter from "./Wavefooter";
@@ -17,6 +18,7 @@ function Home() {
       <Mentorship />
       <PODJEE />
       <Books />
+      <Session/>
       <FAQ />
       <Contact />
       <WaveFooter />

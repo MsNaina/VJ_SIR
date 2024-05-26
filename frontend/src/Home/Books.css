@@ -32,8 +32,7 @@
     left: 3vw;
 }
 .books-btn{
- display: flex;
- justify-content: center;
+ text-align: center;
 }
 .books-btn button{
     border: 2px solid black;
@@ -49,11 +48,10 @@
 }
 .carousel{
    height: 35vw;
-   /* background-color: lightcoral; */
 }
 .carousel .carousel-item{
   width: 16vw;
-  margin-top: -10vw;
+  margin-top: -5vw;
 }
 .carousel-item img{
   height: 22vw;
@@ -76,7 +74,7 @@
     text-align: center;
     left: 0;
     right: 0;
-    bottom: 4vw;
+    bottom: 2vw;
     margin: 0;
 }
 @media(max-width:1497px){
