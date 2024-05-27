@@ -32,7 +32,7 @@ export default function Mentorship() {
 
           <div className="mentorship-imgs">
             <div className="mentorship-img1 mentorship-img">
-              <img src="images\Rectangle 21.png" alt="" />
+              <img src="images\chitrang.png" alt="" />
             </div>
 
             <div className="mentorship-img2 mentorship-img">
@@ -97,7 +97,7 @@ export default function Mentorship() {
             </div>
 
             <div className="mentorship-img3 mentorship-img">
-              <img src="images\Rectangle 22.png" alt="" />
+              <img src="images\himanshu.png" alt="" />
             </div>
           </div>
         </div>

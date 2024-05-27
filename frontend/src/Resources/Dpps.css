@@ -1,0 +1,33 @@
+#Dpp {
+    width: 100%;
+    
+}
+.Dpp{
+padding: 2vw 6vw;
+}
+#Dpp h1{
+    font-size: 2vw;  
+    font-family: Poppins;
+    font-weight: 600;
+    margin-bottom: 1vw;
+}
+
+.searchInput{
+    position: relative;
+    display: flex;
+}
+.searchInput i{
+    position: absolute;
+    left: 2vw;
+    scale: 1.5;
+    top: 1vw;
+}
+
+#searchInput{
+    width: 30%;
+    height: 2.5vw;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 30px;
+   padding: 0vw 4vw;
+}

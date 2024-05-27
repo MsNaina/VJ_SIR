@@ -1,6 +1,11 @@
 #Map{
    /* background-color: lightcoral; */
    width: 100%;
+  
+}
+#Map img{
+    width: 55%;
+    margin: 0vw 25vw;
 }
 .map{
     position: relative;

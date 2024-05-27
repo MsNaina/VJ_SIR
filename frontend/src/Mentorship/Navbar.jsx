@@ -20,7 +20,6 @@ for (var i=0; i < links.length; i++){
     <>
       <section id="Navbar">
         <div className="Navbar">
-
           <div className="logo">
             <img src="images\logo.png" alt="" />
           </div>
@@ -40,12 +39,10 @@ for (var i=0; i < links.length; i++){
                 </Link>
               </li>
               <li>
-                <Link className="links" to="#">
-                  Resource
-                </Link>
+                <Link to="/Resource">Resource</Link>
               </li>
               <li>
-                <Link className=" active links" to="/Mentorship">
+                <Link className=" links" to="/Mentorship">
                   Mentorship
                 </Link>
               </li>
@@ -61,7 +58,6 @@ for (var i=0; i < links.length; i++){
               </li>
             </ul>
           </div>
-
         </div>
       </section>
     </>

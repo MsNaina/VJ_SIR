@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
       <>
         <section id="aboutus">
           <div className="aboutus">
-
             <div className="aboutus-navbar">
               <div className="aboutus-logo">
                 <img src="images\logo.png" alt="" />
@@ -26,7 +25,7 @@ import { Link } from "react-router-dom";
                     </Link>
                   </li>
                   <li>
-                    <Link className="links" to="#">
+                    <Link className="links" to="/Resource">
                       Resource
                     </Link>
                   </li>
@@ -48,8 +47,6 @@ import { Link } from "react-router-dom";
                 </ul>
               </div>
             </div>
-
-            {/* <img className="aboutus-img" src="images\ABOUT US (1).png" alt="" /> */}
 
           </div>
         </section>

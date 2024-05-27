@@ -1,0 +1,58 @@
+#Resources{
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.55);
+    margin: 2vw 2vw;
+    text-align: center;
+     font-family: Poppins;
+     background: rgba(225, 251, 203, 0.5);
+
+}
+#Resources h1{
+    font-size: 3vw;
+    font-weight: 800;
+    padding: 2vw 0vw;
+}
+.Resources{
+flex-wrap: wrap;
+  padding: 2vw 0vw;
+}
+.card123{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8vw;
+}
+.card45{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw;
+    margin-top: 3vw;
+}
+
+.resource-card{
+    background-color:white;
+    position: relative;
+    width: 20vw;
+    height: 18vw;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.55);
+
+}
+.resource-card-bottom{
+    background: rgba(252, 231, 114, 1);
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 3vw;
+}
+
+.resource-card-bottom button{
+font-weight: 700;
+font-size: 1.5vw;
+width: 100%;
+}

@@ -3,7 +3,7 @@ export default function Map(){
 return (
   <>
     <section id="Map">
-      <div className="map">
+      {/* <div className="map">
         
         <img className="map-img" src="images\map.png" alt="" />
 
@@ -34,7 +34,8 @@ return (
         <div className="iits-location">
           <img className="IITKGP IIT" src="images\kgp.png" alt="" />
         </div>
-      </div>
+      </div> */}
+      <img src="images\india-map.png" alt="" />
     </section>
   </>
 );

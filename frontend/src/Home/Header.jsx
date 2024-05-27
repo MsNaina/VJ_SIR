@@ -55,7 +55,7 @@ export default function Header() {
                     <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <a href="#">Resources</a>
+                    <Link to="/Resource">Resource</Link>
                   </li>
                   <li>
                     <Link to="/Mentorship">Mentorship</Link>
