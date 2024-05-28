@@ -11,8 +11,8 @@ export default function Typewriter() {
       "God of Inorganic Chemistry",
     ],
     loop: true,
-    typeSpeed: 90,
-    deleteSpeed: 50,
+    typeSpeed: 120,
+    deleteSpeed: 80,
   });
 
   return (

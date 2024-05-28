@@ -12,7 +12,6 @@
     padding: 2vw 0vw;
 }
 .Resources{
-flex-wrap: wrap;
   padding: 2vw 0vw;
 }
 .card123{
@@ -55,4 +54,5 @@ height: 3vw;
 font-weight: 700;
 font-size: 1.5vw;
 width: 100%;
+ background: rgba(252, 231, 114, 1);
 }

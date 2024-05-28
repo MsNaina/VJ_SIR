@@ -1,8 +1,8 @@
-#DPPs{
+#Modules{
     width: 100%;
 }
 
-.Dpp h1{
+.Modules h1{
     font-size: 2vw;  
     font-family: Poppins;
     font-weight: 600;
@@ -32,17 +32,17 @@ padding: 2vw 6vw;
     border-radius: 30px;
    padding: 0vw 4vw;
 }
-.Dpp_Container{
+.Modules_Container{
     display: flex;
      flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.DppData-container {
+.Modules-container {
   font-family: Poppins;
  
 }
-.DppData {
+.ModulesData {
   background: rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
@@ -54,19 +54,19 @@ padding: 2vw 6vw;
   border-radius: 15px;
 }
 
-.DppData img {
+.ModulesData img {
   width: 60px;
   object-fit: cover;
   object-position: center;
 }
-.DppData-text h6 {
+.ModulesData-text h6 {
   color: rgba(115, 122, 127, 1);
   font-weight: 600;
   font-size: 0.8rem;
 margin-bottom:.3rem ;
 
 }
-.DppData-text h3 {
+.ModulesData-text h3 {
   font-size: .9rem;
   font-weight: 500;
   color: black;

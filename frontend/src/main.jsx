@@ -6,6 +6,9 @@ import "./index.css";
 import Home from "./Home/Home.jsx";
 import AboutUs from "./Aboutus/About.jsx";
 import Resources from "./Resources/Resources.jsx";
+import DPP from "./Resources/Dpps.jsx";
+import Notes from "./Resources/Notes.jsx";
+import Modules from "./Resources/Modules.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignUp from "./login/signup.jsx";
@@ -36,6 +39,18 @@ const router = createBrowserRouter([
   {
     path: "Signup",
     element: <SignUp />,
+  },
+  {
+    path: "Dpp",
+    element: <DPP />,
+  },
+  {
+    path: "Notes",
+    element: <Notes />,
+  },
+  {
+    path: "Modules",
+    element: <Modules />,
   },
 ]);
 

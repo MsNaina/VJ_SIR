@@ -1,5 +1,6 @@
 import "./Resources.css";
 import Navbar from "../Mentorship/Navbar";
+import { Link } from "react-router-dom";
 
 export default function Resources() {
   return (
@@ -28,7 +29,7 @@ export default function Resources() {
             <div className="resource-card">
               <img src="images\Notes.png" alt="" />
               <div className="resource-card-bottom absolute bottom-0  w-full h-20 left-0 ">
-                <button>Notes</button>
+               <button> <Link to="/Notes">Notes</Link></button>
               </div>
             </div>
           </div>
@@ -37,20 +38,20 @@ export default function Resources() {
             <div className="resource-card">
               <img src="images\Modules.png" alt="" />
               <div className="resource-card-bottom absolute bottom-0  w-full h-20 left-0 ">
-                <button>Modules</button>
+                 <button> <Link to="/Modules">Modules</Link></button>
               </div>
             </div>
 
             <div className="resource-card">
               <img src="images\mock-test.png" alt="" />
               <div className="resource-card-bottom ">
-                <button>DPPs</button>
+                <button> <Link to="/Dpp">Dpp</Link></button>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
     </>
   );
 }

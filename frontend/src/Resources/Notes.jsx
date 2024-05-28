@@ -1,19 +1,18 @@
-import "./Dpps.css";
-import Navbar from "../Mentorship/Navbar";
-import React, { useState } from "react"
+import "./Notes.css"
 import data from "./data.json";
+import Navbar from "../Mentorship/Navbar";
+import React, { useState } from "react";
 
-export default function DPP() {
-
-  const[searchTerm, setSearchTerm] = useState("");
+export default function Notes() {
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
       <Navbar />
 
-      <section id="DPPs">
-        <div className="Dpp">
+      <section id="Notes">
+        <div className="Note">
           <div className="searchbar">
-            <h1>Find the DPPs :</h1>
+            <h1>Find the Notes :</h1>
 
             <div className="searchInput_container">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -27,7 +26,7 @@ export default function DPP() {
               />
             </div>
           </div>
-          <div className="Dpp_Container">
+          <div className="Note_Container">
             {data
               .filter((val) => {
                 if (searchTerm == "") {
@@ -41,10 +40,10 @@ export default function DPP() {
               .map((val) => {
                 return (
                   <>
-                    <div className="DppData-container">
-                      <div className="DppData" key={val.id}>
+                    <div className="Notes-container">
+                      <div className="NotesData" key={val.id}>
                         <img src={val.image} alt="" />
-                        <div className="DppData-text">
+                        <div className="NotesData-text">
                           <h6>{val.date}</h6>
                           <h3>{val.chapter}</h3>
                         </div>
