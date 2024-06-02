@@ -22,7 +22,11 @@
   align-items: center;
 }
 .profile img {
-  scale: 0.7;
+  width: 4vw;
+}
+.profile button{
+  font-weight: 500;
+  font-size: 1vw;
 }
 .Nav-item ul {
   display: flex;

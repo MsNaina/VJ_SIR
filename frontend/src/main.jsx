@@ -6,12 +6,13 @@ import "./index.css";
 import Home from "./Home/Home.jsx";
 import AboutUs from "./Aboutus/About.jsx";
 import Resources from "./Resources/Resources.jsx";
-import DPP from "./Resources/Dpps.jsx";
+import ChDPP from "./Resources/ChDpp.jsx";
 import Notes from "./Resources/Notes.jsx";
 import Modules from "./Resources/Modules.jsx";
-
+import Profile from "./profilepage/profile.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignUp from "./login/signup.jsx";
+import PhDPP from "./Resources/PhDpp.jsx"
 
 const router = createBrowserRouter([
   {
@@ -41,8 +42,12 @@ const router = createBrowserRouter([
     element: <SignUp />,
   },
   {
-    path: "Dpp",
-    element: <DPP />,
+    path: "ChemistryDpp",
+    element: <ChDPP />,
+  },
+  {
+    path: "PhysicsDpp",
+    element: <PhDPP />,
   },
   {
     path: "Notes",
@@ -52,7 +57,15 @@ const router = createBrowserRouter([
     path: "Modules",
     element: <Modules />,
   },
+  {
+    path: "profile",
+    element: <Profile />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(
+  <>
+    <RouterProvider router={router} />
+  </>
+);

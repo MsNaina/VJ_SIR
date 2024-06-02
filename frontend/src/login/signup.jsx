@@ -28,12 +28,21 @@ export default function SignUp() {
           <div className="signup-bottom">
             <input type="text" name="" id="input" required placeholder="Name" />
 
+            <input type="text" name="" id="input" required placeholder="City" />
+
+            <input
+              type="tel"
+              name=""
+              id="input"
+              required
+              placeholder="Mobile No."
+            />
             <input
               type="email"
               name=""
               id="input"
               required
-              placeholder="E-mail"
+              placeholder="Email"
             />
 
             <input

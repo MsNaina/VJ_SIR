@@ -1,7 +1,6 @@
 #FAQ{
     width: 100%;
     font-family: Red Hat Display;
-    height: 35vw;
 }
 .faq h1{
     text-align: center;
@@ -13,6 +12,8 @@
 .FAQs{
     display: flex;
     justify-content: space-around;
+    margin: 0vw 6vw;
+    align-items: center;
     
 }
 .FAQ-left h2{
@@ -26,16 +27,15 @@
 .wrapper{
     display: flex;
     height: 40vw;
-    /* width: 40vw; */
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 }
 .accordion{
-    width: 500px;
+    width: 600px;
 }
 .item{
     background-color: white;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 10px 20px;
 }
 .title{
@@ -45,7 +45,7 @@
     align-items: center;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1vw;
+    font-size: 1.2vw;
 }
 .content{
     color: rgb(141, 147, 147);
@@ -57,5 +57,4 @@
     height: auto;
     max-height: 9999px;
     transition: all 0.5s cubic-bezier(1,0,1,0);
-    
 }

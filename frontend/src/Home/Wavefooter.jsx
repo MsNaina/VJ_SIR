@@ -12,7 +12,6 @@ export default function WaveFooter() {
             ></path>
           </svg>
 
-          
           <div className="wave-content">
             <div className="part1">
               <div className="part11">
@@ -31,12 +30,12 @@ export default function WaveFooter() {
             <div className="part2">
               <h3>Mentorship Batches</h3>
               <p>JEE Main & Advanced</p>
-              <p>Mentorship Batch 2024</p>
+              <p>Mentorship Batch 2025</p>
             </div>
 
             <div className="part3">
               <h3>Quick Links</h3>
-              <p>Mentorship Batch 2024</p>
+              <p>Mentorship Batch 2025</p>
               <p>FAQs</p>
             </div>
 
@@ -46,6 +45,7 @@ export default function WaveFooter() {
               <div className="part41">
                 <i class="fa-brands fa-2x fa-instagram"></i>
                 <i class="fa-brands fa-2x fa-youtube"></i>
+                <i class="fa-brands fa-2x fa-linkedin"></i>
                 <i class="fa-brands fa-2x fa-facebook"></i>
               </div>
             </div>

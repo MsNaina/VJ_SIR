@@ -22,15 +22,17 @@
 .header-logo{
     scale: .6;
 }
-.header-profile{
-    scale: .7;
-}
 .Header-profile{
     display: flex;
     align-items: center;
-    font-family:Red Hat Display;
-    font-weight: 500;
+}
+.Header-profile button{
+ font-family:Red Hat Display;
+  font-weight: 500;
     font-size: 1vw;
+}
+.Header-profile img{
+    width: 4vw;
 }
 .header-bottom{
     margin: 6vw 0vw 2vw 2vw;

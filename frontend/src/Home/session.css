@@ -1,18 +1,17 @@
 #Session{
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .session{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    margin: 0vw 2vw;
 }
 .session img{
 width: 32vw;
 }
 .session-right{
-width: 40%;
+width: 45%;
 }
 .session-right h2{
     font-size: 3vw;
@@ -27,13 +26,13 @@ width: 40%;
     font-family: poppins;
     font-weight: 500;
     color: rgba(34, 37, 39, 1);
-    margin-bottom: 2vw;
 }
 .session-right p{
-    font-size: 1vw;
+    font-size: 1.2vw;
     font-family: poppins;
     font-weight: 400;
     color: rgba(138, 145, 156, 1);
+    margin: 2vw 0vw;
 
 }
 .session-btn{
@@ -44,6 +43,6 @@ width: 40%;
      font-weight: 800;
      padding: .5vw 2.5vw;
      border-radius: 30px;
-     margin-top: 3vw;
+     /* margin-top: 3vw; */
 
 }

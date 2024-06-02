@@ -1,5 +1,5 @@
 import "./Notes.css"
-import data from "./data.json";
+import data from "./chemistrydata.json";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";
 

@@ -13,9 +13,9 @@ export default function Passionate() {
           <div className="passionate-pera">
             <div className="passionate-line"></div>
             <p>
-              “A teacher’s job is to take a bunch of live wires abd see that
-              they are well grounded. Teaching is the profession that teaches
-              all the other professions.”
+              “A mentor is like a sturdy trellis, guiding and supporting a young
+              vine as it reaches towards the sun, helping it climb higher and
+              blossom into its full potential.”
             </p>
           </div>
         </div>
@@ -30,7 +30,9 @@ export default function Passionate() {
             <div className="mentorship-footerimg">
               <img src="images\mentorship-footer.png" alt="" />
 
-              <h2>Find your compatible mentor <span>G0!!</span></h2>
+              <h2>
+                Find your compatible mentor <span>G0!!</span>
+              </h2>
             </div>
           </div>
 

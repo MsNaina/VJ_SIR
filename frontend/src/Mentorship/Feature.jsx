@@ -14,7 +14,7 @@ export default function Feature() {
   return (
     <>
       <section className="Features">
-        <h2>Features</h2>
+        <h2>What Makes Us Different?</h2>
 
         <Swiper
           slidesPerView={2.5}
@@ -101,8 +101,6 @@ export default function Feature() {
             </div>
           </SwiperSlide>
         </Swiper>
-
-       
       </section>
     </>
   );

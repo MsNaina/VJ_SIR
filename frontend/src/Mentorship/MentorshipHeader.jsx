@@ -9,9 +9,9 @@ export default function MentorshipHeader() {
 
         <div className="Mentorship-header-right">
           <div className="Mentorship-header-text">
-            <h1>Mentorship Batch</h1>
-            <h3>for JEE Main and</h3>
-            <h3>Advanced 2025</h3>
+            <h1>Mentorship Program</h1>
+            <h3>for JEE Main and <br />
+            Advanced</h3>
             <p>
               Unlock personalized success with our mentorship batch, offering
               tailored guidance, continuous monitoring, exclusive sessions with

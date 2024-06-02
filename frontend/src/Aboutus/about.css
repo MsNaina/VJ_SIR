@@ -34,7 +34,11 @@
   align-items: center;
 }
 .aboutus-profile img {
-  scale: 0.7;
+width: 4vw;
+}
+.aboutus-profile button{
+  font-weight: 500;
+  font-size: 1vw;
 }
 .aboutus-Nav-item ul {
   display: flex;

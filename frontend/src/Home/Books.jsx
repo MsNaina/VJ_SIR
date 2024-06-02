@@ -7,7 +7,6 @@ export default function Books() {
       indicators: true,
     });
   });
-
   return (
     <>
       <section id="Books">

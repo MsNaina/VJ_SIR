@@ -25,10 +25,8 @@ for (var i=0; i < links.length; i++){
           </div>
 
           <div className="profile">
-            <div className="profile-img">
-              <img src="images\profile.png" alt="" />
-            </div>
-            <div>Profile</div>
+            <img src="images\profile.png" alt="" />
+                <button><Link to="/profile">Profile</Link></button>
           </div>
 
           <div className="Nav-item">

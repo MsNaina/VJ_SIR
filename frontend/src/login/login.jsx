@@ -27,14 +27,12 @@ export default function Login() {
           </div>
 
           <div className="login-bottom">
-            {/* <input type="text" name="" id="input" required placeholder="Name" /> */}
-
             <input
-              type="email"
+              type="tel"
               name=""
               id="input"
               required
-              placeholder="E-mail"
+              placeholder="Mobile No."
             />
 
             <input
@@ -53,7 +51,7 @@ export default function Login() {
 
             <div className="register-link">
               <p>
-                Don't have any account? <Link to="/Signup">Sign Up</Link>
+                Don't have an account? <Link to="/Signup">Sign Up</Link>
               </p>
             </div>
           </div>

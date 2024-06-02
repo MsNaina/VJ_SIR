@@ -1,6 +1,6 @@
 #Contact{
     width: 100%;
-    height: 60vw;
+    /* height: 60vw; */
     font-family: Red Hat Display;
 }
 
@@ -19,6 +19,7 @@
 .contact-bottom{
 display: flex;
 justify-content: space-around;
+margin: 0vw 6vw;
 }
 .contact-left h2{
     font-size: 3vw;

@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": "Physics And Measurement "
+  },
+  {
+    "id": 2,
+    "image": "/images/physics2.png",
+    "date": "11 may",
+    "chapter": " Kinematics"
+  },
+  {
+    "id": 3,
+    "image": "/images/physics1.png",
+    "date": "21 may",
+    "chapter": "Lawa Of Motion"
+  },
+  {
+    "id": 4,
+    "image": "/images/physics2.png",
+    "date": "14 may",
+    "chapter": "  Work , Energy And Power"
+  },
+  {
+    "id": 5,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": "Rotational Motion"
+  },
+  {
+    "id": 6,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Gravitation"
+  },
+  {
+    "id": 7,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Properties of Solids And Liquids"
+  },
+
+  {
+    "id": 8,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": "Thermodynamics"
+  },
+  {
+    "id": 9,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": " Kinetic Theory of Gases"
+  },
+  {
+    "id": 10,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": "Oscillations And Waves"
+  },
+  {
+    "id": 11,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Electrostatics"
+  },
+  {
+    "id": 12,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": "Current Electricity"
+  },
+  {
+    "id": 13,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Magnetic Effects of Current And Magnetism"
+  },
+  {
+    "id": 14,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": " EMI And Alternating Current"
+  },
+  {
+    "id": 15,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Electromagnetic Waves"
+  },
+  {
+    "id": 16,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": "Optics"
+  },
+  {
+    "id": 17,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Dual Nature of Matter And Radiation"
+  },
+  {
+    "id": 18,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": "Atoms And Nuclei"
+  },
+  {
+    "id": 19,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": " Electronic Devices"
+  },
+  {
+    "id": 20,
+    "image": "/images/physics1.png",
+    "date": "1 may",
+    "chapter": "Purification of Organic Compounds"
+  }
+]
+  

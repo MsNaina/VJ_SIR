@@ -107,13 +107,10 @@ border-radius: 100%;
 padding: .5vw;
 }
 .signup-bottom{
-    width: 100%;
-}
-.signup-bottom{
-    width: 55%;
+    width: 60%;
 }
 #input{
-    width: 100%;
+    width: 90%;
     height: 3vw;
     border: none;
     outline: none;
@@ -128,7 +125,7 @@ padding: .5vw;
     font-weight: 500;
 }
 .signup-btn{
-    width: 106%;
+    width: 95%;
     height: 3vw;
     border: none;
     outline: none;

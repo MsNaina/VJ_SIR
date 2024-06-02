@@ -10,7 +10,7 @@ export default function Navbar() {
 
           <div className="profile">
             <div className="profile-img">
-              <img src="images\profile.png" alt="" />
+             <button> <img src="images\profile.png" alt="" /></button> 
             </div>
             <div>Profile</div>
           </div>

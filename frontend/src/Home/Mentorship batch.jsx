@@ -21,8 +21,8 @@ export default function Mentorship() {
       <section id="Mentorship">
         <div className="Mentorship">
           <div className="mentorship-text">
-            <h1>Mentorship Batch</h1>
-            <h2> JEE Main & Advanced 2024</h2>
+            <h1>Mentorship Program</h1>
+            <h2> JEE Main & Advanced </h2>
             <p>
               Welcome to the ultimate mentorship experience designed to elevate
               your JEE Main & Advance preparation journey. Join the exclusive VJ

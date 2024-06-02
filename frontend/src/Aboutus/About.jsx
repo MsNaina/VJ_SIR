@@ -11,10 +11,8 @@ import { Link } from "react-router-dom";
               </div>
 
               <div className="aboutus-profile">
-                <div className="aboutus-profile-img">
-                  <img src="images\profile.png" alt="" />
-                </div>
-                <div>Profile</div>
+                <img src="images\profile.png" alt="" />
+                <button><Link to="/profile">Profile</Link></button>
               </div>
 
               <div className="aboutus-Nav-item">
