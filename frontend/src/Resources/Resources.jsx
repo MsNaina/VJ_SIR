@@ -37,7 +37,7 @@ export default function Resources() {
             <img src="images\Notes.png" alt="" />
             <div className="resource-card-bottom absolute bottom-0  w-full h-20 left-0 ">
               <button onClick={scrollToTop}>
-                <Link to="/Notes">Notes</Link>
+                <Link to="/PhysicsNotes">Notes</Link>
               </button>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function Resources() {
             <img src="images\Modules.png" alt="" />
             <div className="resource-card-bottom absolute bottom-0  w-full h-20 left-0 ">
               <button onClick={scrollToTop}>
-                <Link to="/Modules">Modules</Link>
+                <Link to="/PhysicsModules">Modules</Link>
               </button>
             </div>
           </div>

@@ -2,10 +2,11 @@ import "./ChDpp.css";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";
 import data from "./chemistrydata.json";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function ChDPP() {
   const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <>
       <Navbar />
@@ -30,13 +31,14 @@ export default function ChDPP() {
             </div>
             <div className="search-btns">
               <button className="Ph-btn search-btn">
-                {" "}
-                <Link to="/PhysicsDpp">Physics</Link>
+                <NavLink to="/PhysicsDpp">Physics</NavLink>
               </button>
               <button className="Ch-btn search-btn">
-                <Link to="/ChemistryDpp">Chemistry</Link>
+                <NavLink to="/ChemistryDpp">Chemistry</NavLink>
               </button>
-              <button className="Math-btn search-btn">Math</button>
+              <button className="Math-btn search-btn">
+                <NavLink to="/MathDpp">Math</NavLink>
+              </button>
             </div>
           </div>
           <div className="Dpp_Container">

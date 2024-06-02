@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from "react";
 
 import "./Navbar.css";
@@ -26,33 +26,35 @@ for (var i=0; i < links.length; i++){
 
           <div className="profile">
             <img src="images\profile.png" alt="" />
-                <button><Link to="/profile">Profile</Link></button>
+            <button>
+              <NavLink to="/profile">Profile</NavLink>
+            </button>
           </div>
 
           <div className="Nav-item">
             <ul>
               <li>
-                <Link className="links" to="/">
+                <NavLink className="links" to="/">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/Resource">Resource</Link>
+                <NavLink to="/Resource">Resource</NavLink>
               </li>
               <li>
-                <Link className=" links" to="/Mentorship">
+                <NavLink className=" links" to="/Mentorship">
                   Mentorship
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link className="links" to="/AboutUs">
+                <NavLink className="links" to="/AboutUs">
                   About Us
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link className="links" to="/Login">
+                <NavLink className="links" to="/Login">
                   Login
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>

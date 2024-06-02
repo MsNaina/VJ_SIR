@@ -1,9 +1,10 @@
-import "./Modules.css";
+import "./PhModules.css";
 import data from "./chemistrydata.json";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-export default function Modules() {
+export default function ChModules() {
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
@@ -11,19 +12,33 @@ export default function Modules() {
 
       <section id="Modules">
         <div className="Modules">
-          <div className="searchbar">
-            <h1>Find the Modules :</h1>
+          <div className="SearchBar">
+            <div className="searchbar">
+              <h1>Find the Modules :</h1>
 
-            <div className="searchInput_container">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input
-                id="searchInput"
-                type="text"
-                placeholder="Search"
-                onChange={(event) => {
-                  setSearchTerm(event.target.value);
-                }}
-              />
+              <div className="searchInput_container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  id="searchInput"
+                  type="text"
+                  placeholder="Search"
+                  onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+
+            <div className="search-btns">
+              <button className="Ph-btn search-btn">
+                <NavLink to="/PhysicsModules">Physics</NavLink>
+              </button>
+              <button className="Ch-btn search-btn">
+                <NavLink to="/ChemistryModules">Chemistry</NavLink>
+              </button>
+              <button className="Math-btn search-btn">
+                <NavLink to="/MathModules">Math</NavLink>
+              </button>
             </div>
           </div>
           <div className="Modules_Container">

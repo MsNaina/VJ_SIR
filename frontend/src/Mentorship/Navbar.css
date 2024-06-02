@@ -24,6 +24,7 @@
 .profile img {
   width: 4vw;
 }
+
 .profile button{
   font-weight: 500;
   font-size: 1vw;
@@ -32,17 +33,19 @@
   display: flex;
   gap: 1vw;
 }
+.Nav-item a.active{
+  font-weight: bold;
+}
 .Nav-item ul li {
-  background-color: white;
   opacity: 0.6;
   border-radius: 30px;
   padding: 0.5vw 0.7vw;
   background: rgba(240, 240, 240, 0.5);
 }
-.Nav-item ul li .active{
+/* .Nav-item ul li .active{
     font-weight: 900;
 
-}
+} */
 .Nav-item ul li:hover{
   font-weight: 900;
 }

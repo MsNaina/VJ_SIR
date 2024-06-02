@@ -1,118 +1,93 @@
 [
   {
     "id": 1,
-    "image": "/images/physics1.png",
+    "image": "/images/maths1.png",
     "date": "1 may",
-    "chapter": "Physics And Measurement "
+    "chapter": "Sets ,Relations And Functions  "
   },
   {
     "id": 2,
-    "image": "/images/physics2.png",
+    "image": "/images/maths2.png",
     "date": "11 may",
-    "chapter": " Kinematics"
+    "chapter": " Quadratic Equations"
   },
   {
     "id": 3,
     "image": "/images/physics1.png",
     "date": "21 may",
-    "chapter": "Lawa Of Motion"
+    "chapter": "Complex Number"
   },
   {
     "id": 4,
     "image": "/images/physics2.png",
     "date": "14 may",
-    "chapter": "  Work , Energy And Power"
+    "chapter": "Matrices And Determinants"
   },
   {
     "id": 5,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Rotational Motion"
+    "chapter": "Permutations And Combinations"
   },
   {
     "id": 6,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Gravitation"
+    "chapter": "Binomial Theorem"
   },
   {
     "id": 7,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Properties of Solids And Liquids"
+    "chapter": "Sequence And Series"
   },
 
   {
     "id": 8,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Thermodynamics"
+    "chapter": "Limit , Continuity And Differentiability"
   },
   {
     "id": 9,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": " Kinetic Theory of Gases"
+    "chapter": " Integral Calculas"
   },
   {
     "id": 10,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Oscillations And Waves"
+    "chapter": "Differential Equations"
   },
   {
     "id": 11,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Electrostatics"
+    "chapter": "Co-Ordinate Geometry "
   },
   {
     "id": 12,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Current Electricity"
+    "chapter": "3D Geometry"
   },
   {
     "id": 13,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Magnetic Effects of Current And Magnetism"
+    "chapter": "Vector Algebra"
   },
   {
     "id": 14,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": " EMI And Alternating Current"
+    "chapter": " Statistics And Probability"
   },
   {
     "id": 15,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Electromagnetic Waves"
-  },
-  {
-    "id": 16,
-    "image": "/images/physics1.png",
-    "date": "1 may",
-    "chapter": "Optics"
-  },
-  {
-    "id": 17,
-    "image": "/images/physics2.png",
-    "date": "1 may",
-    "chapter": "Dual Nature of Matter And Radiation"
-  },
-  {
-    "id": 18,
-    "image": "/images/physics1.png",
-    "date": "1 may",
-    "chapter": "Atoms And Nuclei"
-  },
-  {
-    "id": 19,
-    "image": "/images/physics2.png",
-    "date": "1 may",
-    "chapter": " Electronic Devices"
+    "chapter": "Trigonometry"
   }
 ]
-  

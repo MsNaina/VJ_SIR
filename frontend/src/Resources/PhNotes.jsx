@@ -1,9 +1,10 @@
-import "./Notes.css"
-import data from "./chemistrydata.json";
+import "./PhNotes.css"
+import data from "./Physicsdata.json";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-export default function Notes() {
+export default function PhNotes() {
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
@@ -11,19 +12,33 @@ export default function Notes() {
 
       <section id="Notes">
         <div className="Note">
-          <div className="searchbar">
-            <h1>Find the Notes :</h1>
+          <div className="SearchBar">
+            <div className="searchbar">
+              <h1>Find the Notes :</h1>
 
-            <div className="searchInput_container">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input
-                id="searchInput"
-                type="text"
-                placeholder="Search"
-                onChange={(event) => {
-                  setSearchTerm(event.target.value);
-                }}
-              />
+              <div className="searchInput_container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  id="searchInput"
+                  type="text"
+                  placeholder="Search"
+                  onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+
+            <div className="search-btns">
+              <button className="Ph-btn search-btn">
+                <NavLink to="/PhysicsNotes">Physics</NavLink>
+              </button>
+              <button className="Ch-btn search-btn">
+                <NavLink to="/ChemistryNotes">Chemistry</NavLink>
+              </button>
+              <button className="Math-btn search-btn">
+                <NavLink to="/MathNotes">Math</NavLink>
+              </button>
             </div>
           </div>
           <div className="Note_Container">

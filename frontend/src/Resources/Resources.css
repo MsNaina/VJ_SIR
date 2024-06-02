@@ -19,20 +19,6 @@
 gap: 3vw;
    
 }
-/* .card123{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8vw;
-}
-.card45{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5vw;
-    margin-top: 3vw;
-} */
-
 .resource-card{
     background-color:white;
     position: relative;

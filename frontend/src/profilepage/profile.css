@@ -1,80 +1,24 @@
-#Profile{
-    padding: 5vw 0vw;
+.profile-navbar{
 display: flex;
-justify-content: space-around;
- font-family: Poppins;
- 
-}
-.profile-left{
-display: flex;
-flex-direction: column;
+justify-content: space-between;
 align-items: center;
-justify-content: space-evenly;
-width: 30%;
+padding: 1vw 3vw;
+font-family: Red Hat Display;
 }
-.profile-img img{
- width: 15vw;
- border-radius: 50%;
+.profile-logo{
+    width: 3.5vw;
 }
-.edit-text{
+.profile-Nav-item ul{
 display: flex;
-flex-direction: column;
-align-items: center;
-gap: 2vw;
+gap: 1vw;
+font-size: 1.2vw;
+font-weight: 500;
 }
-.edit-info{
-    border: 2px solid black;
-    border-radius: 40px;
-    padding: .5vw 3vw;
-    text-align: center;
-    box-shadow: 0px 4px 16px 0px #0000008C;
-    
-}
-.edit-info h2{
-    font-weight: 700;
-    font-size: 2vw;
-}
-.edit-info h3{
-    font-size: 1.5vw;
-}
-.edit{
-    display: flex;
-    gap: 1vw;
-}
-.edit img{
-width: 2vw;
-scale: .7;
-}
-.edit button{
-    font-size: 1.5vw;
-}
-h1{
-    font-size: 4vw;
-    font-weight: 600;
-}
-.profile-info{
-    margin: 2vw 0vw;
-    width: 100%;
-}
-.Name{
-    display: flex;
-    gap: 2vw;
-}
-.class{
-    display: flex;
-    gap: 2vw;
-}
-.profile-info label{
-    font-size: 1.4vw;
-    font-weight: 500;
-    color: black;
-}
-#profile-input{
-    width: 90%;
-    outline: none;
-    border-radius: 30px;
-    padding: 0vw 1vw;
-  color: #0C6205;
-    border: 2px solid black;
-    box-shadow: 0px 4px 16px 0px #0000008C;
+.profile-Nav-item ul li{
+  border-radius: 30px;
+  padding: 0.5vw 0.7vw;
+  background: rgba(240, 240, 240, 0.5);
+  box-shadow: 0px 5.95px 5.95px 0px rgba(0, 0, 0, 0.25);
+
+
 }
