@@ -32,9 +32,10 @@
 .aboutus-profile {
   display: flex;
   align-items: center;
+  gap: 1vw;
 }
 .aboutus-profile img {
-width: 4vw;
+width: 2vw;
 }
 .aboutus-profile button{
   font-weight: 500;

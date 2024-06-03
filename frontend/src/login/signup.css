@@ -3,7 +3,6 @@
     height: 45vw;
     display: flex;
     box-sizing: border-box;
-    overflow: hidden;
     padding: 1vw 2vw;
     justify-content: space-between;
     font-family: Poppins;
@@ -13,6 +12,7 @@ object-fit: cover;
 width: 40vw;
 /* scale: 1; */
 /* position: absolute; */
+min-height: 90vh;
 }
 
 .signup-text1 {
@@ -33,7 +33,8 @@ width: 40vw;
   right: 15vw;
 }
   .signup-text1 img {
-    width: 3vw;
+    width: 4vw;
+    min-height: 2vh;
     margin: 1vw .5vw;
     border-radius: 50%;
     background-color: rgba(217, 217, 217, 1);

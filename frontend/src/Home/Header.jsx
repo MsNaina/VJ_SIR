@@ -16,7 +16,7 @@ export default function Header() {
               </div>
 
               <div className="Header-profile">
-                <img src="images\profile.png" alt="" />
+                <img src="images/profile.png" alt="" />
                 <button>  <Link to="/profile">Profile</Link></button>
               </div>
             </div>

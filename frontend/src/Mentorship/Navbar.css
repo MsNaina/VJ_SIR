@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .logo {
-  scale: 0.7;
+  width: 3.5vw;
 }
 .Navbar {
   display: flex;
@@ -20,9 +20,10 @@
 .profile {
   display: flex;
   align-items: center;
+  gap: 1vw;
 }
 .profile img {
-  width: 4vw;
+  width: 2vw;
 }
 
 .profile button{
