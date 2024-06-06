@@ -3,7 +3,27 @@
     "id": 1,
     "image": "/images/maths1.png",
     "date": "1 may",
-    "chapter": "Sets ,Relations And Functions  "
+    "chapter": "Sets ,Relations And Functions",
+    "topics": [
+      {
+        "title": "Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Proton"
+      },
+      {
+        "title": "Deutron"
+      },
+      {
+        "title": "Periodicity"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 2,
@@ -46,7 +66,27 @@
     "id": 8,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Limit , Continuity And Differentiability"
+    "chapter": "Limit , Continuity And Differentiability",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Proton"
+      },
+      {
+        "title": "Deutron"
+      },
+      {
+        "title": "Periodicity"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 9,
@@ -82,12 +122,78 @@
     "id": 14,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": " Statistics And Probability"
+    "chapter": " Statistics"
   },
   {
     "id": 15,
     "image": "/images/physics2.png",
     "date": "1 may",
     "chapter": "Trigonometry"
-  }
+  },
+   {
+     "id": 16,
+     "image": "/images/physics2.png",
+     "date": "1 may",
+     "chapter": "Straight Line"
+   },
+    {
+      "id": 17,
+      "image": "/images/physics2.png",
+      "date": "1 may",
+      "chapter": "Circle"
+    },
+     {
+       "id": 18,
+       "image": "/images/physics2.png",
+       "date": "1 may",
+       "chapter": "Parabola"
+     },
+      {
+        "id": 19,
+        "image": "/images/physics2.png",
+        "date": "1 may",
+        "chapter": "Ellipse and Hyperbola"
+      },
+       {
+         "id": 20,
+         "image": "/images/physics2.png",
+         "date": "1 may",
+         "chapter": "Mathematical Induction"
+       },
+        {
+          "id": 21,
+          "image": "/images/physics2.png",
+          "date": "1 may",
+          "chapter": "Methoda of Differentiation"
+        },
+         {
+           "id": 22,
+           "image": "/images/physics2.png",
+           "date": "1 may",
+           "chapter": "Aera under curves"
+         },
+          {
+            "id": 23,
+            "image": "/images/physics2.png",
+            "date": "1 may",
+            "chapter": "Methoda of Differentiation"
+          },
+           {
+             "id": 24,
+             "image": "/images/physics2.png",
+             "date": "1 may",
+             "chapter": "Inverse Trigonometry"
+           },
+            {
+              "id": 25,
+              "image": "/images/physics2.png",
+              "date": "1 may",
+              "chapter": "Properties of Triangle"
+            },
+            {
+              "id": 26,
+              "image": "/images/physics2.png",
+              "date": "1 may",
+              "chapter": "Probability"
+            }
 ]

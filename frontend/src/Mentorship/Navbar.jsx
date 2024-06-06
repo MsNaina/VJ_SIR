@@ -21,11 +21,11 @@ for (var i=0; i < links.length; i++){
       <section id="Navbar">
         <div className="Navbar">
           <div className="logo">
-            <img src="images\logo.png" alt="" />
+            <img src="\images\logo.png" alt="" />
           </div>
 
           <div className="profile">
-            <img src="images\profile.png" alt="" />
+            <img src="\images\profile.png" alt="" />
             <button>
               <NavLink to="/profile">Profile</NavLink>
             </button>

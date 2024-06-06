@@ -1,11 +1,26 @@
 import "./PhModules.css";
-import data from "./chemistrydata.json";
+import Chdata from "./chemistrydata.json";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function ChModules() {
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const handleChapterClick = (id) => {
+    navigate(`/Chemistry/topics/${id}`);
+  };
+
+  const filteredData = Chdata.filter((val) => {
+    if (searchTerm === "") {
+      return val;
+    } else if (val.chapter.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return val;
+    }
+    return null;
+  });
+
   return (
     <>
       <Navbar />
@@ -41,32 +56,22 @@ export default function ChModules() {
               </button>
             </div>
           </div>
+
           <div className="Modules_Container">
-            {data
-              .filter((val) => {
-                if (searchTerm == "") {
-                  return val;
-                } else if (
-                  val.chapter.toLowerCase().includes(searchTerm.toLowerCase())
-                ) {
-                  return val;
-                }
-              })
-              .map((val) => {
-                return (
-                  <>
-                    <div className="Modules-container">
-                      <div className="ModulesData" key={val.id}>
-                        <img src={val.image} alt="" />
-                        <div className="ModulesData-text">
-                          <h6>{val.date}</h6>
-                          <h3>{val.chapter}</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                );
-              })}
+            {filteredData.map((val) => (
+              <div className="Modules-container" key={val.id}>
+                <div
+                  className="ModulesData"
+                  onClick={() => handleChapterClick(val.id)}
+                >
+                  <img src={val.image} alt="" />
+                  <div className="ModulesData-text">
+                    <h6>{val.date}</h6>
+                    <h3>{val.chapter}</h3>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

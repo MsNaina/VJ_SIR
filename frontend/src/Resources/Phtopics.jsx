@@ -8,14 +8,16 @@ export default function TopicsPage() {
   const { id } = useParams();
 
   const chapter = data.find((chapter) => chapter.id.toString() === id);
-
   console.log("Topics in Chapter:", chapter.topics);
+
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <section id="TopicPage">
-
-        <div className="TopicsPage">
+        <div
+          className="TopicsPage
+        "
+        >
           {chapter.topics && chapter.topics.length > 0 ? (
             <div className="Topics">
               {chapter.topics.map((topic, index) => (

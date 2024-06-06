@@ -1,15 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
-import Chdata from "./chemistrydata.json";
+import Mathdata from "./Mathdata.json";
 import "./Phtopic.css";
 
-export default function ChTopicsPage() {
+export default function MathTopicsPage() {
   const { id } = useParams();
 
-  const chapter = Chdata.find((chapter) => chapter.id.toString() === id);
-console.log("Received ID from params:", id);
-console.log("Found Chapter:", chapter);
+  const chapter = Mathdata.find((chapter) => chapter.id.toString() === id);
+  console.log("Received ID from params:", id);
+  console.log("Found Chapter:", chapter);
 
   console.log("Topics in Chapter:", chapter.topics);
   return (

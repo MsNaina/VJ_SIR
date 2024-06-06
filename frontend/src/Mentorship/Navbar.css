@@ -5,6 +5,7 @@
 }
 .logo {
   width: 3.5vw;
+   scale: .8;
 }
 .Navbar {
   display: flex;
@@ -35,7 +36,7 @@
   gap: 1vw;
 }
 .Nav-item a.active{
-  font-weight: bold;
+  font-weight: 900;
 }
 .Nav-item ul li {
   opacity: 0.6;
@@ -43,10 +44,6 @@
   padding: 0.5vw 0.7vw;
   background: rgba(240, 240, 240, 0.5);
 }
-/* .Nav-item ul li .active{
-    font-weight: 900;
-
-} */
 .Nav-item ul li:hover{
   font-weight: 900;
 }

@@ -21,6 +21,9 @@ import MathNotes from "./Resources/MathNotes.jsx";
 import TopicsPage from "./Resources/Phtopics.jsx";
 import data from "./Resources/Physicsdata.json";
 import Chdata from "./Resources/chemistrydata.json"
+import ChTopicsPage from "./Resources/ChTopics.jsx";
+import MathTopicsPage from "./Resources/MathTopics.jsx";
+import Mathdata from "./Resources/Mathdata.json"
 
 const router = createBrowserRouter([
   {
@@ -90,8 +93,12 @@ const router = createBrowserRouter([
     element: <TopicsPage data={data} />,
   },
   {
-    path: "/topics/:id",
-    element: <TopicsPage data={Chdata} />,
+    path: "Chemistry/topics/:id",
+    element: <ChTopicsPage data={Chdata} />,
+  },
+  {
+    path: "Maths/topics/:id",
+    element: <MathTopicsPage data={Mathdata} />,
   },
   {
     path: "profile",

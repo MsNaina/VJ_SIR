@@ -3,7 +3,7 @@
     "id": 1,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Physics And Measurement ",
+    "chapter": "Unit And Dimension ",
     "topics":[
       {
         "title": "General Problems on Coordination Chemistry"
@@ -351,7 +351,7 @@
     "id": 14,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": " EMI And Alternating Current",
+    "chapter": "Alternating Current",
     "topics": [
       {
         "title": "General Problems on Coordination Chemistry"
@@ -429,7 +429,7 @@
     "id": 17,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Dual Nature of Matter And Radiation",
+    "chapter": "SHM",
     "topics": [
       {
         "title": "General Problems on Coordination Chemistry"
@@ -455,7 +455,7 @@
     "id": 18,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Atoms And Nuclei",
+    "chapter": "capacitance",
     "topics": [
       {
         "title": "General Problems on Coordination Chemistry"
@@ -502,6 +502,48 @@
         "title": "General Problems on Coordination Chemistry"
       }
     ]
+  },
+  {
+    "id": 20,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Modern Physics-1"
+  },
+  {
+    "id": 21,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Modern Physics-2"
+  },
+  {
+    "id": 22,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Communication System"
+  },
+  {
+    "id": 23,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Experimental Skills"
+  },
+  {
+    "id": 24,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "EMI"
+  },
+  {
+    "id": 25,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Circular Motion"
+  },
+  {
+    "id": 26,
+    "image": "/images/physics2.png",
+    "date": "1 may",
+    "chapter": "Center Of Mass , Momentum & Collison"
   }
 ]
   
