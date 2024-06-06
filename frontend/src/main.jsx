@@ -18,6 +18,9 @@ import ChModules from "./Resources/ChModules.jsx";
 import MathModules from "./Resources/MathModule.jsx";
 import ChNotes from "./Resources/ChNotes.jsx";
 import MathNotes from "./Resources/MathNotes.jsx";
+import TopicsPage from "./Resources/Phtopics.jsx";
+import data from "./Resources/Physicsdata.json";
+import Chdata from "./Resources/chemistrydata.json"
 
 const router = createBrowserRouter([
   {
@@ -81,6 +84,14 @@ const router = createBrowserRouter([
   {
     path: "MathModules",
     element: <MathModules />,
+  },
+  {
+    path: "/topics/:id",
+    element: <TopicsPage data={data} />,
+  },
+  {
+    path: "/topics/:id",
+    element: <TopicsPage data={Chdata} />,
   },
   {
     path: "profile",

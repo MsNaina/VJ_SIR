@@ -49,7 +49,7 @@ export default function Mentorship() {
                           }}
                           className="line absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-full h-10"
                         >
-                          <div className="w-10 h-10 rounded-full bg-white">
+                          <div className="w-[2.4vw] h-[2.4vw] rounded-full bg-white">
                             {" "}
                           </div>
                         </div>
@@ -64,7 +64,7 @@ export default function Mentorship() {
                           }}
                           className="line absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-full h-10"
                         >
-                          <div className="w-10 h-10 rounded-full bg-white">
+                          <div className="w-[2.4vw] h-[2.4vw] rounded-full bg-white">
                             {" "}
                           </div>
                         </div>

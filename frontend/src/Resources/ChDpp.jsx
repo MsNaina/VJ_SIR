@@ -61,6 +61,7 @@ export default function ChDPP() {
                         <div className="DppData-text">
                           <h6>{val.date}</h6>
                           <h3>{val.chapter}</h3>
+                          
                         </div>
                       </div>
                     </div>

@@ -1,0 +1,47 @@
+.Topics {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: Poppins;
+  margin: 8vw 4vw;
+  padding: 2vw 0vw;
+  border-top: 1px solid #000000;
+}
+li {
+  list-style: none;
+}
+.topic-item {
+  margin: 20px 0px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0px 4px 25px 0px #00000040;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.topic-title {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.topic-item h3 {
+  font-size: 1.3vw;
+  color: black;
+  font-weight: 500;
+}
+.line {
+  width: 0.8vw;
+  background: #0c6205;
+  height: 2vw;
+}
+.Attempt {
+  border-top: 1px solid #000000;
+  width: 100%;
+  padding: 0.5vw 2vw;
+  text-align: end;
+  font-size: 1.3vw;
+  color: black;
+  font-weight: 500;
+}

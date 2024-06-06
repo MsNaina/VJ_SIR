@@ -3,116 +3,505 @@
     "id": 1,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Physics And Measurement "
+    "chapter": "Physics And Measurement ",
+    "topics":[
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      }
+    ]
   },
   {
     "id": 2,
     "image": "/images/physics2.png",
     "date": "11 may",
-    "chapter": " Kinematics"
+    "chapter": " Kinematics",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 3,
     "image": "/images/physics1.png",
     "date": "21 may",
-    "chapter": "Lawa Of Motion"
+    "chapter": "Laws Of Motion",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 4,
     "image": "/images/physics2.png",
     "date": "14 may",
-    "chapter": "  Work , Energy And Power"
+    "chapter": "  Work , Energy And Power",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 5,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Rotational Motion"
+    "chapter": "Rotational Motion",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 6,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Gravitation"
+    "chapter": "Gravitation",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 7,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Properties of Solids And Liquids"
+    "chapter": "Properties of Solids And Liquids",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
 
   {
     "id": 8,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Thermodynamics"
+    "chapter": "Thermodynamics",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 9,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": " Kinetic Theory of Gases"
+    "chapter": " Kinetic Theory of Gases",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 10,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Oscillations And Waves"
+    "chapter": "Oscillations And Waves",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 11,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Electrostatics"
+    "chapter": "Electrostatics",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 12,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Current Electricity"
+    "chapter": "Current Electricity",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 13,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Magnetic Effects of Current And Magnetism"
+    "chapter": "Magnetic Effects of Current And Magnetism",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 14,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": " EMI And Alternating Current"
+    "chapter": " EMI And Alternating Current",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 15,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Electromagnetic Waves"
+    "chapter": "Electromagnetic Waves",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 16,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Optics"
+    "chapter": "Optics",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 17,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": "Dual Nature of Matter And Radiation"
+    "chapter": "Dual Nature of Matter And Radiation",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 18,
     "image": "/images/physics1.png",
     "date": "1 may",
-    "chapter": "Atoms And Nuclei"
+    "chapter": "Atoms And Nuclei",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   },
   {
     "id": 19,
     "image": "/images/physics2.png",
     "date": "1 may",
-    "chapter": " Electronic Devices"
+    "chapter": " Electronic Devices",
+    "topics": [
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "Ligands"
+      },
+      {
+        "title": "VBT"
+      },
+      {
+        "title": "Isomerism"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      },
+      {
+        "title": "General Problems on Coordination Chemistry"
+      }
+    ]
   }
 ]
   

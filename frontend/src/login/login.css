@@ -107,14 +107,13 @@ padding: .5vw;
 }
 .login-bottom{
     width: 100%;
-    height: auto;
 }
 .login-bottom{
     width: 60%;
 }
 #input{
     width: 100%;
-    height: 3vw;
+    height: 4rem;
     border: none;
     outline: none;
     background: rgba(217, 217, 217, 1);
@@ -126,6 +125,7 @@ padding: .5vw;
 .login-bottom ::placeholder{
     color: black;
     font-weight: 500;
+    font-size: 1rem;
 }
 .login-btn{
     width: 96%;
@@ -135,6 +135,7 @@ padding: .5vw;
     background: rgba(12, 98, 5, 1);
 color: white;
 font-weight: 600;
+ font-size: 1rem;
 border-radius: 30px;
 padding: 0vw 1vw;
 }

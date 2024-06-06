@@ -3,7 +3,30 @@
     "id": 1,
     "image": "/images/Hydrogen.png",
     "date": "1 may",
-    "chapter": " Hydrogen"
+    "chapter": " Hydrogen",
+   "topics":[
+    {
+    "title":"General Problems on Coordination Chemistry"
+   },
+   {
+    "title":"Proton"
+   },
+   {
+    "title":"Deutron"
+   },
+   {
+    "title":"Periodicity"
+   },
+   {
+    "title":"General Problems on Coordination Chemistry"
+   },
+   {
+    "title":"General Problems on Coordination Chemistry"
+   }
+
+
+  ]
+
   },
   {
     "id": 2,
