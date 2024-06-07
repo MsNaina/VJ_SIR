@@ -18,9 +18,6 @@
     scale: 1.5;
     top: 1vw;
 }
-.search-btn link:active{
-  background-color: darkgreen;
-}
 #searchInput{
     width: 30%;
     height: 2.5vw;

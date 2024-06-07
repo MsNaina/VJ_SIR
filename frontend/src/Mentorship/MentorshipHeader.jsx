@@ -1,4 +1,5 @@
 import "./MentorshipHeader.css";
+import {NavLink} from "react-router-dom";
 export default function MentorshipHeader() {
   return (
     <>
@@ -10,8 +11,10 @@ export default function MentorshipHeader() {
         <div className="Mentorship-header-right">
           <div className="Mentorship-header-text">
             <h1>Mentorship Program</h1>
-            <h3>for JEE Main and <br />
-            Advanced</h3>
+            <h3>
+              for JEE Main and <br />
+              Advanced
+            </h3>
             <p>
               Unlock personalized success with our mentorship batch, offering
               tailored guidance, continuous monitoring, exclusive sessions with
@@ -27,10 +30,7 @@ export default function MentorshipHeader() {
             </div>
 
             <div className="Mentorship-header-discount">
-              <img
-                src="images\mentorshipdiscount.png"
-                alt=""
-              />
+              <img src="images\mentorshipdiscount.png" alt="" />
 
               <div className="mentorship-header-discount">
                 <img src="images\pencil.png" alt="" />
@@ -41,8 +41,11 @@ export default function MentorshipHeader() {
 
           <div className="Mentorship-header-btn">
             <button className="mentorship-header-btn1">
-              <img src="images\plus 1.png" alt="" />
-              Check Compatibility
+              <NavLink to="CompatibilityStage1">
+                {" "}
+                <img src="images\plus 1.png" alt="" />
+                Check Compatibility
+              </NavLink>
             </button>
 
             <a href="">Buy Now</a>

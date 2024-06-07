@@ -24,6 +24,8 @@ import Chdata from "./Resources/chemistrydata.json"
 import ChTopicsPage from "./Resources/ChTopics.jsx";
 import MathTopicsPage from "./Resources/MathTopics.jsx";
 import Mathdata from "./Resources/Mathdata.json"
+import PhQues from "./Resources/PhQuePage.jsx";
+import CompatibilityStage1 from "./compatibility/compatibilitystage1.jsx";
 
 const router = createBrowserRouter([
   {
@@ -101,8 +103,16 @@ const router = createBrowserRouter([
     element: <MathTopicsPage data={Mathdata} />,
   },
   {
+    path: "/quiz/:id",
+    element: <PhQues />,
+  },
+  {
     path: "profile",
     element: <Profile />,
+  },
+  {
+    path: "Compatibility",
+    element: <CompatibilityStage1 />,
   },
 ]);
 

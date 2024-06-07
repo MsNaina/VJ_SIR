@@ -1,4 +1,4 @@
-import "./MathDpp.css";
+import "./PhDpp.css";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";
 import Mathdata from "./Mathdata.json";

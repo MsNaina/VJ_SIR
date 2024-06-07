@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import data from "./Physicsdata.json";
 import "./Phtopic.css";
+import { Link } from "react-router-dom";
 
 export default function TopicsPage() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ export default function TopicsPage() {
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <section id="TopicPage">
         <div
           className="TopicsPage
@@ -27,7 +28,9 @@ export default function TopicsPage() {
                     <h3>{topic.title}</h3>
                   </div>
                   <div className="Attempt">
-                    <h2>Attempt</h2>
+                    <Link to={`/quiz/${topic.id}`}>
+                      <button className="attempt-button">Attempt</button>
+                    </Link>
                   </div>
                 </li>
               ))}

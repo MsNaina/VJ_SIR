@@ -1,0 +1,57 @@
+.QuestionsPage {
+  padding: 20px;
+}
+
+.QuestionHeader {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.QuestionBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.QuestionBody img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Options {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.Option {
+  padding: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.Option.selected {
+  background-color: #ccc;
+}
+
+.Option.correct {
+  background-color: #4caf50;
+}
+
+.Option.incorrect {
+  background-color: #f44336;
+}
+
+.Quebtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.Explanation {
+  margin-top: 20px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}

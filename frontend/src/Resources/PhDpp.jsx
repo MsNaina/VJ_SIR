@@ -33,7 +33,7 @@ export default function PhDPP() {
             <div className="search-btns">
               <button
                 
-                className="Ph-btn search-btn"
+                className="Ph-btn search-btn active:"
               >
                 <NavLink to="/PhysicsDpp">Physics</NavLink>
               </button>
