@@ -3,11 +3,19 @@
   justify-content: space-between;
   flex-wrap: wrap;
   font-family: Poppins;
-  margin: 8vw 4vw;
+  margin: 2rem 4rem;
   padding: 2vw 0vw;
   border-top: 1px solid #000000;
+  
 }
+.TopicsPage p{
+  font-size:3rem ;
+  color: #0C6205;
+   font-family: Poppins;
+   font-weight: 600;
+margin: 6rem 0rem 0rem 4rem;
 
+}
 li {
   list-style: none;
 }
@@ -32,7 +40,7 @@ li {
   color: black;
   font-weight: 500;
 }
-.line {
+.Line {
   width: 0.8vw;
   background: #0c6205;
   height: 2vw;

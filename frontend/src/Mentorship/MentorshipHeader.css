@@ -1,105 +1,102 @@
-.Mentorship-Header{
-    display: flex;
-    width: 100%;
-    height: 110vh;
-    font-family:poppins;
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: 0vw 2vw;
-    /* gap: 3rem; */
+.Mentorship-Header {
+  display: flex;
+  width: 100%;
+  height: 110vh;
+  font-family: poppins;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0vw 2vw;
 }
-.Mentorship-header-left img{
- object-fit: cover;
+.Mentorship-header-left img {
+  object-fit: cover;
 }
-.Mentorship-header-right{
-    padding: 6vw 4vw 4vw 4vw;
-   box-sizing: border-box;
+.Mentorship-header-right {
+  padding: 6vw 4vw 4vw 4vw;
+  box-sizing: border-box;
 }
-.Mentorship-header-right h1{
-    font-size: 4.5vw;
-    font-weight: 700;
-    font-family: Poppins;
+.Mentorship-header-right h1 {
+  font-size: 4.5vw;
+  font-weight: 700;
+  font-family: Poppins;
 }
-.Mentorship-header-right h3{
-    font-size: 4.5vw;
-    font-weight: 500;
-    font-family: Poppins;
+.Mentorship-header-right h3 {
+  font-size: 4.5vw;
+  font-weight: 500;
+  font-family: Poppins;
 }
-.Mentorship-header-right p{
-    font-size: 1vw;
-    font-weight: 400;
-    font-family: Poppins;
+.Mentorship-header-right p {
+  font-size: 1vw;
+  font-weight: 400;
+  font-family: Poppins;
 }
 
-.mentorship-header-price{
-   
-    display: flex;
-    font-family: Red Hat Display;
+.mentorship-header-price {
+  display: flex;
+  font-family: Red Hat Display;
 }
-.mentorship-header-price h3{
-    font-weight: 700;
-    font-size: 3vw;
+.mentorship-header-price h3 {
+  font-weight: 700;
+  font-size: 3vw;
 }
-.mentorship-header-price h4{
-    font-weight: 400;
-    text-decoration: line-through;
-    text-decoration-color: black;
-    color: rgba(172, 0, 0, 1);
-
+.mentorship-header-price h4 {
+  font-weight: 400;
+  text-decoration: line-through;
+  text-decoration-color: black;
+  color: rgba(172, 0, 0, 1);
 }
-.Mentorship-header-price{
-    display: flex;
-    margin: 2vw 0vw;
+.Mentorship-header-price {
+  display: flex;
+  margin: 2vw 0vw;
 }
 .Mentorship-header-discount {
-    position: relative;
+  position: relative;
+  align-items: center;
 }
-.Mentorship-header-discount img{
-    /* scale: .6; */
-    width: 18vw;
-   
+.Mentorship-header-discount img {
+  /* scale: .6; */
+  width: 18vw;
 }
-.mentorship-header-discount img{
-    width: 1.5vw;
+.mentorship-header-discount img {
+  width: 1.5vw;
 }
-.mentorship-header-discount{
-    display: flex;
-    position: absolute;
-    bottom: 1vw;
-    left: 2vw;
-    gap: 1vw;
-
+.mentorship-header-discount {
+  display: flex;
+  position: absolute;
+  bottom: 2.2rem;
+  left: 2rem;
+  gap: 1rem;
+  align-items: center;
 }
-.mentorship-header-discount p{
-   font-weight: 600;
-   font-family: Poppins;
-   color: #0C6205;
-   font-size: .9vw;
+.mentorship-header-discount p {
+  font-weight: 600;
+  font-family: Poppins;
+  color: #0c6205;
+  font-size: 0.9vw;
 }
-.Mentorship-header-btn{
-    display: flex;
-    align-items: center;
-    gap: 3vw;
+.Mentorship-header-btn {
+  display: flex;
+  align-items: center;
+  gap: 3vw;
 }
-.mentorship-header-btn1 a{
-display: flex;
-align-items: center;
-border-radius: 40px;
-border: 2.5px solid rgba(0, 0, 0, 1);
-padding: 0vw 1vw 0vw 0vw;
-font-weight: 500;
-font-size: 1vw;
-text-decoration: none;
+.mentorship-header-btn1 a {
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  border: 2.5px solid rgba(0, 0, 0, 1);
+  padding: 0vw 1vw 0vw 0vw;
+  font-weight: 500;
+  font-size: 1vw;
+  text-decoration: none;
 }
-.mentorship-header-btn1 img{
-    scale: .6;
+.mentorship-header-btn1 img {
+  scale: 0.6;
 }
-.mentorship-header-btn1  a {
-    width: 100%;
-    height: 100%;
+.mentorship-header-btn1 a {
+  width: 100%;
+  height: 100%;
 }
-.Mentorship-header-btn a{
-font-weight: 700;
-font-size: 1.3vw;
-font-family: Poppins;
+.Mentorship-header-btn a {
+  font-weight: 700;
+  font-size: 1.3vw;
+  font-family: Poppins;
 }

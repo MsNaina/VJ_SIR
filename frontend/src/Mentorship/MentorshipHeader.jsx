@@ -1,5 +1,5 @@
 import "./MentorshipHeader.css";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function MentorshipHeader() {
   return (
     <>
@@ -41,8 +41,7 @@ export default function MentorshipHeader() {
 
           <div className="Mentorship-header-btn">
             <button className="mentorship-header-btn1">
-              <NavLink to="CompatibilityStage1">
-                {" "}
+              <NavLink to="./Compatibility">
                 <img src="images\plus 1.png" alt="" />
                 Check Compatibility
               </NavLink>

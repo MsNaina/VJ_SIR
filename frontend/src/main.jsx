@@ -25,7 +25,7 @@ import ChTopicsPage from "./Resources/ChTopics.jsx";
 import MathTopicsPage from "./Resources/MathTopics.jsx";
 import Mathdata from "./Resources/Mathdata.json"
 import PhQues from "./Resources/PhQuePage.jsx";
-import CompatibilityStage1 from "./compatibility/compatibilitystage1.jsx";
+import Compatibility from "./Mentorship/compatibility/compatibility.jsx";
 
 const router = createBrowserRouter([
   {
@@ -111,8 +111,8 @@ const router = createBrowserRouter([
     element: <Profile />,
   },
   {
-    path: "Compatibility",
-    element: <CompatibilityStage1 />,
+    path: "Mentorship/Compatibility",
+    element: <Compatibility />,
   },
 ]);
 

@@ -1,51 +1,49 @@
-#Modules{
-    width: 100%;
+#Modules {
+  width: 100%;
 }
 
-.Modules h1{
-    font-size: 2vw;  
-    font-family: Poppins;
-    font-weight: 600;
-    margin-bottom: 1%;
+.Modules h1 {
+  font-size: 2vw;
+  font-family: Poppins;
+  font-weight: 600;
+  margin-bottom: 1%;
 }
-.searchInput_container{
-    position: relative;
-    display: flex;
+.searchInput_container {
+  position: relative;
+  display: flex;
 }
-.searchInput_container i{
-    position: absolute;
-    left: 2vw;
-    scale: 1.5;
-    top: 1vw;
+.searchInput_container i {
+  position: absolute;
+  left: 2vw;
+  scale: 1.5;
+  top: 1vw;
 }
 
-#searchInput{
-    width: 30%;
-    height: 2.5vw;
-    border: 2px solid black;
-    outline: none;
-    border-radius: 30px;
-   padding: 0vw 4vw;
+#searchInput {
+  width: 30%;
+  height: 2.5vw;
+  border: 2px solid black;
+  outline: none;
+  border-radius: 30px;
+  padding: 0vw 4vw;
 }
-.Modules_Container{
-    display: flex;
-     flex-wrap: wrap;
+.Modules_Container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .Modules-container {
   font-family: Poppins;
- 
 }
 .ModulesData {
   background: rgba(255, 255, 255, 1);
   display: flex;
-  align-items: center;
   gap: 1vw;
   box-shadow: 12.6px 12.6px 25.21px 0px rgba(115, 122, 127, 0.45);
   width: 400px;
   padding: 0.5rem 1rem;
-  margin:1.5rem  1rem;
+  margin: 1.5rem 1rem;
   border-radius: 15px;
 }
 
@@ -58,11 +56,10 @@
   color: rgba(115, 122, 127, 1);
   font-weight: 600;
   font-size: 0.8rem;
-margin-bottom:.3rem ;
-
+  margin-bottom: 0.3rem;
 }
 .ModulesData-text h3 {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: black;
 }

@@ -1,0 +1,89 @@
+#Compatibility {
+  width: 100%;
+  height: 100vh; /* Ensure the section covers the entire viewport height */
+  background-image: url("/images/compatibility.png"); /* Replace "your-image.jpg" with the path to your image */
+  background-size: cover; /* Ensure the background image covers the entire background */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-position: center;
+}
+.Compatibility {
+  padding: 8rem 0vw 0vw 25rem;
+  font-family: poppins;
+   position: relative;
+  
+}
+.Compatibility h2 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.compatibility-info {
+  margin-top: 2rem;
+  width: 70%;
+}
+#fullName {
+  border: 0.96px solid #000000;
+  border-radius: 20px;
+  background-color: white;
+  height: 3rem;
+  margin-top: 1rem;
+  padding-left: 10px;
+}
+.Coform {
+  border: 0.96px solid #000000;
+  border-radius: 20px;
+  background-color: white;
+  height: 3rem;
+  margin-top: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.coformbtn {
+  padding: 10px 20px;
+  background: #0c6205;
+  width: 20%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-group:last-child {
+  margin-right: 0;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+select {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  height: 3rem;
+  display: inline-block;
+}

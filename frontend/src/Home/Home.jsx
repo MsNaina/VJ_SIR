@@ -9,6 +9,8 @@ import Contact from "./contact";
 import WaveFooter from "./Wavefooter";
 import Footer from "./footer";
 import Autoplay from "./autoplay";
+import Testimonial from "./Testimonial";
+import TestimonialCard from "./TestimonialCard";
 // import Typewriter from './typewriter';
 
 function Home() {
@@ -18,7 +20,9 @@ function Home() {
       <Mentorship />
       <PODJEE />
       <Books />
-      <Session/>
+      <Session />
+      <Testimonial />
+      {/* <TestimonialCard/> */}
       <FAQ />
       <Contact />
       <WaveFooter />

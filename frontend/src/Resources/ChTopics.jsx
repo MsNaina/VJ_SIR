@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import Chdata from "./chemistrydata.json";
 import "./Phtopic.css";
+import { Link } from "react-router-dom";
 
 export default function ChTopicsPage() {
   const { id } = useParams();
@@ -17,16 +18,19 @@ console.log("Found Chapter:", chapter);
       <Navbar />
       <section id="TopicPage">
         <div className="TopicsPage">
+          <p>Modules</p>
           {chapter.topics && chapter.topics.length > 0 ? (
             <div className="Topics">
               {chapter.topics.map((topic, index) => (
                 <li key={index} className={`topic-item topic-${index}`}>
                   <div className="topic-title">
-                    <div className="line"></div>
+                    <div className="Line"></div>
                     <h3>{topic.title}</h3>
                   </div>
                   <div className="Attempt">
-                    <h2>Attempt</h2>
+                    <Link to={`/quiz/${topic.id}`}>
+                      <button className="attempt-button">Attempt</button>
+                    </Link>
                   </div>
                 </li>
               ))}

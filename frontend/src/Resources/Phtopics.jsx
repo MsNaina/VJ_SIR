@@ -15,16 +15,14 @@ export default function TopicsPage() {
     <>
       <Navbar />
       <section id="TopicPage">
-        <div
-          className="TopicsPage
-        "
-        >
+        <div className="TopicsPage">
+          <p>Modules</p>
           {chapter.topics && chapter.topics.length > 0 ? (
             <div className="Topics">
               {chapter.topics.map((topic, index) => (
                 <li key={index} className={`topic-item topic-${index}`}>
                   <div className="topic-title">
-                    <div className="line"></div>
+                    <div className="Line"></div>
                     <h3>{topic.title}</h3>
                   </div>
                   <div className="Attempt">

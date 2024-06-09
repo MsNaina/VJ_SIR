@@ -1,0 +1,34 @@
+.CompatibilityNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   font-family: Red Hat Display;
+
+  
+  position: fixed; /* Position the navbar fixed at the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.Compatibility-Nav-item {
+  padding: 0vw 3vw;
+}
+.Compatibility-Nav-item ul {
+  display: flex;
+  gap: 1vw;
+  font-size: 1.2vw;
+  font-weight: 500;
+}
+
+.Compatibility-logo img {
+  width: 3.5vw;
+  margin: 2vw 3vw;
+}
+.Compatibility-Nav-item ul li {
+  border-radius: 30px;
+  padding: 0.2vw 1vw;
+  background: rgba(240, 240, 240, 0.5);
+  box-shadow: 0px 5.95px 5.95px 0px rgba(0, 0, 0, 0.25);
+} 

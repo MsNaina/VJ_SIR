@@ -1,60 +1,56 @@
-#FAQ{
-    width: 100%;
-    font-family: Red Hat Display;
+#FAQ {
+  width: 100%;
+  font-family: Red Hat Display;
 }
-.faq h1{
-    text-align: center;
-    font-weight: 700;
-    font-size: 5vw;
-    margin-bottom:60px ;
-
+.faq h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 5vw;
 }
-.FAQs{
-    display: flex;
-    justify-content: space-around;
-    margin: 0vw 6vw;
-    align-items: center;
-    
+.FAQs {
+  display: flex;
+  justify-content: space-around;
+  margin: 0vw 6vw;
+  align-items: center;
 }
-.FAQ-left h2{
-    font-weight: 700;
-    font-size: 5vw;
-    
+.FAQ-left h2 {
+  font-weight: 700;
+  font-size: 5vw;
 }
-.FAQ-left span{
-    color:#0C6205;
+.FAQ-left span {
+  color: #0c6205;
 }
-.wrapper{
-    display: flex;
-    height: 40vw;
-    justify-content: center;
-    align-items: center;
+.wrapper {
+  display: flex;
+  height: 40vw;
+  justify-content: center;
+  align-items: center;
 }
-.accordion{
-    width: 600px;
+.accordion {
+  width: 600px;
 }
-.item{
-    background-color: white;
-    margin-bottom: 10px;
-    padding: 10px 20px;
+.item {
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 10px 20px;
 }
-.title{
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1.2vw;
+.title {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.2vw;
 }
-.content{
-    color: rgb(141, 147, 147);
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0,1,0,1);
+.content {
+  color: rgb(141, 147, 147);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 }
-.content.show{
-    height: auto;
-    max-height: 9999px;
-    transition: all 0.5s cubic-bezier(1,0,1,0);
+.content.show {
+  height: auto;
+  max-height: 9999px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
 }
