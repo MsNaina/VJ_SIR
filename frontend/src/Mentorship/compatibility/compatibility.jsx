@@ -90,8 +90,8 @@ export default function CompatibilityStage1() {
                     onChange={handleChange}
                   >
                     <option value=""></option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                    <option value="dropper">Dropper</option>
+                    <option value="non-dropper">Non-Dropper</option>
                   </select>
                 </div>
                 <div className="input-group">
@@ -159,11 +159,11 @@ export default function CompatibilityStage1() {
                       onChange={handleChange}
                     >
                       <option value=""></option>
-                      {[1, 2, 3, 4, 5].map((rating) => (
-                        <option key={rating} value={rating}>
-                          {rating}
-                        </option>
-                      ))}
+                      <option value="1">1 (weakest)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (strongest)</option>
                     </select>
                   </div>
                   <div className="input-group">
@@ -176,11 +176,11 @@ export default function CompatibilityStage1() {
                       onChange={handleChange}
                     >
                       <option value=""></option>
-                      {[1, 2, 3, 4, 5].map((rating) => (
-                        <option key={rating} value={rating}>
-                          {rating}
-                        </option>
-                      ))}
+                      <option value="1">1 (weakest)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (strongest)</option>
                     </select>
                   </div>
                   <div className="input-group">
@@ -193,11 +193,11 @@ export default function CompatibilityStage1() {
                       onChange={handleChange}
                     >
                       <option value=""></option>
-                      {[1, 2, 3, 4, 5].map((rating) => (
-                        <option key={rating} value={rating}>
-                          {rating}
-                        </option>
-                      ))}
+                      <option value="1">1 (weakest)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (strongest)</option>
                     </select>
                   </div>
                 </div>

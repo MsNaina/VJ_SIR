@@ -18,15 +18,14 @@ import ChModules from "./Resources/ChModules.jsx";
 import MathModules from "./Resources/MathModule.jsx";
 import ChNotes from "./Resources/ChNotes.jsx";
 import MathNotes from "./Resources/MathNotes.jsx";
-import TopicsPage from "./Resources/Phtopics.jsx";
-import data from "./Resources/Physicsdata.json";
-import Chdata from "./Resources/chemistrydata.json"
-import ChTopicsPage from "./Resources/ChTopics.jsx";
-import MathTopicsPage from "./Resources/MathTopics.jsx";
-import Mathdata from "./Resources/Mathdata.json"
-import PhQues from "./Resources/PhQuePage.jsx";
 import Compatibility from "./Mentorship/compatibility/compatibility.jsx";
-
+import PhQues from "./Resources/PhQuePage.jsx";
+import PhPYQs from "./Resources/PhPYQ.jsx";
+import ChPYQs from "./Resources/ChPYQ.jsx";
+import MathPYQs from "./Resources/MathPYQ.jsx";
+import AllChapterQues from "./Resources/AllChapterQues.jsx";
+import Level from "./Resources/Level.jsx";
+import AllPYQs from "./Resources/AllPYQs.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -91,20 +90,32 @@ const router = createBrowserRouter([
     element: <MathModules />,
   },
   {
-    path: "/topics/:id",
-    element: <TopicsPage data={data} />,
+    path: "/Modules/chapter/:id/questions",
+    element: <AllChapterQues />,
   },
   {
-    path: "Chemistry/topics/:id",
-    element: <ChTopicsPage data={Chdata} />,
-  },
-  {
-    path: "Maths/topics/:id",
-    element: <MathTopicsPage data={Mathdata} />,
-  },
-  {
-    path: "/quiz/:id",
+    path: "/question/:id",
     element: <PhQues />,
+  },
+  {
+    path: "Physicspyqs",
+    element: <PhPYQs />,
+  },
+  {
+    path: "Chemistrypyqs",
+    element: <ChPYQs />,
+  },
+  {
+    path: "Mathpyqs",
+    element: <MathPYQs />,
+  },
+  {
+    path: "/pyq/chapter/:chapterId",
+    element: <Level />,
+  },
+  {
+    path: "/chapter/:chapterId/:level/questions",
+    element: <AllPYQs />,
   },
   {
     path: "profile",

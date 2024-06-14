@@ -38,17 +38,19 @@
 }
 .ModulesData {
   background: rgba(255, 255, 255, 1);
-  display: flex;
-  gap: 1vw;
   box-shadow: 12.6px 12.6px 25.21px 0px rgba(115, 122, 127, 0.45);
   width: 400px;
   padding: 0.5rem 1rem;
   margin: 1.5rem 1rem;
   border-radius: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .ModulesData img {
   width: 60px;
+  height: 60px;
   object-fit: cover;
   object-position: center;
 }
@@ -56,7 +58,7 @@
   color: rgba(115, 122, 127, 1);
   font-weight: 600;
   font-size: 0.8rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 5px;
 }
 .ModulesData-text h3 {
   font-size: 0.9rem;

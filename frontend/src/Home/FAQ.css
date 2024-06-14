@@ -1,11 +1,8 @@
 #FAQ {
   width: 100%;
   font-family: Red Hat Display;
-}
-.faq h1 {
-  text-align: center;
-  font-weight: 700;
-  font-size: 5vw;
+  background: #272727;
+
 }
 .FAQs {
   display: flex;
@@ -16,6 +13,7 @@
 .FAQ-left h2 {
   font-weight: 700;
   font-size: 5vw;
+  color: white;
 }
 .FAQ-left span {
   color: #0c6205;
@@ -30,12 +28,12 @@
   width: 600px;
 }
 .item {
-  background-color: white;
   margin-bottom: 10px;
   padding: 10px 20px;
+ 
 }
 .title {
-  color: black;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +42,7 @@
   font-size: 1.2vw;
 }
 .content {
-  color: rgb(141, 147, 147);
+  color: white;
   max-height: 0;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0, 1, 0, 1);

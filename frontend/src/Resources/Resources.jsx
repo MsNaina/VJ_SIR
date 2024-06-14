@@ -29,7 +29,9 @@ export default function Resources() {
           <div className="resource-card">
             <img src="images\PYQs.png" alt="" />
             <div className="resource-card-bottom">
-              <button onClick={scrollToTop}>PYQs</button>
+              <button onClick={scrollToTop}>
+                <Link to="/Physicspyqs">PYQs</Link>
+              </button>
             </div>
           </div>
 

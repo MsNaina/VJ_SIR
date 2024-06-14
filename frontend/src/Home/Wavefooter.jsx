@@ -1,5 +1,14 @@
 import "./Wavefooter.css";
+import { NavLink } from "react-router-dom";
 export default function WaveFooter() {
+
+   const scrollToTop = () => {
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth", // for smoothly scrolling
+     });
+   };
+   
   return (
     <>
       <section id="Wave-footer">
@@ -15,7 +24,10 @@ export default function WaveFooter() {
           <div className="wave-content">
             <div className="part1">
               <div className="part11">
-                <img src="images\logo.png" alt="" />
+                <NavLink to="/" onClick={scrollToTop}>
+                  <img src="images\logo.png" alt="" />
+                </NavLink>
+
                 <h3>Vishal Joshi (VJ) Sir</h3>
               </div>
               <p>

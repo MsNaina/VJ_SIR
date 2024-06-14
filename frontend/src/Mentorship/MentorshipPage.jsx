@@ -6,6 +6,8 @@ import IITs from './IITs'
 import Feature from './Feature'
 import Passionate from './Passionate'
 import Map from './map'
+import WaveFooter from '../Home/Wavefooter'
+import Footer from "../Home/footer"
 
 function MentorshipPage() {
   
@@ -17,6 +19,8 @@ function MentorshipPage() {
 <Map/>
 <Feature/>
 <Passionate/>
+<WaveFooter/>
+<Footer/>
 </>
   )
 }

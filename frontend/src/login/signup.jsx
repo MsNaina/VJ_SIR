@@ -1,13 +1,16 @@
 import "./signup.css";
 import { Link } from "react-router-dom";
 import React from "react";
+import { NavLink } from "react-router-dom";
 export default function SignUp() {
   return (
     <>
       <section className="SignUp">
         <div className="signup-left">
           <div className="signup-top">
-            <img src="images\logo.png" alt="" />
+            <NavLink to="/">
+              <img src="images\logo.png" alt="" />
+            </NavLink>
 
             <h2>
               Start Your <span>Perfect</span>
@@ -53,10 +56,7 @@ export default function SignUp() {
               placeholder="Password"
             />
 
-            {/* <div className="remeber-forgot">
-    <label> <input type="checkbox"/>Remember me</label>
-    <a href="#">Forgot Password ?</a>
-</div> */}
+           
 
             <button className="signup-btn" type="submit">
               Sign Up

@@ -2,277 +2,162 @@
   {
     "id": 31,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
-    "chapter": " Hydrogen",
-   "topics":[
-    {
-    "title":"General Problems on Coordination Chemistry"
-   },
-   {
-    "title":"Proton"
-   },
-   {
-    "title":"Deutron"
-   },
-   {
-    "title":"Periodicity"
-   },
-   {
-    "title":"General Problems on Coordination Chemistry"
-   },
-   {
-    "title":"General Problems on Coordination Chemistry"
-   }
-
-
-  ]
-
+    "chapter": " Hydrogen"
   },
   {
     "id": 32,
     "image": "/images/state of matter.png",
-    "date": "11 may",
-    "chapter": " States of Matter",
-    "topics": [
-      {
-        "title": "General Problems on Coordination Chemistry"
-      },
-      {
-        "title": "Proton"
-      },
-      {
-        "title": "Deutron"
-      },
-      {
-        "title": "Periodicity"
-      },
-      {
-        "title": "General Problems on Coordination Chemistry"
-      },
-      {
-        "title": "General Problems on Coordination Chemistry"
-      }
-    ]
+    "chapter": " States of Matter"
   },
   {
     "id": 33,
     "image": "/images/Thermodaynamics.png",
-    "date": "21 may",
-    "chapter": " Atomic Structure",
-    "topics": [
-      {
-        "title": "General Problems on Coordination Chemistry"
-      },
-      {
-        "title": "Proton"
-      },
-      {
-        "title": "Deutron"
-      },
-      {
-        "title": "Periodicity"
-      },
-      {
-        "title": "General Problems on Coordination Chemistry"
-      },
-      {
-        "title": "General Problems on Coordination Chemistry"
-      }
-    ]
+    "chapter": " Atomic Structure"
   },
   {
     "id": 34,
     "image": "/images/Hydrogen.png",
-    "date": "14 may",
-    "chapter": " Solid State",
-    "topics": [
-      {
-        "title": "General Problems on Coordination Chemistry"
-      },
-      {
-        "title": "Proton"
-      },
-      {
-        "title": "Deutron"
-      },
-      {
-        "title": "Periodicity"
-      },
-      {
-        "title": "General Problems on Coordination Chemistry"
-      },
-      {
-        "title": "General Problems on Coordination Chemistry"
-      }
-    ]
+    "chapter": " Solid State"
   },
   {
     "id": 35,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": "Some Basic Concept of Chemistry"
   },
   {
     "id": 36,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": "Chemical Bonding and Molecular Structure"
   },
   {
     "id": 37,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": "Chemical Thermodynamics"
   },
 
   {
     "id": 38,
     "image": "/images/Thermodaynamics.png",
-    "date": "1 may",
     "chapter": "Solutions"
   },
   {
     "id": 39,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": " Chemical Equilibrium"
   },
   {
     "id": 40,
     "image": "/images/Thermodaynamics.png",
-    "date": "1 may",
     "chapter": "Redox Reactions"
   },
   {
     "id": 41,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": "Chemical Kinetics"
   },
   {
     "id": 42,
     "image": "/images/Thermodaynamics.png",
-    "date": "1 may",
     "chapter": "Surface Chemistry"
   },
   {
     "id": 43,
     "image": "/images/Thermodaynamics.png",
-    "date": "1 may",
     "chapter": "Classification of Elements and Periodicity"
   },
   {
     "id": 44,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": "General Principles and Process of Isolation"
   },
   {
     "id": 45,
     "image": "/images/Thermodaynamics.png",
-    "date": "1 may",
     "chapter": "S Block Elements"
   },
   {
     "id": 46,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": "P Block Elements"
   },
   {
     "id": 47,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": "D and F Block Elements"
   },
   {
     "id": 48,
     "image": "/images/Thermodaynamics.png",
-    "date": "1 may",
     "chapter": "Coordination Compounds"
   },
   {
     "id": 49,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": " Environmental Chemistry"
   },
   {
     "id": 50,
     "image": "/images/Thermodaynamics.png",
-    "date": "1 may",
     "chapter": "Purification of Organic Compounds"
   },
   {
     "id": 51,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": "Basic Principles of Organic Chemistry"
   },
   {
     "id": 52,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": "Haloalkanes and Haloarenes"
   },
   {
     "id": 53,
     "image": "/images/Thermodaynamics.png",
-    "date": "1 may",
     "chapter": "Alcohols, Phenols, and Ethers"
   },
   {
     "id": 54,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": "Aldehydes, Ketones, and Carboxylic Acids"
   },
   {
     "id": 55,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": " Organic Compounds Containing Nitrogen"
   },
   {
     "id": 56,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": " Biomolecules"
   },
   {
     "id": 57,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": "  Polymers"
   },
   {
     "id": 58,
     "image": "/images/state of matter.png",
-    "date": "1 may",
     "chapter": " Chemistry in Everyday Life"
   },
   {
     "id": 59,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": " Principles Related to Practical Chemistry"
   },
   {
     "id": 60,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": "Electrochemistry"
   },
   {
     "id": 61,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": " Metallurgy"
   },
   {
     "id": 62,
     "image": "/images/Hydrogen.png",
-    "date": "1 may",
     "chapter": " Salt Analysis"
   }
 ]

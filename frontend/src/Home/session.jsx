@@ -9,7 +9,7 @@ return (
 
         <div className="session-right">
           <div className="session-text">
-            <h2>Book 1:1 Sessions</h2>
+            <h2>Book 1:1 Session</h2>
             <h3>Creative & Professional Digital Mentors!</h3>
             <p>
               Students feel at ease during personalized 1-1 mentor sessions for

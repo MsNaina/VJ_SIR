@@ -17,8 +17,6 @@ export default function FAQ(){
   
   <div className="faq">
 
-    <h1>FAQs</h1>
-
 <div className="FAQs">
     <div className="FAQ-left">
 
