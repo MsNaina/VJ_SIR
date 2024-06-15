@@ -11,7 +11,7 @@
 .login-right img{
 object-fit: cover;
 width: 40vw;
-/* position: absolute; */
+
 }
 
 .login-text1 {
@@ -92,21 +92,6 @@ width: 40vw;
 }
 .login-top span{
     color: rgba(12, 98, 5, 1);
-}
-.loginWith{
-    display: flex;
-    align-items: center;
-}
-.loginWith img{
-    scale: .6;
-    max-width: 50px; 
-    height: auto;
-    background: rgba(217, 217, 217, 1);
-border-radius: 100%;
-padding: .5vw;
-}
-.login-bottom{
-    width: 100%;
 }
 .login-bottom{
     width: 60%;

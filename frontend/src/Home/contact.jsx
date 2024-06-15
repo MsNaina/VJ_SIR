@@ -23,7 +23,7 @@ export default function Contact() {
 
               <div className="info">
                 <div className="address">
-                  <img src="images\address.png" alt="" />
+                  <i class="fa-solid fa-location-dot fa-2x"></i>
 
                   <div className="info-text">
                     <h3>Address</h3>
@@ -32,7 +32,7 @@ export default function Contact() {
                 </div>
 
                 <div className="phone">
-                  <img src="images\phone.png" alt="" />
+                  <i class="fa-solid fa-phone fa-2x"></i>
 
                   <div className="info-text">
                     <h3>Phone Number</h3>
@@ -41,7 +41,7 @@ export default function Contact() {
                 </div>
 
                 <div className="mail">
-                  <img src="images\mail.png" alt="" />
+                  <i class="fa-regular fa-envelope fa-2x"></i>
 
                   <div className="info-text">
                     <h3>E-mail</h3>

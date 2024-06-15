@@ -1,106 +1,100 @@
-#Contact{
-    width: 100%;
-    /* height: 60vw; */
-    font-family: Red Hat Display;
+#Contact {
+  width: 100%;
+  font-family: Red Hat Display;
 }
 
-.contact-text{
-    display: block;
-    text-align: center;
+.contact-text {
+  display: block;
+  text-align: center;
 }
-.contact-text h1{
-    font-size: 5vw;
-    font-weight: 700;
+.contact-text h1 {
+  font-size: 5vw;
+  font-weight: 700;
 }
-.contact-text p{
-    font-size: 1.2vw;
-    margin: 1vw 20vw 6vw 20vw;
+.contact-text p {
+  font-size: 1.2vw;
+  margin: 1vw 20vw 6vw 20vw;
 }
-.contact-bottom{
-display: flex;
-justify-content: space-around;
-margin: 0vw 6vw;
+.contact-bottom {
+  display: flex;
+  justify-content: space-around;
+  margin: 0vw 6vw;
 }
-.contact-left h2{
-    font-size: 3vw;
-    font-weight: 700;
+.contact-left h2 {
+  font-size: 3vw;
+  font-weight: 700;
 }
-.contact-left p{
-    font-size: 1vw;
-    font-weight: 400;
-    margin: 1vw 0vw 0vw 0vw;
+.contact-left p {
+  font-size: 1vw;
+  font-weight: 400;
+  margin: 1vw 0vw 0vw 0vw;
 }
-.info{
-    margin: 2vw 0vw;
+.info {
+  margin: 2vw 0vw;
 }
-.address{
-display: flex;
-align-items: center;
+.address,
+.phone,
+.mail {
+  display: flex;
+  align-items: center;
 }
-.phone{
-    display: flex;
-    align-items: center;
+.address i,
+.mail i,
+.phone i {
+  background-color: #a3d2a8;
+  border-radius: 100%;
+  margin: 1vw 1vw 0vw 0vw;
+  padding: 0.8rem;
 }
-.mail{
-    display: flex;
-    align-items: center;
+.info-text h3 {
+  font-size: 1.3vw;
+  font-weight: 700;
 }
-.info-text h3{
-    font-size: 1.3vw;
-    font-weight: 700;
+.info-text h4 {
+  font-size: 1vw;
+  font-weight: 400;
 }
-.info-text h4{
-    font-size: 1vw;
-    font-weight: 400;
+.contact-line {
+  width: 100%;
+  height: 2px;
+  background-color: #00000040;
 }
-.info img{
-    scale: .6;
-    background-color: #A3D2A8;
-    border-radius: 100%;
-    padding: 1vw;
+.social-media h3 {
+  font-size: 2.5vw;
+  margin: 2vw 0vw;
 }
-.contact-line{
-    width: 100%;
-    height: 2px;
-    background-color:#00000040;
+.social-media i {
+  background-color: #a3d2a8;
+  border-radius: 100%;
+  margin: 0vw 1vw 0vw 0vw;
+  padding: 1vw;
 }
-.social-media h3{
-    font-size: 2.5vw;
-    margin: 2vw 0vw;
-}
-.social-media i{
-    background-color: #A3D2A8;
-    border-radius: 100%;
-    margin: 0vw 1vw 0vw 0vw;
-    padding: 1vw;
-}
-.contact-right{
-    padding: 2vw;
-    border: 3px solid #000000;
-    border-radius: 20px;
+.contact-right {
+  padding: 2vw;
+  border: 3px solid #000000;
+  border-radius: 20px;
 }
 
-.contact-right h1{
-    font-size: 2vw;
-    font-weight: 700;
-    padding-bottom: 2vw;
+.contact-right h1 {
+  font-size: 2vw;
+  font-weight: 700;
+  padding-bottom: 2vw;
 }
-.contact-btn{
-    color: white;
-    background-color: black;
-    border-radius: 15px;
-    padding: .5vw 1.5vw;
-    position: relative;
-    top: 10vw;
-    left: 25vw;
+.contact-btn {
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+  padding: 0.5vw 1.5vw;
+  position: relative;
+  top: 10vw;
+  left: 25vw;
 }
-.contact-btn:hover{
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    font-weight: 500;
+.contact-btn:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-weight: 500;
 }
-#textarea{
-    margin-top: 3vw;
-   
+#textarea {
+  margin-top: 3vw;
 }

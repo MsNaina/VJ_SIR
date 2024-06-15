@@ -1,11 +1,12 @@
 import "./session.css"
+import Sessionimg from "../assets/images/session book.png";
 export default function Session(){
 return (
   <>
     <section id="Session">
       <div className="session">
         
-        <img src="images\session book.png" alt="" />
+        <img src={Sessionimg} alt="" />
 
         <div className="session-right">
           <div className="session-text">

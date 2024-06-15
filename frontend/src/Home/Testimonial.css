@@ -44,17 +44,3 @@
     perspective: 200px;
     
 }
- /* @media(max-width:1200px){
-    .Testimonial-slider{
-        width: 12vw;
-        height: 11vw;
-    }
-    .Testimonial-slide{
-        height: 13vw;
-    }
-    .Testimonial-slide img{
-        scale: .8;
-       position: relative;
-        bottom: 1vw;
-    }
-} */

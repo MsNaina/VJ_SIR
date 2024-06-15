@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
-
+import Logo from "../assets/images/logo.png";
+import Profile from "../assets/images/profile.png";
 import "./Navbar.css";
 export default function Navbar() {
 
@@ -21,11 +22,11 @@ for (var i=0; i < links.length; i++){
       <section id="Navbar">
         <div className="Navbar">
           <div className="logo">
-            <img src="\images\logo.png" alt="" />
+            <img src={Logo} alt="" />
           </div>
 
           <div className="profile">
-            <img src="\images\profile.png" alt="" />
+            <img src={Profile} alt="" />
             <button>
               <NavLink to="/profile">Profile</NavLink>
             </button>

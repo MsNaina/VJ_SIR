@@ -1,6 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import "./Mentorship batch.css";
+import { Link } from "react-router-dom";
+import Chitrang from "../assets/images/chitrang.png";
+import Group8 from "../assets/images/Group 8.png";
+import Himanshu from "../assets/images/himanshu.png";
+import Discount from "../assets/images/discount.png";
+import Pencil from "../assets/images/pencil.png";
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 export default function Mentorship() {
   const [rotate, setRotate] = useState(0);
 
@@ -32,11 +45,11 @@ export default function Mentorship() {
 
           <div className="mentorship-imgs">
             <div className="mentorship-img1 mentorship-img">
-              <img src="images\chitrang.png" alt="" />
+              <img src={Chitrang} alt="" />
             </div>
 
             <div className="mentorship-img2 mentorship-img">
-              <img src="images\Group 8.png" alt="" />
+              <img src={Group8} alt="" />
 
               <div className="eyes w-full ">
                 <div className=" relative w-full h-full bg-cover bg-center ">
@@ -81,23 +94,25 @@ export default function Mentorship() {
                 </div>
 
                 <div className="discount">
-                  <img src="images\discount.png" alt="" />
+                  <img src={Discount} alt="" />
 
                   <div className="Discount">
-                    <img src="images\pencil.png" alt="" />
+                    <img src={Pencil} alt="" />
                     <p>Discount of 37.5% applied</p>
                   </div>
                 </div>
               </div>
 
               <div className="mentorship-btn">
-                <button className="btn3">Explore</button>
+                <button className="btn3" onClick={scrollToTop}>
+                  <Link to="/Mentorship">Explore</Link>
+                </button>
                 <button className="btn4">Buy Now</button>
               </div>
             </div>
 
             <div className="mentorship-img3 mentorship-img">
-              <img src="images\himanshu.png" alt="" />
+              <img src={Himanshu} alt="" />
             </div>
           </div>
         </div>

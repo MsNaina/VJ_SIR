@@ -1,13 +1,16 @@
 import React, { useRef, useState } from "react";
 import "./Feature.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import F1 from "../assets/images/F1.png";
+import F2 from "../assets/images/F2.png";
+import F3 from "../assets/images/F3.png";
+import F4 from "../assets/images/F4.png";
+import F5 from "../assets/images/F5.png";
+import F6 from "../assets/images/F6.png";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-
-// import required modules
 import { FreeMode, Pagination } from "swiper/modules";
 
 export default function Feature() {
@@ -20,15 +23,12 @@ export default function Feature() {
           slidesPerView={2.5}
           spaceBetween={50}
           freeMode={true}
-          //  pagination={{
-          //    clickable: true,
-          //  }}
           modules={[FreeMode, Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>
             <div className=" features feature1">
-              <img src="images\F1.png" alt="" />
+              <img src={F1} alt="" />
               <h3>Personalized Matching</h3>
               <p>
                 Utilizing advanced machine learning algorithms, we match each
@@ -41,7 +41,7 @@ export default function Feature() {
 
           <SwiperSlide>
             <div className=" features feature2">
-              <img src="images\F2.png" alt="" />
+              <img src={F2} alt="" />
               <h3>Continuous Monitoring</h3>
               <p>
                 From the moment a student enrolls in the mentorship batch, their
@@ -53,7 +53,7 @@ export default function Feature() {
 
           <SwiperSlide>
             <div className=" features feature3">
-              <img src="images\F3.png" alt="" />
+              <img src={F3} alt="" />
               <h3>Exclusive Sessions with VJ Sir</h3>
               <p>
                 Every Sunday, students have the invaluable opportunity to
@@ -66,7 +66,7 @@ export default function Feature() {
 
           <SwiperSlide>
             <div className="features feature4">
-              <img src="images\F4.png" alt="" />
+              <img src={F4} alt="" />
               <h3>Weekly 1-on-1 Sessions</h3>
               <p>
                 Students benefit from personalized mentorship sessions with
@@ -78,7 +78,7 @@ export default function Feature() {
 
           <SwiperSlide>
             <div className="features feature5">
-              <img src="images\F5.png" alt="" />
+              <img src={F5} alt="" />
               <h3>Customized DPPs</h3>
               <p>
                 Leveraging AI/ML algorithms, custom DPPs are designed for each
@@ -91,7 +91,7 @@ export default function Feature() {
 
           <SwiperSlide>
             <div className="features feature6">
-              <img src="images\F6.png" alt="" />
+              <img src={F6} alt="" />
               <h3>Rapid Doubt Resolution</h3>
               <p>
                 With our 24-hour doubt-solving facility, students receive prompt

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./AllChapterQues.css";
+import Level from "./Level";
 
 const AllPYQs = () => {
   const { chapterId, level } = useParams(); // Get both chapterId and level from the URL
@@ -30,7 +31,7 @@ const AllPYQs = () => {
   }, [chapterId, level]); // Fetch questions when chapterId or level changes
 
   const handleQuestionClick = (questionId) => {
-    navigate(`/question/${questionId}`);
+    navigate(`/pyq/question/${questionId}`);
   };
 
   return (

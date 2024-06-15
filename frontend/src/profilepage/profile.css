@@ -88,12 +88,6 @@ label{
  background-color: white;
  color: #0C6205;
 }
-input:-internal-autofill-selected {
-    /* appearance: menulist-button; */
-    background-image: none !important;
-    /* background-color: white; */
-    color: fieldtext !important;
-}
 .acad-info{
     padding: 2vw 0vw 0vw 2vw;
     width: 15vw;

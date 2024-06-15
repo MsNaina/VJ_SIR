@@ -1,5 +1,6 @@
 import "./Wavefooter.css";
 import { NavLink } from "react-router-dom";
+import Logo from "../assets/images/logo.png";
 export default function WaveFooter() {
 
    const scrollToTop = () => {
@@ -25,7 +26,7 @@ export default function WaveFooter() {
             <div className="part1">
               <div className="part11">
                 <NavLink to="/" onClick={scrollToTop}>
-                  <img src="images\logo.png" alt="" />
+                  <img src={Logo} alt="" />
                 </NavLink>
 
                 <h3>Vishal Joshi (VJ) Sir</h3>

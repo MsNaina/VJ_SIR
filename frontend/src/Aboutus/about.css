@@ -4,10 +4,9 @@
 .aboutus {
   position: relative;
   width: 100%;
-  background: url("images/aboutus.png");
+  background: url("../assets/images/aboutus.png");
   background-size: cover;
   background-repeat: no-repeat;
-  /* overflow: hidden; */
   aspect-ratio: 0.23074391;
 }
 

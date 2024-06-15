@@ -26,6 +26,8 @@ import MathPYQs from "./Resources/MathPYQ.jsx";
 import AllChapterQues from "./Resources/AllChapterQues.jsx";
 import Level from "./Resources/Level.jsx";
 import AllPYQs from "./Resources/AllPYQs.jsx";
+import MainsAdvancedQues from "./Resources/Pyq.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -114,8 +116,12 @@ const router = createBrowserRouter([
     element: <Level />,
   },
   {
-    path: "/chapter/:chapterId/:level/questions",
+    path: "/:chapterId/:level/questions",
     element: <AllPYQs />,
+  },
+  {
+    path: "/pyq/question/:id",
+    element: <MainsAdvancedQues />,
   },
   {
     path: "profile",

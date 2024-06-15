@@ -2,7 +2,10 @@ import "./login.css";
 import { Link } from "react-router-dom";
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import Logo from "../assets/images/logo.png"
+import vjsir from "../assets/images/L-VJ sir.png";
+import Textimg from "../assets/images/LVJ SIR1.png";
+import login from "../assets/images/loginimg.png";
 export default function Login() {
   return (
     <>
@@ -10,23 +13,15 @@ export default function Login() {
         <div className="login-left">
           <div className="login-top">
             <NavLink to="/">
-              <img src="images\logo.png" alt="" />
+              <img src={Logo} alt="" />
             </NavLink>
 
             <h2>
               Start Your <span>Perfect</span>
+              <br />
+              Preparation Today
             </h2>
-            <h2>Preparation Today</h2>
-
-            <div className="loginWith">
-              <img src="images\apple.png" alt="" />
-
-              <img src="images\google.png" alt="" />
-
-              <img src="images\FB.png" alt="" />
-            </div>
-
-            <h3>or</h3>
+            
           </div>
 
           <div className="login-bottom">
@@ -61,10 +56,10 @@ export default function Login() {
         </div>
 
         <div className="login-right">
-          <img src="images\L-VJ sir.png" alt="" />
+          <img src={vjsir} alt="" />
 
           <div className="login-text1">
-            <img src="images\LVJ SIR1.png" alt="" />
+            <img src={Textimg} alt="" />
 
             <p>
               Get Your <br />
@@ -81,7 +76,7 @@ export default function Login() {
             <p>Vishal Joshi VJ Sir</p>
           </div>
 
-          <img className="login-img" src="images\loginimg.png" alt="" />
+          <img className="login-img" src={login} alt="" />
         </div>
       </section>
     </>

@@ -1,11 +1,15 @@
 import "./MentorshipHeader.css";
 import { NavLink } from "react-router-dom";
+import VJsir from "../assets/images/M-VJ SIR.png";
+import Discount from "../assets/images/mentorshipdiscount.png";
+import Pencil from "../assets/images/pencil.png";
+import Plus from "../assets/images/plus 1.png";
 export default function MentorshipHeader() {
   return (
     <>
       <section className="Mentorship-Header">
         <div className="Mentorship-header-left">
-          <img src="images\M-VJ SIR.png" alt="" />
+          <img src={VJsir} alt="" />
         </div>
 
         <div className="Mentorship-header-right">
@@ -30,10 +34,10 @@ export default function MentorshipHeader() {
             </div>
 
             <div className="Mentorship-header-discount">
-              <img src="images\mentorshipdiscount.png" alt="" />
+              <img src={Discount} alt="" />
 
               <div className="mentorship-header-discount">
-                <img src="images\pencil.png" alt="" />
+                <img src={Pencil} alt="" />
                 <p>Discount of 37.5% applied</p>
               </div>
             </div>
@@ -42,7 +46,7 @@ export default function MentorshipHeader() {
           <div className="Mentorship-header-btn">
             <button className="mentorship-header-btn1">
               <NavLink to="./Compatibility">
-                <img src="images\plus 1.png" alt="" />
+                <img src={Plus} alt="" />
                 Check Compatibility
               </NavLink>
             </button>

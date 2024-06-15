@@ -3,8 +3,16 @@ import React from "react";
 import "./Header.css";
 import Autoplay from "./autoplay";
 import Typewriter from "./typewriter";
-
+import Logo from "../assets/images/logo.png";
+import Profile from "../assets/images/profile.png";
+import VJsir from "../assets/images/VJ SIR.png";
 export default function Header() {
+   const scrollToTop = () => {
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth", 
+     });
+   };
   return (
     <>
       <section id="Header">
@@ -12,12 +20,15 @@ export default function Header() {
           <div className="header-left">
             <div className="header-top">
               <div className="header-logo">
-                <img src="images\logo.png" alt="" />
+                <img src={Logo} alt="" />
               </div>
 
               <div className="Header-profile">
-                <img src="images/profile.png" alt="" />
-                <button>  <Link to="/profile">Profile</Link></button>
+                <img src={Profile} alt="" />
+                <button>
+                  {" "}
+                  <Link to="/profile">Profile</Link>
+                </button>
               </div>
             </div>
 
@@ -39,8 +50,10 @@ export default function Header() {
               </div>
 
               <div className="header-btn">
-                <button className="  btn1">Buy Mentorship</button>
-                <button className="btn2">Know More</button>
+                <button className="  btn1">Buy Now</button>
+                <button className="btn2" onClick={scrollToTop}>
+                  <Link to="/Mentorship">Know More</Link>
+                </button>
               </div>
             </div>
           </div>
@@ -67,7 +80,7 @@ export default function Header() {
                 </ul>
               </div>
 
-              <img src="images\VJ SIR.png" alt="" />
+              <img src={VJsir} alt="" />
             </div>
 
             <Autoplay />

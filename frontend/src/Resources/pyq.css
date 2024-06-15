@@ -1,0 +1,117 @@
+#question-page {
+  margin: 4rem 0rem 0rem 6rem;
+  font-family: Poppins;
+}
+#question-page h1 {
+  font-size: 2.5rem;
+  color: #0c6205;
+  font-family: Poppins;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.question-page {
+  width: 80%;
+  border-top: 1px solid #000000;
+  padding-top: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+.question-counter {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.question-text {
+  padding: 1rem 0rem;
+  font-size: 1.3rem;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0px;
+}
+.option-label {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: start;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.integer-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.option-label.selected {
+  background-color: lightblue;
+}
+
+.option-label.correct {
+  background-color: lightgreen;
+  border-color: #18b63d;
+  color: #155724;
+}
+
+.option-label.incorrect {
+  background-color: lightcoral;
+  border-color: red;
+  color: #721c24;
+}
+.option-label.locked {
+  cursor: default;
+}
+.option-label:hover {
+  background-color: #e0e0e0;
+}
+.prev-button:disabled,
+.next-button:disabled,
+.check-button:disabled {
+  cursor: not-allowed;
+}
+.check-button {
+  display: block;
+  margin-top: 20px;
+  border: 1px solid #0c6205;
+  padding: 5px 20px;
+  color: black;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.check-button:hover {
+  color: white;
+  background-color: #0c6205;
+}
+.next-button,
+.prev-button {
+  margin-top: 20px;
+  background: #0c6205;
+  padding: 5px 20px;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.next-check {
+  display: flex;
+  gap: 50px;
+}
+.explanation {
+  margin-top: 20px;
+  padding: 10px;
+}
+.explanation h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0c6205;
+}

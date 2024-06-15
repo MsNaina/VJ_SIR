@@ -2,14 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-   font-family: Red Hat Display;
-
-  
-  position: fixed; /* Position the navbar fixed at the top of the viewport */
+  font-family: Red Hat Display;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Ensure the navbar is above other content */
+  z-index: 1000;
 }
 
 .Compatibility-Nav-item {
@@ -31,4 +29,4 @@
   padding: 0.2vw 1vw;
   background: rgba(240, 240, 240, 0.5);
   box-shadow: 0px 5.95px 5.95px 0px rgba(0, 0, 0, 0.25);
-} 
+}

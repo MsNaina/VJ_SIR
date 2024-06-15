@@ -1,5 +1,7 @@
 import "./about.css"
 import { Link } from "react-router-dom";
+import Logo from "../assets/images/logo.png";
+import Profile from "../assets/images/profile.png";
  function AboutUs(){
     return (
       <>
@@ -7,11 +9,11 @@ import { Link } from "react-router-dom";
           <div className="aboutus">
             <div className="aboutus-navbar">
               <div className="aboutus-logo">
-                <img src="images\logo.png" alt="" />
+                <img src={Logo} alt="" />
               </div>
 
               <div className="aboutus-profile">
-                <img src="images\profile.png" alt="" />
+                <img src={Profile} alt="" />
                 <button><Link to="/profile">Profile</Link></button>
               </div>
 

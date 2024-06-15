@@ -1,12 +1,15 @@
 import "./profile.css";
 import { NavLink } from "react-router-dom";
+import Logo from "../assets/images/logo.png";
+import Profileimg from "../assets/images/profile1.png";
+import info from "../assets/images/profile-info.png";
 export default function Profile() {
   return (
     <>
       <section id="Profile">
         <div className="profile-top">
           <div className="profile-logo">
-            <img src="images\logo.png" alt="" />
+            <img src={Logo} alt="" />
           </div>
 
           <div className="profile-Nav-item">
@@ -40,14 +43,14 @@ export default function Profile() {
 
         <div className="profile-bottom">
           <div className="profile-left">
-            <img className="profile-img" src="/images/profile1.png" alt="" />
+            <img className="profile-img" src={Profileimg} alt="" />
           </div>
 
           <div className="profile-right">
             <h2>Profile</h2>
 
             <div className="profile-info">
-              <img src="/images\profile-info.png" alt="" />
+              <img src={info} alt="" />
               <h3>Name</h3>
             </div>
 

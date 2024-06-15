@@ -1,4 +1,5 @@
 import "./map.css"
+import map from "../assets/images/map.png"
 export default function Map(){
 return (
   <>
@@ -35,7 +36,7 @@ return (
           <img className="IITKGP IIT" src="images\kgp.png" alt="" />
         </div>
       </div> */}
-      <img src="images\india-map.png" alt="" />
+      <img src={map} alt="" />
     </section>
   </>
 );

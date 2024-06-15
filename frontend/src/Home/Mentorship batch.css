@@ -1,7 +1,7 @@
 #Mentorship{
     width: 100%;
-    height: 57vw;
-    /* background-color: lightcoral; */
+    /* height: 57vw; */
+    padding-top: 8rem;
 }
 .mentorship-text{
 text-align: center;

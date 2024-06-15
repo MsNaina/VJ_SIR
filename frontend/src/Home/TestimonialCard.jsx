@@ -1,9 +1,11 @@
 import "./TestimonialCard.css";
+import Testimonialcard from "../assets/images/testimonial.png";
+import Testimonialimg from "../assets/images/testimonialimg.png";
 export default function TestimonialCard() {
   return (
     <>
       <div className="Testimonial-cards">
-        <img src="\images\testimonial.png" alt="" />
+        <img src={Testimonialcard} alt="" />
         <div className="testimonial-content">
           <p>
             Achieving AIR Rank 1 in JEE was a dream come true, made possible by
@@ -14,7 +16,7 @@ export default function TestimonialCard() {
 
           <img
             className=" testimonial-img"
-            src="\images\testimonialimg.png"
+            src={Testimonialimg}
             alt=""
           />
           <div className="testimonial-text">
