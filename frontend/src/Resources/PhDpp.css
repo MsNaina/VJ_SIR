@@ -1,11 +1,11 @@
-#DPPs{
+/* #DPPs{
     width: 100%;
     font-family: Poppins;
 }
 .searchbar h1{
     font-size: 2vw;  
     font-weight: 600;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
 }
 .SearchBar{
     padding: 2vw 0vw;
@@ -88,4 +88,4 @@ margin-bottom:.3rem ;
   font-size: .9rem;
   font-weight: 500;
   color: black;
-}
+} */

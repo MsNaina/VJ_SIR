@@ -1,4 +1,4 @@
-import "./PhDpp.css";
+import "./PhModules.css";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";
 import Mathdata from "./Mathdata.json";

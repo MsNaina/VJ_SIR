@@ -1,133 +1,170 @@
-.SignUp{
-    width: 100%;
-    height: 45vh;
-    display: flex;
-    box-sizing: border-box;
-    padding: 1vw 2vw;
-    justify-content: space-between;
-    font-family: Poppins;
+.SignUp {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  box-sizing: border-box;
+  padding: 1vw 2vw;
+  justify-content: space-between;
+  font-family: Poppins;
 }
-.signup-right img{
-object-fit: cover;
-width: 40vw;
-min-height: 90vh;
+.signup-right img {
+  object-fit: cover;
+  width: 40vw;
+  min-height: 90vh;
 }
 
 .signup-text1 {
-    display: flex;
-    background: rgba(240, 240, 240, 0.5);
-    justify-content: space-around;
-    align-items: center;
-    width: 12vw;
-    position: relative;
-    border-radius: 30px;
-    bottom: 32vw;
-    left: 2vw;
-  }
-  .signup-img{
-  scale: .01;
+  display: flex;
+  background: rgba(240, 240, 240, 0.5);
+  justify-content: space-around;
+  align-items: center;
+  width: 12vw;
+  position: relative;
+  border-radius: 30px;
+  bottom: 32vw;
+  left: 2vw;
+}
+.signup-img {
+  scale: 0.01;
   position: relative;
   bottom: 240vw;
   right: 15vw;
 }
-  .signup-text1 img {
-    width: 4vw;
-    min-height: 2vh;
-    margin: 1vw .5vw;
-    border-radius: 50%;
-    background-color: rgba(217, 217, 217, 1);
+.signup-text1 img {
+  width: 4vw;
+  min-height: 2vh;
+  margin: 1vw 0.5vw;
+  border-radius: 50%;
+  background-color: rgba(217, 217, 217, 1);
 }
-.signup-text2{
-    background: rgba(240, 240, 240, 0.5);
-    width: 10vw;
-    position: relative;
-    border-radius: 20px;
-    bottom: 25vw;
-    left: 26vw;
-    padding: 1vw .5vw;
-    font-size: .9vw;
-}
-  
-.signup-text3{
-    background: rgba(240, 240, 240, 0.5);
-    width: 10vw;
-    position: relative;
-    border-radius: 30px;
-    bottom: 15vw;
-    left: 17vw;
-    padding:.5vw;
-    font-size: 1vw;
+.signup-text2 {
+  background: rgba(240, 240, 240, 0.5);
+  width: 10vw;
+  position: relative;
+  border-radius: 20px;
+  bottom: 25vw;
+  left: 26vw;
+  padding: 1vw 0.5vw;
+  font-size: 0.9vw;
 }
 
+.signup-text3 {
+  background: rgba(240, 240, 240, 0.5);
+  width: 10vw;
+  position: relative;
+  border-radius: 30px;
+  bottom: 15vw;
+  left: 17vw;
+  padding: 0.5vw;
+  font-size: 1vw;
+}
 
-  .signup-text1 p {
-    font-size: .8vw; 
-    line-height: 1.4; 
-    margin: 0; 
-  }
+.signup-text1 p {
+  font-size: 0.8vw;
+  line-height: 1.4;
+  margin: 0;
+}
 
-.signup-left{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    width: 50%;
+.signup-left {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 50%;
 }
-.signup-top{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    padding: 1vw 0vw;
+.signup-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 1vw 0vw;
 }
-.signup-top img{
-    scale: .6;
+.signup-top img {
+  scale: 0.6;
 }
-.signup-top h2{
-    font-size: 3vw;
-    font-weight: 700;
-    font-family: Poppins;
+.signup-top h2 {
+  font-size: 3vw;
+  font-weight: 700;
+  font-family: Poppins;
 }
-.signup-top span{
-    color: rgba(12, 98, 5, 1);
+.signup-top span {
+  color: rgba(12, 98, 5, 1);
 }
-.signup-bottom{
-    width: 60%;
+.signup-bottom {
+  width: 60%;
 }
-#input{
+#input {
+  width: 90%;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: rgba(217, 217, 217, 1);
+  border-radius: 30px;
+  padding: 0vw 1vw;
+  color: black;
+}
+.signup-bottom ::placeholder {
+  color: black;
+  font-weight: 500;
+  padding: 0vw 1vw;
+}
+.signup-btn {
+  width: 95%;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: rgba(12, 98, 5, 1);
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 0vw 1vw;
+}
+
+.login-link {
+  padding: 2vw 0vw;
+  font-weight: 500;
+  font-size: 1.2vw;
+}
+.login-link a {
+  color: rgba(12, 98, 5, 1);
+}
+@media (max-width: 1170px) {
+    #input {
     width: 90%;
-    height: 3vw;
+    height: 45px;
     border: none;
     outline: none;
     background: rgba(217, 217, 217, 1);
     border-radius: 30px;
-    padding: 0vw 1vw;
-   color: black;
- 
-}
-.signup-bottom ::placeholder{
+    padding: 0px 10px;
     color: black;
-    font-weight: 500;
+  }
 }
-.signup-btn{
-    width: 95%;
-    height: 3vw;
-    border: none;
-    outline: none;
-    background: rgba(12, 98, 5, 1);
-color: white;
-font-weight: 600;
-border-radius: 30px;
-padding: 0vw 1vw;
+@media (max-width: 1110px) {
+  #LogIn {
+    align-items: center;
+  }
+  #input {
+    width: 80%;
+    height: 45px;
+  }
 }
-
-.login-link{
-    padding: 2vw 0vw;
-    font-weight: 500;
-    font-size: 1.2vw;
+@media(max-width:800px){
+    #input {
+    width: 90%;
+    height: 45px;
+  }
+  @media (max-width: 650px){
+    #input {
+    width: 24rem;
+    height: 45px;
+  }
+  }
 }
-.login-link a{
-    color: rgba(12, 98, 5, 1);
-
+@media(max-width:405px){
+      #input {
+    width: 80vw;
+    height: 45px;
+  }
 }

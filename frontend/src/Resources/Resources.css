@@ -1,49 +1,75 @@
-#Resources{
-    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.55);
-    margin: 2vw 2vw;
-    text-align: center;
-     font-family: Poppins;
-     background: rgba(225, 251, 203, 0.5);
+#Resources {
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.55);
+  margin: 2rem 2rem;
+  text-align: center;
+  font-family: Poppins;
+  background: rgba(225, 251, 203, 0.5);
+}
+#Resources h1 {
+  font-size: 40px;
+  font-weight: 800;
+  padding: 2vw 0vw;
+}
+.Resources {
+  width: 100%;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 4rem;
+  height: 100%;
+}
+.resource-card {
+  background-color: white;
+  position: relative;
+  width: 300px;
+  height: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.55);
+}
+.resource-card img{
+    width: 100%;
+    height: 80%;
+}
+.resource-card-bottom {
+  background: rgba(252, 231, 114, 1);
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+}
 
+.resource-card-bottom button {
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+  background: rgba(252, 231, 114, 1);
 }
-#Resources h1{
-    font-size: 3vw;
-    font-weight: 800;
-    padding: 2vw 0vw;
+@media(max-width:1180px) and (min-width:1150px){
+    .Resources{
+    gap: 3rem;
 }
+}
+@media(max-width:830px) {
+
 .Resources{
-  padding: 2vw 3vw;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-around;
-gap: 3vw;
-   
+    gap: 2rem;
 }
 .resource-card{
-    background-color:white;
-    position: relative;
-    width: 20vw;
-    height: 18vw;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.55);
-
+    height: 250px;
+    width: 280px;
 }
 .resource-card-bottom{
-    background: rgba(252, 231, 114, 1);
-position: absolute;
-display: flex;
-justify-content: center;
-align-items: center;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 3vw;
+    height: 50px;
 }
 
-.resource-card-bottom button{
-font-weight: 700;
-font-size: 1.5vw;
-width: 100%;
- background: rgba(252, 231, 114, 1);
+}
+@media(max-width:440px){
+    .resource-card{
+    height: 200px;
+    width: 240px;
+}
 }

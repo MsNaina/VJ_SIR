@@ -1,4 +1,4 @@
-import "./PhNotes.css"
+import "./PhModules.css"
 import data from "./Physicsdata.json";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";

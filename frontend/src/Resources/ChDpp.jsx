@@ -1,4 +1,4 @@
-import "./ChDpp.css";
+import "./PhModules.css";
 import Navbar from "../Mentorship/Navbar";
 import React, { useState } from "react";
 import data from "./chemistrydata.json";

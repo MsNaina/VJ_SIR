@@ -1,12 +1,40 @@
 #Modules {
   width: 100%;
+  font-family: Poppins;
 }
 
-.Modules h1 {
-  font-size: 2vw;
-  font-family: Poppins;
+#Modules h1 {
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 1%;
+  margin-bottom: 10px;
+  padding: 2% 0vw 0vw 11%;
+}
+.SearchBar {
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.search-btns a.active {
+  color: #0c6205;
+}
+.search-btns button {
+  width: 9rem;
+  height: 2.8rem;
+  margin: 0rem 0.5rem;
+}
+.search-btn {
+  background-color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 2px solid #000000;
+}
+.search-btn:hover {
+  background-color: lightgreen;
+}
+.searchbar {
+  width: 40%;
 }
 .searchInput_container {
   position: relative;
@@ -14,27 +42,21 @@
 }
 .searchInput_container i {
   position: absolute;
-  left: 2vw;
-  scale: 1.5;
-  top: 1vw;
+  left: 1.5rem;
+  top: 1rem;
 }
-
 #searchInput {
-  width: 30%;
-  height: 2.5vw;
+  width: 100%;
+  height: 40px;
   border: 2px solid black;
   outline: none;
   border-radius: 30px;
-  padding: 0vw 4vw;
+  padding: 0vw 4rem;
 }
 .Modules_Container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-}
-
-.Modules-container {
-  font-family: Poppins;
 }
 .ModulesData {
   background: rgba(255, 255, 255, 1);
@@ -51,17 +73,165 @@
 .ModulesData img {
   width: 60px;
   height: 60px;
-  object-fit: cover;
-  object-position: center;
-}
-.ModulesData-text h6 {
-  color: rgba(115, 122, 127, 1);
-  font-weight: 600;
-  font-size: 0.8rem;
-  margin-bottom: 5px;
 }
 .ModulesData-text h3 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   color: black;
+}
+@media (max-width: 1290px) and (min-width: 1175px) {
+  #Modules h1 {
+    padding: 2% 0vw 0vw 9%;
+  }
+}
+@media (max-width: 1175px) and (min-width: 1075px) {
+  #Modules h1 {
+    padding: 2% 0vw 0vw 8%;
+  }
+}
+@media (max-width: 1075px) and (min-width: 873px) {
+  #Modules h1 {
+    padding: 2% 0vw 0vw 6%;
+  }
+}
+@media (max-width: 873px) and (min-width: 675px) {
+  .SearchBar {
+    padding: 1rem 0rem;
+    display: block;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #Modules h1 {
+    padding: 2% 0% 0% 0%;
+    font-size: 2.5rem;
+  }
+  .ModulesData {
+    width: 300px;
+  }
+  #Modules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .searchbar {
+    width: 100%;
+  }
+}
+@media (max-width: 675px) and (min-width: 470px) {
+  #Modules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SearchBar {
+    display: block;
+  }
+  .searchbar {
+    width: 100%;
+  }
+  #Modules h1 {
+    padding: 2% 0% 0% 0%;
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 470px) and (min-width: 420px) {
+  #Modules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #Modules h1 {
+    padding: 2% 0% 0% 0%;
+    font-size: 2.5rem;
+  }
+  .SearchBar {
+    display: block;
+  }
+  .searchbar {
+    width: 80vw;
+  }
+  .ModulesData {
+    width: 25rem;
+  }
+  .search-btns button {
+    width: 24vw;
+    height: 2.8rem;
+    margin: 0rem 0.5rem;
+  }
+  .search-btn {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 420px) and (min-width: 370px) {
+  #Modules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #Modules h1 {
+    padding: 2% 0% 0% 0%;
+    font-size: 2rem;
+  }
+  .SearchBar {
+    display: block;
+  }
+  .searchbar {
+    width: 75vw;
+  }
+  .ModulesData {
+    width: 22rem;
+  }
+  .search-btns button {
+    width: 22vw;
+    height: 2.8rem;
+    margin: 0rem 0.5rem;
+  }
+  .search-btn {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 370px) {
+  #Modules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #Modules h1 {
+    padding: 2% 0% 0% 0%;
+    font-size: 2rem;
+  }
+  .SearchBar {
+    display: block;
+  }
+  .searchbar {
+    width: 75vw;
+  }
+  .ModulesData {
+    width: 22rem;
+  }
+  .search-btns button {
+    width: 22vw;
+    height: 2.8rem;
+    margin: 0rem 0.5rem;
+  }
+  .search-btn {
+    font-size: 0.8rem;
+  }
+  .ModulesData {
+    width: 20rem;
+  }
+  #searchInput {
+    height: 30px;
+    padding: 0vw 4rem;
+  }
+  .searchInput_container i {
+  position: absolute;
+  left: 1.5rem;
+  top: .8rem;
+}
+.search-btns button {
+  width: 21vw;
+  height: 2.4rem;
+  margin: 0rem 0.5rem;
+}
 }

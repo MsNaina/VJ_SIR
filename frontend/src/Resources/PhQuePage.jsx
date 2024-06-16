@@ -14,19 +14,21 @@ const PhQues = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("Component mounted or ID changed. Fetching question...");
     fetchQuestion(id);
   }, [id]);
 
   const fetchQuestion = (questionId) => {
+    console.log(`Fetching question with ID: ${questionId}`);
     axios
       .get(`http://127.0.0.1:8000/questions/id/${questionId}?format=json`)
       .then((response) => {
-        console.log("Fetched question:", response.data); 
+        console.log("Fetched question:", response.data);
         setQuestion(response.data);
-        setIsExplanationVisible(false); 
-        setSelectedOptions([]); 
-        setIsCorrect(null); 
-        setIsOptionLocked(false); 
+        setIsExplanationVisible(false);
+        setSelectedOptions([]);
+        setIsCorrect(null);
+        setIsOptionLocked(false);
       })
       .catch((error) => {
         console.error("There was an error fetching the question!", error);
@@ -35,7 +37,8 @@ const PhQues = () => {
 
   const handleOptionClick = (option) => {
     if (!isOptionLocked) {
-      if (question.questionType === "single") {
+      console.log(`Option clicked: ${option}`);
+      /* if (question.questionType === "single") {
         setSelectedOptions([option]);
       } else if (question.questionType === "multiple") {
         setSelectedOptions((prevSelectedOptions) =>
@@ -43,28 +46,35 @@ const PhQues = () => {
             ? prevSelectedOptions.filter((opt) => opt !== option)
             : [...prevSelectedOptions, option]
         );
-      }
+      } */
     }
+    console.log("Selected options after click:", selectedOptions);
   };
 
   const handleCheckClick = () => {
-    const isCorrectAnswer =
+    console.log("Check button clicked. Checking answers...");
+     const isCorrectAnswer =
       question.questionType === "single"
         ? selectedOptions[0] === question.correctOptions[0]
         : selectedOptions.sort().join(",") ===
           question.correctOptions.sort().join(",");
-    setIsCorrect(isCorrectAnswer);
+    console.log(`Selected options: ${selectedOptions}`);
+    console.log(`Correct options: ${question.correctOptions}`);
+    console.log(`Is correct answer: ${isCorrectAnswer}`);
+    setIsCorrect(isCorrectAnswer); 
     setIsExplanationVisible(true);
-    setIsOptionLocked(true); 
+    setIsOptionLocked(true);
   };
 
   const handleNextQuestion = () => {
     const nextQuestionId = parseInt(id) + 1;
+    console.log(`Navigating to next question with ID: ${nextQuestionId}`);
     navigate(`/question/${nextQuestionId}`);
   };
 
   const handlePrevQuestion = () => {
     const prevQuestionId = parseInt(id) - 1;
+    console.log(`Navigating to previous question with ID: ${prevQuestionId}`);
     navigate(`/question/${prevQuestionId}`);
   };
 
