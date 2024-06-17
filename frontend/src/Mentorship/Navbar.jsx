@@ -19,6 +19,7 @@ export default function Navbar() {
         </div>
 
         <div className={`menu ${menuOpen ? "open" : ""}`}>
+          
           <div className="Nav-item">
             <ul>
               <li>
@@ -52,6 +53,7 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
+
           <div className="profile">
             <img src={Profile} alt="Profile" />
             <button>
