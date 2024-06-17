@@ -60,7 +60,7 @@ export default function Header() {
 
           <div className="header-right">
             <div className="header-img">
-              <div className="Nav-items">
+              <div className="header-Nav-items">
                 <ul>
                   <li>
                     <Link to="/">Home</Link>

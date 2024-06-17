@@ -21,14 +21,14 @@ export default function SignUp() {
               Start Your <span>Perfect</span>
             </h2>
             <h2>Preparation Today</h2>
-
-           
           </div>
 
           <div className="signup-bottom">
             <input type="text" name="" id="input" required placeholder="Name" />
 
             <input type="text" name="" id="input" required placeholder="City" />
+
+            <input type="text" name="" id="input" required placeholder="Class" />
 
             <input
               type="tel"
@@ -52,8 +52,6 @@ export default function SignUp() {
               required
               placeholder="Password"
             />
-
-           
 
             <button className="signup-btn" type="submit">
               Sign Up

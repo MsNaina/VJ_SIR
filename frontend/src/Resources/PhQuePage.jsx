@@ -29,41 +29,70 @@ const PhQues = () => {
         setSelectedOptions([]);
         setIsCorrect(null);
         setIsOptionLocked(false);
+        console.log("State reset after fetching question.");
       })
       .catch((error) => {
         console.error("There was an error fetching the question!", error);
       });
   };
-
+console.log('hy')
   const handleOptionClick = (option) => {
     if (!isOptionLocked) {
       console.log(`Option clicked: ${option}`);
-      /* if (question.questionType === "single") {
+      if (question.type === "SMCQ") {
         setSelectedOptions([option]);
-      } else if (question.questionType === "multiple") {
+      } else if (question.type === "MMCQ") {
         setSelectedOptions((prevSelectedOptions) =>
           prevSelectedOptions.includes(option)
             ? prevSelectedOptions.filter((opt) => opt !== option)
             : [...prevSelectedOptions, option]
         );
-      } */
+      } else if (question.type === "integer") {
+        setSelectedOptions([option]);
+      }
+      console.log("Selected options after click:", [
+        ...selectedOptions,
+        option,
+      ]);
     }
-    console.log("Selected options after click:", selectedOptions);
   };
 
   const handleCheckClick = () => {
     console.log("Check button clicked. Checking answers...");
-     const isCorrectAnswer =
-      question.questionType === "single"
-        ? selectedOptions[0] === question.correctOptions[0]
-        : selectedOptions.sort().join(",") ===
-          question.correctOptions.sort().join(",");
+    let isCorrectAnswer = false;
+
+    if (question.type === "SMCQ" || question.type === "integer") {
+      isCorrectAnswer = selectedOptions[0] === question.correctOptions[0];
+    } else if (question.type === "MMCQ") {
+      isCorrectAnswer =
+        selectedOptions.sort().join(",") ===
+        question.correctOptions.sort().join(",");
+    }
+
     console.log(`Selected options: ${selectedOptions}`);
     console.log(`Correct options: ${question.correctOptions}`);
     console.log(`Is correct answer: ${isCorrectAnswer}`);
-    setIsCorrect(isCorrectAnswer); 
+    setIsCorrect(isCorrectAnswer);
     setIsExplanationVisible(true);
     setIsOptionLocked(true);
+    fetchExplanation(id); // Fetch explanation when check button is clicked
+  };
+
+  const fetchExplanation = (questionId) => {
+    console.log(`Fetching explanation for question ID: ${questionId}`);
+    axios
+      .get(`http://127.0.0.1:8000/questions/answer/${questionId}?format=json`)
+      .then((response) => {
+        console.log("Fetched explanation:", response.data);
+        // Assuming the explanation image path is stored in response.data.explanation
+        setQuestion((prevQuestion) => ({
+          ...prevQuestion,
+          answer: response.data.explanation,
+        }));
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the explanation!", error);
+      });
   };
 
   const handleNextQuestion = () => {
@@ -145,6 +174,12 @@ const PhQues = () => {
                       className="explanation-image"
                     />
                   </div>
+                </div>
+              )}
+              {isExplanationVisible && !question.answer && (
+                <div className="explanation">
+                  <h3>Explanation</h3>
+                  <p>No explanation available.</p>
                 </div>
               )}
             </>

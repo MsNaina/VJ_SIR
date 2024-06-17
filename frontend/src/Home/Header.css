@@ -92,17 +92,17 @@ margin: 1vw 0vw;
 .header-right{
     width: 50%;
 }
-.Nav-items{
+.header-Nav-items{
     position: relative;
     top:3vw;
     right: 1.5vw;
 }
-.Nav-items ul{
+.header-Nav-items ul{
     display: flex;
     gap: 1vw;
     justify-content: end;
 }
-.Nav-items ul li{
+.header-Nav-items ul li{
   background: rgba(240, 240, 240, 0.5);
   /* opacity: .9; */
  padding: .5vw 1vw;

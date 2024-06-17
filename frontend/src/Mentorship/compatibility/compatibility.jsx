@@ -1,15 +1,22 @@
+import React, { useState } from "react";
+import axios from "axios";
 import CompatibilityNav from "./CoNavbar";
 import "./compatibility.css";
-import React, { useState } from "react";
+
 export default function CompatibilityStage1() {
   const [formData, setFormData] = useState({
     fullName: "",
-    dropper: "",
+    Gender: "",
     state: "",
     maths: "",
     chemistry: "",
     physics: "",
+    medium: "",
+    changingMedium: "",
   });
+  const [responseMessage, setResponseMessage] = useState("");
+  const [allocatedMentor, setAllocatedMentor] = useState("");
+
   const indianStates = [
     "Andhra Pradesh",
     "Arunachal Pradesh",
@@ -48,6 +55,7 @@ export default function CompatibilityStage1() {
     "Ladakh",
     "Jammu and Kashmir",
   ];
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -58,6 +66,29 @@ export default function CompatibilityStage1() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+
+    axios
+      .post("http://localhost:8000/allocate-mentor", formData)
+      .then((response) => {
+        console.log("Response from backend:", response.data);
+        setResponseMessage(response.data.message);
+        setAllocatedMentor(response.data.mentor);
+        // Clear form
+        setFormData({
+          fullName: "",
+          Gender: "",
+          state: "",
+          maths: "",
+          chemistry: "",
+          physics: "",
+          medium: "",
+          changingMedium: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        setResponseMessage("Error submitting form.");
+      });
   };
 
   return (
@@ -65,7 +96,7 @@ export default function CompatibilityStage1() {
       <section id="Compatibility">
         <CompatibilityNav />
         <div className="Compatibility">
-          <h2> Compatibility Test</h2>
+          <h2>Compatibility Test</h2>
           <div className="compatibility-info">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
@@ -81,17 +112,17 @@ export default function CompatibilityStage1() {
 
               <div className="form-group Flex">
                 <div className="input-group">
-                  <label htmlFor="dropper">Are you a dropper?</label>
+                  <label htmlFor="Gender">Gender</label>
                   <select
-                    id="dropper"
-                    name="dropper"
+                    id="Gender"
+                    name="Gender"
                     className="Coform"
-                    value={formData.dropper}
+                    value={formData.Gender}
                     onChange={handleChange}
                   >
                     <option value=""></option>
-                    <option value="dropper">Dropper</option>
-                    <option value="non-dropper">Non-Dropper</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                   </select>
                 </div>
                 <div className="input-group">
@@ -146,10 +177,10 @@ export default function CompatibilityStage1() {
                 </div>
               </div>
 
-              <div className="form-group ">
+              <div className="form-group">
                 <h3>How You Rate Yourself In:</h3>
-                <div className=" Flex">
-                  <div className="input-group ">
+                <div className="Flex">
+                  <div className="input-group">
                     <label htmlFor="maths">Maths :</label>
                     <select
                       id="maths"
@@ -206,6 +237,10 @@ export default function CompatibilityStage1() {
                 Submit
               </button>
             </form>
+            {responseMessage && <p>{responseMessage}</p>}
+            {allocatedMentor && (
+              <p>Your allocated mentor is: {allocatedMentor}</p>
+            )}
           </div>
         </div>
       </section>
