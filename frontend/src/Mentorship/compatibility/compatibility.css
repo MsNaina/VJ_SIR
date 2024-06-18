@@ -143,7 +143,7 @@ select {
 }
 @media (max-width: 600px) {
   .Compatibility h2 {
-    font-size: 6vw;
+    font-size: 6.5vw;
   }
   .Compatibility{
     height: 160%;
@@ -160,6 +160,9 @@ select {
   .coformbtn {
   padding: 10px 5px;
   width: 20vw;
+}
+  .form-group h3 {
+ font-size: 3.5vw;
 }
 }
 @media(max-width:440px){
@@ -180,7 +183,12 @@ select {
   padding: 5px 5px;
   width: 25vw;
 }
-
+.form-group h3 {
+ font-size: 4.5vw;
+}
+.Compatibility h2 {
+    font-size: 7vw;
+  }
 }
 @media(max-width:380px){
   .Compatibility {
