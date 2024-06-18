@@ -195,4 +195,10 @@ select {
     padding-top: 30vw;
     height: 160%;
   }
+  .Compatibility h2 {
+    font-size: 7.5vw;
+  }
+  .form-group h3 {
+ font-size: 5vw;
+}
 }
