@@ -1,16 +1,15 @@
 #Compatibility {
   width: 100%;
-  height: 100vh; 
-  background-image: url("../../assets/images/compatibility.png"); 
-  background-size: cover; 
-  background-repeat: no-repeat; 
+  height: 100vh;
+  background-image: url("../../assets/images/compatibility.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 .Compatibility {
-  padding: 8rem 0vw 0vw 25rem;
   font-family: poppins;
-   position: relative;
-  
+  position: relative;
+  padding: 8rem 0px 0px 30rem;
 }
 .Compatibility h2 {
   font-size: 4rem;
@@ -18,7 +17,7 @@
 }
 .compatibility-info {
   margin-top: 2rem;
-  width: 70%;
+  width: 80%;
 }
 #fullName {
   border: 0.96px solid #000000;
@@ -33,7 +32,6 @@
   border-radius: 20px;
   background-color: white;
   height: 3rem;
-  margin-top: 1rem;
 }
 form {
   display: flex;
@@ -43,18 +41,22 @@ form {
 .form-group {
   margin-bottom: 20px;
 }
-
-.label {
+.form-group label {
+  font-size: 1.2rem;
+}
+.input-group label {
   display: block;
   margin-bottom: 5px;
+  font-size: 1.2rem;
 }
 
 .coformbtn {
-  padding: 10px 20px;
+  padding: 5px 5px;
   background: #0c6205;
-  width: 20%;
+  width: 15%;
   color: white;
   border: none;
+  margin-bottom:1rem ;
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
@@ -63,6 +65,7 @@ form {
 .Flex {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .input-group {
@@ -86,4 +89,102 @@ select {
   border-radius: 2px;
   height: 3rem;
   display: inline-block;
+}
+@media (max-width: 1232px) {
+  .form-group label {
+    font-size: 1rem;
+  }
+  .Compatibility h2 {
+    font-size: 3.5rem;
+  }
+  .coformbtn {
+    width: 20%;
+  }
+  .input-group label {
+  font-size: 1rem;
+}
+.Compatibility {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+}
+@media (max-width: 1155px) {
+  .Compatibility h2 {
+    font-size: 3rem;
+  }
+  .Compatibility {
+    padding: 15vw 0vw 0vw 25vw;
+  }
+  .compatibility-info {
+    margin-top: 2rem;
+    width: 90%;
+  }
+  .form-group label {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 915px) {
+  #Compatibility {
+    background-image: none;
+  }
+  .Compatibility {
+    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  .Compatibility {
+    padding: 0vw 0vw 0vw 0vw ;
+  }
+}
+@media (max-width: 600px) {
+  .Compatibility h2 {
+    font-size: 6vw;
+  }
+  .Compatibility{
+    height: 160%;
+  }
+  .Flex {
+    flex-direction: column;
+  }
+  .compatibility-info {
+    width: 80%;
+  }
+  .Coform {
+    margin: 1rem 0rem;
+  }
+  .coformbtn {
+  padding: 10px 5px;
+  width: 20vw;
+}
+}
+@media(max-width:440px){
+  .form-group label {
+    font-size: 4vw;
+  }
+  .Compatibility {
+    padding-top: 30vw;
+    height: 130%;
+  }
+  .Coform{
+    height: 10vw;
+  }
+  #fullName{
+    height: 10vw;
+  }
+  .coformbtn {
+  padding: 5px 5px;
+  width: 25vw;
+}
+
+}
+@media(max-width:380px){
+  .Compatibility {
+    padding-top: 30vw;
+    height: 160%;
+  }
 }

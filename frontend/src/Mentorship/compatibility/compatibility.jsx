@@ -97,6 +97,7 @@ export default function CompatibilityStage1() {
         <CompatibilityNav />
         <div className="Compatibility">
           <h2>Compatibility Test</h2>
+          
           <div className="compatibility-info">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
@@ -177,9 +178,9 @@ export default function CompatibilityStage1() {
                 </div>
               </div>
 
-              <div className="form-group">
+              <div className="form-group ">
                 <h3>How You Rate Yourself In:</h3>
-                <div className="Flex">
+                <div className="Flex rate">
                   <div className="input-group">
                     <label htmlFor="maths">Maths :</label>
                     <select
@@ -234,7 +235,7 @@ export default function CompatibilityStage1() {
                 </div>
               </div>
               <button className="coformbtn" type="submit">
-                Submit
+                SUBMIT
               </button>
             </form>
             {responseMessage && <p>{responseMessage}</p>}
@@ -242,6 +243,7 @@ export default function CompatibilityStage1() {
               <p>Your allocated mentor is: {allocatedMentor}</p>
             )}
           </div>
+
         </div>
       </section>
     </>
