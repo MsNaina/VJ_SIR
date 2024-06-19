@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./PhQuePage.css";
@@ -18,17 +19,6 @@ const PhQues = () => {
   useEffect(() => {
     fetchQuestionAndAnswer(id);
   }, [id]);
-
-  useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/questions/count`)
-      .then((response) => {
-        setTotalQuestions(response.data.count);
-      })
-      .catch((error) => {
-        console.error("Error fetching total number of questions:", error);
-      });
-  }, []);
 
   const fetchQuestionAndAnswer = async (questionId) => {
     try {
@@ -87,7 +77,7 @@ const PhQues = () => {
           parseInt(integerAnswer) === parseInt(question.correct_option);
         break;
       case "SUBJ":
-        isCorrectAnswer = true; // Always consider subjective questions correct
+        isCorrectAnswer = true;
         break;
       default:
         break;
@@ -96,17 +86,19 @@ const PhQues = () => {
     setIsCorrect(isCorrectAnswer);
     setIsExplanationVisible(true);
     setIsOptionLocked(true);
-    console.log(`type of question is ${question.type}`)
+    console.log(`type of question is ${question.type}`);
   };
 
   const handleNextQuestion = () => {
-    const nextQuestionId = parseInt(id) + 1;
-    navigate(`/questions/id/${nextQuestionId}`);
+    const nextQuestionId = parseInt(id, 10) + 1;
+    navigate(`/questions/${nextQuestionId}`);
   };
 
   const handlePrevQuestion = () => {
-    const prevQuestionId = parseInt(id) - 1;
-    navigate(`/questions/id/${prevQuestionId}`);
+    const prevQuestionId = parseInt(id, 10) - 1;
+    if (prevQuestionId >= 1) {
+      navigate(`/questions/${prevQuestionId}`);
+    }
   };
 
   const arraysEqual = (a, b) => {
@@ -171,6 +163,9 @@ const PhQues = () => {
                   disabled={parseInt(id) <= 1}
                 >
                   Previous
+                  {/* <NavLink to={`/questions/${prevQuestionId}`}>
+                    Previous
+                  </NavLink> */}
                 </button>
                 <div className="next-check">
                   <button
@@ -188,6 +183,9 @@ const PhQues = () => {
                   </button>
 
                   <button className="next-button" onClick={handleNextQuestion}>
+                    {/* <NavLink to={`/questions/${nextQuestionId}`}>
+                      Next
+                    </NavLink> */}{" "}
                     Next
                   </button>
                 </div>
@@ -213,18 +211,6 @@ const PhQues = () => {
                 </div>
               )}
 
-              {/* {question.type === "SUBJ" && (
-                <div className="subjective-question">
-                  <h3>Question</h3>
-                  <div className="subjective-question-content">
-                    <img
-                      src={`http://127.0.0.1:8000${question.question}`}
-                      alt="Question"
-                      className="subjective-question-image"
-                    />
-                  </div>
-                </div>
-              )} */}
             </>
           ) : (
             <p>Loading question...</p>

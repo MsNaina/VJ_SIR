@@ -1,18 +1,18 @@
 #level-select {
   width: 100%;
+  padding: 4rem;
 }
 .level-select {
   display: flex;
   flex-wrap: wrap;
   gap: 10rem;
-  margin: 1rem 4rem;
+  margin-top: 2rem;
   padding: 4vw 0vw;
   border-top: 1px solid black;
 }
 .level-heading h1 {
   font-size: 2.5rem;
   color: #0c6205;
-  margin: 4rem 0rem 0rem 4rem;
   font-family: Poppins;
   font-weight: 600;
 }
@@ -48,4 +48,82 @@
   font-size: 1.3vw;
   color: black;
   font-weight: 500;
+}
+@media (max-width: 1270px) {
+  .level h3 {
+    font-size: 2vw;
+  }
+  .level-Line {
+    height: 2.5vw;
+  }
+  .level-button {
+    font-size: 1.8vw;
+  }
+}
+@media (max-width: 1020px) {
+  .level h3 {
+    font-size: 2.5vw;
+  }
+  .level-button {
+    font-size: 2vw;
+  }
+  .level-Line {
+    height: 3vw;
+  }
+}
+@media (max-width: 860px) {
+  .level-select {
+    gap: 3rem;
+    height: 160px;
+  }
+  .level-button {
+    font-size: 2.4vw;
+  }
+}
+@media (max-width: 760px) {
+  .level h3 {
+    font-size: 2.8vw;
+  }
+  .level-container {
+    width: 35vw;
+    height: 15vw;
+  }
+  .level-button {
+    font-size: 2.4vw;
+  }
+}
+@media(max-width:660px){
+  .level-container {
+    width: 300px;
+    height: 100px;
+  }
+  .level h3 {
+    font-size: 20px;
+  }
+   .level-Line {
+    height: 30px;
+    width: 10px;
+  }
+   .level-button {
+    font-size: 18px;
+  }
+}
+@media(max-width:410px){
+  .level h3 {
+    font-size: 5vw;
+  }
+  .level-button {
+    font-size: 5vw;
+  }
+  #level-select{
+    padding: 4rem 1rem;
+  }
+}
+@media(max-width:350px){
+.level h3 {
+    font-size: 6vw;
+  }
+  .level-button {
+    font-size: 6vw;
+  }
 }
