@@ -1,5 +1,5 @@
 #question-page {
-  margin: 4rem 0 0 6rem;
+  margin: 2rem 0 2rem 6rem;
   font-family: Poppins, sans-serif;
 }
 #question-page h1 {
@@ -21,8 +21,7 @@
 }
 
 .question-image {
-  max-width: 100%;
-  height: auto;
+  max-width: 60%;
 }
 
 .options {
@@ -33,7 +32,7 @@
 }
 
 .option-label {
-  width: 100%;
+  width: 70%;
   border: 1px solid #000;
   border-radius: 5px;
   padding: 10px 20px;
@@ -55,7 +54,7 @@
 .option-label.incorrect {
   background-color: lightcoral;
   border-color: red;
-  color: #721c24;
+  color: black;
 }
 
 .option-label.locked {

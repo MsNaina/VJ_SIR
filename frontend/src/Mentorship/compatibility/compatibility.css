@@ -56,7 +56,7 @@ form {
   width: 15%;
   color: white;
   border: none;
-  margin-bottom:1rem ;
+  margin-bottom: 1rem;
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
@@ -80,6 +80,7 @@ form {
 .form-group h3 {
   margin-bottom: 20px;
   font-weight: 700;
+  font-size: 1.2rem;
 }
 select {
   background-color: rgba(255, 255, 255, 0.9);
@@ -89,6 +90,11 @@ select {
   border-radius: 2px;
   height: 3rem;
   display: inline-block;
+}
+@media(max-width:1280px){
+  #Compatibility{
+    height: 100vh;
+  }
 }
 @media (max-width: 1232px) {
   .form-group label {
@@ -101,29 +107,37 @@ select {
     width: 20%;
   }
   .input-group label {
-  font-size: 1rem;
-}
-.Compatibility {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
-}
-
+    font-size: 1rem;
+  }
+  .Compatibility {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+  }
 }
 @media (max-width: 1155px) {
   .Compatibility h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+  #Compatibility{
+     height: 100vh;
   }
   .Compatibility {
-    padding: 15vw 0vw 0vw 25vw;
+    padding: 20vw 0vw 0vw 20vw;
   }
   .compatibility-info {
     margin-top: 2rem;
     width: 90%;
   }
+  #fullName{
+    height: 2.5rem;
+  }
   .form-group label {
     font-size: 1rem;
+  }
+  .Coform{
+    height: 2.5rem;
   }
 }
 @media (max-width: 915px) {
@@ -132,21 +146,22 @@ select {
   }
   .Compatibility {
     height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .Compatibility {
-    padding: 0vw 0vw 0vw 0vw ;
+    padding: 0vw 0vw 0vw 0vw;
   }
 }
 @media (max-width: 600px) {
   .Compatibility h2 {
     font-size: 6.5vw;
   }
-  .Compatibility{
+  .Compatibility {
     height: 160%;
+    padding-top: 20vw;
   }
   .Flex {
     flex-direction: column;
@@ -158,14 +173,14 @@ select {
     margin: 1rem 0rem;
   }
   .coformbtn {
-  padding: 10px 5px;
-  width: 20vw;
-}
+    padding: 10px 5px;
+    width: 20vw;
+  }
   .form-group h3 {
- font-size: 3.5vw;
+    font-size: 3.5vw;
+  }
 }
-}
-@media(max-width:440px){
+@media (max-width: 440px) {
   .form-group label {
     font-size: 4vw;
   }
@@ -173,24 +188,24 @@ select {
     padding-top: 30vw;
     height: 130%;
   }
-  .Coform{
+  .Coform {
     height: 10vw;
   }
-  #fullName{
+  #fullName {
     height: 10vw;
   }
   .coformbtn {
-  padding: 5px 5px;
-  width: 25vw;
-}
-.form-group h3 {
- font-size: 4.5vw;
-}
-.Compatibility h2 {
+    padding: 5px 5px;
+    width: 25vw;
+  }
+  .form-group h3 {
+    font-size: 4.5vw;
+  }
+  .Compatibility h2 {
     font-size: 7vw;
   }
 }
-@media(max-width:380px){
+@media (max-width: 380px) {
   .Compatibility {
     padding-top: 30vw;
     height: 160%;
@@ -199,6 +214,11 @@ select {
     font-size: 7.5vw;
   }
   .form-group h3 {
- font-size: 5vw;
+    font-size: 5vw;
+  }
 }
+@media (max-width: 350px) {
+  .Compatibility {
+    height: 140%;
+  }
 }

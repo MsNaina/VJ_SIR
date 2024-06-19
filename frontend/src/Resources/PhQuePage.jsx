@@ -8,103 +8,111 @@ const PhQues = () => {
   const { id } = useParams(); // Current question ID
   const [question, setQuestion] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [integerAnswer, setIntegerAnswer] = useState("");
   const [isExplanationVisible, setIsExplanationVisible] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null);
-  const [isOptionLocked, setIsOptionLocked] = useState(false); // New state to lock options
+  const [isOptionLocked, setIsOptionLocked] = useState(false);
+  const [totalQuestions, setTotalQuestions] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("Component mounted or ID changed. Fetching question...");
-    fetchQuestion(id);
+    fetchQuestionAndAnswer(id);
   }, [id]);
 
-  const fetchQuestion = (questionId) => {
-    console.log(`Fetching question with ID: ${questionId}`);
+  useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/questions/id/${questionId}?format=json`)
+      .get(`http://127.0.0.1:8000/questions/count`)
       .then((response) => {
-        console.log("Fetched question:", response.data);
-        setQuestion(response.data);
-        setIsExplanationVisible(false);
-        setSelectedOptions([]);
-        setIsCorrect(null);
-        setIsOptionLocked(false);
-        console.log("State reset after fetching question.");
+        setTotalQuestions(response.data.count);
       })
       .catch((error) => {
-        console.error("There was an error fetching the question!", error);
+        console.error("Error fetching total number of questions:", error);
       });
+  }, []);
+
+  const fetchQuestionAndAnswer = async (questionId) => {
+    try {
+      const questionResponse = await axios.get(
+        `http://127.0.0.1:8000/questions/id/${questionId}?format=json`
+      );
+      const answerResponse = await axios.get(
+        `http://127.0.0.1:8000/questions/answer/${questionId}?format=json`
+      );
+      const questionData = questionResponse.data;
+      const answerData = answerResponse.data;
+
+      setQuestion({ ...questionData, ...answerData });
+      setIsExplanationVisible(false);
+      setSelectedOptions([]);
+      setIsCorrect(null);
+      setIsOptionLocked(false);
+      setIntegerAnswer("");
+    } catch (error) {
+      console.error("Error fetching question and answer:", error);
+    }
   };
-console.log('hy')
+
   const handleOptionClick = (option) => {
     if (!isOptionLocked) {
-      console.log(`Option clicked: ${option}`);
-      if (question.type === "SMCQ") {
-        setSelectedOptions([option]);
-      } else if (question.type === "MMCQ") {
-        setSelectedOptions((prevSelectedOptions) =>
-          prevSelectedOptions.includes(option)
-            ? prevSelectedOptions.filter((opt) => opt !== option)
-            : [...prevSelectedOptions, option]
-        );
-      } else if (question.type === "integer") {
+      if (question.type === "MMCQ") {
+        const updatedSelectedOptions = selectedOptions.includes(option)
+          ? selectedOptions.filter((item) => item !== option)
+          : [...selectedOptions, option];
+        setSelectedOptions(updatedSelectedOptions);
+      } else {
         setSelectedOptions([option]);
       }
-      console.log("Selected options after click:", [
-        ...selectedOptions,
-        option,
-      ]);
     }
+  };
+
+  const handleIntegerInputChange = (event) => {
+    setIntegerAnswer(event.target.value);
   };
 
   const handleCheckClick = () => {
-    console.log("Check button clicked. Checking answers...");
     let isCorrectAnswer = false;
 
-    if (question.type === "SMCQ" || question.type === "integer") {
-      isCorrectAnswer = selectedOptions[0] === question.correctOptions[0];
-    } else if (question.type === "MMCQ") {
-      isCorrectAnswer =
-        selectedOptions.sort().join(",") ===
-        question.correctOptions.sort().join(",");
+    switch (question.type) {
+      case "SMCQ":
+        isCorrectAnswer = selectedOptions[0] === question.correct_option;
+        break;
+      case "MMCQ":
+        isCorrectAnswer = arraysEqual(
+          selectedOptions.sort(),
+          question.correct_option.sort()
+        );
+        break;
+      case "INT":
+        isCorrectAnswer =
+          parseInt(integerAnswer) === parseInt(question.correct_option);
+        break;
+      case "SUBJ":
+        isCorrectAnswer = true; // Always consider subjective questions correct
+        break;
+      default:
+        break;
     }
 
-    console.log(`Selected options: ${selectedOptions}`);
-    console.log(`Correct options: ${question.correctOptions}`);
-    console.log(`Is correct answer: ${isCorrectAnswer}`);
     setIsCorrect(isCorrectAnswer);
     setIsExplanationVisible(true);
     setIsOptionLocked(true);
-    fetchExplanation(id); // Fetch explanation when check button is clicked
-  };
-
-  const fetchExplanation = (questionId) => {
-    console.log(`Fetching explanation for question ID: ${questionId}`);
-    axios
-      .get(`http://127.0.0.1:8000/questions/answer/${questionId}?format=json`)
-      .then((response) => {
-        console.log("Fetched explanation:", response.data);
-        // Assuming the explanation image path is stored in response.data.explanation
-        setQuestion((prevQuestion) => ({
-          ...prevQuestion,
-          answer: response.data.explanation,
-        }));
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the explanation!", error);
-      });
+    console.log(`type of question is ${question.type}`)
   };
 
   const handleNextQuestion = () => {
     const nextQuestionId = parseInt(id) + 1;
-    console.log(`Navigating to next question with ID: ${nextQuestionId}`);
-    navigate(`/question/${nextQuestionId}`);
+    navigate(`/questions/id/${nextQuestionId}`);
   };
 
   const handlePrevQuestion = () => {
     const prevQuestionId = parseInt(id) - 1;
-    console.log(`Navigating to previous question with ID: ${prevQuestionId}`);
-    navigate(`/question/${prevQuestionId}`);
+    navigate(`/questions/id/${prevQuestionId}`);
+  };
+
+  const arraysEqual = (a, b) => {
+    return (
+      a.length === b.length && a.every((value, index) => value === b[index])
+    );
   };
 
   return (
@@ -117,31 +125,45 @@ console.log('hy')
             <>
               <div className="question-image-container">
                 <img
-                  src={`http://127.0.0.1:8000${question.question}`} // Construct the full URL for the image
+                  src={`http://127.0.0.1:8000${question.question}`}
                   alt="Question"
                   className="question-image"
                 />
               </div>
 
-              <div className="options">
-                {["A", "B", "C", "D"].map((option, index) => (
-                  <div
-                    key={index}
-                    className={`option-label ${
-                      selectedOptions.includes(option)
-                        ? isCorrect === null
-                          ? "selected"
-                          : question.correctOptions.includes(option)
-                          ? "correct"
-                          : "incorrect"
-                        : ""
-                    } ${isOptionLocked ? "locked" : ""}`}
-                    onClick={() => handleOptionClick(option)}
-                  >
-                    {option}
-                  </div>
-                ))}
-              </div>
+              {question.type === "SMCQ" || question.type === "MMCQ" ? (
+                <div className="options">
+                  {["A", "B", "C", "D"].map((option) => (
+                    <div
+                      key={option}
+                      className={`option-label ${
+                        selectedOptions.includes(option)
+                          ? isCorrect === null
+                            ? "selected"
+                            : question.correct_option.includes(option)
+                            ? "correct"
+                            : "incorrect"
+                          : ""
+                      } ${isOptionLocked ? "locked" : ""}`}
+                      onClick={() => handleOptionClick(option)}
+                    >
+                      {option}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              {question.type === "INT" && (
+                <div className="integer-input">
+                  <input
+                    type="number"
+                    value={integerAnswer}
+                    onChange={handleIntegerInputChange}
+                    disabled={isOptionLocked}
+                  />
+                </div>
+              )}
+
               <div className="controls">
                 <button
                   className="prev-button"
@@ -154,7 +176,13 @@ console.log('hy')
                   <button
                     className="check-button"
                     onClick={handleCheckClick}
-                    disabled={selectedOptions.length === 0 || isOptionLocked} // Disable if no option selected or options are locked
+                    disabled={
+                      question.type === "INT"
+                        ? integerAnswer === ""
+                        : question.type === "SUBJ"
+                        ? false
+                        : selectedOptions.length === 0 || isOptionLocked
+                    }
                   >
                     Check
                   </button>
@@ -164,24 +192,39 @@ console.log('hy')
                   </button>
                 </div>
               </div>
-              {isExplanationVisible && question.answer && (
+
+              {isExplanationVisible && question.explanation && (
                 <div className="explanation">
                   <h3>Explanation</h3>
                   <div className="explanation-image-container">
                     <img
-                      src={`http://127.0.0.1:8000${question.answer}`} // Assuming question.answer contains the explanation image path
+                      src={`http://127.0.0.1:8000${question.explanation}`}
                       alt="Explanation"
                       className="explanation-image"
                     />
                   </div>
                 </div>
               )}
-              {isExplanationVisible && !question.answer && (
+
+              {isExplanationVisible && !question.explanation && (
                 <div className="explanation">
                   <h3>Explanation</h3>
                   <p>No explanation available.</p>
                 </div>
               )}
+
+              {/* {question.type === "SUBJ" && (
+                <div className="subjective-question">
+                  <h3>Question</h3>
+                  <div className="subjective-question-content">
+                    <img
+                      src={`http://127.0.0.1:8000${question.question}`}
+                      alt="Question"
+                      className="subjective-question-image"
+                    />
+                  </div>
+                </div>
+              )} */}
             </>
           ) : (
             <p>Loading question...</p>

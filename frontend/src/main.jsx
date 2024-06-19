@@ -27,6 +27,7 @@ import AllChapterQues from "./Resources/AllChapterQues.jsx";
 import Level from "./Resources/Level.jsx";
 import AllPYQs from "./Resources/AllPYQs.jsx";
 import MainsAdvancedQues from "./Resources/Pyq.jsx";
+import AllMentor from "./Mentorship/compatibility/Allmentors.jsx";
 
 const router = createBrowserRouter([
   {
@@ -130,6 +131,10 @@ const router = createBrowserRouter([
   {
     path: "Mentorship/Compatibility",
     element: <Compatibility />,
+  },
+  {
+    path: "Mentorship/Compatibility/allocated-mentor",
+    element: <AllMentor />,
   },
 ]);
 

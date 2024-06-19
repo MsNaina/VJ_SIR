@@ -126,6 +126,9 @@
   font-weight: 500;
   font-size: 1.2vw;
 }
+.forgot{
+  font-size: 1rem;
+}
 .register-link a {
   color: rgba(12, 98, 5, 1);
 }
