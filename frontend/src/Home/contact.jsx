@@ -1,4 +1,5 @@
 import "./contact.css";
+import { Link } from "react-router-dom";
 export default function Contact() {
   return (
     <>
@@ -54,10 +55,12 @@ export default function Contact() {
 
               <div className="social-media">
                 <h3>Follow Us :</h3>
-                <i class="fa-brands fa-2x fa-instagram"></i>
-                <i class="fa-brands fa-2x fa-youtube"></i>
-                <i class="fa-brands fa-2x fa-linkedin"></i>
-                <i class="fa-brands fa-2x fa-facebook"></i>
+                <button class="fa-brands fa-2x fa-instagram">
+                  <Link to="https://www.instagram.com/vishaljoshi.vjsir?igsh=MXdpaDh0anYzZWphOA=="></Link>
+                </button>
+                <button class="fa-brands fa-2x fa-youtube"></button>
+                <button class="fa-brands fa-2x fa-linkedin"></button>
+                <button class="fa-brands fa-2x fa-facebook"></button>
               </div>
             </div>
 
@@ -66,7 +69,7 @@ export default function Contact() {
 
               <input type="text" name="" id="" required placeholder="Name" />
               <input type="email" name="" id="" required placeholder="E-mail" />
-              {/* <input type="text" name="" id=""required placeholder="Message" /> */}
+
               <textarea
                 name=""
                 id="textarea"

@@ -1,18 +1,36 @@
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import Autoplay from "./autoplay";
 import Typewriter from "./typewriter";
 import Logo from "../assets/images/logo.png";
 import Profile from "../assets/images/profile.png";
 import VJsir from "../assets/images/VJ SIR.png";
+
 export default function Header() {
-   const scrollToTop = () => {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth", 
-     });
-   };
+  const auth = localStorage.getItem("token");
+  const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+      setUserName(user.name);
+    }
+  }, []);
+
+  const logout = () => {
+    localStorage.clear();
+    navigate("/Signup");
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <section id="Header">
@@ -26,8 +44,11 @@ export default function Header() {
               <div className="Header-profile">
                 <img src={Profile} alt="" />
                 <button>
-                  {" "}
-                  <Link to="/profile">Profile</Link>
+                  {userName ? (
+                    <Link to="/profile">{userName}</Link>
+                  ) : (
+                    <Link to="/profile">Profile</Link>
+                  )}
                 </button>
               </div>
             </div>
@@ -50,7 +71,7 @@ export default function Header() {
               </div>
 
               <div className="header-btn">
-                <button className="  btn1">Buy Now</button>
+                <button className="btn1">Buy Now</button>
                 <button className="btn2" onClick={scrollToTop}>
                   <Link to="/Mentorship">Know More</Link>
                 </button>
@@ -75,7 +96,13 @@ export default function Header() {
                     <Link to="/Aboutus">About Us</Link>
                   </li>
                   <li>
-                    <Link to="/Login">Login</Link>
+                    {auth ? (
+                      <Link onClick={logout} to="/Signup">
+                        Logout
+                      </Link>
+                    ) : (
+                      <Link to="/login">Login</Link>
+                    )}
                   </li>
                 </ul>
               </div>

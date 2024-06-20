@@ -67,6 +67,9 @@
 .login-bottom button {
   background: rgba(12, 98, 5, 1);
 }
+.login-btn:hover{
+  background-color: rgb(38, 213, 38);
+}
 
 .register-link {
   padding: 1.5vw 0vw;

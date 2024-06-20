@@ -54,7 +54,7 @@
   color: black;
 }
 .option-label.locked:hover{
-  background-color: none;
+  background-color: inherit;
 }
 .option-label.locked {
   cursor: default;
