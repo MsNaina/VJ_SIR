@@ -1,23 +1,43 @@
-.IITs-logo{
-    width: 100%;
-    height: 20vw;
-    padding-top: 5vw;
+.IITs-logo {
+  width: 100%;
+  padding: 5vw 0vw;
 }
+.IITs-logo h2 {
+  color: rgba(70, 70, 70, 1);
+  text-align: center;
+  font-size: 4vw;
+  font-weight: 400;
+  font-family: poppins;
+}
+.iits-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  margin-top: 8vw;
+}
+.iits-logo img {
+  width: 150px;
+}
+@media (max-width: 1280px) {
+  .iits-logo img {
+    width: 200px;
+  }
+  .IITs-logo h2{
+    font-size: 5vw;
+  }
+}
+@media (max-width: 769px){
 .IITs-logo h2{
-    color: rgba(70, 70, 70, 1);
-text-align: center;
-font-size: 4vw;
-font-weight: 400;
-font-family:poppins;
+    font-size: 5.5vw;
+  }
 }
-.iits-logo{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2vw;
-    margin-top: 4vw;
-}
-.iits-logo img{
-    width: 11vw;
+@media (max-width: 430px){
+.iits-logo img {
+    width: 180px;
+  }
+  .IITs-logo{
+    padding: 8vw 0vw;
+  }
 }
