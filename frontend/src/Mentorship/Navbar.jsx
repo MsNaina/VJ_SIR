@@ -1,11 +1,27 @@
-import { NavLink } from "react-router-dom";
-import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Logo from "../assets/images/logo.png";
 import Profile from "../assets/images/profile.png";
 import "./Navbar.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const auth = localStorage.getItem("token");
+  const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+      setUserName(user.name);
+    }
+  }, []);
+
+  const logout = () => {
+    localStorage.clear();
+    navigate("/Signup");
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -19,7 +35,6 @@ export default function Navbar() {
         </div>
 
         <div className={`menu ${menuOpen ? "open" : ""}`}>
-          
           <div className="Nav-item">
             <ul>
               <li>
@@ -47,9 +62,15 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="links" to="/Login" onClick={toggleMenu}>
-                  Login
-                </NavLink>
+                {auth ? (
+                  <NavLink onClick={logout} to="/Signup">
+                    Logout
+                  </NavLink>
+                ) : (
+                  <NavLink to="/login" onClick={toggleMenu}>
+                    Login
+                  </NavLink>
+                )}
               </li>
             </ul>
           </div>
@@ -57,9 +78,15 @@ export default function Navbar() {
           <div className="profile">
             <img src={Profile} alt="Profile" />
             <button>
-              <NavLink to="/profile" onClick={toggleMenu}>
-                Profile
-              </NavLink>
+              {userName ? (
+                <NavLink to="/profile" onClick={toggleMenu}>
+                  {userName}
+                </NavLink>
+              ) : (
+                <NavLink to="/profile" onClick={toggleMenu}>
+                  Profile
+                </NavLink>
+              )}
             </button>
           </div>
         </div>

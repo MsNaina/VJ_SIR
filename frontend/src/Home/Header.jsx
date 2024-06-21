@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import Autoplay from "./autoplay";
 import Typewriter from "./typewriter";
 import Logo from "../assets/images/logo.png";
 import Profile from "../assets/images/profile.png";
@@ -110,7 +109,7 @@ export default function Header() {
               <img src={VJsir} alt="" />
             </div>
 
-            <Autoplay />
+            {/* <Autoplay /> */}
           </div>
         </div>
       </section>

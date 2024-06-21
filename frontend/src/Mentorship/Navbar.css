@@ -116,14 +116,14 @@ body.menu.open {
     font-size: 1.7vw;
   }
 }
-@media (max-width: 769px) {
+/* @media (max-width: 769px) {
   .menu {
     font-size: 1.8vw;
   }
   .profile button {
     font-size: 1.8vw;
   }
-}
+} */
 @media (max-width: 769px) {
   .hamburger {
     display: flex;

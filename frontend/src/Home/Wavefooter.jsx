@@ -56,9 +56,17 @@ export default function WaveFooter() {
               <h3>Subscribe Now</h3>
 
               <div className="part41">
-                <i class="fa-brands fa-2x fa-instagram"></i>
+                <button>
+                  <NavLink to="https://www.instagram.com/vishaljoshi.vjsir?igsh=MXdpaDh0anYzZWphOA==">
+                    <i class="fa-brands fa-2x fa-instagram"></i>
+                  </NavLink>
+                </button>
                 <i class="fa-brands fa-2x fa-youtube"></i>
-                <i class="fa-brands fa-2x fa-linkedin"></i>
+                <button>
+                  <NavLink to="https://www.linkedin.com/in/vishaljoshivjsir?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BsU%2Fw8UrWT0GlOYG2sv9vuw%3D%3D">
+                    <i class="fa-brands fa-2x fa-linkedin"></i>
+                  </NavLink>
+                </button>
                 <i class="fa-brands fa-2x fa-facebook"></i>
               </div>
             </div>

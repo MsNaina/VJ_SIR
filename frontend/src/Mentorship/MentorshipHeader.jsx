@@ -1,15 +1,14 @@
 import "./MentorshipHeader.css";
 import { NavLink } from "react-router-dom";
-import VJsir from "../assets/images/M-VJ SIR.png";
-import Discount from "../assets/images/mentorshipdiscount.png";
-import Pencil from "../assets/images/pencil.png";
-import Plus from "../assets/images/plus 1.png";
+import Mentorship from "../assets/images/Mentorship.png";
+import Discountt from "../assets/images/Discount (2).png"
+import comp from "../assets/images/comp.png";
 export default function MentorshipHeader() {
   return (
     <>
       <section className="Mentorship-Header">
         <div className="Mentorship-header-left">
-          <img src={VJsir} alt="" />
+          <img src={Mentorship} alt="" />
         </div>
 
         <div className="Mentorship-header-right">
@@ -31,23 +30,14 @@ export default function MentorshipHeader() {
             <div className="mentorship-header-price">
               <h3>₹5,000/-</h3>
               <h4>₹8,000</h4>
+              <h2>for 3 Months</h2>
             </div>
-
-            <div className="Mentorship-header-discount">
-              <img src={Discount} alt="" />
-
-              <div className="mentorship-header-discount">
-                <img src={Pencil} alt="" />
-                <p>Discount of 37.5% applied</p>
-              </div>
-            </div>
+            <img src={Discountt} alt="" />
           </div>
-
           <div className="Mentorship-header-btn">
-            <button className="mentorship-header-btn1">
+            <button className="comp-btn">
               <NavLink to="./Compatibility">
-                <img src={Plus} alt="" />
-                Check Compatibility
+                <img src={comp} alt="" />
               </NavLink>
             </button>
 
