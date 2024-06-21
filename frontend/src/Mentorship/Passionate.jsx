@@ -1,6 +1,6 @@
 import "./passionate.css";
 import CardsCollection from "./CardsCollection";
-import mentorshipFooter from "../assets/images/mentorship-footer.png"
+import Go from "../assets/images/Go.png";
 export default function Passionate() {
   return (
     <>
@@ -29,11 +29,7 @@ export default function Passionate() {
             </h1>
 
             <div className="mentorship-footerimg">
-              <img src={mentorshipFooter} alt="" />
-
-              <h2>
-                Find your compatible mentor <span>G0!!</span>
-              </h2>
+              <img src={Go} alt="" />
             </div>
           </div>
 

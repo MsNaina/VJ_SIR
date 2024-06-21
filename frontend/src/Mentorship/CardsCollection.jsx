@@ -1,31 +1,35 @@
 import { useState } from "react";
-import sneha from "/sneha.jpeg";
+import "./CardCollection.css"
+import Aayushi from "../assets/images/Aayushi IITR.jpg"
+import Nikhil from "../assets/images/Nikhil Upadhyay IITB.jpg";
+import Aakash from "../assets/images/Akash IITM.jpg";
+import Vrutika from "../assets/images/Vrutika Rao IITK.jpg";
 const cards = [
   {
-    title: "Sneha Verma",
-    image: sneha,
+    title: "Nikhil Upadhyay",
+    image:  Nikhil ,
+    college: "IIT Bombay",
+  },
+  {
+    title: "Aayushi",
+    image: Aayushi,
     college: "IIT Roorkee",
   },
   {
-    title: "Sneha Verma",
-    image: sneha,
-    college: "IIT Roorkee",
+    title: "Aakash Pal",
+    image: Aakash,
+    college: "IIT Delhi",
   },
   {
-    title: "Sneha Verma",
-    image: sneha,
-    college: "IIT Roorkee",
+    title: "Vrutika",
+    image: Vrutika,
+    college: "IIT Kanpur",
   },
-  {
-    title: "Sneha Verma",
-    image: sneha,
-    college: "IIT Roorkee",
-  },
-];
-
-const CardsCollection = () => {
+]
+export default function CardsCollection () {
   const [activeCard, setActiveCard] = useState(0);
   return (
+
     <div className="card-container">
       {cards.map((card, index) => (
         <Card
@@ -42,16 +46,16 @@ const CardsCollection = () => {
 };
 
 const Card = (props) => {
-  // eslint-disable-next-line react/prop-types
   const { image, title, active, onClick, college } = props;
   return (
-    <div
-      style={{
+    <>
+
+     <div
+       style={{
         backgroundImage: `url(${image})`,
-        width: active ? "25rem" : "10rem",
       }}
       onClick={onClick}
-      className="card"
+      className={`card ${active ? "active" : ""}`}
     >
       <div style={{ opacity: active ? 0 : 1 }} className="card-overlay">
         <div className="card-title">{title}</div>
@@ -61,7 +65,6 @@ const Card = (props) => {
         <span className="card-college">-{college}</span>
       </div>
     </div>
+</>
   );
 };
-
-export default CardsCollection;

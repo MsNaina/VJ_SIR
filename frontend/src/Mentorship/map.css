@@ -2,6 +2,7 @@
    width: 100%;
    display: flex;
    justify-content: center;
+   padding-bottom: 5vw;
   
 }
 #Map img{

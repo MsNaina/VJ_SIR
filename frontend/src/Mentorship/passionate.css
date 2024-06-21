@@ -2,7 +2,7 @@
   width: 100%;
   overflow: hidden;
   font-family: poppins;
-  padding: 4vw 2vw 0vw 2vw;
+  padding: 4vw 2vw;
 }
 .passionate-heading h1 {
   font-size: 4vw;
@@ -10,8 +10,6 @@
 }
 .passionate-heading span {
   color: #0c6205;
-  font-size: 4vw;
-  font-weight: 700;
 }
 .passionate-heading h2 {
   font-size: 4vw;
@@ -22,97 +20,165 @@
   width: 30%;
   padding-top: 4vw;
   gap: 1vw;
+  align-items: center;
 }
 .passionate-line {
   width: 0.1vw;
-  height: 4.5vw;
+  height: 90px;
   background-color: rgba(0, 0, 0, 1);
 }
-.mentorship-footer{
+.mentorship-footer {
   margin-top: 8vw;
   display: flex;
   justify-content: space-between;
 }
-.mentorship-footer h1{
+.mentorship-footer h1 {
   font-size: 6vw;
 }
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-.card {
-  transition: all 0.3s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 30rem;
-  border-radius: 1rem;
-  overflow: hidden;
-  position: relative;
-}
-.card-overlay {
-  width: 100%;
-  height: 100%;
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background: linear-gradient(to top, rgb(78, 128, 78), rgb(32, 87, 32));
-}
-.card-title {
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 700;
-  width: fit-content;
-  text-align: center;
-  transform: rotateZ(-90deg) translateX(50%);
-  white-space: nowrap;
-}
-.card-description {
-  transition: all 0.3s ease-in-out;
-  color: black;
-  z-index: 10;
-  font-size: 2rem;
-  font-weight: 700;
-  bottom: 1rem;
-  right: 2px;
-  padding: 1rem 0.5rem;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 8px 0 0 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: absolute;
-}
-.card-college {
-  color: black;
-  font-size: 1rem;
-  font-weight: 600;
-  width: fit-content;
-  text-align: center;
-}
-.mentorship-footerimg{
+.mentorship-footerimg {
   position: relative;
   width: 25vw;
-  left: 20vw;
+  left: 18vw;
   top: 3vw;
   z-index: 10;
 }
-
-.mentorship-footerimg h2{
-  position: absolute;
-  top: 2vw;
-  left: 1vw;
+@media (max-width: 1290px) {
+  .mentorship-footerimg {
+    left: 16vw;
+    top: 8vw;
+  }
 }
-.mentorship-footerimg h2{
-  font-family: poppins;
-  font-size: 1.14vw;
-  font-weight: 500;
+@media (max-width: 1260px) {
+  .mentorship-footerimg {
+    left: 12vw;
+    top: 10vw;
+  }
 }
-.mentorship-footerimg span{
-  font-weight: 700;
-  position: relative;
-  left: 2vw;
+@media (max-width: 1220px) {
+  .mentorship-footerimg {
+    left: 10vw;
+  }
+}
+@media (max-width: 1150px) {
+  .mentorship-footerimg {
+    left: 10vw;
+  }
+  .passionate-pera {
+    width: 50%;
+    font-size: 1.2rem;
+  }
+  .passionate-heading h1,
+  .passionate-heading h2 {
+    font-size: 4.5rem;
+  }
+}
+@media (max-width: 1080px) {
+  .mentorship-footerimg {
+    left: 8vw;
+  }
+}
+@media (max-width: 1040px) {
+  .mentorship-footerimg {
+    left: 8vw;
+    top: 8vw;
+  }
+  .passionate-pera {
+    width: 60%;
+  }
+}
+@media (max-width: 975px) {
+  .mentorship-footer h1 {
+    font-size: 5vw;
+  }
+}
+@media (max-width: 940px) {
+  .mentorship-footerimg {
+    left: 10vw;
+    top: 12vw;
+  }
+}
+@media (max-width: 890px) {
+  .mentorship-footerimg {
+    left: 8vw;
+    top: 14vw;
+  }
+}
+@media (max-width: 860px) {
+  .mentorship-footerimg {
+    left: 9vw;
+    top: 10vw;
+  }
+}
+@media (max-width: 830px) {
+  .mentorship-footerimg {
+    left: 7vw;
+  }
+}
+@media (max-width: 800px) {
+  .mentorship-footerimg {
+    left: 5vw;
+  }
+  .passionate-pera {
+    width: 70%;
+    font-size: 1.2rem;
+  }
+  .passionate-heading h1,
+  .passionate-heading h2 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .mentorship-footerimg {
+    left: 12vw;
+  }
+}
+@media (max-width: 745px) {
+  .mentorship-footerimg {
+    left: 10vw;
+    top: 14vw;
+  }
+}
+@media (max-width: 715px) {
+  .mentorship-footerimg {
+    left: 8vw;
+  }
+  .passionate-pera {
+    width: 80%;
+  }
+  .passionate-heading h1,
+  .passionate-heading h2 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 695px) {
+  .mentorship-footerimg {
+    left: 5vw;
+  }
+}
+@media (max-width: 610px) {
+  .passionate-pera {
+    font-size: 1rem;
+  }
+  .passionate-heading h1,
+  .passionate-heading h2 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 540px) {
+  .passionate-pera {
+    font-size: 1rem;
+  }
+  .passionate-heading h1,
+  .passionate-heading h2 {
+    font-size: 8vw;
+  }
+}
+@media (max-width: 400px) {
+  .passionate-pera {
+    font-size: 0.8rem;
+    width: 90%;
+  }
+  .passionate-line {
+    height: 70px;
+  }
 }
