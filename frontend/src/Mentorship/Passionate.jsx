@@ -1,5 +1,5 @@
 import "./passionate.css";
-import CardsCollection from "./CardsCollection";
+import Vrutika from "../assets/images/vrutika.png";
 import Go from "../assets/images/Go.png";
 export default function Passionate() {
   return (
@@ -22,18 +22,15 @@ export default function Passionate() {
         </div>
 
         <div className="mentorship-footer">
-          <div>
-            <h1>
-              Connect <br /> and <br />
-              Grow.
-            </h1>
+          <h1>
+            Connect <br /> and <br />
+            Grow.
+          </h1>
 
-            <div className="mentorship-footerimg">
-              <img src={Go} alt="" />
-            </div>
+          <div className="mentorship-footerimg">
+            <img className="go" src={Go} alt="" />
+            <img className="vrutika" src={Vrutika} alt="" />
           </div>
-
-          <CardsCollection />
         </div>
       </section>
     </>

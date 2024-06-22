@@ -1,24 +1,23 @@
 #Passionate {
   width: 100%;
-  overflow: hidden;
   font-family: poppins;
   padding: 4vw 2vw;
 }
 .passionate-heading h1 {
-  font-size: 4vw;
+  font-size: 4.5vw;
   font-weight: 700;
 }
 .passionate-heading span {
   color: #0c6205;
 }
 .passionate-heading h2 {
-  font-size: 4vw;
+  font-size: 4.5vw;
   font-weight: 500;
 }
 .passionate-pera {
   display: flex;
   width: 30%;
-  padding-top: 4vw;
+  padding: 4vw 0vw;
   gap: 1vw;
   align-items: center;
 }
@@ -28,157 +27,98 @@
   background-color: rgba(0, 0, 0, 1);
 }
 .mentorship-footer {
-  margin-top: 8vw;
   display: flex;
   justify-content: space-between;
 }
 .mentorship-footer h1 {
-  font-size: 6vw;
+  font-size: 7vw;
 }
 .mentorship-footerimg {
+  width: 55%;
+  height: 40vw;
+  display: flex;
+  justify-content: flex-end;
   position: relative;
-  width: 25vw;
-  left: 18vw;
-  top: 3vw;
-  z-index: 10;
 }
-@media (max-width: 1290px) {
-  .mentorship-footerimg {
-    left: 16vw;
-    top: 8vw;
+.go {
+  width: 60%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.vrutika {
+  border: 6px solid rgb(53, 106, 59);
+  border-radius: 20px;
+  width: 60%;
+}
+@media (max-width: 1200px) {
+  .vrutika {
+    width: 70%;
   }
-}
-@media (max-width: 1260px) {
   .mentorship-footerimg {
-    left: 12vw;
-    top: 10vw;
+    height: 50vw;
   }
-}
-@media (max-width: 1220px) {
-  .mentorship-footerimg {
-    left: 10vw;
-  }
-}
-@media (max-width: 1150px) {
-  .mentorship-footerimg {
-    left: 10vw;
+  .go {
+    left: -10vw;
+    width: 70%;
+    height: 20%;
   }
   .passionate-pera {
     width: 50%;
-    font-size: 1.2rem;
   }
   .passionate-heading h1,
   .passionate-heading h2 {
-    font-size: 4.5rem;
-  }
-}
-@media (max-width: 1080px) {
-  .mentorship-footerimg {
-    left: 8vw;
-  }
-}
-@media (max-width: 1040px) {
-  .mentorship-footerimg {
-    left: 8vw;
-    top: 8vw;
-  }
-  .passionate-pera {
-    width: 60%;
-  }
-}
-@media (max-width: 975px) {
-  .mentorship-footer h1 {
     font-size: 5vw;
   }
 }
-@media (max-width: 940px) {
-  .mentorship-footerimg {
-    left: 10vw;
-    top: 12vw;
-  }
-}
-@media (max-width: 890px) {
-  .mentorship-footerimg {
-    left: 8vw;
-    top: 14vw;
-  }
-}
-@media (max-width: 860px) {
-  .mentorship-footerimg {
-    left: 9vw;
-    top: 10vw;
-  }
-}
-@media (max-width: 830px) {
-  .mentorship-footerimg {
-    left: 7vw;
-  }
-}
-@media (max-width: 800px) {
-  .mentorship-footerimg {
-    left: 5vw;
-  }
-  .passionate-pera {
-    width: 70%;
-    font-size: 1.2rem;
-  }
+
+@media (max-width: 1000px) {
   .passionate-heading h1,
   .passionate-heading h2 {
-    font-size: 4rem;
+    font-size: 6vw;
   }
-}
-@media (max-width: 768px) {
-  .mentorship-footerimg {
-    left: 12vw;
-  }
-}
-@media (max-width: 745px) {
-  .mentorship-footerimg {
-    left: 10vw;
-    top: 14vw;
-  }
-}
-@media (max-width: 715px) {
-  .mentorship-footerimg {
-    left: 8vw;
-  }
-  .passionate-pera {
-    width: 80%;
-  }
-  .passionate-heading h1,
-  .passionate-heading h2 {
-    font-size: 3.5rem;
-  }
-}
-@media (max-width: 695px) {
-  .mentorship-footerimg {
-    left: 5vw;
-  }
-}
-@media (max-width: 610px) {
-  .passionate-pera {
-    font-size: 1rem;
-  }
-  .passionate-heading h1,
-  .passionate-heading h2 {
-    font-size: 3rem;
-  }
-}
-@media (max-width: 540px) {
-  .passionate-pera {
-    font-size: 1rem;
-  }
-  .passionate-heading h1,
-  .passionate-heading h2 {
+  .mentorship-footer h1 {
     font-size: 8vw;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 760px) {
+  .passionate-heading h1,
+  .passionate-heading h2 {
+    font-size: 7vw;
+  }
   .passionate-pera {
-    font-size: 0.8rem;
-    width: 90%;
+    width: 60%;
+    gap: 3vw;
+  }
+  .vrutika {
+    width: 80%;
+  }
+  .go {
+    left: -15vw;
+  }
+}
+@media (max-width: 550px) {
+  .passionate-pera {
+    width: 80%;
+  }
+}
+@media (max-width: 490px) {
+  .passionate-pera p {
+    font-size: 2.5vw;
   }
   .passionate-line {
-    height: 70px;
+    height: 60px;
+  }
+}
+@media (max-width: 380px) {
+  .passionate-pera p {
+    font-size: 2.7vw;
+  }
+  .passionate-line {
+    height: 60px;
+  }
+  .passionate-pera {
+    gap: 4vw;
   }
 }
