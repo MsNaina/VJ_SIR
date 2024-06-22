@@ -123,7 +123,9 @@ body.menu.open {
   .hamburger {
     display: flex;
   }
-
+.logo {
+    width: 40px;
+  }
   .menu {
     display: flex;
     flex-direction: column;
