@@ -8,7 +8,6 @@ import FAQ from "./FAQ";
 import Contact from "./contact";
 import WaveFooter from "./Wavefooter";
 import Footer from "./footer";
-import Autoplay from "./autoplay";
 import Testimonial from "./Testimonial";
 import TestimonialCard from "./TestimonialCard";
 // import Typewriter from './typewriter';
@@ -27,7 +26,7 @@ function Home() {
       <Contact />
       <WaveFooter />
       <Footer />
-      {/* <Autoplay/> */}
+      
       {/* <Typewriter/> */}
     </>
   );
