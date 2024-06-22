@@ -1,7 +1,8 @@
 #Header {
   width: 100%;
   font-family: Red Hat Display;
-  overflow: hidden;
+  /* overflow: hidden; */
+  background-color: lightblue;
 }
 .header {
   display: flex;
@@ -9,7 +10,7 @@
   justify-content: space-between;
   padding: 0vw 2vw;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
   gap: 4vw;
 }
 .header-left {
@@ -95,7 +96,6 @@
   }
   .header-text span {
     font-size: 4vw;
-   
   }
 }
 @media (max-width: 769px) {
@@ -108,6 +108,7 @@
   .header-left {
     order: 2;
     padding: 40px 0px;
+    gap: 4vw;
   }
   .header-right img {
     height: 60%;
@@ -123,13 +124,15 @@
   }
   .header-text span {
     font-size: 6vw;
-    font-weight: bold;
+    
   }
   .header-typewriter span {
-    font-size: 6vw;
+    font-size: 6.5vw;
+  
   }
   .header-typewriter {
-    padding: 1vw 0vw;
+    padding: 2vw 0vw;
+    
   }
   .header-btn button {
     font-size: 2.5vw;

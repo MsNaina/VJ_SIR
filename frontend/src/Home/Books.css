@@ -1,101 +1,99 @@
-#Books{
-    width: 100%;
+#Books {
+  width: 100%;
+  background-color: lightblue;
 }
-.Books{
-    width: 100%;
-    font-family: Red Hat Display;
-    
+.Books {
+  width: 100%;
+  font-family: Red Hat Display;
 }
-.Books-text h1{
-    font-family: Red Hat Display;
-    font-size: 6vw;
-    font-weight: 700;
+.Books-text h1 {
+  font-size: 8vw;
+  font-weight: 700;
 }
-.Books-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Books-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2vw; */
+  background-color: lightcyan;
+  position: relative;
 }
-.Books-text img{
-    scale: .4;
+.Books-text img {
+  width: 8vw;
 }
-.Books-text-img2{
-    position: relative;
-    top: 3vw;
-    right: 3vw;
+.Books-text-img2 {
+  position: absolute;
+  top: 3vw;
+  right: 0vw;
 }
-.Books-text-img1{
-    position: relative;
-    bottom: 3vw;
-    left: 3vw;
+.Books-text-img1 {
+  position: absolute;
+  bottom: 3vw;
+  left: 0vw;
 }
-.books-btn{
- text-align: center;
- margin-bottom: 5vw;
+.books-btn {
+  text-align: center;
+  margin-bottom: 5vw;
 }
-.books-btn button{
-    border: 2px solid black;
-    padding: .5vw 1vw;
-    border-radius: 20px;
-    font-weight: 500;
-    font-size: 1.2vw;
-   
+.books-btn button {
+  border: 2px solid black;
+  padding: 0.5vw 1vw;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 1.2vw;
 }
-.books-btn button:hover{
-     background-color: black;
-    color: white;
+.books-btn button:hover {
+  background-color: black;
+  color: white;
 }
-.carousel{
-   height: 32vw;
+.carousel {
+  height: 32vw;
 }
-.carousel .carousel-item{
+.carousel .carousel-item {
   width: 16vw;
   margin-top: -8vw;
 }
-.carousel-item img{
+.carousel-item img {
   height: 22vw;
-    
 }
 .carousel .indicators .indicator-item {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    height: 8px;
-    width: 8px;
-    margin: 1vw 4px;
-    background-color: rgba(16, 9, 9, 0.5);
-    -webkit-transition: background-color .3s;
-    transition: background-color .3s;
-    border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 1vw 4px;
+  background-color: rgba(16, 9, 9, 0.5);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  border-radius: 50%;
 }
 .carousel .indicators {
-    position: absolute;
-    text-align: center;
-    left: 0;
-    right: 0;
-    bottom: 2vw;
-    margin: 0;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 2vw;
+  margin: 0;
 }
-@media(max-width:1497px){
-    .carousel .indicators {
-        bottom: 9vw;       
+@media (max-width: 1497px) {
+  .carousel .indicators {
+    bottom: 9vw;
+  }
 }
+@media (max-width: 1445px) {
+  .Books-text img {
+    scale: 0.4;
+  }
+  .Books-text h1 {
+    font-size: 6vw;
+  }
 }
-@media(max-width:1445px) {
-
-    .Books-text img{
-        scale: .4;
-    }
-    .Books-text h1{
-        font-size: 6vw;
-    }
-}
-@media(max-width:1300px){
-
-    .carousel .indicators {
-        bottom: 8vw;       
-}
-.Books{
+@media (max-width: 1300px) {
+  .carousel .indicators {
+    bottom: 8vw;
+  }
+  .Books {
     height: 60vw;
-}
+  }
 }

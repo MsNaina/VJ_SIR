@@ -5,7 +5,6 @@ import Chitrang from "../assets/images/chitrang.png";
 import Group8 from "../assets/images/Group 8.png";
 import Himanshu from "../assets/images/himanshu.png";
 import Discount from "../assets/images/discount.png";
-import Pencil from "../assets/images/pencil.png";
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -91,15 +90,11 @@ export default function Mentorship() {
                 <div className="price">
                   <h3>₹5,000/-</h3>
                   <h4>₹8,000</h4>
+                  <h3>for 3 Months</h3>
                 </div>
 
                 <div className="discount">
                   <img src={Discount} alt="" />
-
-                  <div className="Discount">
-                    <img src={Pencil} alt="" />
-                    <p>Discount of 37.5% applied</p>
-                  </div>
                 </div>
               </div>
 

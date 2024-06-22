@@ -1,219 +1,153 @@
-#Mentorship{
-    width: 100%;
-    /* height: 57vw; */
-    padding-top: 8rem;
+#Mentorship {
+  width: 100%;
+  padding-top: 8vw;
+  background-color: lightcoral;
 }
-.mentorship-text{
-text-align: center;
-font-family:Red Hat Display;
-align-items: center;
-display: flex;
-flex-direction: column;
-gap: 1rem;
+.mentorship-text {
+  text-align: center;
+  font-family: Red Hat Display;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.mentorship-text h1{
-   font-size: 5vw;
-   font-weight: 500; 
+.mentorship-text h1 {
+  font-size: 5vw;
+  font-weight: 500;
 }
-.mentorship-text h2{
-    font-size: 4vw;
+.mentorship-text h2 {
+  font-size: 4vw;
 }
-.mentorship-text p{
-    font-size: 1.2vw;
-    font-style: italic;
-    margin: 0vw 30vw;
-    font-weight: 400;
+.mentorship-text p {
+  font-size: 1.2vw;
+  font-style: italic;
+  margin: 0vw 30vw;
+  font-weight: 400;
 }
-.mentorship-imgs{
- display: flex;
- justify-content: space-around;
- margin-top: 3vw;
+.mentorship-imgs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3vw;
 }
-.mentorship-img{
-scale: .92;
+.mentorship-img {
+  scale: 0.92;
 }
-.mentorship-img2{
-    scale: .92;
-    overflow: hidden;
-    align-items: center;
+.mentorship-img2 {
+  scale: 0.92;
+  overflow: hidden;
+  align-items: center;
 }
-.eyes{
+.eyes {
+  position: relative;
+  top: -58%;
+}
+.mentorship-price {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 30%;
+}
+.price {
+  display: flex;
+  gap: 1vw;
+}
+.discount {
+  position: relative;
+}
+.discount img {
+  scale: 0.9;
+  width: 13vw;
+}
+.price h3 {
+  font-size: 1.5vw;
+  font-weight: 700;
+  font-family: Red Hat Display;
+  color: #ffffff;
+}
+.price h4 {
+  font-size: 1vw;
+  color: #ac0000;
+  text-decoration: line-through;
+  text-decoration-color: white;
+}
+.mentorship-btn {
+  display: flex;
+  position: relative;
+  top: -26%;
+  justify-content: center;
+  gap: 2vw;
+}
+.mentorship-btn button {
+  border-radius: 30px;
+  padding: 0.4vw 3vw;
+  font-weight: 400;
+  font-size: 1.2vw;
+}
+.btn3 {
+  background-color: white;
+}
+.btn4 {
+  background-color: black;
+  color: white;
+}
+@media (max-width: 1285px) {
+  .discount img {
+    scale: 0.7;
+  }
+  .btn3,
+  .btn4 {
+    padding: 0.4vw 3vw;
+    font-size: 1.4vw;
+  }
+}
+/* @media (max-width: 1270px) {
+  .price h3 {
     position: relative;
-    top: -58%;
-}
-.mentorship-price{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 30%;
-   
-}
-.price{
-    display: flex;
-}
-.discount{
-    position: relative;
-}
-.discount img{
-    scale: .9;
-    width: 13vw;
-}
-.Discount{
-    display: flex;
-    gap: 1vw;
-    color: #0C6205;
-    font-size: .9vw;
-    font-weight: 600;
-}
-.Discount img{
-position: absolute;
- top: .5vw;
- left: 2vw;
- /* scale: .09; */
- width: 1.5vw;
-}
-.Discount p{
-    position: absolute;
-    top: 0.7vw;
-    left: 4vw;
-    font-size: .65vw;
-}
-.price h3{
-    font-size: 1.5vw;
+    font-size: 2vw;
     font-weight: 700;
-    font-family:Red Hat Display;
-    color:#FFFFFF;
-}
-.price h4{
-font-size: 1vw;
-color:#AC0000;
-text-decoration: line-through;
-text-decoration-color: white;
-}
-.mentorship-btn{
-    display: flex;
-    position: relative;
-    top: -26%;
-   justify-content: center;
-   gap: 2vw;
-}
-.btn3{
-    background-color: white;
-    border-radius: 30px;
-    padding: .4vw 3vw;
-    font-weight: 400;
-    font-size: 1.2vw;
-}
-.btn4{
-    background-color: black;
-    border-radius: 30px;
-    padding: .4vw 3vw;
-    font-size: 1.2vw;
-    color: white;
-}
-@media(max-width:1365px){
-    .discount img{
-        scale: .7;
-    }
-    .Discount{
-        display: flex;
-        position: relative;
-        bottom: 48%;
-        left: 20%;
-        gap: .3vw;
-        color: #0C6205;
-        font-size: .9vw;
-        font-weight: 600;
-    }
-    .btn3{
-        padding: .4vw 3vw;
-        font-size: 1.4vw;
-      
-    }
-    .btn4{
-        padding: .4vw 3vw;
-        font-size: 1.4vw;
-    }
-}
-@media(max-width:1365px){
-    .price h3{
-        position: relative;
-        font-size: 2vw;
-        font-weight: 700;
-        top: 1.5vw;
-    }
-    .price h4{
-    font-size: 1vw;
-    position: relative;
     top: 1.5vw;
-    }
-    .discount{
-        position: relative;
-        top: 1vw;
-    }
-}
-@media(max-width:1270px){
-
-    .price h3{
-        position: relative;
-        font-size: 2vw;
-        font-weight: 700;
-        top: 1.5vw;
-        left: 1vw;
-    }
-    .price h4{
+    left: 1vw;
+  }
+  .price h4 {
     font-size: 1vw;
     position: relative;
     top: 1.5vw;
     left: 1vw;
-    }
-    .discount{
-        position: relative;
-        top: 1vw;
-    }
-
-}
-@media(max-width:1225px){
-    .discount img{
-        scale: .6;
-    }
-    .Discount{
-        display: flex;
-        position: relative;
-        bottom: 48%;
-        left: 22%;
-        gap: .2vw;
-        color: #0C6205;
-        font-size: .9vw;
-        font-weight: 600;
-    }
-    .Discount p{
-        position: relative;
-        top: .4vw;
-    }
-    .btn3{
-        padding: .4vw 3vw;
-        font-size: 1.4vw;
-        margin: 0vw 1vw 0vw 4vw;
-    }
-    .btn4{
-        padding: .4vw 3vw;
-        font-size: 1.4vw;
-        margin: 0vw 0vw 0vw 4vw;
-    }
-    .price h3{
-        position: relative;
-        font-size: 2vw;
-        font-weight: 700;
-        top: 2vw;
-        left: 1vw;
-    }
-    .price h4{
+  }
+  .discount {
+    position: relative;
+    top: 1vw;
+  }
+} */
+@media (max-width: 1225px) {
+  .discount img {
+    scale: 0.6;
+  }
+  .Discount p {
+    position: relative;
+    top: 0.4vw;
+  }
+  .btn3 {
+    padding: 0.4vw 3vw;
+    font-size: 1.4vw;
+    margin: 0vw 1vw 0vw 4vw;
+  }
+  .btn4 {
+    padding: 0.4vw 3vw;
+    font-size: 1.4vw;
+    margin: 0vw 0vw 0vw 4vw;
+  }
+  .price h3 {
+    position: relative;
+    font-size: 2vw;
+    font-weight: 700;
+    top: 2vw;
+    left: 1vw;
+  }
+  .price h4 {
     font-size: 1vw;
     position: relative;
     top: 2vw;
     left: 1vw;
-    }
+  }
 }
-
