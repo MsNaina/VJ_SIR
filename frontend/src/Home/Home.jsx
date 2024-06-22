@@ -3,14 +3,13 @@ import Header from "./Header";
 import Mentorship from "./Mentorship batch";
 import PODJEE from "./PODJEE";
 import Books from "./Books";
-import  Session from "./session"
+import Session from "./session";
 import FAQ from "./FAQ";
 import Contact from "./contact";
 import WaveFooter from "./Wavefooter";
 import Footer from "./footer";
 import Testimonial from "./Testimonial";
 import TestimonialCard from "./TestimonialCard";
-// import Typewriter from './typewriter';
 
 function Home() {
   return (
@@ -21,13 +20,10 @@ function Home() {
       <Books />
       <Session />
       <Testimonial />
-      {/* <TestimonialCard/> */}
-      <FAQ />
+      {/* <FAQ /> */}
       <Contact />
       <WaveFooter />
       <Footer />
-      
-      {/* <Typewriter/> */}
     </>
   );
 }

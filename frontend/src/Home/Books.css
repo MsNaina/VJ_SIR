@@ -1,10 +1,10 @@
 #Books {
   width: 100%;
-  background-color: lightblue;
+  font-family: Red Hat Display;
 }
 .Books {
   width: 100%;
-  font-family: Red Hat Display;
+  padding: 5vw 0vw;
 }
 .Books-text h1 {
   font-size: 8vw;
@@ -12,28 +12,25 @@
 }
 .Books-text {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  /* gap: 2vw; */
-  background-color: lightcyan;
   position: relative;
 }
 .Books-text img {
-  width: 8vw;
+  width: 8%;
 }
 .Books-text-img2 {
   position: absolute;
   top: 3vw;
-  right: 0vw;
+  right: 8%;
 }
 .Books-text-img1 {
   position: absolute;
   bottom: 3vw;
-  left: 0vw;
+  left: 8%;
 }
 .books-btn {
   text-align: center;
-  margin-bottom: 5vw;
 }
 .books-btn button {
   border: 2px solid black;
@@ -41,6 +38,7 @@
   border-radius: 20px;
   font-weight: 500;
   font-size: 1.2vw;
+  width: 130px;
 }
 .books-btn button:hover {
   background-color: black;
@@ -51,7 +49,7 @@
 }
 .carousel .carousel-item {
   width: 16vw;
-  margin-top: -8vw;
+  margin-top: -5vw;
 }
 .carousel-item img {
   height: 22vw;
@@ -64,7 +62,6 @@
   width: 8px;
   margin: 1vw 4px;
   background-color: rgba(16, 9, 9, 0.5);
-  -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   border-radius: 50%;
 }
@@ -73,27 +70,192 @@
   text-align: center;
   left: 0;
   right: 0;
-  bottom: 2vw;
+  bottom: 1vw;
   margin: 0;
 }
-@media (max-width: 1497px) {
-  .carousel .indicators {
-    bottom: 9vw;
+
+@media (max-width: 1260px) {
+  .carousel {
+    height: 36vw;
+  }
+  .carousel .carousel-item {
+    width: 18vw;
+    margin-top: -5vw;
+  }
+  .carousel-item img {
+    height: 24vw;
   }
 }
-@media (max-width: 1445px) {
-  .Books-text img {
-    scale: 0.4;
+@media (max-width: 1150px) {
+  .carousel {
+    height: 40vw;
   }
+  .carousel .carousel-item {
+    width: 20vw;
+  }
+  .carousel-item img {
+    height: 26vw;
+  }
+  .books-btn button {
+    width: 110px;
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 1050px) {
+  .carousel {
+    height: 45vw;
+  }
+  .carousel .carousel-item {
+    width: 22vw;
+  }
+  .carousel-item img {
+    height: 30vw;
+  }
+}
+@media (max-width: 960px) {
   .Books-text h1 {
-    font-size: 6vw;
+    font-size: 9vw;
+  }
+  .carousel {
+    height: 48vw;
+  }
+  .carousel .carousel-item {
+    width: 24vw;
+  }
+  .carousel-item img {
+    height: 32vw;
+  }
+  .books-btn {
+    margin-top: 2vw;
+  }
+  .books-btn button {
+    width: 110px;
+    font-size: 2vw;
+  }
+  .Books-text img {
+    width: 10%;
+  }
+  .Books-text-img2 {
+    position: absolute;
+    top: 4vw;
+    right: 0%;
+  }
+  .Books-text-img1 {
+    position: absolute;
+    bottom: 5vw;
+    left: 0%;
   }
 }
-@media (max-width: 1300px) {
-  .carousel .indicators {
-    bottom: 8vw;
+@media (max-width: 870px) {
+  .carousel {
+    height: 50vw;
   }
-  .Books {
+  .carousel .carousel-item {
+    width: 26vw;
+  }
+  .carousel-item img {
+    height: 34vw;
+  }
+}
+@media (max-width: 800px) {
+  .carousel .carousel-item {
+    width: 28vw;
+  }
+}
+@media (max-width: 769px) {
+  .carousel {
+    height: 55vw;
+  }
+  .carousel .carousel-item {
+    width: 32vw;
+  }
+  .carousel-item img {
+    height: 40vw;
+  }
+}
+@media (max-width: 670px) {
+  .Books-text h1 {
+    font-size: 9.5vw;
+  }
+  .carousel {
     height: 60vw;
+  }
+  .carousel .carousel-item {
+    width: 34vw;
+  }
+  .carousel-item img {
+    height: 42vw;
+  }
+  .books-btn button {
+    font-size: 2.5vw;
+  }
+}
+@media (max-width: 615px) {
+  .carousel {
+    height: 65vw;
+  }
+  .carousel .carousel-item {
+    width: 36vw;
+  }
+  .carousel-item img {
+    height: 45vw;
+  }
+  .books-btn button {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 580px) {
+  .carousel {
+    height: 70vw;
+  }
+  .carousel .carousel-item {
+    width: 40vw;
+  }
+  .carousel-item img {
+    height: 50vw;
+  }
+}
+@media (max-width: 520px) {
+  .carousel {
+    height: 75vw;
+  }
+  .carousel .carousel-item {
+    width: 44vw;
+  }
+  .carousel-item img {
+    height: 54vw;
+  }
+}
+@media (max-width: 480px) {
+  .carousel {
+    height: 80vw;
+  }
+  .carousel .carousel-item {
+    width: 48vw;
+  }
+  .carousel-item img {
+    height: 56vw;
+  }
+  .books-btn button {
+    font-size: 3.5vw;
+  }
+}
+@media (max-width: 435px) {
+  .carousel {
+    height: 95vw;
+  }
+  .carousel .carousel-item {
+    width: 55vw;
+  }
+  .carousel-item img {
+    height: 65vw;
+  }
+  .books-btn button {
+    font-size: 3.5vw;
+  }
+}
+@media (max-width: 385px) {
+  .books-btn button {
+    font-size: 4vw;
   }
 }

@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Uppercoma from "../assets/images/upper coma.png"
 import Downcoma from "../assets/images/down coma.png";

@@ -1,8 +1,7 @@
 #Header {
   width: 100%;
   font-family: Red Hat Display;
-  /* overflow: hidden; */
-  background-color: lightblue;
+  overflow: hidden;
 }
 .header {
   display: flex;
@@ -10,7 +9,6 @@
   justify-content: space-between;
   padding: 0vw 2vw;
   box-sizing: border-box;
-  /* overflow: hidden; */
   gap: 4vw;
 }
 .header-left {
@@ -170,5 +168,8 @@
   }
   .header-typewriter span {
     font-size: 7vw;
+  }
+  .Speaker img{
+    padding: 0.1rem;
   }
 }
