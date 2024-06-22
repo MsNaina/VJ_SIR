@@ -72,15 +72,17 @@ body.menu.open {
   gap: 5px;
   position: relative;
   z-index: 11;
+  background-color: black;
+  padding: 1vw;
+  border-radius: 5px;
 }
 
 .hamburger .line {
   width: 25px;
   height: 3px;
-  background-color: black;
+  background-color: white;
   transition: all 0.3s ease;
 }
-
 .hamburger.open .line:nth-child(1) {
   transform: rotate(45deg) translate(6px, 5px);
 }
@@ -116,14 +118,7 @@ body.menu.open {
     font-size: 1.7vw;
   }
 }
-/* @media (max-width: 769px) {
-  .menu {
-    font-size: 1.8vw;
-  }
-  .profile button {
-    font-size: 1.8vw;
-  }
-} */
+
 @media (max-width: 769px) {
   .hamburger {
     display: flex;

@@ -1,36 +1,3 @@
-/* .CompatibilityNav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: Red Hat Display;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.Compatibility-Nav-item {
-  padding: 0vw 3vw;
-}
-.Compatibility-Nav-item ul {
-  display: flex;
-  gap: 1vw;
-  font-size: 1.2vw;
-  font-weight: 500;
-}
-
-.Compatibility-logo img {
-  width: 3.5vw;
-  margin: 2vw 3vw;
-}
-.Compatibility-Nav-item ul li {
-  border-radius: 30px;
-  padding: 0.2vw 1vw;
-  background: rgba(240, 240, 240, 0.5);
-  box-shadow: 0px 5.95px 5.95px 0px rgba(0, 0, 0, 0.25);
-} */
-
 * {
   padding: 0;
   margin: 0;
@@ -101,10 +68,6 @@ body.Compatibility-menu.open {
   border-radius: 30px;
 }
 
-/* .Compatibility-Nav-item ul li:hover {
-  font-weight: 900;
-} */
-
 .hamburger {
   display: none;
   cursor: pointer;
@@ -112,12 +75,15 @@ body.Compatibility-menu.open {
   gap: 5px;
   position: relative;
   z-index: 11;
+  background-color: black;
+  padding: 1vw;
+  border-radius: 5px;
 }
 
 .hamburger .line {
   width: 25px;
   height: 3px;
-  background-color: black;
+  background-color: white;
   transition: all 0.3s ease;
 }
 

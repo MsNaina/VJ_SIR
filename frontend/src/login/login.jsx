@@ -30,7 +30,6 @@ export default function Login() {
     console.log(result);
 
     if (result.token) {
-      // Adjust this according to your backend response structure
       localStorage.setItem("token", JSON.stringify(result));
       navigate("/");
     } else {

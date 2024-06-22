@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import "./MentorshipPage.css"
 import Navbar from './Navbar'
 import MentorshipHeader from './MentorshipHeader'

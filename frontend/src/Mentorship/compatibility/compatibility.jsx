@@ -18,7 +18,7 @@ export default function CompatibilityStage1() {
   const [responseMessage, setResponseMessage] = useState("");
   const [allocatedMentor, setAllocatedMentor] = useState("");
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const indianStates = [
     "Andhra Pradesh",
     "Arunachal Pradesh",
@@ -76,7 +76,6 @@ export default function CompatibilityStage1() {
         setResponseMessage(response.data.message);
         setAllocatedMentor(response.data.mentor);
 
-        // Redirect to the new page with the response data
         navigate.push({
           pathname: "Mentorship/Compatibility/allocated-mentor",
           state: {
@@ -85,10 +84,10 @@ export default function CompatibilityStage1() {
           },
         });
       })
-      // .catch((error) => {
-      //   console.error("Error submitting form:", error);
-      //   setResponseMessage("Error submitting form.");
-      // });
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        setResponseMessage("Error submitting form.");
+      });
   };
 
   return (

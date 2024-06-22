@@ -35,18 +35,15 @@ export default function SignUp() {
     });
 
     result = await result.json();
-    console.log("API Response:", result); // Log the entire response object
-
-    // Check if result contains the expected 'token' field
+    console.log("API Response:", result);
     if (result.token) {
       console.log("success");
 
       localStorage.setItem("token", JSON.stringify(result.token));
-       localStorage.setItem("user", JSON.stringify(result.user));
+      localStorage.setItem("user", JSON.stringify(result.user));
       navigate("/login");
     } else {
       console.log("Registration failed");
-      // Handle registration error (e.g., show error message)
     }
   };
 
