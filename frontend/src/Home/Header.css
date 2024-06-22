@@ -1,207 +1,171 @@
-#Header{
-    width: 100%;
-    height: 120vh;
-     font-family:Red Hat Display;
+#Header {
+  width: 100%;
+  font-family: Red Hat Display;
+  overflow: hidden;
 }
-.Header{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-   
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0vw 2vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  gap: 4vw;
 }
-.header-left{
-    width: 50%;
+.header-left {
+  box-sizing: border-box;
+  padding-top: 100px;
 }
-
-.header-top{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0vw 2vw;
-    
+.header-right img {
+  object-fit: cover;
 }
-.header-logo{
-    scale: .8;
-    width: 3.5vw;
+.header-text h1 {
+  font-weight: 800;
+  font-size: 6vw;
 }
-.Header-profile{
-    display: flex;
-    align-items: center;
-    gap: 1vw;
+.header-text span {
+  font-size: 3.5vw;
+  font-weight: bold;
 }
-.Header-profile button{
- font-family:Red Hat Display;
+.header-typewriter {
+  font-size: 3.5vw;
   font-weight: 500;
-    font-size: 1vw;
+  font-family: Red Hat Display;
+  font-style: italic;
+  margin: 1vw 0vw;
 }
-.Header-profile img{
-    width: 2vw;
+.p1 {
+  font-size: 1.8vw;
 }
-.header-bottom{
-    margin: 6vw 0vw 2vw 2vw;
+.p2 {
+  font-size: 1.4vw;
 }
-.header-text{
-    width: 80%;
+.header-btn {
+  display: flex;
+  gap: 2vw;
 }
-.header-text h1{
-    font-weight: 800;
+.header-btn button {
+  border: 2px solid black;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 1.2vw;
+  width: 10vw;
+  padding: 0.5vw 0vw;
+  margin: 2vw 0vw;
+}
+.header-btn button:hover {
+  background-color: black;
+  color: white;
+}
+.Speaker {
+  display: flex;
+  gap: 2vw;
+  justify-content: flex-end;
+  padding-top: 60px;
+}
+.Speaker img {
+  width: 8vw;
+  border: 1.5px solid rgba(0, 0, 0, 1);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+@media (max-width: 1050px) {
+  .header-text h1 {
+    font-size: 6.5vw;
+  }
+  .p1 {
+    font-size: 2.5vw;
+  }
+  .p2 {
+    font-size: 1.5vw;
+  }
+  .header-btn button {
+    font-size: 1.5vw;
+    width: 12vw;
+  }
+}
+@media (max-width: 870px) {
+  .header {
+    gap: 2vw;
+  }
+  .p1 {
+    font-size: 2.4vw;
+  }
+  .header-text span {
+    font-size: 4vw;
+   
+  }
+}
+@media (max-width: 769px) {
+  .header {
+    flex-direction: column;
+  }
+  .header-right {
+    order: 1;
+  }
+  .header-left {
+    order: 2;
+    padding: 40px 0px;
+  }
+  .header-right img {
+    height: 60%;
+  }
+  .p1 {
+    font-size: 4vw;
+  }
+  .p2 {
+    font-size: 2.5vw;
+  }
+  .header-text h1 {
+    font-size: 8vw;
+  }
+  .header-text span {
     font-size: 6vw;
-}
-.header-text span{
-    font-size: 3.5vw;
     font-weight: bold;
-}
-.header-typewriter{
-    font-size: 3.5vw;
-    font-weight: 500;
-font-family: Red Hat Display;
-font-style: italic;
-margin: 1vw 0vw;
-}
-.p1{
-    font-size: 1.7vw;
-}
-.p2{
-    font-size: 1.2vw;
-}
-.btn1{
-    border: 2px solid black;
-    padding: .5vw 1vw;
-    border-radius: 20px;
-    margin: 2vw .5vw;
-    font-weight: 500;
-    font-size: 1.2vw;
-}
-
-.btn1:hover{
-    background-color: black;
-    color: white;
-}
-.btn2:hover{
-     background-color: black;
-    color: white;
-}
-.btn2{
-    border: 2px solid black;
-    padding: .5vw 1vw;
-    border-radius: 20px;
-    margin: 2vw .5vw;
-    font-weight: 500;
-    font-size: 1.2vw;
-}
-.header-right{
-    width: 50%;
-}
-.header-Nav-items{
-    position: relative;
-    top:3vw;
-    right: 1.5vw;
-}
-.header-Nav-items ul{
+  }
+  .header-typewriter span {
+    font-size: 6vw;
+  }
+  .header-typewriter {
+    padding: 1vw 0vw;
+  }
+  .header-btn button {
+    font-size: 2.5vw;
+    width: 18vw;
+    padding: 0.5vw 0vw;
+  }
+  .header-left {
     display: flex;
-    gap: 1vw;
-    justify-content: end;
+    flex-direction: column;
+  }
+  .header-text {
+    order: 2;
+    padding-top: 2vw;
+  }
+  .Speaker {
+    order: 1;
+    justify-content: space-around;
+    padding-top: 0;
+  }
+  .Speaker img {
+    width: 15vw;
+  }
+  .header-btn {
+    order: 3;
+  }
 }
-.header-Nav-items ul li{
-  background: rgba(240, 240, 240, 0.5);
-  /* opacity: .9; */
- padding: .5vw 1vw;
- border-radius: 30px;
- font-weight: 500;
- font-size: 1vw;
- backdrop-filter: blur(10px);
-}
-.header-img{
- position: absolute;
-  top: -2vw;
-  right: 1vw;
-}
-.header-img img{
-    width: 43vw;
-    height: 55vw;
-    /* scale: 1; */
-}
-.header-slider{
-    height: 40%;
-    margin: auto;
-    position: absolute;
-    width: 20%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    top: 40vw;
-    left: 15vw;
-    border-radius: 30px;
-}
-.header-slide-track{
-    display: flex;
-    width: calc(150px*8);
-    animation: scroll 4s linear infinite;
-}
-@keyframes scroll{
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(calc(-150px*4));
-    }
-}
-.header-slide{
-    height: 200px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    perspective: 100px;
-    background-color: rgba(255, 255, 255, 0.5);
-  
-}
-
-@media(max-width:1385px)and (min-width:1230px) {
-
-    .header-text h1{
-        font-size: 6.5vw;
-    }
-    .header-text h2{
-    
-    font-size: 4.1vw;
-    font-style: italic;
-    }
-    .p1{
-        font-size: 2vw;
-    }
-    .p2{
-        font-size: 1.5vw;
-        padding: 1vw 0vw;
-    }
-    
-}
-@media(max-width:1229px){
-
-    .header-text h1{
-        font-size: 6.7vw;
-        padding-top: 1vw;
-    }
-    .header-text h2{
-    
-    font-size: 4.1vw;
-    font-style: italic;
-    padding: 1vw 0vw 1.5vw 0vw;
-    }
-    .p1{
-        font-size: 2vw;
-    }
-    .p2{
-        font-size: 1.5vw;
-    }
-}
-@media(max-width:1200px){
-    .header-slider{
-        width: 12vw;
-        height: 11vw;
-    }
-    .header-slide{
-        height: 13vw;
-    }
-    
+@media (max-width: 560px) {
+  .header-btn button {
+    font-size: 3vw;
+    width: 18vw;
+    padding: 0.5vw 0vw;
+  }
+  .p2 {
+    font-size: 2.8vw;
+  }
+  .header-typewriter span {
+    font-size: 7vw;
+  }
 }

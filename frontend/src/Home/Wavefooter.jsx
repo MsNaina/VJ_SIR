@@ -30,7 +30,6 @@ export default function WaveFooter() {
               fillOpacity="1"
               d="M0,160L80,160C160,160,320,160,480,138.7C640,117,800,85,960,80C1120,75,1280,96,1360,106.7L1440,117L1440,400L1360,400C1280,400,1120,400,960,400C800,400,640,400,480,400C320,400,160,400,80,400L0,400Z"
             ></path>
-           
           </svg>
 
           <div className="wave-content">
@@ -50,7 +49,6 @@ export default function WaveFooter() {
               </p>
             </div>
 
-
             <div className="part2-container">
               <div className="part2">
                 <h3>Mentorship Batches</h3>
@@ -63,7 +61,9 @@ export default function WaveFooter() {
               <div className="part3">
                 <h3>Quick Links</h3>
                 <p>Mentorship Batch</p>
-                <p>FAQs</p>
+                <p>
+                  <NavLink to="/#FAQ">FAQs</NavLink>
+                </p>
               </div>
             </div>
 
