@@ -2,33 +2,43 @@ import "./Wavefooter.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 export default function WaveFooter() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-   const scrollToTop = () => {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth", // for smoothly scrolling
-     });
-   };
-   
   return (
     <>
       <section id="Wave-footer">
         <div className="wave-footer">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 400"
+            preserveAspectRatio="none"
+          >
             <path
+              className="wave-large"
               fill="#B0E3B5"
-              fill-opacity="1"
-              d="M0,128L80,128C160,128,320,128,480,106.7C640,85,800,53,960,48C1120,43,1280,64,1360,74.7L1440,85L1440,400L1360,400C1280,400,1120,400,960,400C800,400,640,400,480,400C320,400,160,400,80,400L0,400Z"
+              fillOpacity="1"
+              d="M0,128L80,128C160,128,320,128,480,106.7C640,85,800,73,960,78C1120,83,1280,94,1360,104.7L1440,115L1440,400L1360,400C1280,400,1120,400,960,400C800,400,640,400,480,400C320,400,160,400,80,400L0,400Z"
             ></path>
+            <path
+              className="wave-medium"
+              fill="#B0E3B5"
+              fillOpacity="1"
+              d="M0,160L80,160C160,160,320,160,480,138.7C640,117,800,85,960,80C1120,75,1280,96,1360,106.7L1440,117L1440,400L1360,400C1280,400,1120,400,960,400C800,400,640,400,480,400C320,400,160,400,80,400L0,400Z"
+            ></path>
+           
           </svg>
 
           <div className="wave-content">
             <div className="part1">
               <div className="part11">
                 <NavLink to="/" onClick={scrollToTop}>
-                  <img src={Logo} alt="" />
+                  <img src={Logo} alt="Logo" />
                 </NavLink>
-
                 <h3>Vishal Joshi (VJ) Sir</h3>
               </div>
               <p>
@@ -40,34 +50,46 @@ export default function WaveFooter() {
               </p>
             </div>
 
-            <div className="part2">
-              <h3>Mentorship Batches</h3>
-              <p>JEE Main & Advanced</p>
-              <p>Mentorship Batch 2025</p>
+
+            <div className="part2-container">
+              <div className="part2">
+                <h3>Mentorship Batches</h3>
+                <p>JEE Main & Advanced</p>
+                <p>Mentorship Batch</p>
+              </div>
             </div>
 
-            <div className="part3">
-              <h3>Quick Links</h3>
-              <p>Mentorship Batch 2025</p>
-              <p>FAQs</p>
+            <div className="part3-container">
+              <div className="part3">
+                <h3>Quick Links</h3>
+                <p>Mentorship Batch</p>
+                <p>FAQs</p>
+              </div>
             </div>
 
             <div className="part4">
               <h3>Subscribe Now</h3>
-
               <div className="part41">
                 <button>
-                  <NavLink to="https://www.instagram.com/vishaljoshi.vjsir?igsh=MXdpaDh0anYzZWphOA==">
-                    <i class="fa-brands fa-2x fa-instagram"></i>
+                  <NavLink to="https://www.instagram.com/vishaljoshi.vjsir">
+                    <i className="fa-brands fa-2x fa-instagram"></i>
                   </NavLink>
                 </button>
-                <i class="fa-brands fa-2x fa-youtube"></i>
                 <button>
-                  <NavLink to="https://www.linkedin.com/in/vishaljoshivjsir?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BsU%2Fw8UrWT0GlOYG2sv9vuw%3D%3D">
-                    <i class="fa-brands fa-2x fa-linkedin"></i>
+                  <NavLink to="https://youtube.com/@nucleusvjsir">
+                    <i className="fa-brands fa-2x fa-youtube"></i>
                   </NavLink>
                 </button>
-                <i class="fa-brands fa-2x fa-facebook"></i>
+                <button>
+                  <NavLink to="https://www.linkedin.com/in/vishaljoshivjsir">
+                    <i className="fa-brands fa-2x fa-linkedin"></i>
+                  </NavLink>
+                </button>
+                <button>
+                  <NavLink to="https://www.facebook.com">
+                    <i className="fa-brands fa-2x fa-facebook"></i>
+                  </NavLink>
+                </button>
               </div>
             </div>
           </div>

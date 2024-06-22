@@ -15,7 +15,6 @@ export default function Footer(){
       <div className="footer-right">All Right Reserved @vjsir.com</div>
 
     </div>
-    
    </section>    
 </>
 )
