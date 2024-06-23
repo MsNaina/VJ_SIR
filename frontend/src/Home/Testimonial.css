@@ -1,46 +1,97 @@
-#Testimonial{
-    width: 100%;
-    text-align: center;
-    margin: 3rem 0rem ;
+#Testimonial {
+  width: 100%;
+  text-align: center;
+  margin: 3rem 0rem;
 }
-#Testimonial h1{
-    font-size: 4rem;
-    font-weight: 600;
-     font-family: poppins;
+#Testimonial h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  font-family: Poppins;
 }
-.Testimonial-slider{
-    height: 650px;
-    margin: auto;
-    position: relative;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    padding-top: 3rem;
+.Testimonial-slider {
+  height: 650px;
+  margin: auto;
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding-top: 3rem;
 }
-.Testimonial-slide-track{
-    display: flex;
-    width: calc(450px*10);
-    animation: slide 9s linear infinite;
-   
+.Testimonial-slide-track {
+  display: flex;
+  width: calc(450px * 10);
+  animation: slide 14s linear infinite;
 }
-.Testimonial-slide-track:hover{
-    animation-play-state: paused;
+.Testimonial-slide-track:hover {
+  animation-play-state: paused;
 }
-@keyframes slide{
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(calc(-450px*5));
-    }
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-450px * 5));
+  }
 }
-.Testimonial-slide{
+.Testimonial-slide {
+  height: 550px;
+  width: 450px;
+}
+@media (max-width: 900px) {
+  .Testimonial-slide {
     height: 500px;
-    width: 450px;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    perspective: 200px;
+    width: 400px;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-400px * 5));
+    }
+  }
+}
+@media (max-width: 769px) {
+  #Testimonial h1 {
+    font-size: 7vw;
+    padding-top: 50px;
     
+  }
+}
+@media (max-width: 560px) {
+  .Testimonial-slide {
+    height: 450px;
+    width: 350px;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-350px * 5));
+    }
+  }
+  .Testimonial-slider {
+  height: 550px;
+  padding-top: 1rem;
+}
+}
+@media (max-width: 440px) {
+  .Testimonial-slide {
+    height: 400px;
+    width: 320px;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-320px * 5));
+    }
+  }
+  .Testimonial-slider {
+  height: 500px;
+  padding-top: 0rem;
+}
 }
