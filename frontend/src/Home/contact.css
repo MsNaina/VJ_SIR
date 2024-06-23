@@ -4,21 +4,22 @@
 }
 
 .contact-text {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  padding: 2rem 20rem;
 }
 .contact-text h1 {
   font-size: 5vw;
   font-weight: 700;
 }
 .contact-text p {
-  font-size: 1.2vw;
-  margin: 1vw 20vw 6vw 20vw;
+  font-size: 1rem;
 }
 .contact-bottom {
   display: flex;
   justify-content: space-around;
-  margin: 0vw 6vw;
+  margin-top: 5rem;
 }
 .contact-left h2 {
   font-size: 3vw;
@@ -27,24 +28,30 @@
 .contact-left p {
   font-size: 1vw;
   font-weight: 400;
-  margin: 1vw 0vw 0vw 0vw;
+  margin-top: 1rem;
 }
 .info {
-  margin: 2vw 0vw;
+  margin: 2rem 0rem;
 }
 .address,
 .phone,
 .mail {
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 .address i,
 .mail i,
 .phone i {
   background-color: #a3d2a8;
   border-radius: 100%;
-  margin: 1vw 1vw 0vw 0vw;
+  margin: 0.5rem 0rem;
   padding: 0.8rem;
+}
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .info-text h3 {
   font-size: 1.3vw;
@@ -61,22 +68,28 @@
 }
 .social-media h3 {
   font-size: 2.5vw;
-  margin: 2vw 0vw;
+  margin: 2rem 0rem;
 }
-.social-media button {
+.social-media-btn {
+  display: flex;
+  gap: 1rem;
+}
+.social-media-btn button {
   background-color: #a3d2a8;
   border-radius: 100%;
-  margin: 0vw 1vw 0vw 0vw;
-  padding: 1vw;
+  margin: 0.5rem 0rem;
+  padding: 0.8rem;
 }
 .contact-right {
   padding: 2vw;
   border: 3px solid #000000;
   border-radius: 20px;
+  position: relative;
+  width: 30%;
 }
 
 .contact-right h1 {
-  font-size: 2vw;
+  font-size: 1.8rem;
   font-weight: 700;
   padding-bottom: 2vw;
 }
@@ -84,17 +97,153 @@
   color: white;
   background-color: black;
   border-radius: 15px;
-  padding: 0.5vw 1.5vw;
-  position: relative;
-  top: 10vw;
-  left: 25vw;
+  padding: 0.5rem 0rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-weight: 500;
+  width: 110px;
 }
 .contact-btn:hover {
   background-color: white;
   color: black;
   border: 2px solid black;
-  font-weight: 500;
 }
 #textarea {
-  margin-top: 3vw;
+  margin-top: 3rem;
+}
+@media (max-width: 1285px) {
+  .contact-right {
+    width: 35%;
+  }
+  .contact-left h2 {
+    font-size: 3rem;
+  }
+  .contact-left p {
+    font-size: 1rem;
+  }
+  .info-text h3 {
+    font-size: 1.3rem;
+  }
+  .info-text h4 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1100px) {
+  .contact-text {
+    padding: 2rem 15rem;
+  }
+  .contact-right {
+    width: 40%;
+  }
+}
+@media (max-width: 950px) {
+  .contact-text h1 {
+    font-size: 4rem;
+  }
+  .contact-text {
+    padding: 2rem 10rem;
+  }
+  .contact-left p {
+    font-size: 0.9rem;
+  }
+  .contact-right {
+    width: 45%;
+  }
+  .contact-left {
+    width: 40%;
+  }
+}
+@media (max-width: 769px) {
+  .Contact {
+    padding-bottom: 5rem;
+  }
+  .contact-text {
+    padding: 0rem 5rem;
+  }
+  .contact-right {
+    order: 1;
+  }
+  .contact-left {
+    order: 2;
+  }
+  .contact-bottom {
+    width: 100%;
+    padding: 0rem 4rem;
+    flex-direction: column;
+  }
+  .contact-right {
+    width: 100%;
+    height: 30rem;
+  }
+  .contact-left {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .contact-left p {
+    font-size: 1.2rem;
+  }
+  .social-media h3 {
+    font-size: 2rem;
+    margin: 2rem 0rem;
+  }
+}
+@media (max-width: 630px) {
+  .contact-text {
+    padding: 0rem 2rem;
+  }
+  .contact-bottom {
+    padding: 0rem 2rem;
+  }
+}
+@media (max-width: 530px) {
+  .contact-text p {
+    font-size: 2.5vw;
+    padding-top: 1rem;
+  }
+  .contact-bottom {
+   margin-top: 2rem;
+  }
+}
+@media (max-width: 460px) {
+  .contact-text {
+    padding: 0rem 1rem;
+  }
+  
+  .contact-text h1 {
+    font-size: 10vw;
+  }
+  .contact-text p {
+    font-size: 2.8vw;
+  }
+  .contact-left h2 {
+    font-size: 2.5rem;
+  }
+  .contact-right{
+    height:25rem ;
+    
+  }
+}
+@media (max-width: 380px) {
+  .contact-text h1 {
+    font-size: 12vw;
+  }
+  .contact-left h2 {
+    font-size: 2.5rem;
+  }
+  .contact-left p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 340px) {
+  .contact-text h1 {
+    font-size: 12vw;
+  }
+  .contact-text p {
+    font-size: .8rem;
+  }
+  .contact-left h2 {
+    font-size: 2rem;
+  }
+  
 }
