@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Mentorship batch.css";
-import Eyes from  "./eye.jsx"
 import { Link } from "react-router-dom";
 import Chitrang from "../assets/images/chitrang.png";
 import Group8 from "../assets/images/Group 8.png";

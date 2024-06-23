@@ -15,12 +15,12 @@ function Home() {
   return (
     <>
       <Header />
-      <Mentorship />
+      {/* <Mentorship /> */}
       <PODJEE />
       <Books />
       <Session />
       <Testimonial />
-      {/* <FAQ /> */}
+      <FAQ />
       <Contact />
       <WaveFooter />
       <Footer />
