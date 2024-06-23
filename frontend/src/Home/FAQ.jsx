@@ -11,50 +11,46 @@ export default function FAQ(){
        
         setSelected(i)
         }
-    return(
-<>
-  <section id="FAQ">     
-  
-  <div className="faq">
+    return (
+      <>
+        <section id="FAQ">
+          
+            <div className="FAQs">
 
-<div className="FAQs">
-    <div className="FAQ-left">
+              <div className="FAQ-left">
+                <div className="faq">
+                  <h2>
+                    <span>Frequently</span>
+                  </h2>
+                  <h2>asked</h2>
+                </div>
+                <h2>questions.</h2>
+              </div>
 
-        <h2><span>Frequently</span></h2>
-        <h2>asked</h2>
-        <h2>questions.</h2>
-    </div>
+              <div className="FAQ-right wrapper">
+                <div className="accordion">
+                  {data.map((item, i) => (
+                    <div className="item">
+                      <div className="title" onClick={() => toggle(i)}>
+                        <h2>{item.question}</h2>
+                        <span>{selected === i ? "-" : "^"}</span>
+                      </div>
 
-<div className="FAQ-right wrapper">
+                      <div
+                        className={selected === i ? "content show" : "content"}
+                      >
+                        {item.answer}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-<div className="accordion">
-
-    {data.map((item,i)=>(
-       
-       <div className="item">
-
-        <div className="title" onClick={()=> toggle(i)}>
-    
-            <h2>{item.question}</h2>
-            <span>{selected ===i ? '-' : "^"}</span>
-        </div>
-
-        <div className={selected ===i ? 'content show' : "content"}>
-            {item.answer}
-        </div>
-
-        </div>
-    ))}
-</div>
-
-</div>
-
-</div>
-
-  </div>
-  </section>       
-</>
-    )
+            </div>
+         
+        </section>
+      </>
+    );
 }
 const data =[
 

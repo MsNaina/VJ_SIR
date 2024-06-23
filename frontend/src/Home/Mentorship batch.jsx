@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Mentorship batch.css";
+import Eyes from  "./eye.jsx"
 import { Link } from "react-router-dom";
 import Chitrang from "../assets/images/chitrang.png";
 import Group8 from "../assets/images/Group 8.png";
@@ -30,8 +31,10 @@ export default function Mentorship() {
 
   return (
     <>
+      {/* <Eyes/> */}
       <section id="Mentorship">
         <div className="Mentorship">
+
           <div className="mentorship-text">
             <h1>Mentorship Program</h1>
             <h2> JEE Main & Advanced </h2>
@@ -43,9 +46,12 @@ export default function Mentorship() {
           </div>
 
           <div className="mentorship-imgs">
-            <div className="mentorship-img1 mentorship-img">
-              <img src={Chitrang} alt="" />
-            </div>
+
+            {/* <div className="mentorship-img1"> */}
+              <div className="mentorship-img1 mentorship-img">
+                <img src={Chitrang} alt="" />
+              </div>
+            {/* </div> */}
 
             <div className="mentorship-img2 mentorship-img">
               <img src={Group8} alt="" />
@@ -89,8 +95,10 @@ export default function Mentorship() {
               <div className="mentorship-price">
                 <div className="price">
                   <h3>₹5,000/-</h3>
-                  <h4>₹8,000</h4>
-                  <h3>for 3 Months</h3>
+                  <div>
+                    <h4>₹8,000</h4>
+                    <h6>for 3 Months</h6>
+                  </div>
                 </div>
 
                 <div className="discount">
@@ -106,9 +114,12 @@ export default function Mentorship() {
               </div>
             </div>
 
-            <div className="mentorship-img3 mentorship-img">
-              <img src={Himanshu} alt="" />
-            </div>
+            {/* <div className="mentorship-img3"> */}
+              <div className="mentorship-img3 mentorship-img">
+                <img src={Himanshu} alt="" />
+              </div>
+            {/* </div> */}
+
           </div>
         </div>
       </section>

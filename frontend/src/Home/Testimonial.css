@@ -48,9 +48,6 @@
     height: 500px;
     width: 400px;
   }
-  /* .Testimonial-slide-track {
-    width: calc(400px * 10);
-  } */
   @keyframes slide {
     0% {
       transform: translateX(0);
@@ -71,9 +68,6 @@
     height: 450px;
     width: 350px;
   }
-  /* .Testimonial-slide-track {
-    width: calc(350px * 10);
-  } */
   @keyframes slide {
     0% {
       transform: translateX(0);
@@ -92,9 +86,6 @@
     height: 400px;
     width: 320px;
   }
-  /* .Testimonial-slide-track {
-    width: calc(320px * 10);
-  } */
   @keyframes slide {
     0% {
       transform: translateX(0);
