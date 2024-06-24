@@ -30,6 +30,7 @@ export default function Navbar() {
   return (
     <>
       <section id="Navbar">
+        
         <div className="logo">
           <img src={Logo} alt="Logo" />
         </div>
