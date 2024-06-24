@@ -2,6 +2,7 @@
   width: 100%;
   padding: 2rem 6rem;
   font-family: Poppins;
+  position: relative; /**/
 }
 #chapter-questions h1 {
   color: #0c6205;
@@ -12,13 +13,23 @@
   margin: 2rem 0rem;
   padding: 1rem 0rem;
   border-top: 1px solid #000000;
+  text-align: center;
 }
-.question-thumbnail{
-  width: 60%;
+.question-item img {
+  width: 800px;
 }
-
-/* @media(max-width:1240px){
-  #chapter-questions{
-    
+@media (max-width: 950px) {
+  #chapter-questions {
+    padding: 2rem 2rem;
   }
-} */
+  .question-item img {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .question-item {
+    overflow-x: auto;
+    max-width: none;
+  }
+  
+}

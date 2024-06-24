@@ -124,7 +124,7 @@ select {
      height: 100vh;
   }
   .Compatibility {
-    padding: 20vw 0vw 0vw 20vw;
+    padding: 10vw 0vw 0vw 20vw;
   }
   .compatibility-info {
     margin-top: 2rem;
@@ -145,14 +145,13 @@ select {
     background-image: none;
   }
   .Compatibility {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .Compatibility {
-    padding: 0vw 0vw 0vw 0vw;
+    padding: 10vw 0vw 0vw 0vw;
   }
 }
 @media (max-width: 600px) {
@@ -184,7 +183,6 @@ select {
     font-size: 4vw;
   }
   .Compatibility {
-    /* padding-top: 30vw; */
     height: 140%;
   }
   .Coform {
@@ -219,5 +217,10 @@ select {
 @media (max-width: 350px) {
   .Compatibility {
     height: 130%;
+  }
+}
+@media (max-width: 300px) {
+  .Compatibility {
+    height: 120%;
   }
 }

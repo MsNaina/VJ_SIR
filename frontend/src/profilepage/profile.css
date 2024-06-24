@@ -8,7 +8,12 @@
   aspect-ratio: 2.08830022075;
   height: 100vh;
 }
-
+.profile-menu {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
 .user-profile {
   display: flex;
   flex-direction: column;
@@ -22,7 +27,9 @@
   align-items: center;
   padding: 1rem 0rem;
 }
-
+.profile-Nav-item{
+  order: 1;
+}
 .profile-Nav-item ul {
   display: flex;
   gap: 1vw;
@@ -105,7 +112,9 @@ label {
   #user-Profile {
     overflow: hidden;
   }
-
+.profile-menu {
+    font-size: 1.1rem;
+  }
   .profile-bottom {
     left: 25%;
   }
@@ -137,12 +146,13 @@ label {
     padding: 0rem 4rem;
     width: 100%;
   }
+  
 }
 @media (max-width: 769px) {
   .profile-Nav-item ul li {
     border: none;
     font-size: 1.2rem;
-    padding: 15px 10px;
+    padding: 10px 10px;
     background-color: white;
     opacity: 1;
     border-radius: 0px;
@@ -153,6 +163,34 @@ label {
     flex-direction: column;
     margin-top: 2rem;
   }
+
+    .profile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 15rem;
+    height: 22rem;
+    text-align: center;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 600;
+
+    z-index: 10;
+  }
+  .profile-menu.open {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 0.9;
+  }
 }
 @media (max-width: 720px) {
   .profile-Nav-item ul li {
@@ -162,15 +200,20 @@ label {
     top: 15%;
   }
 }
+@media(max-width:500px){
+ .profile-menu{
+    width: 12rem;
+  }
+}
 @media (max-width: 430px) {
   .profile-Nav-item ul li {
     padding: 8px 10px;
   }
+ .profile-menu{
+    height: 20rem;
+  }
 }
 @media (max-width: 340px) {
-  .profile-Nav-item ul li {
-    font-size: 1rem;
-  }
   .profile-bottom h2 {
     font-size: 1.2rem;
     padding: 1rem 0rem;
@@ -180,6 +223,11 @@ label {
   .profile-Nav-item ul li {
     font-size: 0.9rem;
     padding: 6px 10px;
+  }
+  .profile-menu{
+    height: 17rem;
+    width: 10rem;
+    padding-top: 2rem;
   }
 }
 @media (max-width: 280px) {

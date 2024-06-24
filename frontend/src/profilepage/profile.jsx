@@ -35,7 +35,7 @@ export default function Profile() {
               <img src={Logo} alt="" />
             </div>
 
-            <div className={`menu ${menuOpen ? "open" : ""}`}>
+            <div className={`profile-menu ${menuOpen ? "open" : ""}`}>
               <div className="profile-Nav-item">
                 <ul>
                   <li>

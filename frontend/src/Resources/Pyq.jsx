@@ -2,87 +2,125 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
-// import "./pyq.css";
+import "./PhQuePage.css";
 
-const MainsAdvancedQues = () => {
-  const { id } = useParams(); // Current question ID
+const MainsAdvancedQuestions = () => {
+  const { id } = useParams();
   const [question, setQuestion] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [integerAnswer, setIntegerAnswer] = useState("");
   const [isExplanationVisible, setIsExplanationVisible] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null);
-  const [isOptionLocked, setIsOptionLocked] = useState(false); // New state to lock options
+  const [isOptionLocked, setIsOptionLocked] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchQuestion(id);
+    fetchQuestionAndAnswer(id);
   }, [id]);
 
-  const fetchQuestion = (questionId) => {
-    axios
-      .get(`http://127.0.0.1:8000/questions/id/${questionId}?format=json`)
-      .then((response) => {
-        console.log("Fetched question:", response.data);
-        setQuestion(response.data);
-        setIsExplanationVisible(false);
-        setSelectedOptions([]);
-        setIntegerAnswer("");
-        setIsCorrect(null);
-        setIsOptionLocked(false);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the question!", error);
-      });
+  const fetchQuestionAndAnswer = async (questionId) => {
+    try {
+      const questionResponse = await axios.get(
+        `http://127.0.0.1:8000/questions/id/${questionId}?format=json`
+      );
+      const answerResponse = await axios.get(
+        `http://127.0.0.1:8000/questions/answer/${questionId}?format=json`
+      );
+      const questionData = questionResponse.data;
+      const answerData = answerResponse.data;
+
+      setQuestion({ ...questionData, ...answerData });
+      setIsExplanationVisible(false);
+      setSelectedOptions([]);
+      setIsCorrect(null);
+      setIsOptionLocked(false);
+      setIntegerAnswer("");
+    } catch (error) {
+      console.error("Error fetching question and answer:", error);
+    }
   };
 
   const handleOptionClick = (option) => {
     if (!isOptionLocked) {
-      if (question.type === "single") {
+      if (question.type === "MMCQ") {
+        const updatedSelectedOptions = selectedOptions.includes(option)
+          ? selectedOptions.filter((item) => item !== option)
+          : [...selectedOptions, option];
+        setSelectedOptions(updatedSelectedOptions);
+      } else {
         setSelectedOptions([option]);
-      } else if (question.type === "multiple") {
-        setSelectedOptions((prevSelectedOptions) =>
-          prevSelectedOptions.includes(option)
-            ? prevSelectedOptions.filter((opt) => opt !== option)
-            : [...prevSelectedOptions, option]
-        );
       }
     }
   };
-  console.log("option is clicked");
-  const handleIntegerChange = (e) => {
-    if (!isOptionLocked) {
-      setIntegerAnswer(e.target.value);
-    }
+
+  const handleIntegerInputChange = (event) => {
+    setIntegerAnswer(event.target.value);
   };
 
   const handleCheckClick = () => {
     let isCorrectAnswer = false;
 
-    if (question.type === "single") {
-      isCorrectAnswer = selectedOptions[0] === question.correctOptions[0];
-    } else if (question.type === "multiple") {
-      isCorrectAnswer =
-        selectedOptions.sort().join(",") ===
-        question.correctOptions.sort().join(",");
-    } else if (question.type === "integer") {
-      isCorrectAnswer =
-        parseInt(integerAnswer, 10) ===
-        parseInt(question.correctOptions[0], 10);
+    switch (question.type) {
+      case "SMCQ":
+        isCorrectAnswer = selectedOptions[0] === question.correct_option;
+        break;
+      case "MMCQ":
+        isCorrectAnswer = arraysEqual(
+          selectedOptions.sort(),
+          question.correct_option.sort()
+        );
+        break;
+      case "INT":
+        isCorrectAnswer =
+          parseInt(integerAnswer) === parseInt(question.correct_option);
+        break;
+      case "SUBJ":
+        isCorrectAnswer = true;
+        break;
+      default:
+        break;
     }
 
     setIsCorrect(isCorrectAnswer);
     setIsExplanationVisible(true);
     setIsOptionLocked(true);
+    console.log(`type of question is ${question.type}`);
   };
 
   const handleNextQuestion = () => {
-    const nextQuestionId = parseInt(id) + 1;
-    navigate(`/pyq/question/${nextQuestionId}`);
+    const currentQuestionId = id;
+    if (currentQuestionId) {
+      const chapterId = currentQuestionId.slice(2, 4);
+      const questionNumber = parseInt(currentQuestionId.slice(4), 10);
+      const nextQuestionNumber = questionNumber + 1;
+      const nextQuestionId = `MA${chapterId}${nextQuestionNumber
+        .toString()
+        .padStart(3, "0")}`;
+      navigate(`/question/${nextQuestionId}`);
+    }
+    console.log("next button ");
   };
 
   const handlePrevQuestion = () => {
-    const prevQuestionId = parseInt(id) - 1;
-    navigate(`/pyq/question/${prevQuestionId}`);
+    const currentQuestionId = id;
+    if (currentQuestionId) {
+      const chapterId = currentQuestionId.slice(2, 4);
+      const questionNumber = parseInt(currentQuestionId.slice(4), 10);
+      if (questionNumber > 1) {
+        const prevQuestionNumber = questionNumber - 1;
+        const prevQuestionId = `MA${chapterId}${prevQuestionNumber
+          .toString()
+          .padStart(3, "0")}`;
+        navigate(`/question/${prevQuestionId}`);
+      }
+    }
+    console.log("prev  button ");
+  };
+
+  const arraysEqual = (a, b) => {
+    return (
+      a.length === b.length && a.every((value, index) => value === b[index])
+    );
   };
 
   return (
@@ -101,16 +139,16 @@ const MainsAdvancedQues = () => {
                 />
               </div>
 
-              <div className="options">
-                {question.type !== "integer" &&
-                  ["A", "B", "C", "D"].map((option, index) => (
+              {question.type === "SMCQ" || question.type === "MMCQ" ? (
+                <div className="options">
+                  {["A", "B", "C", "D"].map((option) => (
                     <div
-                      key={index}
+                      key={option}
                       className={`option-label ${
                         selectedOptions.includes(option)
                           ? isCorrect === null
                             ? "selected"
-                            : question.correctOptions.includes(option)
+                            : question.correct_option.includes(option)
                             ? "correct"
                             : "incorrect"
                           : ""
@@ -120,17 +158,20 @@ const MainsAdvancedQues = () => {
                       {option}
                     </div>
                   ))}
+                </div>
+              ) : null}
 
-                {question.type === "integer" && (
+              {question.type === "INT" && (
+                <div className="integer-input">
                   <input
                     type="number"
-                    className="integer-input"
                     value={integerAnswer}
-                    onChange={handleIntegerChange}
+                    onChange={handleIntegerInputChange}
                     disabled={isOptionLocked}
                   />
-                )}
-              </div>
+                </div>
+              )}
+
               <div className="controls">
                 <button
                   className="prev-button"
@@ -144,8 +185,11 @@ const MainsAdvancedQues = () => {
                     className="check-button"
                     onClick={handleCheckClick}
                     disabled={
-                      (selectedOptions.length === 0 && integerAnswer === "") ||
-                      isOptionLocked
+                      question.type === "INT"
+                        ? integerAnswer === ""
+                        : question.type === "SUBJ"
+                        ? false
+                        : selectedOptions.length === 0 || isOptionLocked
                     }
                   >
                     Check
@@ -156,16 +200,24 @@ const MainsAdvancedQues = () => {
                   </button>
                 </div>
               </div>
-              {isExplanationVisible && question.answer && (
+
+              {isExplanationVisible && question.explanation && (
                 <div className="explanation">
                   <h3>Explanation</h3>
                   <div className="explanation-image-container">
                     <img
-                      src={`http://127.0.0.1:8000${question.answer}`}
+                      src={`http://127.0.0.1:8000${question.explanation}`}
                       alt="Explanation"
                       className="explanation-image"
                     />
                   </div>
+                </div>
+              )}
+
+              {isExplanationVisible && !question.explanation && (
+                <div className="explanation">
+                  <h3>Explanation</h3>
+                  <p>No explanation available.</p>
                 </div>
               )}
             </>
@@ -178,4 +230,4 @@ const MainsAdvancedQues = () => {
   );
 };
 
-export default MainsAdvancedQues;
+export default MainsAdvancedQuestions;

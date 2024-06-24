@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./PhQuePage.css";
 
 const PhQues = () => {
-  const { id } = useParams(); // Current question ID
+  const { id } = useParams();
   const [question, setQuestion] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [integerAnswer, setIntegerAnswer] = useState("");
@@ -90,15 +89,33 @@ const PhQues = () => {
   };
 
   const handleNextQuestion = () => {
-    const nextQuestionId = parseInt(id, 10) + 1;
-    navigate(`/questions/${nextQuestionId}`);
+    const currentQuestionId = id;
+    if (currentQuestionId) {
+      const chapterId = currentQuestionId.slice(2, 4);
+      const questionNumber = parseInt(currentQuestionId.slice(4), 10);
+      const nextQuestionNumber = questionNumber + 1;
+      const nextQuestionId = `MA${chapterId}${nextQuestionNumber
+        .toString()
+        .padStart(3, "0")}`;
+      navigate(`/question/${nextQuestionId}`);
+    }
+    console.log("next button ");
   };
 
   const handlePrevQuestion = () => {
-    const prevQuestionId = parseInt(id, 10) - 1;
-    if (prevQuestionId >= 1) {
-      navigate(`/questions/${prevQuestionId}`);
+    const currentQuestionId = id;
+    if (currentQuestionId) {
+      const chapterId = currentQuestionId.slice(2, 4);
+      const questionNumber = parseInt(currentQuestionId.slice(4), 10);
+      if (questionNumber > 1) {
+        const prevQuestionNumber = questionNumber - 1;
+        const prevQuestionId = `MA${chapterId}${prevQuestionNumber
+          .toString()
+          .padStart(3, "0")}`;
+        navigate(`/question/${prevQuestionId}`);
+      }
     }
+    console.log("prev  button ");
   };
 
   const arraysEqual = (a, b) => {
@@ -115,7 +132,6 @@ const PhQues = () => {
         <div className="question-page">
           {question ? (
             <>
-            
               <div className="question-image-container">
                 <img
                   src={`http://127.0.0.1:8000${question.question}`}
@@ -164,9 +180,6 @@ const PhQues = () => {
                   disabled={parseInt(id) <= 1}
                 >
                   Previous
-                  {/* <NavLink to={`/questions/${prevQuestionId}`}>
-                    Previous
-                  </NavLink> */}
                 </button>
                 <div className="next-check">
                   <button
@@ -184,9 +197,6 @@ const PhQues = () => {
                   </button>
 
                   <button className="next-button" onClick={handleNextQuestion}>
-                    {/* <NavLink to={`/questions/${nextQuestionId}`}>
-                      Next
-                    </NavLink> */}{" "}
                     Next
                   </button>
                 </div>
@@ -211,7 +221,6 @@ const PhQues = () => {
                   <p>No explanation available.</p>
                 </div>
               )}
-
             </>
           ) : (
             <p>Loading question...</p>
