@@ -27,7 +27,7 @@ const MathDpp = () => {
     <>
       <Navbar />
       <section id="Modules">
-        <h1>Find the Dpp :</h1>
+        <h1>Find the DPP :</h1>
 
         <div className="SearchBar">
           <div className="searchbar">
