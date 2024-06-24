@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import CompatibilityNav from "./CoNavbar";
 import "./compatibility.css";
+import Navbar from "../Navbar";
 
 export default function CompatibilityStage1() {
   const [formData, setFormData] = useState({
@@ -92,7 +92,8 @@ export default function CompatibilityStage1() {
 
   return (
     <section id="Compatibility">
-      <CompatibilityNav />
+      <Navbar/>
+      
       <div className="Compatibility">
         <h2>Compatibility Test</h2>
         <div className="compatibility-info">

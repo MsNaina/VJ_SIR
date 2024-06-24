@@ -28,10 +28,10 @@ const ChPYQs = () => {
     <>
       <Navbar />
       <section id="Modules">
-        <div className="Modules">
+      <h1>Find the PYQs :</h1>
           <div className="SearchBar">
             <div className="searchbar">
-              <h1>Find the PYQs :</h1>
+              
               <div className="searchInput_container">
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input
@@ -73,7 +73,7 @@ const ChPYQs = () => {
               </div>
             ))}
           </div>
-        </div>
+       
       </section>
     </>
   );

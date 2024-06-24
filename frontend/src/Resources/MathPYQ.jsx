@@ -9,7 +9,6 @@ const MathPYQs = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // Fetch modules from the backend
     axios
       .get(`http://127.0.0.1:8000/questions/list-chapters/MA`)
       .then((response) => {
@@ -28,10 +27,10 @@ const MathPYQs = () => {
     <>
       <Navbar />
       <section id="Modules">
-        <div className="Modules">
+        <h1>Find the PYQs :</h1>
+       
           <div className="SearchBar">
             <div className="searchbar">
-              <h1>Find the PYQs :</h1>
               <div className="searchInput_container">
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input
@@ -73,7 +72,7 @@ const MathPYQs = () => {
               </div>
             ))}
           </div>
-        </div>
+       
       </section>
     </>
   );

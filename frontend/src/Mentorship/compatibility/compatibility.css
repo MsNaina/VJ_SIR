@@ -5,11 +5,12 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
 }
 .Compatibility {
   font-family: poppins;
   position: relative;
-  padding: 8rem 0px 0px 30rem;
+  padding: 4rem 0px 0px 30rem;
 }
 .Compatibility h2 {
   font-size: 4rem;
@@ -113,7 +114,6 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
   }
 }
 @media (max-width: 1155px) {
@@ -160,8 +160,7 @@ select {
     font-size: 6.5vw;
   }
   .Compatibility {
-    height: 160%;
-    padding-top: 20vw;
+    height: 140%;
   }
   .Flex {
     flex-direction: column;
@@ -185,8 +184,8 @@ select {
     font-size: 4vw;
   }
   .Compatibility {
-    padding-top: 30vw;
-    height: 130%;
+    /* padding-top: 30vw; */
+    height: 140%;
   }
   .Coform {
     height: 10vw;
@@ -207,8 +206,8 @@ select {
 }
 @media (max-width: 380px) {
   .Compatibility {
-    padding-top: 30vw;
-    height: 160%;
+    padding-top: 0vw;
+    height: 130%;
   }
   .Compatibility h2 {
     font-size: 7.5vw;
@@ -219,6 +218,6 @@ select {
 }
 @media (max-width: 350px) {
   .Compatibility {
-    height: 140%;
+    height: 130%;
   }
 }

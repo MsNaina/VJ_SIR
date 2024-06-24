@@ -9,7 +9,6 @@ const PhModules = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // Fetch modules from the backend
     axios
       .get(`http://127.0.0.1:8000/questions/list-chapters/PH`)
       .then((response) => {

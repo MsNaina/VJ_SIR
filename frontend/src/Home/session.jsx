@@ -22,7 +22,10 @@ export default function Session() {
               </p>
             </div>
 
-            <button className="session-btn">BUY NOW</button>
+            <div className="session-bottom">
+              <button className="session-btn">BUY NOW</button>
+              <a href=""> Know More</a>
+            </div>
           </div>
         </div>
       </section>
