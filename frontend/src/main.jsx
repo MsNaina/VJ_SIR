@@ -28,7 +28,8 @@ import Level from "./Resources/Level.jsx";
 import AllPYQs from "./Resources/AllPYQs.jsx";
 import MainsAdvancedQues from "./Resources/Pyq.jsx";
 import AllMentor from "./Mentorship/compatibility/Allmentors.jsx";
-
+import OTP from "./login/Otp.jsx"
+import SnehaTestimonial from "./Home/snehaTestimonial.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "Mentorship",
     element: <MentorshipPage />,
+  },
+  {
+    path: "session",
+    element: <SnehaTestimonial />,
   },
   {
     path: "Aboutus",
@@ -55,6 +60,10 @@ const router = createBrowserRouter([
   {
     path: "Signup",
     element: <SignUp />,
+  },
+  {
+    path: "/otp",
+    element: <OTP />,
   },
   {
     path: "ChemistryDpp",

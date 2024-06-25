@@ -52,37 +52,40 @@ export default function FAQ(){
       </>
     );
 }
-const data =[
+const data = [
+  {
+    question: "How will the mentorship benefit me?",
+    answer:
+      " Students benefit from personalized mentorship sessions with their assigned mentor every week, providing dedicated time for addressing queries, clarifying concepts, and setting goals.",
+  },
 
-{
-    question:"How will the mentorship benefit me?",
-    answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem officiis est esse sit similique quia placeat accusantium aliquam rem libero?"
-},
+  {
+    question: "Are there any success stories from VJ Sir's previous students?",
+    answer:
+      "Yes, VJ Sir has mentored JEE Advanced 2014 AIR 1, Chitraang Murdia and you can find all the success stories in his YouTube channel itself.",
+  },
 
-{
-    question:"Are there any success stories from VJ Sir's previous students?",
-    answer: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, ipsum?"
-},
+  {
+    question: "What sets VJ Sir’s mentorship apart?",
+    answer:
+      "Compatible Mentor for every Mentee and On-on-one session every week with the mentor where the would be tacking their progress throughout the week. The mentors would not only be solving general academic issues but also subject doubts.",
+  },
 
-{
-    question:"What sets VJ Sir’s mentorship apart?",
-    answer: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, ipsum?"
-},
+  {
+    question: "Can I interact with VJ sir directly?",
+    answer:
+      "Yes, every Sunday at 9 pm VJ Sir will be conducting a zoom session with thee students.",
+  },
 
-{
-    question:"Can I interact with VJ sir directly?",
-    answer: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, ipsum?"
-},
+  {
+    question: "What are the different batches available for mentorship?",
+    answer:
+      "There's no batch available, the mentorship will run in phases. Yu can join whenever you want.",
+  },
 
-{
-    question:"What are the different batches available for mentorship?",
-    answer: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, ipsum?"
-},
-
-
-{
-    question:"What will be the duration of the mentorship?",
-    answer: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, ipsum?"
-},
-
-]
+  {
+    question: "What will be the duration of the mentorship?",
+    answer:
+      " It's a yearlong mentorship program and you can join whenever you want.",
+  },
+];

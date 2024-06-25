@@ -1,5 +1,5 @@
 import "./contact.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Contact() {
   return (
     <>
@@ -37,7 +37,7 @@ export default function Contact() {
 
                   <div className="info-text">
                     <h3>Phone Number</h3>
-                    <h4>+91XXXXXXXXXX</h4>
+                    <h4>+91 9571741509</h4>
                   </div>
                 </div>
 
@@ -46,7 +46,7 @@ export default function Contact() {
 
                   <div className="info-text">
                     <h3>E-mail</h3>
-                    <h4>vjsir.123@gmail.com</h4>
+                    <h4>vishaljoshi@vjnucleus.com</h4>
                   </div>
                 </div>
               </div>
@@ -57,35 +57,56 @@ export default function Contact() {
                 <h3>Follow Us :</h3>
                 <div className="social-media-btn">
                   <button>
-                    <Link to="https://www.instagram.com/vishaljoshi.vjsir?igsh=MXdpaDh0anYzZWphOA==">
-                      <i class="fa-brands fa-2x fa-instagram"></i>
-                    </Link>
+                    <NavLink to="https://www.instagram.com/vishaljoshi.vjsir">
+                      <i className="fa-brands fa-2x fa-instagram"></i>
+                    </NavLink>
                   </button>
-                  <button class="fa-brands fa-2x fa-youtube"></button>
                   <button>
-                    <Link to="https://www.linkedin.com/in/vishaljoshivjsir?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BsU%2Fw8UrWT0GlOYG2sv9vuw%3D%3D">
-                      <i class="fa-brands fa-2x fa-linkedin"></i>
-                    </Link>
+                    <NavLink to="https://youtube.com/@nucleusvjsir">
+                      <i className="fa-brands fa-2x fa-youtube"></i>
+                    </NavLink>
                   </button>
-                  <button class="fa-brands fa-2x fa-facebook"></button>
+                  <button>
+                    <NavLink to="https://www.linkedin.com/in/vishaljoshivjsir">
+                      <i className="fa-brands fa-2x fa-linkedin"></i>
+                    </NavLink>
+                  </button>
+                  <button>
+                    <NavLink to="https://www.facebook.com">
+                      <i className="fa-brands fa-2x fa-facebook"></i>
+                    </NavLink>
+                  </button>
                 </div>
               </div>
             </div>
             <div className="contact-right">
               <h1>Send a Message</h1>
+              <form action="https://formspree.io/f/movaanqe" method="POST">
+                <input
+                  type="text"
+                  name="username"
+                  id=""
+                  required
+                  placeholder="Name"
+                />
+                <input
+                  type="email"
+                  name="Email"
+                  id=""
+                  required
+                  placeholder="E-mail"
+                />
 
-              <input type="text" name="" id="" required placeholder="Name" />
-              <input type="email" name="" id="" required placeholder="E-mail" />
-
-              <textarea
-                name=""
-                id="textarea"
-                cols="1"
-                rows="10"
-                placeholder="Message"
-              ></textarea>
-
-              <button className="contact-btn">SUBMIT</button>
+                <textarea
+                  name="message"
+                  id="textarea"
+                  cols="4"
+                  rows="10"
+                  placeholder="Message"
+                ></textarea>
+                <input className="contact-btn" type="submit" value="submit" />
+                {/* <button className="contact-btn">SUBMIT</button> */}
+              </form>
             </div>
           </div>
         </div>

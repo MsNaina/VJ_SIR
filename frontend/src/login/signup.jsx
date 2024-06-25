@@ -39,9 +39,7 @@ export default function SignUp() {
     if (result.token) {
       console.log("success");
 
-      localStorage.setItem("token", JSON.stringify(result.token));
-      localStorage.setItem("user", JSON.stringify(result.user));
-      navigate("/login");
+      navigate("/otp", { state: { email: Mail, mobile_no: Number } });
     } else {
       console.log("Registration failed");
     }
@@ -106,7 +104,7 @@ export default function SignUp() {
             />
 
             <button className="login-btn" onClick={checkdata} type="submit">
-              Sign Up
+              Request OTP
             </button>
 
             <div className="register-link">

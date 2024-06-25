@@ -89,6 +89,7 @@ export default function CompatibilityStage1() {
         setResponseMessage("Error submitting form.");
       });
   };
+  
 
   return (
     <section id="Compatibility">

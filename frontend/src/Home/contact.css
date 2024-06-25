@@ -110,8 +110,11 @@
   color: black;
   border: 2px solid black;
 }
+input , textarea{
+  font-weight: 500;
+}
 #textarea {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 @media (max-width: 1285px) {
   .contact-right {

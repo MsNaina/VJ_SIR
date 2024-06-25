@@ -1,5 +1,6 @@
 import "./session.css";
 import Sessionimg from "../assets/images/sneha.png";
+import { NavLink } from "react-router-dom";
 export default function Session() {
   return (
     <>
@@ -24,7 +25,10 @@ export default function Session() {
 
             <div className="session-bottom">
               <button className="session-btn">BUY NOW</button>
-              <a href=""> Know More</a>
+              <a href="">
+                {" "}
+                <NavLink to="./session" >Know More</NavLink>{" "}
+              </a>
             </div>
           </div>
         </div>
