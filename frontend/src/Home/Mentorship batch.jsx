@@ -30,7 +30,7 @@ export default function Mentorship() {
 
   return (
     <>
-      {/* <Eyes/> */}
+    
       <section id="Mentorship">
         <div className="Mentorship">
 
@@ -46,11 +46,11 @@ export default function Mentorship() {
 
           <div className="mentorship-imgs">
 
-            {/* <div className="mentorship-img1"> */}
+          
               <div className="mentorship-img1 mentorship-img">
                 <img src={Chitrang} alt="" />
               </div>
-            {/* </div> */}
+           
 
             <div className="mentorship-img2 mentorship-img">
               <img src={Group8} alt="" />
@@ -113,11 +113,11 @@ export default function Mentorship() {
               </div>
             </div>
 
-            {/* <div className="mentorship-img3"> */}
+           
               <div className="mentorship-img3 mentorship-img">
                 <img src={Himanshu} alt="" />
               </div>
-            {/* </div> */}
+          
 
           </div>
         </div>

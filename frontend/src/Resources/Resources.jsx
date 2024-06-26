@@ -27,7 +27,9 @@ export default function Resources() {
           <div className="resource-card">
             <img src={Mocktext} alt="" />
             <div className="resource-card-bottom ">
-              <button onClick={scrollToTop}>Mock Test</button>
+              <button onClick={scrollToTop}>
+                <Link to="/mocktest">Mock Test</Link>
+              </button>
             </div>
           </div>
 

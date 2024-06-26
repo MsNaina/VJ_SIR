@@ -2,29 +2,32 @@
   width: 100%;
   padding: 8vw 0vw;
   font-family: Red Hat Display;
-  background-color: lightblue;
 }
 .Mentorship {
   padding: 0rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .mentorship-text {
   text-align: center;
-
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
+  width: 50%;
+  justify-content: center;
 }
 .mentorship-text h1 {
-  font-size: 5rem;
+  font-size: 5vw;
   font-weight: 500;
 }
 .mentorship-text h2 {
-  font-size: 4rem;
+  font-size: 5vw;
 }
 .mentorship-text p {
   font-size: 1rem;
   font-style: italic;
-  margin: 0rem 25rem;
   font-weight: 400;
 }
 .mentorship-imgs {
@@ -96,15 +99,23 @@ h6 {
   background-color: black;
   color: white;
 }
-@media (max-width: 1270px) {
-  .mentorship-text p {
-    margin: 0rem 20rem;
+@media (max-width: 1290px) {
+  .mentorship-text h2 {
+    font-size: 4.5vw;
+  }
+}
+@media (max-width: 1225px) {
+  .mentorship-text h1 {
+    font-size: 5.5vw;
+  }
+  .mentorship-text h2 {
+    font-size: 5.5vw;
+  }
+  .mentorship-text {
+    width: 60%;
   }
 }
 @media (max-width: 1200px) {
-  .mentorship-text p {
-    margin: 0rem 15rem;
-  }
   .mentorship-price {
     left: 12%;
   }
@@ -113,20 +124,11 @@ h6 {
   }
 }
 @media (max-width: 1170px) {
-  .mentorship-text p {
-    margin: 0rem 12rem;
-  }
   .mentorship-price {
     left: 10%;
   }
 }
 @media (max-width: 1100px) {
-  .mentorship-text h1 {
-    font-size: 4rem;
-  }
-  .mentorship-text h2 {
-    font-size: 3rem;
-  }
   .mentorship-text p {
     font-size: 1rem;
   }
@@ -143,7 +145,6 @@ h6 {
   .mentorship-imgs {
     gap: 1rem;
   }
-  
 }
 @media (max-width: 950px) {
   .mentorship-price {
@@ -164,28 +165,58 @@ h6 {
   .mentorship-price {
     left: 5%;
   }
-  .mentorship-text p {
-    margin: 0rem 10rem;
-  }
-  
 }
 @media (max-width: 850px) {
-  .mentorship-imgs{
-    display: block;
+  .mentorship-img {
+    width: 100%;
+    padding: 20px;
   }
-  .mentorship-price {
-    left: 5%;
+  .mentorship-img2 {
+    display: none;
+  }
+  .mentorship-text {
+    width: 70%;
+  }
+  .mentorship-text h1,
+  .mentorship-text h2 {
+    font-size: 6.5vw;
+  }
+}
+@media (max-width: 769px) {
+  .mentorship-text {
+    width: 80%;
+  }
+  .mentorship-text h1,
+  .mentorship-text h2 {
+    font-size: 7vw;
+  }
+}
+@media (max-width: 650px) {
+  .mentorship-text {
+    width: 90%;
+  }
+  .mentorship-text h1,
+  .mentorship-text h2 {
+    font-size: 8vw;
+  }
+  .mentorship-img {
+    padding: 0px;
+  }
+}
+@media (max-width: 535px) {
+  .mentorship-text {
+    width: 90%;
+  }
+  .mentorship-text h1,
+  .mentorship-text h2 {
+    font-size: 7.8vw;
   }
   .mentorship-text p {
-    margin: 0rem 10rem;
+    font-size: 2.5vw;
   }
-  .mentorship-img3{
-    order: 3;
-  }
-  .mentorship-img1{
-    order: 2;
-  }
-  .mentorship-img2{
-    order: 1;
+}
+@media (max-width: 535px) {
+  .mentorship-text {
+    width: 100%;
   }
 }

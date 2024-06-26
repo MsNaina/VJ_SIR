@@ -15,7 +15,7 @@ function Home() {
   return (
     <>
       <Header />
-      {/* <Mentorship /> */}
+      <Mentorship />
       <PODJEE />
       <Books />
       <Session />

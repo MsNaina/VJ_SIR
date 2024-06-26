@@ -36,9 +36,11 @@ export default function SignUp() {
 
     result = await result.json();
     console.log("API Response:", result);
-    if (result.token) {
+    if (
+      result.msg ===
+      "OTP sent to your email. Please verify to complete registration."
+    ) {
       console.log("success");
-
       navigate("/otp", { state: { email: Mail, mobile_no: Number } });
     } else {
       console.log("Registration failed");
@@ -46,79 +48,69 @@ export default function SignUp() {
   };
 
   return (
-    <>
-      <section id="LogIn">
-        <div className="login-left">
-          <NavLink to="/">
-            <img src={Logo} alt="" />
-          </NavLink>
-
-          <h2>
-            Start Your <span>Perfect</span>
-          </h2>
-          <h2>Preparation Today</h2>
-
-          <div className="login-bottom">
-            <input
-              type="text"
-              id="input"
-              value={Name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              placeholder="Name"
-            />
-
-            <input
-              type="tel"
-              id="input"
-              value={Number}
-              onChange={(e) => setNumber(e.target.value)}
-              required
-              placeholder="Mobile No."
-            />
-
-            <input
-              type="email"
-              id="input"
-              value={Mail}
-              onChange={(e) => setMail(e.target.value)}
-              required
-              placeholder="Email"
-            />
-
-            <input
-              type="password"
-              id="input"
-              value={Password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Password"
-            />
-            <input
-              type="password"
-              id="input"
-              value={Password2}
-              onChange={(e) => setPassword2(e.target.value)}
-              required
-              placeholder="Confirm Password"
-            />
-
-            <button className="login-btn" onClick={checkdata} type="submit">
-              Request OTP
-            </button>
-
-            <div className="register-link">
-              <p>
-                Already have an account? <NavLink to="/login">Log In</NavLink>
-              </p>
-            </div>
+    <section id="LogIn">
+      <div className="login-left">
+        <NavLink to="/">
+          <img src={Logo} alt="" />
+        </NavLink>
+        <h2>
+          Start Your <span>Perfect</span>
+        </h2>
+        <h2>Preparation Today</h2>
+        <div className="login-bottom">
+          <input
+            type="text"
+            id="input"
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            placeholder="Name"
+          />
+          <input
+            type="tel"
+            id="input"
+            value={Number}
+            onChange={(e) => setNumber(e.target.value)}
+            required
+            placeholder="Mobile No."
+          />
+          <input
+            type="email"
+            id="input"
+            value={Mail}
+            onChange={(e) => setMail(e.target.value)}
+            required
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            id="input"
+            value={Password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder="Password"
+          />
+          <input
+            type="password"
+            id="input"
+            value={Password2}
+            onChange={(e) => setPassword2(e.target.value)}
+            required
+            placeholder="Confirm Password"
+          />
+          <button className="login-btn" onClick={checkdata} type="submit">
+            Request OTP
+          </button>
+          <div className="register-link">
+            <p>
+              Already have an account? <NavLink to="/login">Log In</NavLink>
+            </p>
           </div>
         </div>
-
-        <div className="login-right">
-          <img src={vjsir} alt="" />
-        </div>
-      </section>
-    </>
+      </div>
+      <div className="login-right">
+        <img src={vjsir} alt="" />
+      </div>
+    </section>
   );
 }

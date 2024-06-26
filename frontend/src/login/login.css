@@ -82,6 +82,20 @@
 .register-link a {
   color: rgba(12, 98, 5, 1);
 }
+.otp-link{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0rem;
+  align-items: center;
+  font-family: Red Hat Display;
+  font-weight: 500;
+}
+.otp-line{
+  width: .3rem;
+  height: 2.5rem;
+  background: #0C6205;
+
+}
 @media (max-width: 1240px) 
 {
   #LogIn {
@@ -112,6 +126,10 @@
   .register-link p {
     font-size: 1rem;
   }
+  .otp-link{
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 @media (max-width: 1110px)
   {
@@ -122,17 +140,20 @@
     width: 100%;
   }
   #input {
-    width: 80%;
+    width: 70%;
   }
   .login-btn {
-    width: 82%;
+    width: 72%;
   }
   .register-link p {
     font-size: 1.3rem;
   }
+  .login-bottom{
+    padding-top: 40px;
+  }
   .login-left h2 {
     font-size: 5vw;
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
 }
 @media (max-width: 800px){
@@ -148,6 +169,10 @@
   }
   .register-link p {
     font-size: 1rem;
+  }
+  .otp-link{
+    justify-content: center;
+    gap: 2rem;
   }
 }
 @media (max-width: 650px){
@@ -169,13 +194,14 @@
   }
   .login-bottom {
     width: 100%;
-    padding-top: 100px;
+    padding-top: 50px;
   }
 }
 
 @media (max-width: 405px) {
   .login-left h2 {
     font-size: 8vw;
+    padding-top: 2.5vw;
   }
   #input {
     width: 80vw;
@@ -186,5 +212,14 @@
   }
   .login-btn {
     width: 84vw;
+  }
+  .otp-link{
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+@media(max-width:320px){
+  .otp-link a{
+    font-size: 4vw;
   }
 }

@@ -30,6 +30,8 @@ import MainsAdvancedQues from "./Resources/Pyq.jsx";
 import AllMentor from "./Mentorship/compatibility/Allmentors.jsx";
 import OTP from "./login/Otp.jsx"
 import SnehaTestimonial from "./Home/snehaTestimonial.jsx";
+import Mocktest from "./Resources/Mocktest.jsx"
+import Mocktestquestion from "./Resources/Mockques.jsx"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -122,6 +124,14 @@ const router = createBrowserRouter([
     element: <MathPYQs />,
   },
   {
+    path: "mocktest",
+    element: <Mocktest />,
+  },
+  {
+    path: "Mocktestques",
+    element: <Mocktestquestion />,
+  },
+  {
     path: "/pyq/chapter/:chapterId",
     element: <Level />,
   },
@@ -139,7 +149,11 @@ const router = createBrowserRouter([
   },
   {
     path: "Mentorship/Compatibility",
-    element: <Compatibility />,
+    element: (
+      // <ProtectedRoute>
+      <Compatibility />
+      // </ProtectedRoute>
+    ),
   },
   {
     path: "Mentorship/Compatibility/allocated-mentor",
