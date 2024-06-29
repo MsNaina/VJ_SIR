@@ -87,3 +87,18 @@
   border-radius: 10px;
   border: 1px solid #000000;
 }
+@media(max-width:970px){
+.instruction-bottom p{
+  font-size: .8rem;
+   padding: 1rem 0rem 2rem 2rem;
+}
+.inner-points {
+  margin-left: 2rem;
+}
+.general-instruction{
+  margin-top: 2rem;
+}
+.instruction-bottom h3{
+  font-size: 1rem;
+}
+}

@@ -29,8 +29,15 @@ const PhQues = () => {
       );
       const questionData = questionResponse.data;
       const answerData = answerResponse.data;
+      
+      const correctOptions = [
+        answerData.is_O1_correct ? "A" : null,
+        answerData.is_O2_correct ? "B" : null,
+        answerData.is_O3_correct ? "C" : null,
+        answerData.is_O4_correct ? "D" : null,
+      ].filter((option) => option !== null);
 
-      setQuestion({ ...questionData, ...answerData });
+      setQuestion({ ...questionData, correct_option: correctOptions });
       setIsExplanationVisible(false);
       setSelectedOptions([]);
       setIsCorrect(null);
@@ -59,6 +66,12 @@ const PhQues = () => {
   };
 
   const handleCheckClick = () => {
+    // Check if correct_option is defined
+    if (!question.correct_option) {
+      console.error("correct_option is not defined");
+      return;
+    }
+
     let isCorrectAnswer = false;
 
     switch (question.type) {
@@ -91,10 +104,11 @@ const PhQues = () => {
   const handleNextQuestion = () => {
     const currentQuestionId = id;
     if (currentQuestionId) {
+      const subjectId = currentQuestionId.slice(0, 2);
       const chapterId = currentQuestionId.slice(2, 4);
       const questionNumber = parseInt(currentQuestionId.slice(4), 10);
       const nextQuestionNumber = questionNumber + 1;
-      const nextQuestionId = `MA${chapterId}${nextQuestionNumber
+      const nextQuestionId = `${subjectId}${chapterId}${nextQuestionNumber
         .toString()
         .padStart(3, "0")}`;
       navigate(`/question/${nextQuestionId}`);
@@ -105,17 +119,18 @@ const PhQues = () => {
   const handlePrevQuestion = () => {
     const currentQuestionId = id;
     if (currentQuestionId) {
+      const subjectId = currentQuestionId.slice(0, 2);
       const chapterId = currentQuestionId.slice(2, 4);
       const questionNumber = parseInt(currentQuestionId.slice(4), 10);
       if (questionNumber > 1) {
         const prevQuestionNumber = questionNumber - 1;
-        const prevQuestionId = `MA${chapterId}${prevQuestionNumber
+        const prevQuestionId = `${subjectId}${chapterId}${prevQuestionNumber
           .toString()
           .padStart(3, "0")}`;
         navigate(`/question/${prevQuestionId}`);
       }
     }
-    console.log("prev  button ");
+    console.log("prev button ");
   };
 
   const arraysEqual = (a, b) => {
@@ -140,7 +155,7 @@ const PhQues = () => {
                 />
               </div>
 
-              {question.type === "SMCQ" || question.type === "MMCQ" ? (
+              {(question.type === "SMCQ" || question.type === "MMCQ") && (
                 <div className="options">
                   {["A", "B", "C", "D"].map((option) => (
                     <div
@@ -149,7 +164,8 @@ const PhQues = () => {
                         selectedOptions.includes(option)
                           ? isCorrect === null
                             ? "selected"
-                            : question.correct_option.includes(option)
+                            : question.correct_option &&
+                              question.correct_option.includes(option)
                             ? "correct"
                             : "incorrect"
                           : ""
@@ -160,7 +176,7 @@ const PhQues = () => {
                     </div>
                   ))}
                 </div>
-              ) : null}
+              )}
 
               {question.type === "INT" && (
                 <div className="integer-input">

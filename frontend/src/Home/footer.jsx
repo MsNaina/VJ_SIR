@@ -7,8 +7,8 @@ export default function Footer(){
           <div className="footer-content">
             <div className="footer-left">
               <h4>
-                {" "}
-                <NavLink to="/session">Privacy Policy</NavLink>{" "}
+               
+                <NavLink to="/privacypolicy">Privacy Policy</NavLink>{" "}
               </h4>
               <h4>Terms of Use</h4>
               <h4>Content Policy</h4>

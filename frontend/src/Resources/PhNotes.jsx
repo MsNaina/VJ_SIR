@@ -9,7 +9,6 @@ const PhNotes = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    
     axios
       .get(`http://127.0.0.1:8000/questions/list-chapters/PH`)
       .then((response) => {
@@ -23,6 +22,24 @@ const PhNotes = () => {
   const filteredModules = modules.filter((module) =>
     module.chapter_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleModuleClick = async (chapterId) => {
+    try {
+      const response = await axios.get(
+        `http://127.0.0.1:8000/notes/subject/PH`
+      );
+      const chapterNotes = response.data.find(
+        (note) => note.chapter === chapterId
+      );
+      if (chapterNotes) {
+        window.open(`http://127.0.0.1:8000${chapterNotes.pdf_url}`, "_blank");
+      } else {
+        console.error(`No PDF URL found for this chapter ${chapterId}`);
+      }
+    } catch (error) {
+      console.error("There was an error fetching the PDF URL!", error);
+    }
+  };
 
   return (
     <>
@@ -58,8 +75,8 @@ const PhNotes = () => {
         <div className="Modules_Container">
           {filteredModules.map((module) => (
             <div className="Modules-container" key={module.id}>
-              <NavLink
-                to={`/Notes/chapter/${module.id}`}
+              <div
+                onClick={() => handleModuleClick(module.id)}
                 className="ModulesData"
               >
                 <img
@@ -69,7 +86,7 @@ const PhNotes = () => {
                 <div className="ModulesData-text">
                   <h3>{module.chapter_name}</h3>
                 </div>
-              </NavLink>
+              </div>
             </div>
           ))}
         </div>

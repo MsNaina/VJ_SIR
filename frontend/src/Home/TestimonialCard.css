@@ -4,7 +4,7 @@
   width: 450px;
   transition: transform 1s;
   padding: 1rem;
-  /* position: relative; Added for positioning */
+ 
 }
 .Testimonial-cards img {
   height: 550px;
@@ -13,9 +13,9 @@
   padding: 1rem 0rem;
 }
 .testimonial-content {
-  position: relative; /* Changed from relative to absolute */
-  bottom: 100%; /* Adjusted to 10% */
-  height: 90%; /* Adjusted to 80% */
+  position: relative; 
+  bottom: 100%; 
+  height: 90%; 
   display: flex;
   flex-direction: column;
   align-items: center;

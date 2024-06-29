@@ -32,10 +32,15 @@ import OTP from "./login/Otp.jsx"
 import SnehaTestimonial from "./Home/snehaTestimonial.jsx";
 import Mocktest from "./Resources/Mocktest.jsx"
 import Mocktestquestion from "./Resources/Mockques.jsx"
+import Privacy from "./Home/privacy.jsx"
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "privacypolicy",
+    element: <Privacy />,
   },
 
   {

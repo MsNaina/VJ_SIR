@@ -88,7 +88,6 @@ export default function Testimonial() {
               <TestimonialCard
                 cardImage={testimonial.cardImage}
                 testimonialText={testimonial.testimonialText}
-                // personImage={testimonial.personImage}
                 name={testimonial.name}
                 designation={testimonial.designation}
               />

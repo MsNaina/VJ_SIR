@@ -4,21 +4,22 @@ import { useNavigate } from "react-router-dom";
 import "./compatibility.css";
 import Navbar from "../Navbar";
 
-export default function CompatibilityStage1() {
+const CompatibilityStage1 = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
-    Gender: "",
+    // fullName: "",
+    gender: "",
     state: "",
-    maths: "",
-    chemistry: "",
-    physics: "",
+    maths_rank: "",
+    chemistry_rank: "",
+    physics_rank: "",
     medium: "",
-    changingMedium: "",
+    medium_change: "",
   });
   const [responseMessage, setResponseMessage] = useState("");
-  const [allocatedMentor, setAllocatedMentor] = useState("");
+  const [allocatedMentor, setAllocatedMentor] = useState(null);
 
   const navigate = useNavigate();
+
   const indianStates = [
     "Andhra Pradesh",
     "Arunachal Pradesh",
@@ -65,59 +66,73 @@ export default function CompatibilityStage1() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log("Form data:", formData);
 
-    axios
-      .post("http://localhost:8000/allocate-mentor", formData)
-      .then((response) => {
-        console.log("Response from backend:", response.data);
-        setResponseMessage(response.data.message);
-        setAllocatedMentor(response.data.mentor);
-
-        navigate.push({
-          pathname: "Mentorship/Compatibility/allocated-mentor",
-          state: {
-            responseMessage: response.data.message,
-            allocatedMentor: response.data.mentor,
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/mentorship/get-mentor",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
           },
-        });
-      })
-      .catch((error) => {
-        console.error("Error submitting form:", error);
-        setResponseMessage("Error submitting form.");
+        }
+      );
+
+      const responseData = response.data.data;
+      setResponseMessage(response.data.message);
+      setAllocatedMentor(responseData.alloted_mentor);
+
+      navigate("/Mentorship/Compatibility/allocated-mentor", {
+        state: {
+          allocatedMentor: responseData.alloted_mentor,
+          extraMentors: [
+            responseData.extra_mentor_1,
+            responseData.extra_mentor_2,
+            responseData.extra_mentor_3,
+          ],
+          compatibilityScores: [
+            responseData.extra_mentor_1_compatibility,
+            responseData.extra_mentor_2_compatibility,
+            responseData.extra_mentor_3_compatibility,
+          ],
+        },
       });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setResponseMessage("Error submitting form.");
+    }
   };
-  
 
   return (
     <section id="Compatibility">
-      <Navbar/>
-      
+      <Navbar />
+
       <div className="Compatibility">
         <h2>Compatibility Test</h2>
         <div className="compatibility-info">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} action="POST">
             <div className="form-group">
-              <label htmlFor="fullName">Full Name :</label>
+              {/* <label htmlFor="fullName">Full Name :</label>
               <input
                 id="fullName"
                 type="text"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-              />
+              /> */}
             </div>
 
             <div className="form-group Flex">
               <div className="input-group">
-                <label htmlFor="Gender">Gender</label>
+                <label htmlFor="gender">Gender</label>
                 <select
-                  id="Gender"
-                  name="Gender"
+                  id="gender"
+                  name="gender"
                   className="Coform"
-                  value={formData.Gender}
+                  value={formData.gender}
                   onChange={handleChange}
                 >
                   <option value=""></option>
@@ -160,14 +175,14 @@ export default function CompatibilityStage1() {
                 </select>
               </div>
               <div className="input-group">
-                <label htmlFor="changingMedium">
+                <label htmlFor="medium_change">
                   Are you changing your medium?
                 </label>
                 <select
-                  id="changingMedium"
-                  name="changingMedium"
+                  id="medium_change"
+                  name="medium_change"
                   className="Coform"
-                  value={formData.changingMedium}
+                  value={formData.medium_change}
                   onChange={handleChange}
                 >
                   <option value=""></option>
@@ -181,12 +196,12 @@ export default function CompatibilityStage1() {
               <h3>How You Rate Yourself In:</h3>
               <div className="Flex rate">
                 <div className="input-group">
-                  <label htmlFor="maths">Maths :</label>
+                  <label htmlFor="maths_rank">Maths :</label>
                   <select
-                    id="maths"
-                    name="maths"
+                    id="maths_rank"
+                    name="maths_rank"
                     className="Coform"
-                    value={formData.maths}
+                    value={formData.maths_rank}
                     onChange={handleChange}
                   >
                     <option value=""></option>
@@ -198,12 +213,12 @@ export default function CompatibilityStage1() {
                   </select>
                 </div>
                 <div className="input-group">
-                  <label htmlFor="chemistry">Chemistry :</label>
+                  <label htmlFor="chemistry_rank">Chemistry :</label>
                   <select
-                    id="chemistry"
-                    name="chemistry"
+                    id="chemistry_rank"
+                    name="chemistry_rank"
                     className="Coform"
-                    value={formData.chemistry}
+                    value={formData.chemistry_rank}
                     onChange={handleChange}
                   >
                     <option value=""></option>
@@ -215,12 +230,12 @@ export default function CompatibilityStage1() {
                   </select>
                 </div>
                 <div className="input-group">
-                  <label htmlFor="physics">Physics :</label>
+                  <label htmlFor="physics_rank">Physics :</label>
                   <select
-                    id="physics"
-                    name="physics"
+                    id="physics_rank"
+                    name="physics_rank"
                     className="Coform"
-                    value={formData.physics}
+                    value={formData.physics_rank}
                     onChange={handleChange}
                   >
                     <option value=""></option>
@@ -238,11 +253,13 @@ export default function CompatibilityStage1() {
             </button>
           </form>
           {responseMessage && <p>{responseMessage}</p>}
-          {allocatedMentor && (
-            <p>Your allocated mentor is: {allocatedMentor}</p>
+          {allocatedMentor && allocatedMentor.Name && (
+            <p>Your allocated mentor is: {allocatedMentor.Name}</p>
           )}
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default CompatibilityStage1;

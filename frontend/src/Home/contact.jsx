@@ -24,7 +24,7 @@ export default function Contact() {
 
               <div className="info">
                 <div className="address">
-                  <i class="fa-solid fa-location-dot fa-2x"></i>
+                  <i className="fa-solid fa-location-dot fa-2x"></i>
 
                   <div className="info-text">
                     <h3>Address</h3>
@@ -33,7 +33,7 @@ export default function Contact() {
                 </div>
 
                 <div className="phone">
-                  <i class="fa-solid fa-phone fa-2x"></i>
+                  <i className="fa-solid fa-phone fa-2x"></i>
 
                   <div className="info-text">
                     <h3>Phone Number</h3>
@@ -42,7 +42,7 @@ export default function Contact() {
                 </div>
 
                 <div className="mail">
-                  <i class="fa-regular fa-envelope fa-2x"></i>
+                  <i className="fa-regular fa-envelope fa-2x"></i>
 
                   <div className="info-text">
                     <h3>E-mail</h3>
@@ -104,8 +104,8 @@ export default function Contact() {
                   rows="10"
                   placeholder="Message"
                 ></textarea>
-                <input className="contact-btn" type="submit" value="submit" />
-                {/* <button className="contact-btn">SUBMIT</button> */}
+                <input className="contact-btn" type="submit" value="SUBMIT" />
+               
               </form>
             </div>
           </div>

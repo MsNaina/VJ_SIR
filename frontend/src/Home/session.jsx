@@ -26,7 +26,6 @@ export default function Session() {
             <div className="session-bottom">
               <button className="session-btn">BUY NOW</button>
               <a href="">
-                {" "}
                 <NavLink to="./session" >Know More</NavLink>{" "}
               </a>
             </div>

@@ -9,7 +9,6 @@ import Contact from "./contact";
 import WaveFooter from "./Wavefooter";
 import Footer from "./footer";
 import Testimonial from "./Testimonial";
-import TestimonialCard from "./TestimonialCard";
 
 function Home() {
   return (
