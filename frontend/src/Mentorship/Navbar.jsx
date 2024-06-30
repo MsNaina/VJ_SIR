@@ -19,6 +19,7 @@ export default function Navbar() {
   }, []);
 
   const logout = () => {
+      console.log("Logging out user...");
     localStorage.clear();
     navigate("/Signup");
   };

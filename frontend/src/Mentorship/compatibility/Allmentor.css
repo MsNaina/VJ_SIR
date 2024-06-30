@@ -1,0 +1,68 @@
+.mentors {
+  /* background-color: lightblue; */
+  width: 100%;
+  font-family: poppins;
+  margin-top: 2rem;
+}
+.mentors h2 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+}
+.mentors span {
+  font-style: italic;
+  color: #0c6205;
+}
+.mentor-cards {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3rem 0rem;
+}
+.mentor-card {
+  background-image: url("../../assets/images/mentorss.png");
+  background-size: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  border-radius: 20px;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.Mentor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50%;
+  text-align: center;
+}
+.mentor-info h3{
+font-size: 2rem;
+font-weight: 600;
+}
+.mentor-IIT{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+.mentor-info h4{
+font-size: 1.5rem;
+font-weight: 600;
+font-style: italic;
+}
+.Mentor-info h5{
+font-size: 1.5rem;
+font-weight: 600;
+color: #0C6205;
+}

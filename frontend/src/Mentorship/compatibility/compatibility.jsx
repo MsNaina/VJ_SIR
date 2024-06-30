@@ -6,7 +6,6 @@ import Navbar from "../Navbar";
 
 const CompatibilityStage1 = () => {
   const [formData, setFormData] = useState({
-    // fullName: "",
     gender: "",
     state: "",
     maths_rank: "",
@@ -16,7 +15,7 @@ const CompatibilityStage1 = () => {
     medium_change: "",
   });
   const [responseMessage, setResponseMessage] = useState("");
-  const [allocatedMentor, setAllocatedMentor] = useState(null);
+  // const [allocatedMentor, setAllocatedMentor] = useState(null);
 
   const navigate = useNavigate();
 
@@ -60,9 +59,16 @@ const CompatibilityStage1 = () => {
   ];
 
   const handleChange = (e) => {
+    const value =
+      e.target.name === "maths_rank" ||
+      e.target.name === "chemistry_rank" ||
+      e.target.name === "physics_rank"
+        ? parseInt(e.target.value) 
+        : e.target.value; 
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: value,
     });
   };
 
@@ -71,19 +77,33 @@ const CompatibilityStage1 = () => {
     console.log("Form data:", formData);
 
     try {
+      const accessToken = localStorage.getItem("access_token");
+      if (!accessToken) {
+        console.error("Access token not found in localStorage.");
+        return;
+      }
+      const formDataToSend = new FormData();
+      formDataToSend.append("gender", formData.gender);
+      formDataToSend.append("state", formData.state);
+      formDataToSend.append("maths_rank", formData.maths_rank);
+      formDataToSend.append("chemistry_rank", formData.chemistry_rank);
+      formDataToSend.append("physics_rank", formData.physics_rank);
+      formDataToSend.append("medium", formData.medium);
+      formDataToSend.append("medium_change", formData.medium_change);
+
       const response = await axios.post(
         "http://127.0.0.1:8000/mentorship/get-mentor",
-        formData,
+        formDataToSend,
         {
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${accessToken}`,
           },
         }
       );
-
       const responseData = response.data.data;
       setResponseMessage(response.data.message);
-      setAllocatedMentor(responseData.alloted_mentor);
+      // setAllocatedMentor(responseData.alloted_mentor);
 
       navigate("/Mentorship/Compatibility/allocated-mentor", {
         state: {
@@ -101,8 +121,15 @@ const CompatibilityStage1 = () => {
         },
       });
     } catch (error) {
-      console.error("Error submitting form:", error);
-      setResponseMessage("Error submitting form.");
+      if (
+        error.response &&
+        error.response.data.message === "Mentor has already been alloted"
+      ) {
+        alert("Mentor has already been allotted to you.");
+      } else {
+        console.error("Error submitting form:", error);
+        setResponseMessage("Error submitting form.");
+      }
     }
   };
 
@@ -114,16 +141,7 @@ const CompatibilityStage1 = () => {
         <h2>Compatibility Test</h2>
         <div className="compatibility-info">
           <form onSubmit={handleSubmit} action="POST">
-            <div className="form-group">
-              {/* <label htmlFor="fullName">Full Name :</label>
-              <input
-                id="fullName"
-                type="text"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
-              /> */}
-            </div>
+            <div className="form-group"></div>
 
             <div className="form-group Flex">
               <div className="input-group">
@@ -134,6 +152,7 @@ const CompatibilityStage1 = () => {
                   className="Coform"
                   value={formData.gender}
                   onChange={handleChange}
+                  required
                 >
                   <option value=""></option>
                   <option value="Male">Male</option>
@@ -148,6 +167,7 @@ const CompatibilityStage1 = () => {
                   className="Coform"
                   value={formData.state}
                   onChange={handleChange}
+                  required
                 >
                   <option value=""></option>
                   {indianStates.map((state) => (
@@ -168,6 +188,7 @@ const CompatibilityStage1 = () => {
                   className="Coform"
                   value={formData.medium}
                   onChange={handleChange}
+                  required
                 >
                   <option value=""></option>
                   <option value="English">English</option>
@@ -184,6 +205,7 @@ const CompatibilityStage1 = () => {
                   className="Coform"
                   value={formData.medium_change}
                   onChange={handleChange}
+                  required
                 >
                   <option value=""></option>
                   <option value="Yes">Yes</option>
@@ -203,6 +225,7 @@ const CompatibilityStage1 = () => {
                     className="Coform"
                     value={formData.maths_rank}
                     onChange={handleChange}
+                    required
                   >
                     <option value=""></option>
                     <option value="1">1 (weakest)</option>
@@ -220,6 +243,7 @@ const CompatibilityStage1 = () => {
                     className="Coform"
                     value={formData.chemistry_rank}
                     onChange={handleChange}
+                    required
                   >
                     <option value=""></option>
                     <option value="1">1 (weakest)</option>
@@ -237,6 +261,7 @@ const CompatibilityStage1 = () => {
                     className="Coform"
                     value={formData.physics_rank}
                     onChange={handleChange}
+                    required
                   >
                     <option value=""></option>
                     <option value="1">1 (weakest)</option>
@@ -252,10 +277,6 @@ const CompatibilityStage1 = () => {
               SUBMIT
             </button>
           </form>
-          {responseMessage && <p>{responseMessage}</p>}
-          {allocatedMentor && allocatedMentor.Name && (
-            <p>Your allocated mentor is: {allocatedMentor.Name}</p>
-          )}
         </div>
       </div>
     </section>

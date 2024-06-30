@@ -119,6 +119,7 @@
 
 import "./login.css";
 import React, { useState, useEffect } from "react";
+// import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
@@ -139,6 +140,15 @@ export default function SignUp() {
   }, [navigate]);
 
   const handleSignUp = async () => {
+
+    console.log("SignUp initiated with data:", {
+      Name,
+      Password,
+      Password2,
+      Mail,
+      Number,
+    });
+
     const mobileNumberPattern = /^[0-9]{10}$/;
     if (!mobileNumberPattern.test(Number)) {
       alert("Please enter a valid 10-digit mobile number.");
@@ -146,7 +156,8 @@ export default function SignUp() {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/user/website-register/", {
+      // axios.defaults.withCredentials = true;
+      const response = await fetch("http://127.0.0.1:8000/api/user/register/", {
         method: "POST",
         body: JSON.stringify({
           name: Name,
@@ -161,23 +172,39 @@ export default function SignUp() {
       const result = await response.json();
       console.log("API Response:", result);
 
-      if (
+  //     if (
+  //       result.msg ===
+  //       "OTP sent to your email. Please verify to complete registration."
+  //     ) {
+  //       // Assuming the backend returns a session ID upon successful signup
+  //       const sessionID = result.session_id; // Replace with actual key if different
+
+  //       // Store session ID in localStorage or Cookies
+  //       localStorage.setItem("session_key", sessionID);
+
+  //       // Redirect to OTP verification page with necessary state
+  //       navigate("/otp", {
+  //         state: { email: Mail, mobile_no: Number },
+  //       });
+  //     } else {
+  //       console.log("Registration failed");
+  //       // Handle registration failure scenario
+  //     }
+  //   } catch (error) {
+  //     console.error("Error during signup:", error);
+  //     alert("Error during signup. Please try again later.");
+  //   }
+  // };
+   if (
         result.msg ===
         "OTP sent to your email. Please verify to complete registration."
       ) {
-        // Assuming the backend returns a session ID upon successful signup
-        const sessionID = result.session_key; // Replace with actual key if different
-
-        // Store session ID in localStorage or Cookies
-        localStorage.setItem("session_key", sessionID);
-
-        // Redirect to OTP verification page with necessary state
+        console.log("OTP sent to email. Redirecting to OTP page...");
         navigate("/otp", {
           state: { email: Mail, mobile_no: Number },
         });
       } else {
-        console.log("Registration failed");
-        // Handle registration failure scenario
+        console.log("Registration failed:", result);
       }
     } catch (error) {
       console.error("Error during signup:", error);

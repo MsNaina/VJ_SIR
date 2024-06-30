@@ -3,8 +3,10 @@
   font-family: Red Hat Display;
   background-color: lightblue;
 }
+.privacy{
+ background-image: url("../assets/images/Privacy.png");
+}
 .privacy-header {
-  background-image: url("../assets/images/Privacy.png");
   text-align: center;
   position: relative;
   line-height: 3rem;
