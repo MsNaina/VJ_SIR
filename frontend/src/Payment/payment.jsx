@@ -13,9 +13,9 @@ const Payment = () => {
       <Navbar />
       
       <div className="max-w-full my-8 border-4 border-gray-700 rounded-3xl shadow-lg bg-white flex overflow-hidden relative">
-        {/* Green section on the left */}
+      
         <div className="w-96 bg-green-100 relative">
-          {/* Image floating above the bottom part with increased padding */}
+         
           <img
             src={Personalisation}
             alt="Overlapping illustration"
@@ -24,7 +24,7 @@ const Payment = () => {
         </div>
 
         <div className="flex-grow p-8">
-          {/* About the Class Section */}
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div className="col-span-2">
               <h2 className="text-3xl font-bold mb-4">About the class</h2>
@@ -52,13 +52,13 @@ const Payment = () => {
               </ul>
             </div>
             <div className="flex justify-center items-center">
-              {/* Empty div for potential content */}
+              
             </div>
           </div>
         </div>
       </div>
 
-      {/* Direct to Payment Button */}
+  
       <div className="flex justify-center">
         <button className="bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-green-700 mt-4">
         <NavLink className="links" to="/payment/direct" onClick={toggleMenu}>
