@@ -1,0 +1,29 @@
+#Privacy {
+    width: 100%;
+    font-family: Red Hat Display;
+    background-color: lightblue;
+  }
+  .privacy{
+   background-image: url("../assets/images/Privacy.png");
+  }
+  .privacy-header {
+    text-align: center;
+    position: relative;
+    line-height: 3rem;
+  }
+  .privacy-header p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .privacy-header h1 {
+    padding-top: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .green
+{
+  height: 20px;
+  width: 20 px;
+
+}
+  
