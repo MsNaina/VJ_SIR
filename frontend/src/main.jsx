@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import MentorshipPage from "./Mentorship/MentorshipPage.jsx";
 import Login from "./login/login.jsx";
 import "./index.css";
+import Payment from "./Payment/payment.jsx";
 import Home from "./Home/Home.jsx";
 import AboutUs from "./Aboutus/About.jsx";
 import Resources from "./Resources/Resources.jsx";
@@ -29,12 +30,11 @@ import AllPYQs from "./Resources/AllPYQs.jsx";
 import MainsAdvancedQues from "./Resources/Pyq.jsx";
 import AllMentor from "./Mentorship/compatibility/Allmentors.jsx";
 import OTP from "./login/Otp.jsx"
-import Class from "./login/class.jsx"
 import SnehaTestimonial from "./Home/snehaTestimonial.jsx";
 import Mocktest from "./Resources/Mocktest.jsx"
 import Mocktestquestion from "./Resources/Mockques.jsx"
 import Privacy from "./Home/privacy.jsx"
-import Mentor from "./Mentorship/compatibility/mentor.jsx"
+import PaymentDirect from "./Payment/paymentDirect/paymentDirect.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,6 +43,14 @@ const router = createBrowserRouter([
   {
     path: "privacypolicy",
     element: <Privacy />,
+  },
+  {
+    path: "payment",
+    element: <Payment />,
+  },
+  {
+    path:"payment/direct",
+    element: <PaymentDirect />
   },
 
   {
@@ -73,10 +81,6 @@ const router = createBrowserRouter([
   {
     path: "/otp",
     element: <OTP />,
-  },
-  {
-    path: "/class",
-    element: <Class />,
   },
   {
     path: "ChemistryDpp",
@@ -169,10 +173,6 @@ const router = createBrowserRouter([
   {
     path: "Mentorship/Compatibility/allocated-mentor",
     element: <AllMentor />,
-  },
-  {
-    path: "/mentor",
-    element: <Mentor/>,
   },
 ]);
 
