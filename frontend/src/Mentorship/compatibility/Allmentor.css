@@ -1,9 +1,11 @@
 .mentors {
-  /* background-color: lightblue; */
   width: 100%;
   font-family: poppins;
-  margin-top: 2rem;
+  margin: 2rem 0rem 1rem 0rem;
+  display: flex;
+  flex-direction: column;
 }
+
 .mentors h2 {
   text-align: center;
   font-size: 4rem;
@@ -16,20 +18,22 @@
 .mentor-cards {
   display: flex;
   justify-content: space-evenly;
-  padding: 3rem 0rem;
+  padding: 2rem 0rem;
 }
 .mentor-card {
   background-image: url("../../assets/images/mentorss.png");
   background-size: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 350px;
-  height: 450px;
+  width: 25rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   color: black;
   border-radius: 20px;
+  margin-top: 2rem;
+  padding-top: 1rem;
 }
 
 .profile-photo {
@@ -37,6 +41,7 @@
   height: 150px;
   border-radius: 50%;
   margin-bottom: 10px;
+  border: 3px solid;
 }
 .Mentor-info {
   display: flex;
@@ -45,24 +50,125 @@
   height: 50%;
   text-align: center;
 }
-.mentor-info h3{
-font-size: 2rem;
-font-weight: 600;
+.mentor-info h3 {
+  font-size: 2rem;
+  font-weight: 600;
 }
-.mentor-IIT{
-    display: flex;
+.mentor-IIT {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  gap: 1rem;
+}
+.mentor-info h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+.Mentor-info h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0c6205;
+}
+.mentor-btn {
+  display: flex;
+  justify-content: center;
+}
+.mentor-btn button {
+  background-color: #0c6205;
+  width: 200px;
+  padding: 0.5rem;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 40px;
+}
+
+@media (max-width: 1180px) {
+  .mentor-card {
+    width: 20rem;
+    height: 28rem;
+  }
+  .mentors h2 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 1000px) {
+  .mentor-card {
+    width: 20rem;
+    height: 28rem;
+  }
+  .mentor-info h3 {
+    font-size: 1.6rem;
+  }
+  .mentor-info h4 {
+    font-size: 1.2rem;
+  }
+  .Mentor-info h5 {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 920px) {
+  .mentor-card {
+    width: 18rem;
+    height: 25rem;
+  }
+  .Mentor-info h5 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 825px) {
+  .mentors {
+    margin-top: 5rem;
+  }
+  .mentor-card {
+    width: 40rem;
+    height: 25rem;
+  }
+  .mentor-info h3 {
+    font-size: 2rem;
+  }
+  .mentor-info h4,
+  .Mentor-info h5 {
+    font-size: 1.5rem;
+  }
+  .mentor-cards {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 1rem;
-    gap: 1rem;
+  }
 }
-.mentor-info h4{
-font-size: 1.5rem;
-font-weight: 600;
-font-style: italic;
-}
-.Mentor-info h5{
-font-size: 1.5rem;
-font-weight: 600;
-color: #0C6205;
+@media (max-width: 680px) {
+  .mentors h2 {
+    font-size: 6vw;
+  }
+  .mentor-card {
+    width: 80vw;
+    height: 45vw;
+  }
+  .mentor-info h3 {
+    font-size: 4.5vw;
+  }
+  .mentor-info h4,
+  .Mentor-info h5 {
+    font-size: 3vw;
+  }
+  .mentor-btn button {
+    width: 30vw;
+    padding: 0.5rem;
+    font-size: 2.5vw;
+  }
+  .profile-photo {
+    width: 18vw;
+    height: 18vw;
+  }
+  .mentors {
+    margin-top: 3rem;
+  }
+  .mentor-IIT i {
+    font-size: 4vw;
+  }
+  .mentor-IIT {
+    padding: 0;
+    gap: .5rem;
+  }
 }

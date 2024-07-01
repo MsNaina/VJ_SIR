@@ -1,0 +1,217 @@
+.Mentor {
+  margin-top: 3rem;
+  font-family: poppins;
+}
+.mentor-profile {
+  background-image: url("../../assets/images/mentor-profile.png");
+  background-size: cover;
+  width: 30rem;
+  height: 33rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.Mentor h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 600;
+}
+.Mentor span {
+  color: #0c6205;
+  font-style: italic;
+}
+.my-mentor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+.Mentor-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.Mentor-right p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.Mentor-right a {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3076b1;
+  text-decoration: underline;
+  width: 100%;
+}
+.mentor-profile h2 {
+  font-size: 2vw;
+  font-weight: 600;
+}
+.mentor-Info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.mentor-Info h4 {
+  font-size: 1.4vw;
+  color: #0c6205;
+  font-style: italic;
+  font-weight: 600;
+}
+.mentor-profile img {
+  border: 6px solid #b0e3b5;
+  height: 400px;
+  width: 350px;
+  border-radius: 0;
+  margin-top: 3rem;
+}
+.mentor-Info i {
+  font-size: 1.5em;
+  color: #0c6205;
+}
+@media (max-width: 1290px) {
+  .Mentor-right p {
+    font-size: 1.1rem;
+  }
+  .Mentor-right a {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 1100px) {
+  .Mentor-right p,
+  .Mentor-right a {
+    font-size: 1rem;
+  }
+  .mentor-profile {
+    width: 28rem;
+    height: 30rem;
+  }
+  .mentor-profile img {
+    border: 6px solid #b0e3b5;
+    height: 30rem;
+    width: 20rem;
+  }
+  .Mentor h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 900px) {
+  .Mentor-right p,
+  .Mentor-right a {
+    font-size: 0.9rem;
+  }
+  .Mentor-right {
+    gap: 0.5rem;
+  }
+  .mentor-profile {
+    width: 28rem;
+    height: 32rem;
+  }
+  .mentor-profile img {
+    border: 6px solid #b0e3b5;
+    height: 30rem;
+    width: 20rem;
+  }
+  .Mentor h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 769px) {
+  .my-mentor {
+    flex-direction: column;
+    padding: 0vw 2vw 2vw 2vw;
+    gap: 1rem;
+  }
+  .Mentor-right p {
+    font-size: 1rem;
+  }
+  .Mentor-right a {
+    font-size: 1.2rem;
+  }
+  .Mentor-right {
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .mentor-profile {
+    width: 30rem;
+    height: 35rem;
+    gap: 2vw;
+  }
+  .mentor-profile img {
+    width: 22rem;
+    height: 25rem;
+  }
+  .Mentor h1 {
+    font-size: 3rem;
+  }
+  .mentor-profile h2 {
+    font-size: 2rem;
+  }
+  .mentor-Info h4 {
+    font-size: 1.5rem;
+  }
+  .mentor-knowmore {
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .mentor-profile {
+    width: 25rem;
+    height: 28rem;
+    gap: 1.5vw;
+  }
+  .mentor-profile img {
+    width: 20rem;
+    height: 20rem;
+  }
+  .mentor-profile h2 {
+    font-size: 5vw;
+  }
+  .mentor-Info h4 {
+    font-size: 3vw;
+  }
+  .mentor-Info i {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 430px) {
+  .Mentor h1 {
+    font-size: 8vw;
+  }
+  .Mentor-right p {
+    font-size: 3.2vw;
+  }
+  .Mentor-right a {
+    font-size: 4vw;
+  }
+  .mentor-profile {
+    width: 75vw;
+    height: 90vw;
+  }
+  .mentor-profile img {
+    width: 55vw;
+    height: 70vw;
+  }
+}
+@media (max-width: 330px) {
+  .Mentor {
+    margin-top: 1rem;
+  }
+  .Mentor-right {
+    width: 90%;
+  }
+  .Mentor-right p {
+    font-size: 3.5vw;
+  }
+  .mentor-profile {
+    width: 70vw;
+    height: 80vw;
+  }
+  .mentor-profile img {
+    width: 50vw;
+    height: 50vw;
+  }
+}

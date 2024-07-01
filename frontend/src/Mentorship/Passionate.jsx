@@ -1,7 +1,14 @@
 import "./passionate.css";
+import { NavLink } from "react-router-dom";
 import Vrutika from "../assets/images/vrutika.png";
 import Go from "../assets/images/Go.png";
 export default function Passionate() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <section id="Passionate">
@@ -28,7 +35,11 @@ export default function Passionate() {
           </h1>
 
           <div className="mentorship-footerimg">
-            <img className="go" src={Go} alt="" />
+            <button onClick={scrollToTop} className="go">
+              <NavLink to="./Compatibility">
+                <img src={Go} alt="" />
+              </NavLink>
+            </button>
             <img className="vrutika" src={Vrutika} alt="" />
           </div>
         </div>

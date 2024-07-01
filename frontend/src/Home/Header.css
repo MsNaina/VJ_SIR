@@ -39,10 +39,6 @@
 .p2 {
   font-size: 1.4vw;
 }
-.header-btn {
-  display: flex;
-  gap: 2vw;
-}
 .header-btn button {
   border: 2px solid black;
   border-radius: 20px;

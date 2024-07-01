@@ -18,23 +18,6 @@ export default function Login() {
 
   const handleLogin = async () => {
     console.log("email, password", email, password);
-
-    //   let result = await fetch("http://127.0.0.1:8000/api/user/login/", {
-    //     method: "POST",
-    //     body: JSON.stringify({ email, password }),
-    //     headers: { "Content-Type": "application/json" },
-    //   });
-
-    //   result = await result.json();
-    //   console.log(result);
-
-    //   if (result.token) {
-    //     localStorage.setItem("token", JSON.stringify(result.token));
-    //     navigate("/");
-    //   } else {
-    //     alert("Please enter correct details");
-    //   }
-    // };
     try {
       const response = await fetch("http://127.0.0.1:8000/api/user/login/", {
         method: "POST",
@@ -49,11 +32,10 @@ export default function Login() {
       const data = await response.json();
       console.log("Login response:", data);
 
-      // Store tokens in localStorage
       localStorage.setItem("access_token", data.token.access);
       localStorage.setItem("refresh_token", data.token.refresh);
 
-      navigate("/"); // Redirect to homepage after successful login
+      navigate("/class");
     } catch (error) {
       console.error("Login error:", error);
       alert("Login failed. Please check your credentials.");

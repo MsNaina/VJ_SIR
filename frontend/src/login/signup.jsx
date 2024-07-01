@@ -154,9 +154,12 @@ export default function SignUp() {
       alert("Please enter a valid 10-digit mobile number.");
       return;
     }
+    navigate("/otp", {
+      state: { email: Mail, mobile_no: Number },
+    });
 
     try {
-      // axios.defaults.withCredentials = true;
+
       const response = await fetch("http://127.0.0.1:8000/api/user/register/", {
         method: "POST",
         body: JSON.stringify({
@@ -171,30 +174,8 @@ export default function SignUp() {
 
       const result = await response.json();
       console.log("API Response:", result);
-
-  //     if (
-  //       result.msg ===
-  //       "OTP sent to your email. Please verify to complete registration."
-  //     ) {
-  //       // Assuming the backend returns a session ID upon successful signup
-  //       const sessionID = result.session_id; // Replace with actual key if different
-
-  //       // Store session ID in localStorage or Cookies
-  //       localStorage.setItem("session_key", sessionID);
-
-  //       // Redirect to OTP verification page with necessary state
-  //       navigate("/otp", {
-  //         state: { email: Mail, mobile_no: Number },
-  //       });
-  //     } else {
-  //       console.log("Registration failed");
-  //       // Handle registration failure scenario
-  //     }
-  //   } catch (error) {
-  //     console.error("Error during signup:", error);
-  //     alert("Error during signup. Please try again later.");
-  //   }
-  // };
+      console.log("email" ,Mail)
+      
    if (
         result.msg ===
         "OTP sent to your email. Please verify to complete registration."

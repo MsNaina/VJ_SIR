@@ -40,7 +40,6 @@ export default function Header() {
             </div>
 
             <div className="header-btn">
-              <button className="btn1">Buy Now</button>
               <button className="btn2" onClick={scrollToTop}>
                 <Link to="/Mentorship">Know More</Link>
               </button>
