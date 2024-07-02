@@ -1,20 +1,40 @@
 import "./profile.css";
-import { NavLink, useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import info from "../assets/images/profile-info.png";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 export default function Profile() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const auth = localStorage.getItem("token");
+  const auth = localStorage.getItem("access_token" || "refresh_token");
   const navigate = useNavigate();
-  const [userName, setUserName] = useState("");
+  const [userData, setUserData] = useState({
+    name: "",
+    mobile_no: "",
+    email: "",
+  });
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (user) {
-      setUserName(user.name);
-    }
+    const fetchUserData = async () => {
+      const token = localStorage.getItem("access_token");
+      if (token) {
+        try {
+          const response = await axios.get(
+            "http://127.0.0.1:8000/api/user/profile/",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          setUserData(response.data);
+        } catch (error) {
+          console.error("Failed to fetch user data:", error);
+        }
+      }
+    };
+    fetchUserData();
   }, []);
 
   const logout = () => {
@@ -87,8 +107,8 @@ export default function Profile() {
             <div className="profile-info">
               <img src={info} alt="" />
               <h3>
-                {userName ? (
-                  <NavLink to="/profile">{userName}</NavLink>
+                {userData ? (
+                  <NavLink to="/profile">{userData.name}</NavLink>
                 ) : (
                   <NavLink to="/profile">Profile</NavLink>
                 )}
@@ -99,26 +119,36 @@ export default function Profile() {
               <h2>Personal Information</h2>
               <div className="personal-info">
                 <div className="profile-label">
-                  <label htmlFor="">Mobile No.</label>
-                  <input id="profile-input" type="tel" />
+                  <label htmlFor="mobile_no">Mobile No.</label>
+                  <input
+                    id="profile-input"
+                    type="tel"
+                    value={userData.mobile_no}
+                    readOnly
+                  />
                 </div>
                 <div className="profile-label">
-                  <label htmlFor="">Email ID</label>
-                  <input id="profile-input" type="email" />
+                  <label htmlFor="email">Email ID</label>
+                  <input
+                    id="profile-input"
+                    type="email"
+                    value={userData.email}
+                    readOnly
+                  />
                 </div>
 
                 <div className="profile-label">
-                  <label htmlFor="">City</label>
+                  <label htmlFor="city">City</label>
                   <input id="profile-input" type="text" />
                 </div>
               </div>
-            </div>
 
-            <div>
-              <h2>Academic Information</h2>
-              <div className="acad-info">
-                <label htmlFor="">Class</label>
-                <input id="profile-input" type="text" />
+              <div>
+                <h2>Academic Information</h2>
+                <div className="acad-info">
+                  <label htmlFor="">Class</label>
+                  <input id="profile-input" type="text" />
+                </div>
               </div>
             </div>
           </div>

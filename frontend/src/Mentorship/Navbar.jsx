@@ -3,25 +3,40 @@ import React, { useState, useEffect } from "react";
 import Logo from "../assets/images/logo.png";
 import Profile from "../assets/images/profile.png";
 import "./Navbar.css";
+import axios from "axios"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const auth = localStorage.getItem("token");
+  const auth = localStorage.getItem("access_token" || "refresh_token");
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (user) {
-      setUserName(user.name);
-    }
+    const fetchUserData = async () => {
+      const token = localStorage.getItem("access_token");
+      if (token) {
+        try {
+          const response = await axios.get(
+            "http://127.0.0.1:8000/api/user/profile/",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          setUserName(response.data.name);
+        } catch (error) {
+          console.error("Failed to fetch user data:", error);
+        }
+      }
+    };
+    fetchUserData();
   }, []);
 
   const logout = () => {
       console.log("Logging out user...");
     localStorage.clear();
-    navigate("/Signup");
+    navigate("/login");
   };
 
   const toggleMenu = () => {
@@ -31,7 +46,6 @@ export default function Navbar() {
   return (
     <>
       <section id="Navbar">
-        
         <div className="logo">
           <img src={Logo} alt="Logo" />
         </div>
@@ -65,7 +79,7 @@ export default function Navbar() {
               </li>
               <li>
                 {auth ? (
-                  <NavLink onClick={logout} to="/Signup">
+                  <NavLink onClick={logout} to="/login">
                     Logout
                   </NavLink>
                 ) : (
@@ -81,13 +95,9 @@ export default function Navbar() {
             <img src={Profile} alt="Profile" />
             <button>
               {userName ? (
-                <NavLink to="/profile" onClick={toggleMenu}>
-                  {userName}
-                </NavLink>
+                <NavLink to="/profile">{userName}</NavLink>
               ) : (
-                <NavLink to="/profile" onClick={toggleMenu}>
-                  Profile
-                </NavLink>
+                <NavLink to="/profile">Profile</NavLink>
               )}
             </button>
           </div>

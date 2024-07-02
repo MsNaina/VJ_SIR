@@ -35,6 +35,8 @@ import Mocktest from "./Resources/Mocktest.jsx"
 import Mocktestquestion from "./Resources/Mockques.jsx"
 import Privacy from "./Home/privacy.jsx"
 import Mentor from "./Mentorship/compatibility/mentor.jsx"
+import Highlight from "./payment/highlight.jsx"
+import Payment from "./payment/payment.jsx"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
   {
     path: "privacypolicy",
     element: <Privacy />,
+  },
+  {
+    path: "highlights",
+    element: <Highlight />,
+  },
+  {
+    path: "payment",
+    element: <Payment/>,
   },
 
   {
@@ -172,7 +182,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/mentor",
-    element: <Mentor/>,
+    element: <Mentor />,
   },
 ]);
 

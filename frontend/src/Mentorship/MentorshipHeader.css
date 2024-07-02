@@ -66,6 +66,8 @@
   font-weight: 700;
   font-size: 1.3vw;
   text-decoration: underline;
+  font-style: italic;
+  color: #0C6205;
 }
 @media (max-width: 1290px) {
   .Mentorship-header-price img {

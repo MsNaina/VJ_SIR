@@ -1,0 +1,115 @@
+.Highlights {
+  font-family: poppins;
+  margin: 1vw 2vw;
+  display: flex;
+  border: 3px solid #000000;
+  border-radius: 40px;
+}
+/* .Highlights-left 
+img {
+  height: 90vh;
+  width: 100%;
+} */
+.Highlights-left {
+  background-image: url("../assets/images/combined.png");
+  width: 20rem;
+  height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  border-radius: 40px 0px 0px 40px;
+}
+.highlight-content {
+  padding: 0rem 3rem;
+}
+.highlight-content h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0rem;
+}
+.highlight-content p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.highlight-content ul li {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2rem;
+  list-style-type: circle;
+}
+.highlight-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.highlight-btn button {
+  background: #0c6205;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.requirements {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1220px) {
+  .Highlights-left {
+    width: 25rem;
+  }
+}
+@media (max-width: 940px) {
+  .Highlights-left {
+    width: 35rem;
+  }
+}
+@media (max-width: 769px) {
+  .Highlights-left {
+    background-image: none;
+    display: none;
+  }
+  .Highlights-right {
+    width: 100%;
+    padding: 0rem;
+  }
+  .highlight-content {
+    padding: 2rem;
+  }
+  .Highlights {
+    border: none;
+  }
+  .requirements {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+@media (max-width: 520px){
+  .highlight-content h1{
+    font-size: 6vw;
+  }
+  .highlight-content ul li , .highlight-content p{
+    font-size: 3.2vw;
+  }
+  .highlight-content{
+    padding: 0rem 1.5rem;
+  }
+  .highlight-btn button {
+  padding: 0.5rem 2rem;
+  font-size: 4vw;
+}
+}
+@media (max-width: 350px){
+  .highlight-content h1{
+    font-size: 6vw;
+    margin: 1rem 0rem;
+  }
+  .highlight-content ul li , .highlight-content p{
+    font-size: 3.5vw;
+  }
+  .highlight-btn button {
+  font-size: 5vw;
+}
+}
+

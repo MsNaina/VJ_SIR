@@ -1,4 +1,5 @@
 import "./MentorshipHeader.css";
+import { NavLink } from "react-router-dom";
 import Mentorship from "../assets/images/Mentorship.png";
 import Discountt from "../assets/images/Discount (2).png"
 import comp from "../assets/images/comp.png";
@@ -35,7 +36,7 @@ export default function MentorshipHeader() {
             <img src={Discountt} alt="" />
           </div>
           <div className="Mentorship-header-btn">
-            <a href="">Buy Now</a>
+            <NavLink to= "/highlights"> Buy Now </NavLink>
           </div>
         </div>
       </section>

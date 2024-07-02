@@ -9,20 +9,20 @@ export default function Class() {
     const [Class, setClass] = useState("");
     const navigate = useNavigate();
 
-    useEffect(() => {
-      const accessToken = localStorage.getItem("access_token");
-      const refreshToken = localStorage.getItem("refresh_token");
+    // useEffect(() => {
+    //   const accessToken = localStorage.getItem("access_token");
+    //   const refreshToken = localStorage.getItem("refresh_token");
 
-      if (accessToken && refreshToken) {
-        navigate("/");
-      }
-    }, [navigate]);
+    //   if (accessToken && refreshToken) {
+    //     navigate("/");
+    //   }
+    // }, [navigate]);
 
     const handleNext = () => {
-      const accessToken = "your-access-token";
-      const refreshToken = "your-refresh-token";
-      localStorage.setItem("access_token", accessToken);
-      localStorage.setItem("refresh_token", refreshToken);
+      // const accessToken = "your-access-token";
+      // const refreshToken = "your-refresh-token";
+      // localStorage.setItem("access_token", accessToken);
+      // localStorage.setItem("refresh_token", refreshToken);
       navigate("/");
     };
 

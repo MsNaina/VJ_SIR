@@ -24,18 +24,16 @@ export default function Login() {
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json" },
       });
-
       if (!response.ok) {
         throw new Error("Login failed");
       }
-
       const data = await response.json();
       console.log("Login response:", data);
 
       localStorage.setItem("access_token", data.token.access);
       localStorage.setItem("refresh_token", data.token.refresh);
 
-      navigate("/class");
+      navigate("/");
     } catch (error) {
       console.error("Login error:", error);
       alert("Login failed. Please check your credentials.");
