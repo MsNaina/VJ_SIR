@@ -252,7 +252,7 @@
     bottom: 25%;
   }
   .book-session button {
-    padding: 0rem 0.8rem;
+    /* padding: 0rem 0.8rem; */
     justify-content: space-between;
     gap: 0.5rem;
   }
@@ -460,7 +460,8 @@
     gap: 3vw;
   }
   .book-session button {
-    width: 100px;
+    width: 25vw;
+    text-align: center;
   }
   .book-session button img {
     width: 20px;
@@ -499,14 +500,9 @@
   .book-session img {
     width: 45vw;
   }
-  .book-session button {
-    width: 40vw;
-  }
   .book-session button h2 {
-    font-size: 2.5vw;
-  }
-  .book-session button img {
-    width: 5vw;
+    font-size: 4vw;
+
   }
   .Sneha-Testimonial h2 {
     font-size: 1.5rem;
@@ -522,12 +518,7 @@
   .card1 p {
     font-size: 2.7vw;
   }
-}
-@media (max-width: 375px) {
-  .book-session button h2 {
-    font-size: 3.4vw;
-  }
-  .book-session button img {
+   .book-session button img{
     display: none;
   }
 }
@@ -548,9 +539,7 @@
   .card1 p {
     font-size: 2.8vw;
   }
-  .book-session button h2 {
-    font-size: 3.2vw;
-  }
+ 
 }
 @media (max-width: 335px) {
   .book-session button h2 {

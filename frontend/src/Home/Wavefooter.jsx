@@ -1,11 +1,12 @@
 import "./Wavefooter.css";
 import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Logo from "../assets/images/logo.png";
 export default function WaveFooter() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "auto",
     });
   };
 
@@ -60,9 +61,14 @@ export default function WaveFooter() {
             <div className="part3-container">
               <div className="part3">
                 <h3>Quick Links</h3>
-                <p>Mentorship Batch</p>
                 <p>
-                  <NavLink to="/#FAQ">FAQs</NavLink>
+                  <HashLink to="/Mentorship" onClick={scrollToTop}>
+                    Mentorship Batch
+                  </HashLink>
+                </p>
+
+                <p>
+                  <HashLink to="/#FAQ">FAQs</HashLink>
                 </p>
               </div>
             </div>

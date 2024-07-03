@@ -1,6 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import "./Header.css";
+import { HashLink } from "react-router-hash-link";
 import Typewriter from "./typewriter";
 import VJsir from "../assets/images/VJ SIR.png";
 import Navbar from "../Mentorship/Navbar";
@@ -13,7 +13,7 @@ export default function Header() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "auto",
     });
   };
 
@@ -41,7 +41,7 @@ export default function Header() {
 
             <div className="header-btn">
               <button className="btn2" onClick={scrollToTop}>
-                <Link to="/Mentorship">Know More</Link>
+                <HashLink to="/Mentorship">Know More</HashLink>
               </button>
             </div>
 

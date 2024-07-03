@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Logo from "../assets/images/logo.png";
 import Profile from "../assets/images/profile.png";
 import "./Navbar.css";
-import axios from "axios"
+import axios from "axios";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,9 +34,30 @@ export default function Navbar() {
   }, []);
 
   const logout = () => {
-      console.log("Logging out user...");
-    localStorage.clear();
-    navigate("/login");
+    // const refreshToken = localStorage.getItem("refresh_token");
+    // const token = localStorage.getItem("access_token");
+    // if (refreshToken && token) {
+    //   try {
+    //     await axios.post(
+    //       "http://127.0.0.1:8000/api/user/logout/",
+    //       {
+    //         refresh: refreshToken,
+    //       },
+    //       {
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           Authorization: `Bearer ${token}`,
+    //         },
+    //       }
+    //     );
+
+        localStorage.clear();
+        navigate("/login");
+      // } catch (error) {
+      //   console.error("Failed to logout:", error);
+      // }
+    // }
+    // return;
   };
 
   const toggleMenu = () => {

@@ -108,6 +108,7 @@ const CompatibilityStage1 = () => {
       navigate("/Mentorship/Compatibility/allocated-mentor", {
         state: {
           allocatedMentor: responseData.alloted_mentor,
+          compatibilityScore: responseData.alloted_mentor_compatibility,
           extraMentors: [
             responseData.extra_mentor_1,
             responseData.extra_mentor_2,

@@ -32,11 +32,11 @@ import OTP from "./login/Otp.jsx"
 import Class from "./login/class.jsx"
 import SnehaTestimonial from "./Home/snehaTestimonial.jsx";
 import Mocktest from "./Resources/Mocktest.jsx"
-import Mocktestquestion from "./Resources/Mockques.jsx"
 import Privacy from "./Home/privacy.jsx"
 import Mentor from "./Mentorship/compatibility/mentor.jsx"
 import Highlight from "./payment/highlight.jsx"
 import Payment from "./payment/payment.jsx"
+import PAYMENT from "./payment/snehaPayment.jsx"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,9 +52,12 @@ const router = createBrowserRouter([
   },
   {
     path: "payment",
-    element: <Payment/>,
+    element: <Payment />,
   },
-
+  {
+    path: "Pay",
+    element: <PAYMENT/>,
+  },
   {
     path: "Mentorship",
     element: <MentorshipPage />,
@@ -148,10 +151,10 @@ const router = createBrowserRouter([
     path: "mocktest",
     element: <Mocktest />,
   },
-  {
-    path: "Mocktestques",
-    element: <Mocktestquestion />,
-  },
+  // {
+  //   path: "Mocktestques",
+  //   element: <Mocktestquestion />,
+  // },
   {
     path: "/pyq/chapter/:chapterId",
     element: <Level />,

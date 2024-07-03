@@ -1,7 +1,13 @@
 import "./session.css";
 import Sessionimg from "../assets/images/sneha.png";
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 export default function Session() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  };
   return (
     <>
       <section id="Session">
@@ -24,10 +30,14 @@ export default function Session() {
             </div>
 
             <div className="session-bottom">
-              <button className="session-btn">BUY NOW</button>
-              <a href="">
-                <NavLink to="./session" >Know More</NavLink>{" "}
-              </a>
+              {/* <button className="session-btn"> */}
+              <HashLink to="/Pay" onClick={scrollToTop} className="Session-btn" >
+                Buy Now
+              </HashLink>
+              {/* </button> */}
+              <HashLink to="/session" className="knowmore" onClick={scrollToTop}>
+                Know More
+              </HashLink>
             </div>
           </div>
         </div>

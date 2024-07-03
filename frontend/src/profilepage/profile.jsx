@@ -13,6 +13,7 @@ export default function Profile() {
     name: "",
     mobile_no: "",
     email: "",
+    student_class: "",
   });
 
   useEffect(() => {
@@ -37,10 +38,38 @@ export default function Profile() {
     fetchUserData();
   }, []);
 
-  const logout = () => {
-    localStorage.clear();
-    navigate("/Signup");
-  };
+  // const logout = () => {
+  //   localStorage.clear();
+  //   navigate("/Signup");
+  // };
+
+    const logout = async () => {
+      const refreshToken = localStorage.getItem("refresh_token");
+      if (refreshToken) {
+        try {
+          await axios.post(
+            "http://127.0.0.1:8000/api/user/logout/",
+            {
+              refresh: refreshToken,
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          localStorage.clear();
+          navigate("/Signup");
+        } catch (error) {
+          console.error("Failed to logout:", error);
+          alert("Error during logout. Please try again later.");
+        }
+      } else {
+        localStorage.clear();
+        navigate("/Signup");
+      }
+    };
+    
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -147,7 +176,11 @@ export default function Profile() {
                 <h2>Academic Information</h2>
                 <div className="acad-info">
                   <label htmlFor="">Class</label>
-                  <input id="profile-input" type="text" />
+                  <input
+                    id="profile-input"
+                    type="text"
+                    value={userData.student_class}
+                  />
                 </div>
               </div>
             </div>

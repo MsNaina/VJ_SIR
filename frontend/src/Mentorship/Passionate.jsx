@@ -1,12 +1,29 @@
 import "./passionate.css";
 import { NavLink } from "react-router-dom";
-import Vrutika from "../assets/images/vrutika.png";
+import { useState , useEffect } from "react";
+// import Vrutika from "../assets/images/vrutika.png";
+
 import Go from "../assets/images/Go.png";
 export default function Passionate() {
+  const [mentor, setMentor] = useState(null);
+  useEffect(() => {
+    const fetchMentor = async () => {
+      try {
+        const response = await axios.get(
+          "{{domainname}}:{{PORT}}/mentorship/random-mentor"
+        );
+        setMentor(response.data);
+      } catch (error) {
+        console.error("Error fetching mentor:", error);
+      }
+    };
+
+    fetchMentor();
+  }, []);
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "auto",
     });
   };
   return (
@@ -33,15 +50,22 @@ export default function Passionate() {
             Connect <br /> and <br />
             Grow.
           </h1>
-
-          <div className="mentorship-footerimg">
-            <button onClick={scrollToTop} className="go">
-              <NavLink to="./Compatibility">
-                <img src={Go} alt="" />
-              </NavLink>
-            </button>
-            <img className="vrutika" src={Vrutika} alt="" />
-          </div>
+        </div>
+        <div className="mentorship-footerimg">
+          <button onClick={scrollToTop} className="go">
+            <NavLink to="./Compatibility">
+              <img src={Go} alt="" />
+            </NavLink>
+          </button>
+          {mentor ? (
+            <div>
+              <img className="profile" src={mentor.profile} alt={mentor.name} />
+              <p>{mentor.name}</p>
+              <p>{mentor.iit}</p>
+            </div>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </section>
     </>

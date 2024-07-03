@@ -1,4 +1,4 @@
-.Mentorship-Header {
+#MentorshipHeader {
   display: flex;
   width: 100%;
   font-family: poppins;
@@ -132,7 +132,7 @@
   }
 }
 @media (max-width: 769px) {
-  .Mentorship-Header {
+  #MentorshipHeader {
     display: flex;
     flex-direction: column;
     gap: 5vw;

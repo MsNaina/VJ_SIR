@@ -1,6 +1,7 @@
 import Navbar from "../Mentorship/Navbar";
 import "./snehaTestimonial.css";
 import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import sneha from "../assets/images/Snehadas.png";
 import booksession from "../assets/images/book-session.png";
 import arrow from "../assets/images/Arrow.png";
@@ -8,6 +9,12 @@ import Testimonialcard from "../assets/images/testimonial.png";
 import Sntestimonial from "../assets/images/Sntestimonial.png";
 
 export default function SnehaTestimonial() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  };
   return (
     <>
       <section id="Sneha-Testimonial">
@@ -21,7 +28,7 @@ export default function SnehaTestimonial() {
                 <h2>Sneha Das</h2>
                 <p>
                   IIT Roorkee | 2+ years of Mentorship experience | Anxiety &
-                  Stress Management | Personal Development
+                  Stress Management | Personal Development
                 </p>
               </div>
               <div className="sneha-thumbnail">
@@ -49,10 +56,12 @@ export default function SnehaTestimonial() {
               </div>
               <div className="book-session">
                 <img src={booksession} alt="" />
-                <button>
-                  <h2>₹ 500 /-</h2>
-                  <img src={arrow} alt="" />
-                </button>
+                <NavLink to="/Pay">
+                  <button className="session-btn">
+                    <h2>₹ 500 /-</h2>
+                    <img src={arrow} alt="Arrow" />
+                  </button>
+                </NavLink>
               </div>
             </div>
 

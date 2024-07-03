@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Mentorship batch.css";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Chitrang from "../assets/images/chitrang.png";
 import Group8 from "../assets/images/Group 8.png";
 import Himanshu from "../assets/images/himanshu.png";
@@ -9,9 +9,10 @@ import Discount from "../assets/images/discount.png";
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth",
+    behavior: "auto",
   });
 };
+
 
 export default function Mentorship() {
   const [rotate, setRotate] = useState(0);
@@ -30,10 +31,8 @@ export default function Mentorship() {
 
   return (
     <>
-    
       <section id="Mentorship">
         <div className="Mentorship">
-
           <div className="mentorship-text">
             <h1>Mentorship Program</h1>
             <h2> JEE Main & Advanced </h2>
@@ -45,12 +44,9 @@ export default function Mentorship() {
           </div>
 
           <div className="mentorship-imgs">
-
-          
-              <div className="mentorship-img1 mentorship-img">
-                <img src={Chitrang} alt="" />
-              </div>
-           
+            <div className="mentorship-img1 mentorship-img">
+              <img src={Chitrang} alt="" />
+            </div>
 
             <div className="mentorship-img2 mentorship-img">
               <img src={Group8} alt="" />
@@ -106,19 +102,22 @@ export default function Mentorship() {
               </div>
 
               <div className="mentorship-btn">
-                <button className="btn3" onClick={scrollToTop}>
-                  <Link to="/Mentorship">Explore</Link>
+                <button className="btn3">
+                  <HashLink to="/Mentorship" onClick={scrollToTop}>
+                    Explore
+                  </HashLink>
                 </button>
-                <button className="btn4">Buy Now</button>
+                <button className="btn4">
+                  <HashLink to="/payment" onClick={scrollToTop}>
+                    Buy Now
+                  </HashLink>
+                </button>
               </div>
             </div>
 
-           
-              <div className="mentorship-img3 mentorship-img">
-                <img src={Himanshu} alt="" />
-              </div>
-          
-
+            <div className="mentorship-img3 mentorship-img">
+              <img src={Himanshu} alt="" />
+            </div>
           </div>
         </div>
       </section>

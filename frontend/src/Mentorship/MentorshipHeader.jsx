@@ -2,12 +2,17 @@ import "./MentorshipHeader.css";
 import { NavLink } from "react-router-dom";
 import Mentorship from "../assets/images/Mentorship.png";
 import Discountt from "../assets/images/Discount (2).png"
-import comp from "../assets/images/comp.png";
 export default function MentorshipHeader() {
 
+   const scrollToTop = () => {
+     window.scrollTo({
+       top: 0,
+       behavior: "auto",
+     });
+   };
   return (
     <>
-      <section className="Mentorship-Header">
+      <section id="MentorshipHeader">
         <div className="Mentorship-header-left">
           <img src={Mentorship} alt="" />
         </div>
@@ -36,7 +41,7 @@ export default function MentorshipHeader() {
             <img src={Discountt} alt="" />
           </div>
           <div className="Mentorship-header-btn">
-            <NavLink to= "/highlights"> Buy Now </NavLink>
+            <NavLink onClick={scrollToTop} to= "/payment"> Buy Now </NavLink>
           </div>
         </div>
       </section>
