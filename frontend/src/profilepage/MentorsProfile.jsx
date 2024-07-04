@@ -23,7 +23,7 @@ export default function Profile() {
       if (token) {
         try {
           const response = await axiosInstance.get(
-            "http://127.0.0.1:8000/api/user/profile/",
+            "http://127.0.0.1:8000/mentorship/get-mentor/",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -44,33 +44,32 @@ export default function Profile() {
   //   navigate("/Signup");
   // };
 
-    const logout = async () => {
-      const refreshToken = localStorage.getItem("refresh_token");
-      // if (refreshToken) {
-        try {
-          await axios.post(
-            "http://127.0.0.1:8000/api/user/logout/",
-            {
-              refresh: refreshToken,
+  const logout = async () => {
+    const refreshToken = localStorage.getItem("refresh_token");
+    if (refreshToken) {
+      try {
+        await axios.post(
+          "http://127.0.0.1:8000/api/user/logout/",
+          {
+            refresh: refreshToken,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
             },
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          localStorage.clear();
-          navigate("/Signup");
-        } catch (error) {
-          console.error("Failed to logout:", error);
-          alert("Error during logout. Please try again later.");
-        }
-      // } else {
-      //   localStorage.clear();
-      //   navigate("/Signup");
-      // }
-    };
-    
+          }
+        );
+        localStorage.clear();
+        navigate("/Signup");
+      } catch (error) {
+        console.error("Failed to logout:", error);
+        alert("Error during logout. Please try again later.");
+      }
+    } else {
+      localStorage.clear();
+      navigate("/Signup");
+    }
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -167,10 +166,10 @@ export default function Profile() {
                   />
                 </div>
 
-                {/* <div className="profile-label">
+                <div className="profile-label">
                   <label htmlFor="city">City</label>
                   <input id="profile-input" type="text" />
-                </div> */}
+                </div>
               </div>
 
               <div>

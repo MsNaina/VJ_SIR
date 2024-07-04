@@ -9,14 +9,30 @@ const MathDpp = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/questions/list-chapters/MA`)
-      .then((response) => {
-        setModules(response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the modules!", error);
-      });
+    const fetchChapters = async () => {
+      const accessToken = localStorage.getItem("access_token");
+      if (accessToken) {
+        try {
+          const response = await axios.get(
+            `http://127.0.0.1:8000/questions/list-chapters/MA`,
+            {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            }
+          );
+
+          setModules(response.data);
+        } catch (error) {
+          console.error("There was an error fetching the modules!", error);
+        }
+      } else {
+        console.log("Access token not found. Unable to fetch data.");
+        // Handle case where access token is not available
+      }
+    };
+
+    fetchChapters();
   }, []);
 
   const filteredModules = modules.filter((module) =>

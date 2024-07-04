@@ -15,7 +15,6 @@ const CompatibilityStage1 = () => {
     medium_change: "",
   });
   const [responseMessage, setResponseMessage] = useState("");
-  // const [allocatedMentor, setAllocatedMentor] = useState(null);
 
   const navigate = useNavigate();
 
@@ -63,8 +62,8 @@ const CompatibilityStage1 = () => {
       e.target.name === "maths_rank" ||
       e.target.name === "chemistry_rank" ||
       e.target.name === "physics_rank"
-        ? parseInt(e.target.value) 
-        : e.target.value; 
+        ? parseInt(e.target.value)
+        : e.target.value;
 
     setFormData({
       ...formData,
@@ -82,28 +81,18 @@ const CompatibilityStage1 = () => {
         console.error("Access token not found in localStorage.");
         return;
       }
-      const formDataToSend = new FormData();
-      formDataToSend.append("gender", formData.gender);
-      formDataToSend.append("state", formData.state);
-      formDataToSend.append("maths_rank", formData.maths_rank);
-      formDataToSend.append("chemistry_rank", formData.chemistry_rank);
-      formDataToSend.append("physics_rank", formData.physics_rank);
-      formDataToSend.append("medium", formData.medium);
-      formDataToSend.append("medium_change", formData.medium_change);
-
       const response = await axios.post(
         "http://127.0.0.1:8000/mentorship/get-mentor",
-        formDataToSend,
+        formData,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "application/json",
             Authorization: `Bearer ${accessToken}`,
           },
         }
       );
       const responseData = response.data.data;
       setResponseMessage(response.data.message);
-      // setAllocatedMentor(responseData.alloted_mentor);
 
       navigate("/Mentorship/Compatibility/allocated-mentor", {
         state: {

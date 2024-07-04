@@ -7,6 +7,7 @@ import "./login.css";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +18,7 @@ export default function Login() {
   }, [navigate]);
 
   const handleLogin = async () => {
+    setLoading(true); 
     console.log("email, password", email, password);
     try {
       const response = await fetch("http://127.0.0.1:8000/api/user/login/", {
@@ -37,6 +39,8 @@ export default function Login() {
     } catch (error) {
       console.error("Login error:", error);
       alert("Login failed. Please check your credentials.");
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -59,6 +63,7 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
             required
             placeholder="E-mail"
+            disabled={loading}
           />
           <input
             type="password"
@@ -67,9 +72,16 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             required
             placeholder="Password"
+            disabled={loading} 
           />
-          <button onClick={handleLogin} className="login-btn" type="button">
-            Log In
+          <button
+            onClick={handleLogin}
+            className="login-btn"
+            type="button"
+            disabled={loading} 
+          >
+            {loading ? "Logging in..." : "Log In"}{" "}
+            
           </button>
           <div className="register-link">
             <NavLink className="forgot">Forgot Password?</NavLink>

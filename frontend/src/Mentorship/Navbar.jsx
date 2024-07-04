@@ -4,6 +4,7 @@ import Logo from "../assets/images/logo.png";
 import Profile from "../assets/images/profile.png";
 import "./Navbar.css";
 import axios from "axios";
+import axiosInstance from "../refresh";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
       const token = localStorage.getItem("access_token");
       if (token) {
         try {
-          const response = await axios.get(
+          const response = await axiosInstance.get(
             "http://127.0.0.1:8000/api/user/profile/",
             {
               headers: {
@@ -33,7 +34,7 @@ export default function Navbar() {
     fetchUserData();
   }, []);
 
-  const logout = () => {
+  const logout = async () => {
     // const refreshToken = localStorage.getItem("refresh_token");
     // const token = localStorage.getItem("access_token");
     // if (refreshToken && token) {

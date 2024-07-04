@@ -32,7 +32,7 @@ export default function Class() {
 
       console.log("API Response:", response.data);
 
-      // Redirect to home page or another page as needed
+     
       navigate("/");
     } catch (error) {
       console.error("Error during class selection:", error);

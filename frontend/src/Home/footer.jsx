@@ -9,10 +9,16 @@ export default function Footer() {
             <h4>
               <NavLink to="/privacypolicy">Privacy Policy</NavLink>{" "}
             </h4>
+
             <h4>Terms of Use</h4>
+            <h4>
+              <NavLink to="/privacypolicy">Refund Policy</NavLink>{" "}
+            </h4>
           </div>
 
-          <div className="footer-right">All Right Reserved @vjsir.com</div>
+          <div className="footer-right">
+            All Right Reserved @VJ Nucleus Pvt. Ltd.com
+          </div>
         </div>
       </section>
     </>

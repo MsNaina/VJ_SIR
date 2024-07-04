@@ -112,6 +112,7 @@
 }
 input , textarea{
   font-weight: 500;
+  padding-left: .2rem;
 }
 #textarea {
   margin-top: 2rem;
@@ -224,7 +225,7 @@ input , textarea{
     font-size: 2.5rem;
   }
   .contact-right{
-    height:25rem ;
+    height:28rem ;
     
   }
 }
@@ -250,4 +251,14 @@ input , textarea{
     font-size: 2rem;
   }
   
+}
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+.success-message {
+  color: green;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }

@@ -9,15 +9,29 @@ const ChPYQs = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // Fetch modules from the backend
-    axios
-      .get(`http://127.0.0.1:8000/questions/list-chapters/CH`)
-      .then((response) => {
-        setchapter(response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the modules!", error);
-      });
+    const fetchChapters = async () => {
+      const accessToken = localStorage.getItem("access_token");
+      if (accessToken) {
+        try {
+          const response = await axios.get(
+            `http://127.0.0.1:8000/questions/list-chapters/CH`,
+            {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            }
+          );
+          setchapter(response.data);
+        } catch (error) {
+          console.error("There was an error fetching the PYQs!", error);
+        }
+      } else {
+        console.log("Access token not found. Unable to fetch data.");
+        // Handle case where access token is not available
+      }
+    };
+
+    fetchChapters();
   }, []);
 
   const filterChapter = chapter.filter((chapter) =>
