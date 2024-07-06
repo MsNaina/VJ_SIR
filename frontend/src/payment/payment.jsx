@@ -72,7 +72,7 @@ export default function Payment() {
                 </div>
                 <h2>
                   I agree to the
-                  <HashLink to="/terms&conditions">
+                  <HashLink to="/Terms&condition">
                     {" "}
                     Terms & Conditions
                   </HashLink>{" "}

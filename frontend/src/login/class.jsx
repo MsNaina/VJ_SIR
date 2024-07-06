@@ -3,16 +3,15 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import "./login.css";
-import axios from "axios"
+import axios from "axios";
 
 export default function Class() {
- 
-    const [selectedClass, setSelectedClass] = useState("");
-    const navigate = useNavigate();
+  const [selectedClass, setSelectedClass] = useState("");
+  const navigate = useNavigate();
 
-    const handleNext = async () => {
-     const accessToken = localStorage.getItem("access_token");
-    
+  const handleNext = async () => {
+    const accessToken = localStorage.getItem("access_token");
+
     if (!selectedClass) {
       alert("Please select your class.");
       return;
@@ -30,16 +29,11 @@ export default function Class() {
         }
       );
 
-      console.log("API Response:", response.data);
-
-     
       navigate("/");
     } catch (error) {
-      console.error("Error during class selection:", error);
       alert("Error during class selection. Please try again later.");
     }
   };
-
 
   return (
     <section id="LogIn">

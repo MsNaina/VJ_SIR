@@ -24,7 +24,7 @@ export default function Resources() {
       setComingSoonMessage("Coming Soon");
       setTimeout(() => {
         setComingSoonMessage("");
-      }, 2000); // 3 seconds
+      }, 2000); // 2 seconds
       return;
     }
 

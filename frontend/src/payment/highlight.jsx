@@ -1,12 +1,7 @@
-import React, { useState } from "react";
 import Navbar from "../Mentorship/Navbar";
 import "./highlight.css"
 import { NavLink } from "react-router-dom";
 const Highlight = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
   return (
     <>
       <section id="Highlights">

@@ -19,7 +19,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     setLoading(true); 
-    console.log("email, password", email, password);
+  
     try {
       const response = await fetch("http://127.0.0.1:8000/api/user/login/", {
         method: "POST",
@@ -30,14 +30,14 @@ export default function Login() {
         throw new Error("Login failed");
       }
       const data = await response.json();
-      console.log("Login response:", data);
+    
 
       localStorage.setItem("access_token", data.token.access);
       localStorage.setItem("refresh_token", data.token.refresh);
 
       navigate("/");
     } catch (error) {
-      console.error("Login error:", error);
+     
       alert("Login failed. Please check your credentials.");
     } finally {
       setLoading(false); 

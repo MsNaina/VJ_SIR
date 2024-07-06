@@ -13,7 +13,6 @@ const AllChapterQues = () => {
     axios
       .get(`http://127.0.0.1:8000/questions/MODULE/${id}?format=json`)
       .then((response) => {
-        console.log("Fetched questions:", response.data); // Log the response data
         setQuestions(response.data);
       })
       .catch((error) => {
@@ -40,7 +39,7 @@ const AllChapterQues = () => {
                 onClick={() => handleQuestionClick(question.id)}
               >
                 <img
-                  src={`http://127.0.0.1:8000${question.question}`} // Construct the full URL for the image
+                  src={`http://127.0.0.1:8000${question.question}`} 
                   alt={`Question ${question.id}`}
                   className="question-thumbnail"
                 />

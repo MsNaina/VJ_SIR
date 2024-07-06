@@ -1,0 +1,70 @@
+#Mentor-Profile {
+  width: 100%;
+  font-family: "Red Hat Display", sans-serif;
+  background-image: url("../../assets/images/Mentorprofilepage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  aspect-ratio: 2.08830022075;
+  height: 100vh;
+}
+.Mentor-Profile {
+  position: absolute;
+  font-family: poppins;
+  left: 40rem;
+  top: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.Mentor-Profile h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.Mentorprofile-info {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.Mentorprofile-info p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.mentorpersonalinfo {
+  margin: 2rem 0rem;
+}
+.mentorpersonalinfo h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.mentorinfo {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 1290px) {
+  .Mentor-Profile {
+    left: 35rem;
+  }
+}
+@media (max-width: 1120px) {
+  .Mentor-Profile {
+    align-items: center;
+  }
+}
+@media (max-width: 890px) {
+  #Mentor-Profile {
+    background-image: none;
+  }
+  .Mentor-Profile {
+    margin: 0rem 2rem;
+    align-items: flex-start;
+    left: 0;
+  }
+}
+@media (max-width: 400px) {
+  .Mentorprofile-info {
+    flex-direction: column;
+  }
+}

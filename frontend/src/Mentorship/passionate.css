@@ -81,6 +81,10 @@
   right: 50%;
   z-index: 2;
 }
+.mentorship-footerimg button:focus , .mentorship-footerimg button:active ,button:focus-visible {
+  outline: none; 
+  background-color:transparent; 
+}
 @media (max-width: 1200px) {
   .mentorship-footerimg {
     height: 50vw;

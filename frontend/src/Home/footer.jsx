@@ -1,18 +1,33 @@
 import "./footer.css";
 import { NavLink } from "react-router-dom";
+
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  };
   return (
     <>
       <section id="Footer">
         <div className="footer-content">
           <div className="footer-left">
             <h4>
-              <NavLink to="/privacypolicy">Privacy Policy</NavLink>{" "}
+              <NavLink to="/privacypolicy" onClick={scrollToTop}>
+                Privacy Policy
+              </NavLink>
             </h4>
 
-            <h4>Terms of Use</h4>
             <h4>
-              <NavLink to="/privacypolicy">Refund Policy</NavLink>{" "}
+              <NavLink to="/Terms&condition" onClick={scrollToTop}>
+                Terms of Use
+              </NavLink>
+            </h4>
+            <h4>
+              <NavLink to="/RefundPolicy" onClick={scrollToTop}>
+                Refund Policy
+              </NavLink>
             </h4>
           </div>
 

@@ -30,12 +30,15 @@ export default function Session() {
             </div>
 
             <div className="session-bottom">
-              {/* <button className="session-btn"> */}
-              <HashLink to="/Pay" onClick={scrollToTop} className="Session-btn" >
+              <HashLink to="/Pay" onClick={scrollToTop} className="Session-btn">
                 Buy Now
               </HashLink>
-              {/* </button> */}
-              <HashLink to="/session" className="knowmore" onClick={scrollToTop}>
+
+              <HashLink
+                to="/session"
+                className="knowmore"
+                onClick={scrollToTop}
+              >
                 Know More
               </HashLink>
             </div>

@@ -32,7 +32,7 @@ export default function Mentor() {
             <div className="Mentor-left">
               <div className="mentor-profile">
                 <img
-                  src={getProfilePhotoUrl(mentor.profile_photo)}
+                  src={getProfilePhotoUrl(mentor.profile_photo) || Default}
                   alt=""
                   className="profile-photo"
                 />

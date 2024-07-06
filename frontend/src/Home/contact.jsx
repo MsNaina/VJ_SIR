@@ -1,7 +1,6 @@
 import "./contact.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-// import axiosInstance from "../refresh";
 import axios from "axios"
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -72,11 +71,9 @@ export default function Contact() {
         setFormErrors({});
         setTimeout(() => {
           setSuccessMessage("");
-        }, 3000);
+        }, 6000);
       }
-    } catch (error) {
-      console.error("Error sending message:", error);
-    } finally {
+    }finally {
       setIsLoading(false);
     }
   };
@@ -161,9 +158,7 @@ export default function Contact() {
             </div>
             <div className="contact-right">
               <h1>Send a Message</h1>
-              {successMessage && (
-                <p className="success-message">{successMessage}</p>
-              )}
+
               <form onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -222,6 +217,9 @@ export default function Contact() {
                 <button className="contact-btn" type="submit">
                   {isLoading ? "Sending..." : "SUBMIT"}
                 </button>
+                {successMessage && (
+                  <p className="success-message">{successMessage}</p>
+                )}
               </form>
             </div>
           </div>

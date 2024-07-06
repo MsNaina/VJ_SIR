@@ -79,22 +79,27 @@
   font-weight: 500;
   color: black;
 }
-@media (max-width: 1290px) and (min-width: 1175px) {
+.coming-soon-message{
+font-size: 1rem;
+color: #0c6205;
+text-align: center;
+}
+@media (max-width: 1290px){
   #Modules h1 {
     padding: 2% 0vw 0vw 9%;
   }
 }
-@media (max-width: 1175px) and (min-width: 1075px) {
+@media (max-width: 1175px){
   #Modules h1 {
     padding: 2% 0vw 0vw 8%;
   }
 }
-@media (max-width: 1075px) and (min-width: 873px) {
+@media (max-width: 1075px){
   #Modules h1 {
     padding: 2% 0vw 0vw 6%;
   }
 }
-@media (max-width: 873px) and (min-width: 675px) {
+@media (max-width: 873px){
   .SearchBar {
     padding: 1rem 0rem;
     display: block;
@@ -117,7 +122,7 @@
     width: 100%;
   }
 }
-@media (max-width: 675px) and (min-width: 470px) {
+@media (max-width: 675px){
   #Modules {
     display: flex;
     flex-direction: column;
@@ -134,7 +139,7 @@
     font-size: 2.5rem;
   }
 }
-@media (max-width: 470px) and (min-width: 420px) {
+@media (max-width: 470px){
   #Modules {
     display: flex;
     flex-direction: column;
@@ -162,7 +167,7 @@
     font-size: 1rem;
   }
 }
-@media (max-width: 420px) and (min-width: 370px) {
+@media (max-width: 420px){
   #Modules {
     display: flex;
     flex-direction: column;

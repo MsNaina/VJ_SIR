@@ -55,8 +55,8 @@
   font-weight: 500;
   padding-left: 2rem;
   appearance: none; 
-  -moz-appearance: none; /* Remove Firefox default arrow icon */
-  -webkit-appearance: none; /* Remove Chrome/Safari default arrow icon */
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 .login-bottom ::placeholder {
   color: black;

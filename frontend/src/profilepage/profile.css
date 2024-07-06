@@ -106,7 +106,6 @@ label {
 
 .acad-info {
   padding: 2vw;
-  width: 15vw;
 }
 @media (max-width: 1290px) {
   #user-Profile {
@@ -213,10 +212,13 @@ label {
     height: 20rem;
   }
 }
-@media (max-width: 340px) {
+@media (max-width: 400px) {
   .profile-bottom h2 {
     font-size: 1.2rem;
     padding: 1rem 0rem;
+  }
+  .profile-bottom{
+    padding: 0rem 1rem;
   }
 }
 @media (max-width: 315px) {

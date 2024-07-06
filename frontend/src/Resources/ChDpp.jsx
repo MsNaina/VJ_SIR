@@ -28,7 +28,6 @@ const ChDpp = () => {
         }
       } else {
         console.log("Access token not found. Unable to fetch data.");
-        // Handle case where access token is not available
       }
     };
 

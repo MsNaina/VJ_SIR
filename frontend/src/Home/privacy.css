@@ -1,10 +1,9 @@
 #Privacy {
   width: 100%;
   font-family: Red Hat Display;
-  background-color: lightblue;
 }
-.privacy{
- background-image: url("../assets/images/Privacy.png");
+.privacy {
+  background-image: url("../assets/images/Privacy.png");
 }
 .privacy-header {
   text-align: center;
@@ -19,4 +18,64 @@
   padding-top: 2rem;
   font-size: 3rem;
   font-weight: 700;
+}
+.privacy-content {
+  padding: 0rem 2rem;
+  font-family: Poppins;
+  margin: 2rem 0rem;
+}
+.privacy-pera {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.main-content h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.main-content p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.main-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.subinfo-privacy ul li {
+  margin-bottom: 1rem;
+  list-style: circle;
+}
+.subinfo-privacy span {
+  font-weight: 700;
+}
+@media (max-width: 769px) {
+  .privacy-header h1 {
+    font-size: 5vw;
+  }
+  .privacy-header p {
+    font-size: 1.8vw;
+  }
+  .privacy-pera {
+    font-size: 1.5vw;
+  }
+  .main-content ul li {
+    font-size: 1.5vw;
+  }
+  .main-content p {
+    font-size: 1.5vw;
+  }
+  .main-content h2 {
+  font-size: 3vw;
+  
+}
 }

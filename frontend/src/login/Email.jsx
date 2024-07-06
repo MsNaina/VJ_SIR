@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate , NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import "./login.css";
 
-export default function Email() {
+const Email = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const auth = localStorage.getItem("access_token");
-    if (auth) {
-      navigate("/");
-    }
-  }, [navigate]);
+  const navigate= useNavigate();
 
   const handleLogin = async () => {
     setLoading(true);
-    const accessToken = localStorage.getItem("access_token");
     try {
       const response = await fetch(
         "http://127.0.0.1:8000/api/user/send-reset-password-email/",
@@ -27,19 +19,18 @@ export default function Email() {
           body: JSON.stringify({ email }),
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${accessToken}`,
           },
         }
       );
       const data = await response.json();
-      console.log("Login response:", data);
       if (response.ok) {
         alert("OTP sent successfully. Please check your email.");
+        const { uid, token } = data; // Assuming this is how your API response looks
+        navigate(`/api/user/reset/${uid}/${token}`);
       } else {
         alert(data.detail || "Request failed. Please check your Email.");
       }
     } catch (error) {
-      console.error("Email verification error:", error);
       alert("Request failed. Please check your Email.");
     } finally {
       setLoading(false);
@@ -82,4 +73,6 @@ export default function Email() {
       </div>
     </section>
   );
-}
+};
+
+export default Email;

@@ -5,15 +5,17 @@ import Navbar from "../Mentorship/Navbar";
 import "./PhModules.css";
 
 const PhNotes = () => {
-  const [modules, setModules] = useState([]);
+  const [chapters, setChapters] = useState([]);
+  const [notes, setNotes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [comingSoonChapter, setComingSoonChapter] = useState(null);
 
   useEffect(() => {
-    const fetchChapters = async () => {
+    const fetchChaptersAndNotes = async () => {
       const accessToken = localStorage.getItem("access_token");
       if (accessToken) {
         try {
-          const response = await axios.get(
+          const chapterResponse = await axios.get(
             `http://127.0.0.1:8000/questions/list-chapters/PH`,
             {
               headers: {
@@ -22,55 +24,47 @@ const PhNotes = () => {
             }
           );
 
-          setModules(response.data);
+          const notesResponse = await axios.get(
+            `http://127.0.0.1:8000/notes/subject/PH`,
+            {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            }
+          );
+
+          setChapters(chapterResponse.data);
+          setNotes(notesResponse.data);
         } catch (error) {
-          console.error("There was an error fetching the modules!", error);
+          console.error(
+            "There was an error fetching the chapters and notes!",
+            error
+          );
         }
       } else {
         console.log("Access token not found. Unable to fetch data.");
-        // Handle case where access token is not available
       }
     };
 
-    fetchChapters();
+    fetchChaptersAndNotes();
   }, []);
-  const filteredModules = modules.filter((module) =>
-    module.chapter_name.toLowerCase().includes(searchTerm.toLowerCase())
+
+  const filteredChapters = chapters.filter((chapter) =>
+    chapter.chapter_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleModuleClick = async (chapterId) => {
-    const token = localStorage.getItem("access_token");
-
-    if (!token) {
-      console.error("No token found in local storage");
-      alert("Please login again to continue.");
-      return;
-    }
-
-    try {
-      const response = await axios.get(
-        `http://127.0.0.1:8000/notes/subject/PH`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      const chapterNotes = response.data.find(
-        (note) => note.chapter === chapterId
-      );
-
-      if (chapterNotes) {
-        window.open(`http://127.0.0.1:8000${chapterNotes.pdf_url}`, "_blank");
-      } else {
-        console.error(`No PDF URL found for this chapter ${chapterId}`);
-      }
-    } catch (error) {
-      console.error("There was an error fetching the PDF URL!", error);
-      alert("Error fetching the PDF URL. Please try again later.");
+  const handleModuleClick = (chapterId) => {
+    const chapterNotes = notes.find((note) => note.chapter.id === chapterId);
+    if (chapterNotes && chapterNotes.pdf_url) {
+      window.open(`http://127.0.0.1:8000${chapterNotes.pdf_url}`, "_blank");
+    } else {
+      setComingSoonChapter(chapterId);
+      setTimeout(() => {
+        setComingSoonChapter(null);
+      }, 1000);
     }
   };
+
   return (
     <>
       <Navbar />
@@ -103,18 +97,21 @@ const PhNotes = () => {
         </div>
 
         <div className="Modules_Container">
-          {filteredModules.map((module) => (
-            <div className="Modules-container" key={module.id}>
+          {filteredChapters.map((chapter) => (
+            <div className="Modules-container" key={chapter.id}>
+              {comingSoonChapter === chapter.id && (
+                <div className="coming-soon-message">Coming soon!</div>
+              )}
               <div
-                onClick={() => handleModuleClick(module.id)}
+                onClick={() => handleModuleClick(chapter.id)}
                 className="ModulesData"
               >
                 <img
-                  src={`http://127.0.0.1:8000${module.icon_id.icon_url}`}
+                  src={`http://127.0.0.1:8000${chapter.icon_id.icon_url}`}
                   alt=""
                 />
                 <div className="ModulesData-text">
-                  <h3>{module.chapter_name}</h3>
+                  <h3>{chapter.chapter_name}</h3>
                 </div>
               </div>
             </div>

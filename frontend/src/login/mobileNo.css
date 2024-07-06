@@ -16,14 +16,15 @@
   font-size: 2rem;
   font-weight: 600;
 }
-.Mobileno-right input[type="text"]:not(.browser-default) {
+.Mobileno-right input[type="text"]:not(.browser-default),
+.Mobileno-right input[type="text"]:not(.browser-default)[placeholder="Enter OTP"] {
   padding: 2px 5px;
   margin-top: 10px;
   border: 2px solid black;
   border-radius: 10px;
 }
-
-.mobileotprequest button {
+.mobileotprequest button,
+.otp-verification button {
   background: #0c6205;
   padding: 0.5rem 2rem;
   border-radius: 20px;
@@ -35,6 +36,17 @@
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+}
+.otp-verification{
+  display: flex;
+  flex-direction: column;
+}
+.verification-message {
+  margin-top: 2rem;
+  color: green;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
 }
 .sidebar {
   position: fixed;

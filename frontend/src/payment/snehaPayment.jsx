@@ -2,21 +2,27 @@ import "./payment.css";
 import Navbar from "../Mentorship/Navbar";
 import { HashLink } from "react-router-hash-link";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import MobileNo from "../login/mobileNo"; // Importing the MobileNo component
 
-export default function Payment() {
+export default function Pay() {
   const [isChecked, setIsChecked] = useState(false);
-  const navigate = useNavigate();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
-  const handleStartClick = (event) => {
-    if (!isChecked) {
-      event.preventDefault();
+  const handleStartClick = (e) => {
+    e.preventDefault();
+    if (isChecked) {
+      setIsSidebarOpen(true);
+    } else {
       alert("Please accept the Terms & Conditions and Privacy Policy.");
     }
+  };
+
+  const handleCloseSidebar = () => {
+    setIsSidebarOpen(false);
   };
 
   return (
@@ -66,7 +72,7 @@ export default function Payment() {
                 </div>
                 <h2>
                   I agree to the
-                  <HashLink to="/terms&conditions">
+                  <HashLink to="/Terms&condition">
                     {" "}
                     Terms & Conditions
                   </HashLink>{" "}
@@ -74,18 +80,12 @@ export default function Payment() {
                   <HashLink to="/privacypolicy"> Privacy Policy</HashLink>
                 </h2>
               </div>
-              <button onClick={handleStartClick}>
-                <HashLink
-                  to="/verifynumber"
-                  style={{ pointerEvents: isChecked ? "auto" : "none" }}
-                >
-                  NEXT
-                </HashLink>
-              </button>
+              <button onClick={handleStartClick}>NEXT</button>
             </div>
           </div>
         </div>
       </section>
+      {isSidebarOpen && <MobileNo onClose={handleCloseSidebar} />}
     </>
   );
 }

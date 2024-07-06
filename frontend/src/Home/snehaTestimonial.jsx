@@ -1,7 +1,6 @@
 import Navbar from "../Mentorship/Navbar";
 import "./snehaTestimonial.css";
 import { NavLink } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import sneha from "../assets/images/Snehadas.png";
 import booksession from "../assets/images/book-session.png";
 import arrow from "../assets/images/Arrow.png";

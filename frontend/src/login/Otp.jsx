@@ -10,8 +10,6 @@ export default function OTP() {
   const navigate = useNavigate();
   const location = useLocation();
   const email = location.state.email;
-  console.log("from previous request : ", email);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,10 +18,6 @@ export default function OTP() {
     if (name === "email") setEmail(value);
   };
 
-  // const handleChange = (e) => {
-  //   const { value } = e.target;
-  //   setOtp(value);
-  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (otp.length !== 6) {
@@ -39,35 +33,23 @@ export default function OTP() {
             email: email,
           },
           otp,
-
-          
         }
       );
 
-      console.log("Response from backend:", response);
-
       if (response.status === 200 || response.status === 201) {
         const { access, refresh, msg } = response.data.token;
-        console.log(msg);
+
         localStorage.setItem("access_token", access);
         localStorage.setItem("refresh_token", refresh);
 
         Cookies.set("session_id", access, { expires: 7 });
 
-        console.log(
-          "OTP verified successfully. Tokens stored in localStorage."
-        );
-        console.log("Access Token:", access);
-        console.log("Refresh Token:", refresh);
-        console.log("Registration message:", msg);
         navigate("/class");
       } else {
         alert("Invalid OTP. Please try again.");
       }
     } catch (error) {
-      console.error("Failed to verify OTP:", error);
       if (error.response && error.response.data) {
-        console.error("Error response data:", error.response.data);
       }
       alert("Failed to verify OTP. Please try again later.");
     }

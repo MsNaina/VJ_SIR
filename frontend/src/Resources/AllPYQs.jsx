@@ -21,7 +21,7 @@ const AllPYQs = () => {
       axios
         .get(url)
         .then((response) => {
-          console.log("Fetched questions:", response.data); // Log the response data
+         
           setQuestions(response.data);
         })
         .catch((error) => {

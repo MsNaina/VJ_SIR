@@ -22,14 +22,7 @@ export default function SignUp() {
   }, [navigate]);
 
   const handleSignUp = async () => {
-      setLoading(true);
-    console.log("SignUp initiated with data:", {
-      Name,
-      Password,
-      Password2,
-      Mail,
-      Number,
-    });
+    setLoading(true);
 
     const mobileNumberPattern = /^[0-9]{10}$/;
     const emailPattern =
@@ -69,27 +62,22 @@ export default function SignUp() {
         );
 
         const result = await response.json();
-        console.log("API Response:", result);
 
         if (
           result.msg ===
           "OTP sent to your email. Please verify to complete registration."
         ) {
-          console.log("OTP sent to email. Redirecting to OTP page...");
           navigate("/otp", {
             state: { email: Mail, mobile_no: Number },
-            
           });
         } else {
-          console.log("Registration failed:", result);
-           setLoading(false);
+          setLoading(false);
         }
       } catch (error) {
-        console.error("Error during signup:", error);
         setErrors({ form: "Error during signup. Please try again later." });
         setLoading(false);
       }
-        } else {
+    } else {
       setLoading(false);
     }
   };
