@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const axiosInstance = axios.create({
   baseURL: "http://127.0.0.1:8000/", // Replace with your actual domain and port
 });
@@ -32,7 +33,7 @@ const refreshToken = async () => {
 };
 
 // Set an interval to refresh the token every 4 minutes
-setInterval(refreshToken, 4 * 60 * 1000);
+setInterval(refreshToken, 40 * 60 * 1000);
 
 // Add a request interceptor to include the access token in headers
 axiosInstance.interceptors.request.use(
@@ -67,6 +68,7 @@ axiosInstance.interceptors.response.use(
         });
         // Store the new access token in local storage
         localStorage.setItem("access_token", data.access);
+        localStorage.setItem("refresh_token", data.refresh); // Update refresh token as well
         // Update the default headers with the new access token
         axiosInstance.defaults.headers.common[
           "Authorization"
@@ -74,8 +76,7 @@ axiosInstance.interceptors.response.use(
         // Retry the original request with the new access token
         return axiosInstance(originalRequest);
       } catch (refreshError) {
-        console.log("Refresh token expired, please login again");
-
+        console.log("Refresh token expired or blacklisted, please login again");
         localStorage.removeItem("access_token");
         localStorage.removeItem("refresh_token");
         window.location.href = "/login";

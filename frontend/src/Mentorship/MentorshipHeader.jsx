@@ -41,7 +41,7 @@ export default function MentorshipHeader() {
             <img src={Discountt} alt="" />
           </div>
           <div className="Mentorship-header-btn">
-            <NavLink onClick={scrollToTop} to= "/payment"> Buy Now </NavLink>
+            <NavLink onClick={scrollToTop} to= "/highlights"> Buy Now </NavLink>
           </div>
         </div>
       </section>

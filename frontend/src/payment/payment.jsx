@@ -1,6 +1,30 @@
 import "./payment.css";
 import Navbar from "../Mentorship/Navbar";
+import { HashLink } from "react-router-hash-link";
+import React, { useState } from "react";
+import MobileNo from "../login/mobileNo"; // Importing the MobileNo component
+
 export default function Payment() {
+  const [isChecked, setIsChecked] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleStartClick = (e) => {
+    e.preventDefault();
+    if (isChecked) {
+      setIsSidebarOpen(true);
+    } else {
+      alert("Please accept the Terms & Conditions and Privacy Policy.");
+    }
+  };
+
+  const handleCloseSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <>
       <section id="Payment">
@@ -37,11 +61,31 @@ export default function Payment() {
             </div>
 
             <div className="payment-btn">
-              <button>PAY NOW</button>
+              <div className="terms-container">
+                <div className="terms-checkbox">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
+                  />
+                </div>
+                <h2>
+                  I agree to the
+                  <HashLink to="/terms&conditions">
+                    {" "}
+                    Terms & Conditions
+                  </HashLink>{" "}
+                  and
+                  <HashLink to="/privacypolicy"> Privacy Policy</HashLink>
+                </h2>
+              </div>
+              <button onClick={handleStartClick}>NEXT</button>
             </div>
           </div>
         </div>
       </section>
+      {isSidebarOpen && <MobileNo onClose={handleCloseSidebar} />}
     </>
   );
 }

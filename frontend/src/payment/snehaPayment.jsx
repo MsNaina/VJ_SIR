@@ -1,6 +1,24 @@
 import "./payment.css";
 import Navbar from "../Mentorship/Navbar";
-export default function PAYMENT() {
+import { HashLink } from "react-router-hash-link";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function Payment() {
+  const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleStartClick = (event) => {
+    if (!isChecked) {
+      event.preventDefault();
+      alert("Please accept the Terms & Conditions and Privacy Policy.");
+    }
+  };
+
   return (
     <>
       <section id="Payment">
@@ -22,22 +40,48 @@ export default function PAYMENT() {
               <div className="payment211">
                 <div className="payment21">
                   <h2>Item Name</h2>
-                  <h3>One-One Session</h3>
+                  <h3>Mentorship Session'25</h3>
                 </div>
 
                 <div className="payment22">
                   <h2>Price</h2>
-                  <h3>₹5,00</h3>
+                  <h3>₹500</h3>
                 </div>
               </div>
             </div>
             <div className="payment3">
               <h2>Order Total</h2>
-              <h3>₹5,00</h3>
+              <h3>₹500</h3>
             </div>
 
             <div className="payment-btn">
-              <button>PAY NOW</button>
+              <div className="terms-container">
+                <div className="terms-checkbox">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
+                  />
+                </div>
+                <h2>
+                  I agree to the
+                  <HashLink to="/terms&conditions">
+                    {" "}
+                    Terms & Conditions
+                  </HashLink>{" "}
+                  and
+                  <HashLink to="/privacypolicy"> Privacy Policy</HashLink>
+                </h2>
+              </div>
+              <button onClick={handleStartClick}>
+                <HashLink
+                  to="/verifynumber"
+                  style={{ pointerEvents: isChecked ? "auto" : "none" }}
+                >
+                  NEXT
+                </HashLink>
+              </button>
             </div>
           </div>
         </div>

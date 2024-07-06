@@ -12,7 +12,6 @@ const PhQues = () => {
   const [isExplanationVisible, setIsExplanationVisible] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null);
   const [isOptionLocked, setIsOptionLocked] = useState(false);
-  const [totalQuestions, setTotalQuestions] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,15 +28,11 @@ const PhQues = () => {
       );
       const questionData = questionResponse.data;
       const answerData = answerResponse.data;
-      
-      const correctOptions = [
-        answerData.is_O1_correct ? "A" : null,
-        answerData.is_O2_correct ? "B" : null,
-        answerData.is_O3_correct ? "C" : null,
-        answerData.is_O4_correct ? "D" : null,
-      ].filter((option) => option !== null);
 
-      setQuestion({ ...questionData, correct_option: correctOptions });
+      setQuestion({
+        ...questionData,
+        correct_option: answerData.correct_option,
+      });
       setIsExplanationVisible(false);
       setSelectedOptions([]);
       setIsCorrect(null);
@@ -66,7 +61,6 @@ const PhQues = () => {
   };
 
   const handleCheckClick = () => {
-    // Check if correct_option is defined
     if (!question.correct_option) {
       console.error("correct_option is not defined");
       return;
@@ -98,7 +92,6 @@ const PhQues = () => {
     setIsCorrect(isCorrectAnswer);
     setIsExplanationVisible(true);
     setIsOptionLocked(true);
-    console.log(`type of question is ${question.type}`);
   };
 
   const handleNextQuestion = () => {
@@ -113,7 +106,6 @@ const PhQues = () => {
         .padStart(3, "0")}`;
       navigate(`/question/${nextQuestionId}`);
     }
-    console.log("next button ");
   };
 
   const handlePrevQuestion = () => {
@@ -130,7 +122,6 @@ const PhQues = () => {
         navigate(`/question/${prevQuestionId}`);
       }
     }
-    console.log("prev button ");
   };
 
   const arraysEqual = (a, b) => {
@@ -217,6 +208,13 @@ const PhQues = () => {
                   </button>
                 </div>
               </div>
+
+              {isExplanationVisible && (
+                <div className="correct-answer">
+                  <h3>Correct Answer</h3>
+                  <p>{question.correct_option}</p>
+                </div>
+              )}
 
               {isExplanationVisible && question.explanation && (
                 <div className="explanation">

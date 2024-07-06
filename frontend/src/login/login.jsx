@@ -84,7 +84,7 @@ export default function Login() {
             
           </button>
           <div className="register-link">
-            <NavLink className="forgot">Forgot Password?</NavLink>
+            <NavLink className="forgot"to="/email">Forgot Password?</NavLink>
             <p>
               Don't have an account? <NavLink to="/signup">Sign Up</NavLink>
             </p>

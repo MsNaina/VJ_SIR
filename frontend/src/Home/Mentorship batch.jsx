@@ -108,7 +108,7 @@ export default function Mentorship() {
                   </HashLink>
                 </button>
                 <button className="btn4">
-                  <HashLink to="/payment" onClick={scrollToTop}>
+                  <HashLink to="/highlights" onClick={scrollToTop}>
                     Buy Now
                   </HashLink>
                 </button>

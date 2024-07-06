@@ -3,7 +3,6 @@ import { useLocation, NavLink, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import "./Allmentor.css";
 import axios from "axios";
-import Default from "../../assets/images/defaultimg.jpg";
 
 export default function AllMentor() {
   const location = useLocation();
@@ -20,6 +19,13 @@ export default function AllMentor() {
       ]);
     }
   }, [location.state]);
+
+   const getProfilePhotoUrl = (path) => {
+     if (path) {
+       return `http://127.0.0.1:8000/${path}`;
+     }
+     return "/media/mentor_pfp/image.png";
+   };
 
   const handleMeetMentor = async () => {
     const token = localStorage.getItem("access_token");
@@ -78,7 +84,7 @@ export default function AllMentor() {
             {mentors.map((mentor, index) => (
               <div className="mentor-card" key={index}>
                 <img
-                  src={mentor.profile_photo || Default}
+                  src={getProfilePhotoUrl(mentor.profile_photo)}
                   alt=""
                   className="profile-photo"
                 />
@@ -90,7 +96,10 @@ export default function AllMentor() {
                       <h4>{mentor.IIT}</h4>
                     </div>
                   </div>
-                  <h5>Compatibility Score: {mentor.compatibility * 100}%</h5>
+                  <h5>
+                    Compatibility Score:{" "}
+                    {(mentor.compatibility * 100).toFixed(2)}%
+                  </h5>
                 </div>
               </div>
             ))}

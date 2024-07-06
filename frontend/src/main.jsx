@@ -37,10 +37,20 @@ import Mentor from "./Mentorship/compatibility/mentor.jsx"
 import Highlight from "./payment/highlight.jsx"
 import Payment from "./payment/payment.jsx"
 import PAYMENT from "./payment/snehaPayment.jsx"
+import MobileNo from "./login/mobileNo.jsx"
+import Email from "./login/Email.jsx"
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "email",
+    element: <Email />,
+  },
+  {
+    path: "verifynumber",
+    element: <MobileNo />,
   },
   {
     path: "privacypolicy",
@@ -56,7 +66,7 @@ const router = createBrowserRouter([
   },
   {
     path: "Pay",
-    element: <PAYMENT/>,
+    element: <PAYMENT />,
   },
   {
     path: "Mentorship",

@@ -1,0 +1,80 @@
+.mobileno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.Mobileno-left img {
+  width: 300px;
+  height: auto;
+}
+.Mobileno-right {
+  width: 90%;
+}
+.Mobileno-right h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.Mobileno-right input[type="text"]:not(.browser-default) {
+  padding: 2px 5px;
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.mobileotprequest button {
+  background: #0c6205;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.mobileotprequest {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  padding: 20px;
+  transform: translateX(100%);
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+@media (max-width: 769px) {
+  .sidebar {
+    width: 300px;
+    height: 100%;
+  }
+  .Mobileno-right h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+}

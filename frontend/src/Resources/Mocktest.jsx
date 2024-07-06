@@ -3,21 +3,20 @@ import instruction from "../assets/images/inst.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Mocktest() {
-    const [isChecked, setIsChecked] = useState(false);
-    const navigate = useNavigate();
+  const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
 
-    const handleCheckboxChange = () => {
-      setIsChecked(!isChecked);
-    };
-    
-    const handleStartClick = () => {
-      if (isChecked) {
-        // Navigate to the next page (e.g., question page)
-        navigate("/Mocktestques"); // Replace with your actual route
-      } else {
-        alert("Please read and agree to the instructions before starting.");
-      }
-    };
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleStartClick = () => {
+    if (isChecked) {
+      navigate("/Mocktestques");
+    } else {
+      alert("Please read and agree to the instructions before starting.");
+    }
+  };
 
   return (
     <>

@@ -40,20 +40,36 @@ const MathNotes = () => {
   );
 
   const handleModuleClick = async (chapterId) => {
+    const token = localStorage.getItem("access_token");
+
+    if (!token) {
+      console.error("No token found in local storage");
+      alert("Please login again to continue.");
+      return;
+    }
+
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/notes/subject/MA`
+        `http://127.0.0.1:8000/notes/subject/MA`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
+
       const chapterNotes = response.data.find(
         (note) => note.chapter === chapterId
       );
+
       if (chapterNotes) {
         window.open(`http://127.0.0.1:8000${chapterNotes.pdf_url}`, "_blank");
       } else {
-        console.error("No PDF URL found for this chapter");
+        console.error(`No PDF URL found for this chapter ${chapterId}`);
       }
     } catch (error) {
       console.error("There was an error fetching the PDF URL!", error);
+      alert("Error fetching the PDF URL. Please try again later.");
     }
   };
 

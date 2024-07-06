@@ -1,6 +1,7 @@
+import React, { useState } from "react";
 import "./Resources.css";
 import Navbar from "../Mentorship/Navbar";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Mocktext from "../assets/images/mock-test.png";
 import PYQs from "../assets/images/PYQs.png";
 import Notes from "../assets/images/Notes.png";
@@ -9,6 +10,7 @@ import Dpp from "../assets/images/Dpp3.png";
 
 export default function Resources() {
   const navigate = useNavigate();
+  const [comingSoonMessage, setComingSoonMessage] = useState("");
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -18,6 +20,14 @@ export default function Resources() {
   };
 
   const handleResourceClick = (path) => {
+    if (path === "/mocktest" || path === "/PhysicsDpp") {
+      setComingSoonMessage("Coming Soon");
+      setTimeout(() => {
+        setComingSoonMessage("");
+      }, 2000); // 3 seconds
+      return;
+    }
+
     const accessToken = localStorage.getItem("access_token");
     if (accessToken) {
       navigate(path);
@@ -32,6 +42,10 @@ export default function Resources() {
 
       <section id="Resources" className="rounded-[30px]">
         <h1>Resources</h1>
+
+        {comingSoonMessage && (
+          <div className="coming-soon-message">{comingSoonMessage}</div>
+        )}
 
         <div className="Resources">
           <div className="resource-card">

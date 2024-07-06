@@ -11,6 +11,13 @@ export default function Mentor() {
     if (!mentor) {
       return <div>No mentor details available.</div>;
     }
+    
+   const getProfilePhotoUrl = (path) => {
+     if (path) {
+       return `http://127.0.0.1:8000/${path}`;
+     }
+     return "/media/mentor_pfp/image.png";
+   };
 
   return (
     <>
@@ -25,7 +32,7 @@ export default function Mentor() {
             <div className="Mentor-left">
               <div className="mentor-profile">
                 <img
-                  src={mentor.profile_photo || Default}
+                  src={getProfilePhotoUrl(mentor.profile_photo)}
                   alt=""
                   className="profile-photo"
                 />

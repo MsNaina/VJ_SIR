@@ -48,6 +48,9 @@
   width: 100%;
   background: rgba(252, 231, 114, 1);
 }
+.coming-soon-message{
+  font-size: 2rem;
+}
 @media(max-width:1180px) and (min-width:1150px){
     .Resources{
     gap: 3rem;

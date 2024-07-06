@@ -126,6 +126,14 @@
   max-width: 100%;
   height: auto;
 }
+.correct-answer{
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: #0c6205;
+  font-weight: 600;
+  align-items: center;
+}
 @media(max-width:1270px){
   #question-page{
  margin: 4rem 0 2rem 6rem;
@@ -160,6 +168,19 @@
 }
 .option-label{
   width: 100%;
+}
+.controls{
+  display: flex;
+}
+.next-check{
+  display: flex;
+  gap: 20px;  
+  width: 50%;
+  justify-content: flex-end;
+}
+.next-check button, .prev-button{
+  padding:5px 15px;
+  font-size: 1rem;
 }
 }
 @media(max-width:530px){
