@@ -24,7 +24,7 @@ export default function Header() {
         <div className="header">
           <div className="header-left">
             <div className="header-text">
-              <p className="p1">Embark on your JEE Main & Advanced</p>
+              <p className="p1">HYY Embark on your JEE Main & Advanced</p>
               <h1>
                 VJ Sir - <span>Your</span>{" "}
               </h1>
