@@ -1,26 +1,31 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate , NavLink } from "react-router-dom";
+import Logo from "../assets/images/logo.png";
+import vjsir from "../assets/images/vjsir1.png";
 import config from "../config";
+import "./login.css";
 
-const ResetPassword = () => {
+export default function ResetPassword() {
   const { uid, token } = useParams();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleResetPassword = async () => {
-    setLoading(true);
     if (password !== confirmPassword) {
-      alert("Passwords do not match.");
-      setLoading(false);
+      setPopupMessage("Passwords do not match.");
       return;
     }
+
+    setLoading(true);
     try {
       const response = await fetch(
         `${config.BASE_URL}/api/user/reset-password/${uid}/${token}/`,
         {
           method: "POST",
-          body: JSON.stringify({ password }),
+          body: JSON.stringify({ password, password2: confirmPassword }),
           headers: {
             "Content-Type": "application/json",
           },
@@ -28,45 +33,68 @@ const ResetPassword = () => {
       );
       const data = await response.json();
       if (response.ok) {
-        alert("Password reset successfully!");
-        // Redirect to login page or any other page
-        window.location.href = "/login";
+        setPopupMessage("Password changed successfully!");
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
       } else {
-        alert(data.detail || "Failed to reset password.");
+        setPopupMessage(data.detail || "Failed to change password.");
       }
     } catch (error) {
-      alert("Failed to reset password.");
+      setPopupMessage("Failed to change password.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="ResetPassword">
-      <h2>Reset Your Password</h2>
-      <div>
-        <label htmlFor="password">New Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="confirmPassword">Confirm Password:</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-      </div>
-      <button onClick={handleResetPassword} disabled={loading}>
-        {loading ? "Resetting Password..." : "Reset Password"}
-      </button>
-    </section>
-  );
-};
+    <>
+      <section id="LogIn">
+        <div className="login-left">
+          <NavLink to="/">
+            <img src={Logo} alt="Logo" />
+          </NavLink>
+          <h2>
+            Start Your <span>Perfect</span>
+            <br />
+            Preparation Today
+          </h2>
+          <div className="login-bottom">
+            <input
+              type="password"
+              id="input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Enter Your Password"
+              disabled={loading}
+            />
 
-export default ResetPassword;
+            <input
+              type="password"
+              id="input"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              placeholder="Confirm Password"
+              disabled={loading}
+            />
+
+            <button
+              onClick={handleResetPassword}
+              className="login-btn"
+              type="button"
+              disabled={loading}
+            >
+              {loading ? "Changing..." : "Change Password"}
+            </button>
+          </div>
+          {popupMessage && <div className="popup-message">{popupMessage}</div>}
+        </div>
+        <div className="login-right">
+          <img src={vjsir} alt="VJ Sir" />
+        </div>
+      </section>
+    </>
+  );
+}

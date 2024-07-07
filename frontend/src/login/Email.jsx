@@ -1,14 +1,27 @@
-import React, { useState } from "react";
-import { useNavigate , NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import "./login.css";
-import config from "../config"
+import config from "../config";
 
 const Email = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate= useNavigate();
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); 
+ 
+
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage("");
+        setMessageType("");
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
 
   const handleLogin = async () => {
     setLoading(true);
@@ -25,12 +38,18 @@ const Email = () => {
       );
       const data = await response.json();
       if (response.ok) {
-        alert("Please check your email.");
+        setMessage("Please check your email.");
+        setMessageType("success");
+         setEmail("");
       } else {
-        alert(data.detail || "Request failed. Please check your Email.");
+        setMessage(data.detail || "Request failed. Please check your Email.");
+        setMessageType("error");
+         setEmail("");
       }
     } catch (error) {
-      alert("Request failed. Please check your Email.");
+      setMessage("Request failed. Please check your Email.");
+      setMessageType("error");
+
     } finally {
       setLoading(false);
     }
@@ -65,6 +84,7 @@ const Email = () => {
           >
             {loading ? "Sending Request..." : "Send Request"}
           </button>
+          {message && <div className={`message ${messageType}`}>{message}</div>}
         </div>
       </div>
       <div className="login-right">

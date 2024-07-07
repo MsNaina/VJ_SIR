@@ -95,7 +95,7 @@ root.render(
       />
       <Route
         path="/api/user/reset-password/:uid/:token/"
-        component={ResetPassword}
+        element={<ResetPassword />}
       />
       <Route path="/mentor" element={<Mentor />} />
     </Routes>
