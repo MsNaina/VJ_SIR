@@ -2,6 +2,7 @@ import "./mobileNo.css";
 import Mobile from "../assets/images/Mobilenumber.png";
 import React, { useState } from "react";
 import axios from "axios";
+import config from "../config"
 
 export default function MobileNo({ onClose }) {
   const [mobileNumber, setMobileNumber] = useState("");
@@ -16,7 +17,7 @@ export default function MobileNo({ onClose }) {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/user/mobile-otp/",
+        `${config.BASE_URL}/api/user/mobile-otp/`,
         { mobile_no: mobileNumber },
         {
           headers: {
@@ -39,7 +40,7 @@ export default function MobileNo({ onClose }) {
     setOtpLoading(true);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/user/mobile-verify-otp/",
+        `${config.BASE_URL}/api/user/mobile-verify-otp/`,
         { otp, params: { mobile_no: mobileNumber } },
         {
           headers: {

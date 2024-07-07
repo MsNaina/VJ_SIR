@@ -3,6 +3,7 @@ import { useNavigate , NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import "./login.css";
+import config from "../config"
 
 const Email = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ const Email = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/user/send-reset-password-email/",
+        `${config.BASE_URL}/api/user/send-reset-password-email/`,
         {
           method: "POST",
           body: JSON.stringify({ email }),
@@ -24,9 +25,7 @@ const Email = () => {
       );
       const data = await response.json();
       if (response.ok) {
-        alert("OTP sent successfully. Please check your email.");
-        const { uid, token } = data; // Assuming this is how your API response looks
-        navigate(`/api/user/reset/${uid}/${token}`);
+        alert("Please check your email.");
       } else {
         alert(data.detail || "Request failed. Please check your Email.");
       }
@@ -64,7 +63,7 @@ const Email = () => {
             type="button"
             disabled={loading}
           >
-            {loading ? "Getting OTP..." : "Get OTP"}
+            {loading ? "Sending Request..." : "Send Request"}
           </button>
         </div>
       </div>

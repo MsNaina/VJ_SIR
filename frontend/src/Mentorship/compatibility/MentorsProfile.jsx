@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axiosInstance from "../../refresh";
 import "./Mentorprofile.css";
 import Navbar from "../Navbar";
-
+import config from "../../config"
 export default function MentorProfile() {
   const [mentorDetails, setMentorDetails] = useState(null);
 
@@ -10,7 +10,7 @@ export default function MentorProfile() {
     const fetchMentorDetails = async () => {
       try {
         const response = await axiosInstance.get(
-          "http://127.0.0.1:8000/mentorship/get-mentor",
+          `${config.BASE_URL}/mentorship/get-mentor`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("access_token")}`,

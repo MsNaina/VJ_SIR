@@ -4,7 +4,7 @@ import axios from "axios";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import Cookies from "js-cookie";
-
+import config from "../config";
 export default function OTP() {
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ export default function OTP() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/user/website-verify-otp/",
+        `${config.BASE_URL}/api/user/website-verify-otp/`,
         {
           params: {
             email: email,
@@ -82,8 +82,6 @@ export default function OTP() {
           </button>
           <div className="otp-link">
             <a href="/Signup">Change E-mail</a>
-            <div className="otp-line"></div>
-            <a href="/">Request New Code</a>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import "./contact.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios"
+import config from "../config"
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -56,7 +57,7 @@ export default function Contact() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/contact/send/",
+        `${config.BASE_URL}/contact/send/`,
         formData
       );
       if (response.data.msg === "Email has been sent to your email address.") {

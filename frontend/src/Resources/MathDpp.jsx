@@ -3,7 +3,7 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./PhModules.css";
-
+import config from "../config";
 const MathDpp = () => {
   const [modules, setModules] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,7 +14,7 @@ const MathDpp = () => {
       if (accessToken) {
         try {
           const response = await axios.get(
-            `http://127.0.0.1:8000/questions/list-chapters/MA`,
+            `${config.BASE_URL}/questions/list-chapters/MA`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -78,7 +78,7 @@ const MathDpp = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`http://127.0.0.1:8000${module.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${module.icon_id.icon_url}`}
                   alt=""
                 />
                 <div className="ModulesData-text">

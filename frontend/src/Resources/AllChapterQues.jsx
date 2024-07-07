@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./AllChapterQues.css"
-
+import config from "../config";
 const AllChapterQues = () => {
   const { id } = useParams();
   const [questions, setQuestions] = useState([]);
@@ -11,7 +11,7 @@ const AllChapterQues = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/questions/MODULE/${id}?format=json`)
+      .get(`${config.BASE_URL}/questions/MODULE/${id}?format=json`)
       .then((response) => {
         setQuestions(response.data);
       })
@@ -39,11 +39,10 @@ const AllChapterQues = () => {
                 onClick={() => handleQuestionClick(question.id)}
               >
                 <img
-                  src={`http://127.0.0.1:8000${question.question}`} 
+                  src={`${config.BASE_URL}${question.question}`}
                   alt={`Question ${question.id}`}
                   className="question-thumbnail"
                 />
-               
               </div>
             ))
           ) : (

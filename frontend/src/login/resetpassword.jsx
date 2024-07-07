@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import config from "../config";
 
 const ResetPassword = () => {
   const { uid, token } = useParams();
@@ -9,9 +10,14 @@ const ResetPassword = () => {
 
   const handleResetPassword = async () => {
     setLoading(true);
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      setLoading(false);
+      return;
+    }
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/user/reset-password/${uid}/${token}/`,
+        `${config.BASE_URL}/api/user/reset-password/${uid}/${token}/`,
         {
           method: "POST",
           body: JSON.stringify({ password }),
@@ -23,7 +29,8 @@ const ResetPassword = () => {
       const data = await response.json();
       if (response.ok) {
         alert("Password reset successfully!");
-        // Optionally, redirect to login or another page
+        // Redirect to login page or any other page
+        window.location.href = "/login";
       } else {
         alert(data.detail || "Failed to reset password.");
       }

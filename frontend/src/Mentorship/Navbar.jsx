@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 import Logo from "../assets/images/logo.png";
 import Profile from "../assets/images/profile.png";
 import "./Navbar.css";
-import axios from "axios";
 import axiosInstance from "../refresh";
-
+import config from "../config"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const auth = localStorage.getItem("access_token" || "refresh_token");
@@ -18,7 +17,7 @@ export default function Navbar() {
       if (token) {
         try {
           const response = await axiosInstance.get(
-            "http://127.0.0.1:8000/api/user/profile/",
+            `${config.BASE_URL}/api/user/profile/`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -35,30 +34,9 @@ export default function Navbar() {
   }, []);
 
   const logout = async () => {
-    // const refreshToken = localStorage.getItem("refresh_token");
-    // const token = localStorage.getItem("access_token");
-    // if (refreshToken && token) {
-    //   try {
-    //     await axios.post(
-    //       "http://127.0.0.1:8000/api/user/logout/",
-    //       {
-    //         refresh: refreshToken,
-    //       },
-    //       {
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //           Authorization: `Bearer ${token}`,
-    //         },
-    //       }
-    //     );
 
         localStorage.clear();
         navigate("/login");
-      // } catch (error) {
-      //   console.error("Failed to logout:", error);
-      // }
-    // }
-    // return;
   };
 
   const toggleMenu = () => {

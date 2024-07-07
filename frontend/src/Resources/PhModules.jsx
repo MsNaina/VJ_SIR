@@ -3,7 +3,7 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./PhModules.css";
-
+import config from "../config";
 const PhModules = () => {
   const [modules, setModules] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,7 +14,7 @@ const PhModules = () => {
       if (accessToken) {
         try {
           const response = await axios.get(
-            `http://127.0.0.1:8000/questions/list-chapters/PH`,
+            `${config.BASE_URL}/questions/list-chapters/PH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -28,7 +28,7 @@ const PhModules = () => {
         }
       } else {
         console.log("Access token not found. Unable to fetch data.");
-        // Handle case where access token is not available
+    
       }
     };
 
@@ -78,7 +78,7 @@ const PhModules = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`http://127.0.0.1:8000${module.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${module.icon_id.icon_url}`}
                   alt=""
                 />
                 <div className="ModulesData-text">

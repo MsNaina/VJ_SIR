@@ -94,7 +94,7 @@ root.render(
         element={<AllMentor />}
       />
       <Route
-        path="http://127.0.0.1:8000/api/user/reset/:uid/:token"
+        path="/api/user/reset-password/:uid/:token/"
         component={ResetPassword}
       />
       <Route path="/mentor" element={<Mentor />} />

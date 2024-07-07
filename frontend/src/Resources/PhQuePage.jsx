@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./PhQuePage.css";
-
+import config from "../config";
 const PhQues = () => {
   const { id } = useParams();
   const [question, setQuestion] = useState(null);
@@ -21,10 +21,10 @@ const PhQues = () => {
   const fetchQuestionAndAnswer = async (questionId) => {
     try {
       const questionResponse = await axios.get(
-        `http://127.0.0.1:8000/questions/id/${questionId}?format=json`
+        `${config.BASE_URL}/questions/id/${questionId}?format=json`
       );
       const answerResponse = await axios.get(
-        `http://127.0.0.1:8000/questions/answer/${questionId}?format=json`
+        `${config.BASE_URL}/questions/answer/${questionId}?format=json`
       );
       const questionData = questionResponse.data;
       const answerData = answerResponse.data;
@@ -140,7 +140,7 @@ const PhQues = () => {
             <>
               <div className="question-image-container">
                 <img
-                  src={`http://127.0.0.1:8000${question.question}`}
+                  src={`${config.BASE_URL}${question.question}`}
                   alt="Question"
                   className="question-image"
                 />
@@ -221,7 +221,7 @@ const PhQues = () => {
                   <h3>Explanation</h3>
                   <div className="explanation-image-container">
                     <img
-                      src={`http://127.0.0.1:8000${question.explanation}`}
+                      src={`${config.BASE_URL}${question.explanation}`}
                       alt="Explanation"
                       className="explanation-image"
                     />

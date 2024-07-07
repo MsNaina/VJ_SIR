@@ -3,7 +3,7 @@ import { useLocation, NavLink } from "react-router-dom";
 import Navbar from "../Navbar";
 import Default from "../../assets/images/defaultimg.jpg";
 import "./mentor.css";
-
+import config from "../../config"
 export default function Mentor() {
     const location = useLocation();
     const { mentor} = location.state || {};
@@ -14,7 +14,7 @@ export default function Mentor() {
     
    const getProfilePhotoUrl = (path) => {
      if (path) {
-       return `http://127.0.0.1:8000/${path}`;
+       return `${config.BASE_URL}/${path}`;
      }
      return "/media/mentor_pfp/image.png";
    };

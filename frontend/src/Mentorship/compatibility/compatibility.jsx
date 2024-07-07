@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./compatibility.css";
 import Navbar from "../Navbar";
 import axiosInstance from "../../refresh";
-
+import config from "../../config"
 const CompatibilityStage1 = () => {
   const [formData, setFormData] = useState({
     gender: "",
@@ -80,7 +80,7 @@ const CompatibilityStage1 = () => {
         return;
       }
       const response = await axiosInstance.post(
-        "http://127.0.0.1:8000/mentorship/get-mentor",
+        `${config.BASE_URL}/mentorship/get-mentor`,
         formData,
         {
           headers: {

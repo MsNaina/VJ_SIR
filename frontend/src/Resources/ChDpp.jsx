@@ -3,7 +3,7 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./PhModules.css";
-
+import config from "../config"
 const ChDpp = () => {
   const [modules, setModules] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,7 +14,7 @@ const ChDpp = () => {
       if (accessToken) {
         try {
           const response = await axios.get(
-            `http://127.0.0.1:8000/questions/list-chapters/CH`,
+            `${config.BASE_URL}/questions/list-chapters/CH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -77,7 +77,7 @@ const ChDpp = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`http://127.0.0.1:8000${module.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${module.icon_id.icon_url}`}
                   alt=""
                 />
                 <div className="ModulesData-text">

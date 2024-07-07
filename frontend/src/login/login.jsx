@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import "./login.css";
+import config from "../config"
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ export default function Login() {
     setLoading(true); 
   
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/user/login/", {
+      const response = await fetch(`${config.BASE_URL}/api/user/login/`, {
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json" },

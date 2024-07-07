@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import "./login.css";
 import axios from "axios";
+import config from "../config"
 
 export default function Class() {
   const [selectedClass, setSelectedClass] = useState("");
@@ -19,7 +20,7 @@ export default function Class() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/user/select-class/",
+        `${config.BASE_URL}/api/user/select-class/`,
         { student_class: selectedClass },
         {
           headers: {

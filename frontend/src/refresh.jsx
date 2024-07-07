@@ -1,10 +1,9 @@
 import axios from "axios";
-
+import config from "./config";
 const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:8000/", // Replace with your actual domain and port
+  baseURL: config.BASE_URL,
 });
 
-// Function to refresh tokens
 const refreshToken = async () => {
   const refresh_token = localStorage.getItem("refresh_token");
   if (refresh_token) {

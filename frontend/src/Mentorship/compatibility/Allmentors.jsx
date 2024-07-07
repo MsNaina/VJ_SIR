@@ -3,7 +3,7 @@ import { useLocation, NavLink, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import "./Allmentor.css";
 import axiosInstance from "../../refresh";
-
+import config from "../../config"
 export default function AllMentor() {
   const location = useLocation();
   const [mentors, setMentors] = useState([]);
@@ -22,7 +22,7 @@ export default function AllMentor() {
 
    const getProfilePhotoUrl = (path) => {
      if (path) {
-       return `http://127.0.0.1:8000/${path}`;
+       return `${config.BASE_URL}${path}`;
      }
      return "/media/mentor_pfp/image.png";
    };
@@ -44,7 +44,7 @@ export default function AllMentor() {
     }
     try {
       const response = await axiosInstance.get(
-        "http://127.0.0.1:8000/mentorship/get-mentor",
+        `${config.BASE_URL}/mentorship/get-mentor`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

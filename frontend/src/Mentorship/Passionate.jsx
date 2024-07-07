@@ -1,18 +1,18 @@
 import "./passionate.css";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axiosInstance from "../refresh";
 import Go from "../assets/images/Go.png";
-
+import config from "../config"
 export default function Passionate() {
   const [mentor, setMentor] = useState(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMentor = async () => {
       try {
         const response = await axiosInstance.get(
-          "http://127.0.0.1:8000/mentorship/random-mentor"
+          `${config.BASE_URL}/mentorship/random-mentor`
         );
         setMentor(response.data);
       } catch (error) {
@@ -32,38 +32,39 @@ export default function Passionate() {
 
   const getProfilePhotoUrl = (path) => {
     if (path) {
-      return `http://127.0.0.1:8000/${path}`;
+      return `${config.BASE_URL}/${path}`;
     }
     return "/media/mentor_pfp/image.png";
   };
 
-  const checkPermissions = async () => {
-    try {
-      const response = await axiosInstance.get(
-        "http://127.0.0.1:8000/api/user/my-permissions/"
-      );
-      const { is_payment_done, is_mentor_alloted } = response.data;
+ const checkPermissions = async () => {
+   try {
+     const response = await axiosInstance.get(
+       `${config.BASE_URL}/api/user/my-permissions/`
+     );
+     const { is_payment_done, is_mentor_alloted } = response.data;
 
-      if (!is_payment_done) {
-        navigate("/Payment", {
-          state: { message: "Please confirm your payment." },
-        });
-      } else if (!is_mentor_alloted) {
-        navigate("/Mentorship/Compatibility");
-        navigate("/MentorProfile");
-        fetchMentorDetails();
-      }
-    } catch (error) {
-      navigate("/Payment", {
-        state: { message: "Please confirm your payment." },
-      });
-    }
-  };
+     if (!is_payment_done) {
+       navigate("/Payment", {
+         state: { message: "Please confirm your payment." },
+       });
+     } else if (is_payment_done && !is_mentor_alloted) {
+       navigate("/Mentorship/Compatibility");
+     } else {
+       navigate("/MentorProfile");
+     }
+   } catch (error) {
+     
+     navigate("/Payment", {
+       state: { message: "Please confirm your payment." },
+     });
+   }
+ };
 
   const fetchMentorDetails = async () => {
     try {
       const response = await axiosInstance.get(
-        "http://127.0.0.1:8000/mentorship/get-mentor",
+        `${config.BASE_URL}/mentorship/get-mentor`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
