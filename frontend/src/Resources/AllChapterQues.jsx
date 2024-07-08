@@ -11,7 +11,7 @@ const AllChapterQues = () => {
 
   useEffect(() => {
     axios
-      .get(`${config.BASE_URL}/questions/MODULE/${id}?format=json`)
+      .get(`${config.BASE_URL}/api/questions/MODULE/${id}?format=json`)
       .then((response) => {
         setQuestions(response.data);
       })

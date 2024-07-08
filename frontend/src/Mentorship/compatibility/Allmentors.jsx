@@ -44,7 +44,7 @@ export default function AllMentor() {
     }
     try {
       const response = await axiosInstance.get(
-        `${config.BASE_URL}/mentorship/get-mentor`,
+        `${config.BASE_URL}/api/mentorship/get-mentor`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

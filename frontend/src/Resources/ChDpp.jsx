@@ -14,7 +14,7 @@ const ChDpp = () => {
       if (accessToken) {
         try {
           const response = await axios.get(
-            `${config.BASE_URL}/questions/list-chapters/CH`,
+            `${config.BASE_URL}/api/questions/list-chapters/CH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
