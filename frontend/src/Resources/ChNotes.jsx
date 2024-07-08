@@ -16,7 +16,7 @@ const ChNotes = () => {
       if (accessToken) {
         try {
           const chapterResponse = await axios.get(
-            `${config.BASE_URL}/questions/list-chapters/PH`,
+            `${config.BASE_URL}/api/questions/list-chapters/PH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -25,7 +25,7 @@ const ChNotes = () => {
           );
 
           const notesResponse = await axios.get(
-            `${config.BASE_URL}/notes/subject/PH`,
+            `${config.BASE_URL}/api/notes/subject/PH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,

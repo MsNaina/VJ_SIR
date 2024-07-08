@@ -14,7 +14,7 @@ const PhPYQs = () => {
       if (accessToken) {
         try {
           const response = await axios.get(
-            `${config.BASE_URL}/questions/list-chapters/PH`,
+            `${config.BASE_URL}/api/questions/list-chapters/PH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,

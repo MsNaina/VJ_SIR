@@ -12,7 +12,7 @@ export default function Passionate() {
     const fetchMentor = async () => {
       try {
         const response = await axiosInstance.get(
-          `${config.BASE_URL}/mentorship/random-mentor`
+          `${config.BASE_URL}/api/mentorship/random-mentor`
         );
         setMentor(response.data);
       } catch (error) {
@@ -64,7 +64,7 @@ export default function Passionate() {
   const fetchMentorDetails = async () => {
     try {
       const response = await axiosInstance.get(
-        `${config.BASE_URL}/mentorship/get-mentor`,
+        `${config.BASE_URL}/api/mentorship/get-mentor`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,

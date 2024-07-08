@@ -13,9 +13,9 @@ const AllPYQs = () => {
   useEffect(() => {
     let url = "";
     if (level === "mains") {
-      url = `${config.BASE_URL}/questions/MAIN/${chapterId}?format=json`;
+      url = `${config.BASE_URL}/api/questions/MAIN/${chapterId}?format=json`;
     } else if (level === "advanced") {
-      url = `${config.BASE_URL}/questions/adv/${chapterId}?format=json`;
+      url = `${config.BASE_URL}/api/questions/adv/${chapterId}?format=json`;
     }
     if (url) {
       axios
