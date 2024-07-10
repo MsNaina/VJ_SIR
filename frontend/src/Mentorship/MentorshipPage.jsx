@@ -7,11 +7,14 @@ import Passionate from './Passionate'
 import Map from './map'
 import WaveFooter from '../Home/Wavefooter'
 import Footer from "../Home/footer"
-
+import { Helmet } from 'react-helmet-async';
 function MentorshipPage() {
   
     return (
       <>
+       <Helmet>
+      <title>mentorship - vj nucleus</title>
+    </Helmet>
 <Navbar/>
 <MentorshipHeader/>
 <IITs/>

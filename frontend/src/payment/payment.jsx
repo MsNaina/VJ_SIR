@@ -3,6 +3,7 @@ import Navbar from "../Mentorship/Navbar";
 import { HashLink } from "react-router-hash-link";
 import React, { useState } from "react";
 import MobileNo from "../login/mobileNo"; // Importing the MobileNo component
+import { Helmet } from 'react-helmet-async';
 
 export default function Payment() {
   const [isChecked, setIsChecked] = useState(false);
@@ -27,6 +28,9 @@ export default function Payment() {
 
   return (
     <>
+    <Helmet>
+      <title>payment - vj nucleus</title>
+    </Helmet>
       <section id="Payment">
         <Navbar />
         <div className="payment">

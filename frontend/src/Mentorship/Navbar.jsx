@@ -47,7 +47,9 @@ export default function Navbar() {
     <>
       <section id="Navbar">
         <div className="logo">
-          <img src={Logo} alt="Logo" />
+        <NavLink to="/">
+          <img src={Logo} alt="" />
+        </NavLink>
         </div>
 
         <div className={`menu ${menuOpen ? "open" : ""}`}>

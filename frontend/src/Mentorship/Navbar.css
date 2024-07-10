@@ -57,8 +57,8 @@ body.menu.open {
 .Nav-item ul li {
   opacity: 0.6;
   border-radius: 30px;
-  padding: 0.5vw 0.7vw;
-  background: rgba(240, 240, 240, 0.5);
+  padding: 0.5vw 1.2vw;
+  background: rgba(221, 217, 217, 0.5);
 }
 
 .Nav-item ul li:hover {
