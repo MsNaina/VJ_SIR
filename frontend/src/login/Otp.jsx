@@ -5,6 +5,7 @@ import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import Cookies from "js-cookie";
 import config from "../config";
+import { Helmet } from 'react-helmet-async';
 
 export default function OTP() {
   const [otp, setOtp] = useState("");
@@ -56,6 +57,10 @@ export default function OTP() {
   };
 
   return (
+    <>
+     <Helmet>
+      <title>registration - vj nucleus</title>
+    </Helmet>
     <section id="LogIn">
       <div className="login-left">
         <NavLink to="/">
@@ -92,5 +97,6 @@ export default function OTP() {
         <img src={vjsir} alt="vjsir" />
       </div>
     </section>
+    </>
   );
 }

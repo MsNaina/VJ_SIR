@@ -7,6 +7,7 @@ import PYQs from "../assets/images/PYQs.png";
 import Notes from "../assets/images/Notes.png";
 import Modules from "../assets/images/Modules.png";
 import Dpp from "../assets/images/Dpp3.png";
+import { Helmet } from 'react-helmet-async';
 
 export default function Resources() {
   const navigate = useNavigate();
@@ -38,6 +39,9 @@ export default function Resources() {
 
   return (
     <>
+    <Helmet>
+    <title>resource - vj nucleus</title>
+  </Helmet>
       <Navbar />
 
       <section id="Resources" className="rounded-[30px]">
