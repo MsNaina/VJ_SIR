@@ -5,6 +5,8 @@ import Navbar from "../Navbar";
 import "./Allmentor.css";
 import axiosInstance from "../../refresh";
 import config from "../../config"
+import { Helmet } from 'react-helmet-async';
+
 export default function AllMentor() {
   const location = useLocation();
   const [mentors, setMentors] = useState([]);
@@ -71,6 +73,9 @@ export default function AllMentor() {
   };
   return (
     <>
+     <Helmet>
+    <title>compatibility - vj nucleus</title>
+  </Helmet>
       <section id="mentors">
         <Navbar />
 

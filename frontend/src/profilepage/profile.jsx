@@ -20,9 +20,13 @@ export default function Profile() {
   });
 
   useEffect(() => {
+
     const fetchUserData = async () => {
       const token = localStorage.getItem("access_token");
-      if (token) {
+      if (!token) {
+        navigate("/login");
+        return;
+      }
         try {
           const response = await axiosInstance.get(
             `${config.BASE_URL}/api/user/profile/`,
@@ -33,10 +37,10 @@ export default function Profile() {
             }
           );
           setUserData(response.data);
-        } catch (error) {
+        } 
+        catch (error) {
           console.error("Failed to fetch user data:", error);
         }
-      }
     };
     fetchUserData();
   }, []);
@@ -75,7 +79,7 @@ export default function Profile() {
           <div className="profile-top">
             <div className="profile-logo">
             <NavLink to="/">
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="logo" />
         </NavLink>
             </div>
 

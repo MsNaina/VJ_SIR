@@ -4,6 +4,8 @@ import Navbar from "../Navbar";
 import Default from "../../assets/images/defaultimg.jpg";
 import "./mentor.css";
 import config from "../../config"
+import { Helmet } from 'react-helmet-async';
+
 export default function Mentor() {
     const location = useLocation();
     const { mentor} = location.state || {};
@@ -21,6 +23,9 @@ export default function Mentor() {
 
   return (
     <>
+     <Helmet>
+    <title>compatibility - vj nucleus</title>
+  </Helmet>
       <section id="Mentor">
         <Navbar />
         <div className="Mentor">
