@@ -1,13 +1,24 @@
 import "./payment.css";
 import Navbar from "../Mentorship/Navbar";
 import { HashLink } from "react-router-hash-link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MobileNo from "../login/mobileNo"; // Importing the MobileNo component
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 
 export default function Pay() {
   const [isChecked, setIsChecked] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate(); // useNavigate hook for navigation
+
+  useEffect(() => {
+    // Check for access token when component mounts
+    const accessToken = localStorage.getItem("access_token"); // Adjust storage mechanism as needed
+    if (!accessToken) {
+      // Redirect to login page if access token is not present
+      navigate("/login"); // Replace with your login page route
+    }
+  }, [navigate]);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -28,9 +39,9 @@ export default function Pay() {
 
   return (
     <>
-    <Helmet>
-      <title>payment - vj nucleus</title>
-    </Helmet>
+      <Helmet>
+        <title>payment - vj nucleus</title>
+      </Helmet>
       <section id="Payment">
         <Navbar />
         <div className="payment">
