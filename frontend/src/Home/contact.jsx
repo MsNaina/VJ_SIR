@@ -60,7 +60,7 @@ export default function Contact() {
 
     try {
       const response = await axios.post(
-        `${config.BASE_URL}/contact/send/`,
+        `${config.BASE_URL}/api/contact/send/`,
         formData
       );
       if (response.data.msg === "Email has been sent to your email address.") {

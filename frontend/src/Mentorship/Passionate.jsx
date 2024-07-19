@@ -32,7 +32,7 @@ export default function Passionate() {
 
   const getProfilePhotoUrl = (path) => {
     if (path) {
-      return `${config.BASE_URL}/${path}`;
+      return `${path}`;
     }
     return "/media/mentor_pfp/image.png";
   };
