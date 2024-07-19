@@ -66,7 +66,7 @@ export default function Payment() {
 
                 <div className="payment22">
                   <h2>Price</h2>
-                  <h3>₹500</h3>
+                  <h3>₹5,000</h3>
                 </div>
               </div>
             </div>

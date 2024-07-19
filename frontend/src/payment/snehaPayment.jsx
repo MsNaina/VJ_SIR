@@ -61,7 +61,7 @@ export default function Pay() {
               <div className="payment211">
                 <div className="payment21">
                   <h2>Item Name</h2>
-                  <h3>Mentorship Session'25</h3>
+                  <h3>One-to-One Session</h3>
                 </div>
 
                 <div className="payment22">
