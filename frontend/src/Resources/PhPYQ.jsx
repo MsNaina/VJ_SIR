@@ -15,7 +15,7 @@ const PhPYQs = () => {
       if (accessToken) {
         try {
           const response = await axios.get(
-            `${config.BASE_URL}/questions/list-chapters/PH`,
+            `${config.BASE_URL}/api/questions/list-chapters/PH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -78,7 +78,7 @@ const PhPYQs = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}//*
                   alt=""
                 />
                 <div className="ModulesData-text">

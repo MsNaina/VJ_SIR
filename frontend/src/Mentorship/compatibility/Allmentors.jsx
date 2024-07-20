@@ -25,7 +25,7 @@ export default function AllMentor() {
 
    const getProfilePhotoUrl = (path) => {
      if (path) {
-       return `${config.BASE_URL}${path}`;
+       return `${config.BASE_URL}${path}`; //*
      }
      return "/media/mentor_pfp/image.png";
    };
@@ -47,7 +47,7 @@ export default function AllMentor() {
     }
     try {
       const response = await axiosInstance.get(
-        `${config.BASE_URL}/mentorship/get-mentor`,
+        `${config.BASE_URL}/api/mentorship/get-mentor`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

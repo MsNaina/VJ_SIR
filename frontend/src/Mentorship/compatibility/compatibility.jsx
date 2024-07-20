@@ -83,7 +83,7 @@ const CompatibilityStage1 = () => {
         return;
       }
       const response = await axiosInstance.post(
-        `${config.BASE_URL}/mentorship/get-mentor`,
+        `${config.BASE_URL}/api/mentorship/get-mentor`,
         formData,
         {
           headers: {

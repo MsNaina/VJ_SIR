@@ -1,6 +1,6 @@
 
 const config = {
-  BASE_URL: "http://vjnucleus.com"
+  BASE_URL: "https://vjnucleus.com"
 ,
 };
 

@@ -23,10 +23,10 @@ const MainsAdvancedQuestions = () => {
   const fetchQuestionAndAnswer = async (questionId) => {
     try {
       const questionResponse = await axios.get(
-        `${config.BASE_URL}/questions/id/${questionId}?format=json`
+        `${config.BASE_URL}/api/questions/id/${questionId}?format=json`
       );
       const answerResponse = await axios.get(
-        `${config.BASE_URL}/questions/answer/${questionId}?format=json`
+        `${config.BASE_URL}/api/questions/answer/${questionId}?format=json`
       );
       const questionData = questionResponse.data;
       const answerData = answerResponse.data;
@@ -135,7 +135,7 @@ const MainsAdvancedQuestions = () => {
             <>
               <div className="question-image-container">
                 <img
-                  src={`${config.BASE_URL}${question.question}`}
+                  src={`${config.BASE_URL}${question.question}`}//*
                   alt="Question"
                   className="question-image"
                 />
@@ -208,7 +208,7 @@ const MainsAdvancedQuestions = () => {
                   <h3>Explanation</h3>
                   <div className="explanation-image-container">
                     <img
-                      src={`${config.BASE_URL}${question.explanation}`}
+                      src={`${config.BASE_URL}${question.explanation}`}//*
                       alt="Explanation"
                       className="explanation-image"
                     />

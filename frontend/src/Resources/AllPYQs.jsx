@@ -14,9 +14,9 @@ const AllPYQs = () => {
   useEffect(() => {
     let url = "";
     if (level === "mains") {
-      url = `${config.BASE_URL}/questions/MAIN/${chapterId}?format=json`;
+      url = `${config.BASE_URL}/api/questions/MAIN/${chapterId}?format=json`;
     } else if (level === "advanced") {
-      url = `${config.BASE_URL}/questions/adv/${chapterId}?format=json`;
+      url = `${config.BASE_URL}/api/questions/adv/${chapterId}?format=json`;
     }
     if (url) {
       axios
@@ -50,7 +50,7 @@ const AllPYQs = () => {
                 onClick={() => handleQuestionClick(question.id)}
               >
                 <img
-                  src={`${config.BASE_URL}${question.question}`} // Construct the full URL for the image
+                  src={`${config.BASE_URL}${question.question}`} //*
                   alt={`Question ${question.id}`}
                   className="question-thumbnail"
                 />

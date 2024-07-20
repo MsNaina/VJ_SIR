@@ -12,7 +12,7 @@ const AllChapterQues = () => {
 
   useEffect(() => {
     axios
-      .get(`${config.BASE_URL}/questions/MODULE/${id}?format=json`)
+      .get(`${config.BASE_URL}/api/questions/MODULE/${id}?format=json`)
       .then((response) => {
         setQuestions(response.data);
       })
@@ -40,7 +40,7 @@ const AllChapterQues = () => {
                 onClick={() => handleQuestionClick(question.id)}
               >
                 <img
-                  src={`${config.BASE_URL}${question.question}`}
+                  src={`${config.BASE_URL}${question.question}`}//*
                   alt={`Question ${question.id}`}
                   className="question-thumbnail"
                 />

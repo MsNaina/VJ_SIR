@@ -15,7 +15,7 @@ export default function PhModules() {
       if (accessToken) {
         try {
           const response = await axios.get(
-            `${config.BASE_URL}/questions/list-chapters/PH`,
+            `${config.BASE_URL}/api/questions/list-chapters/PH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -79,7 +79,7 @@ export default function PhModules() {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${module.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${module.icon_id.icon_url}`}//*
                   alt=""
                 />
                 <div className="ModulesData-text">

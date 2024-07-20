@@ -5,5 +5,6 @@ rm -rf dist
 
 npm install
 # Build
-npm run build  
+npm run build 
+pm2 stop server 
 pm2 start server.cjs

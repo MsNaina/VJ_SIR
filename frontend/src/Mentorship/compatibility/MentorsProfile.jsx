@@ -11,7 +11,7 @@ export default function MentorProfile() {
     const fetchMentorDetails = async () => {
       try {
         const response = await axiosInstance.get(
-          `${config.BASE_URL}/mentorship/get-mentor`,
+          `${config.BASE_URL}/api/mentorship/get-mentor`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -41,7 +41,7 @@ export default function MentorProfile() {
             <img
               src={
                 mentorDetails.profile_photo
-                  ? `http://127.0.0.1:8000/${mentorDetails.profile_photo}`
+                  ? `http://127.0.0.1:8000/${mentorDetails.profile_photo}`//*
                   : "/media/default_profile.jpg"
               }
               alt={mentorDetails.Name}

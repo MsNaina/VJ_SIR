@@ -17,7 +17,7 @@ const ChNotes = () => {
       if (accessToken) {
         try {
           const chapterResponse = await axios.get(
-            `${config.BASE_URL}/questions/list-chapters/PH`,
+            `${config.BASE_URL}/api/questions/list-chapters/PH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -26,7 +26,7 @@ const ChNotes = () => {
           );
 
           const notesResponse = await axios.get(
-            `${config.BASE_URL}/notes/subject/PH`,
+            `${config.BASE_URL}/api/notes/subject/PH`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -57,7 +57,7 @@ const ChNotes = () => {
   const handleModuleClick = (chapterId) => {
     const chapterNotes = notes.find((note) => note.chapter.id === chapterId);
     if (chapterNotes && chapterNotes.pdf_url) {
-      window.open(`${config.BASE_URL}${chapterNotes.pdf_url}`, "_blank");
+      window.open(`${config.BASE_URL}${chapterNotes.pdf_url}`, "_blank");//*
     } else {
       setComingSoonChapter(chapterId);
       setTimeout(() => {
@@ -108,7 +108,7 @@ const ChNotes = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`http://127.0.0.1:8000${chapter.icon_id.icon_url}`}
+                  src={`http://127.0.0.1:8000${chapter.icon_id.icon_url}`} //*
                   alt=""
                 />
                 <div className="ModulesData-text">

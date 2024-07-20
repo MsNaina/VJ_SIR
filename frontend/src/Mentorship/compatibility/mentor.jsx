@@ -16,7 +16,7 @@ export default function Mentor() {
     
    const getProfilePhotoUrl = (path) => {
      if (path) {
-       return `${config.BASE_URL}/${path}`;
+       return `${config.BASE_URL}/${path}`; //*
      }
      return "/media/mentor_pfp/image.png";
    };
@@ -52,7 +52,7 @@ export default function Mentor() {
               <p>{mentor.about}</p>
               <div className="mentor-knowmore">
                 <a href="">
-                  <NavLink>Know More</NavLink>
+                  <NavLink to="/MentorProfile">Know More</NavLink>
                 </a>
               </div>
             </div>

@@ -72,7 +72,7 @@ export default function Payment() {
             </div>
             <div className="payment3">
               <h2>Order Total</h2>
-              <h3>₹500</h3>
+              <h3>₹5,000</h3>
             </div>
 
             <div className="payment-btn">
