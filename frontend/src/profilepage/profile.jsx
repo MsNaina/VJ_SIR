@@ -6,6 +6,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import axiosInstance from "../refresh";
 import config from "../config"
+import { Helmet } from 'react-helmet-async';
+
 export default function Profile() {
   const [menuOpen, setMenuOpen] = useState(false);
   const auth = localStorage.getItem("access_token" || "refresh_token");
@@ -18,9 +20,13 @@ export default function Profile() {
   });
 
   useEffect(() => {
+
     const fetchUserData = async () => {
       const token = localStorage.getItem("access_token");
-      if (token) {
+      if (!token) {
+        navigate("/login");
+        return;
+      }
         try {
           const response = await axiosInstance.get(
             `${config.BASE_URL}/api/user/profile/`,
@@ -31,10 +37,10 @@ export default function Profile() {
             }
           );
           setUserData(response.data);
-        } catch (error) {
+        } 
+        catch (error) {
           console.error("Failed to fetch user data:", error);
         }
-      }
     };
     fetchUserData();
   }, []);
@@ -65,11 +71,16 @@ export default function Profile() {
 
   return (
     <>
+    <Helmet>
+      <title>profile - vj nucleus</title>
+    </Helmet>
       <section id="user-Profile">
         <div className="user-profile">
           <div className="profile-top">
             <div className="profile-logo">
-              <img src={Logo} alt="" />
+            <NavLink to="/">
+          <img src={Logo} alt="logo" />
+        </NavLink>
             </div>
 
             <div className={`profile-menu ${menuOpen ? "open" : ""}`}>

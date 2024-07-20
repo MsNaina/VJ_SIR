@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
@@ -56,7 +57,7 @@ const MathNotes = () => {
   const handleModuleClick = (chapterId) => {
     const chapterNotes = notes.find((note) => note.chapter.id === chapterId);
     if (chapterNotes && chapterNotes.pdf_url) {
-      window.open(`${config.BASE_URL}${chapterNotes.pdf_url}`, "_blank");
+      window.open(`${config.BASE_URL}${chapterNotes.pdf_url}`, "_blank");//*
     } else {
       setComingSoonChapter(chapterId);
       setTimeout(() => {
@@ -107,7 +108,7 @@ const MathNotes = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}//*
                   alt=""
                 />
                 <div className="ModulesData-text">
@@ -122,4 +123,4 @@ const MathNotes = () => {
   );
 };
 
-export default MathNotes;
+export default MathNotes

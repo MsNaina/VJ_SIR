@@ -4,6 +4,8 @@ import Navbar from "../Navbar";
 import Default from "../../assets/images/defaultimg.jpg";
 import "./mentor.css";
 import config from "../../config"
+import { Helmet } from 'react-helmet-async';
+
 export default function Mentor() {
     const location = useLocation();
     const { mentor} = location.state || {};
@@ -14,13 +16,16 @@ export default function Mentor() {
     
    const getProfilePhotoUrl = (path) => {
      if (path) {
-       return `${config.BASE_URL}/${path}`;
+       return `${config.BASE_URL}/${path}`; //*
      }
      return "/media/mentor_pfp/image.png";
    };
 
   return (
     <>
+     <Helmet>
+    <title>compatibility - vj nucleus</title>
+  </Helmet>
       <section id="Mentor">
         <Navbar />
         <div className="Mentor">
@@ -47,7 +52,7 @@ export default function Mentor() {
               <p>{mentor.about}</p>
               <div className="mentor-knowmore">
                 <a href="">
-                  <NavLink>Know More</NavLink>
+                  <NavLink to="/MentorProfile">Know More</NavLink>
                 </a>
               </div>
             </div>

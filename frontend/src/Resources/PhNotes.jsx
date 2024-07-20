@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./PhModules.css";
 import config from "../config";
-const PhNotes = () => {
+export default function PhNotes() {
   const [chapters, setChapters] = useState([]);
   const [notes, setNotes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,7 +56,7 @@ const PhNotes = () => {
   const handleModuleClick = (chapterId) => {
     const chapterNotes = notes.find((note) => note.chapter.id === chapterId);
     if (chapterNotes && chapterNotes.pdf_url) {
-      window.open(`${config.BASE_URL}${chapterNotes.pdf_url}`, "_blank");
+      window.open(`${config.BASE_URL}${chapterNotes.pdf_url}`, "_blank");//*
     } else {
       setComingSoonChapter(chapterId);
       setTimeout(() => {
@@ -107,7 +107,7 @@ const PhNotes = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}//*
                   alt=""
                 />
                 <div className="ModulesData-text">
@@ -122,4 +122,3 @@ const PhNotes = () => {
   );
 };
 
-export default PhNotes;

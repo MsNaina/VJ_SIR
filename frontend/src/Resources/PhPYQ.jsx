@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
@@ -77,7 +78,7 @@ const PhPYQs = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}//*
                   alt=""
                 />
                 <div className="ModulesData-text">
@@ -91,5 +92,4 @@ const PhPYQs = () => {
     </>
   );
 };
-
-export default PhPYQs;
+export default PhPYQs

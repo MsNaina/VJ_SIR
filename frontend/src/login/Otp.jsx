@@ -5,6 +5,8 @@ import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import Cookies from "js-cookie";
 import config from "../config";
+import { Helmet } from 'react-helmet-async';
+
 export default function OTP() {
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
@@ -15,7 +17,6 @@ export default function OTP() {
     const { name, value } = e.target;
     if (name === "otp" && !/^\d*$/.test(value)) return;
     if (name === "otp") setOtp(value);
-    if (name === "email") setEmail(value);
   };
 
   const handleSubmit = async (event) => {
@@ -37,7 +38,7 @@ export default function OTP() {
       );
 
       if (response.status === 200 || response.status === 201) {
-        const { access, refresh, msg } = response.data.token;
+        const { access, refresh } = response.data.token;
 
         localStorage.setItem("access_token", access);
         localStorage.setItem("refresh_token", refresh);
@@ -50,12 +51,16 @@ export default function OTP() {
       }
     } catch (error) {
       if (error.response && error.response.data) {
+        alert("Failed to verify OTP. Please try again later.");
       }
-      alert("Failed to verify OTP. Please try again later.");
     }
   };
 
   return (
+    <>
+     <Helmet>
+      <title>registration - vj nucleus</title>
+    </Helmet>
     <section id="LogIn">
       <div className="login-left">
         <NavLink to="/">
@@ -67,6 +72,9 @@ export default function OTP() {
           Preparation Today
         </h2>
         <div className="login-bottom">
+        <p className="otp-message">
+            OTP will be valid for the next 10 minutes.
+          </p>
           <input
             type="text"
             id="input"
@@ -76,12 +84,12 @@ export default function OTP() {
             onChange={handleChange}
             required
           />
-
           <button className="login-btn" type="submit" onClick={handleSubmit}>
             Confirm
           </button>
+          
           <div className="otp-link">
-            <a href="/Signup">Change E-mail</a>
+            <NavLink to="/signup">Change E-mail</NavLink>
           </div>
         </div>
       </div>
@@ -89,5 +97,6 @@ export default function OTP() {
         <img src={vjsir} alt="vjsir" />
       </div>
     </section>
+    </>
   );
 }

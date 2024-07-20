@@ -2,6 +2,7 @@
     margin: 0;
 padding: 0;
 box-sizing: border-box;
+max-width: 1600px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');

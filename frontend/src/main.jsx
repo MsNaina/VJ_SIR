@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MentorshipPage from "./Mentorship/MentorshipPage.jsx";
 import Login from "./login/login.jsx";
@@ -46,58 +47,51 @@ import MentorProfile from "./Mentorship/compatibility/MentorsProfile.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Router>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="email" element={<Email />} />
-      <Route path="MentorProfile" element={<MentorProfile />} />
-      <Route path="Terms&condition" element={<Terms />} />
-      <Route path="RefundPolicy" element={<Refund />} />
-      <Route path="verifynumber" element={<MobileNo />} />
-      <Route path="privacypolicy" element={<Privacy />} />
-      <Route path="highlights" element={<Highlight />} />
-      <Route path="payment" element={<Payment />} />
-      <Route path="Pay" element={<PAYMENT />} />
-      <Route path="Mentorship" element={<MentorshipPage />} />
-      <Route path="session" element={<SnehaTestimonial />} />
-      <Route path="Aboutus" element={<AboutUs />} />
-      <Route path="Resource" element={<Resources />} />
-      <Route path="Login" element={<Login />} />
-      <Route path="Signup" element={<SignUp />} />
-      <Route path="/otp" element={<OTP />} />
-      <Route path="/class" element={<Class />} />
-      <Route path="ChemistryDpp" element={<ChDPP />} />
-      <Route path="MathDpp" element={<MathDPP />} />
-      <Route path="PhysicsDpp" element={<PhDPP />} />
-      <Route path="PhysicsNotes" element={<PhNotes />} />
-      <Route path="ChemistryNotes" element={<ChNotes />} />
-      <Route path="MathNotes" element={<MathNotes />} />
-      <Route path="PhysicsModules" element={<PhModules />} />
-      <Route path="ChemistryModules" element={<ChModules />} />
-      <Route path="MathModules" element={<MathModules />} />
-      <Route
-        path="/Modules/chapter/:id/questions"
-        element={<AllChapterQues />}
-      />
-      <Route path="/question/:id" element={<PhQues />} />
-      <Route path="Physicspyqs" element={<PhPYQs />} />
-      <Route path="Chemistrypyqs" element={<ChPYQs />} />
-      <Route path="Mathpyqs" element={<MathPYQs />} />
-      <Route path="mocktest" element={<Mocktest />} />
-      <Route path="/pyq/chapter/:chapterId" element={<Level />} />
-      <Route path="/:chapterId/:level/questions" element={<AllPYQs />} />
-      <Route path="/pyq/question/:id" element={<MainsAdvancedQues />} />
-      <Route path="profile" element={<Profile />} />
-      <Route path="Mentorship/Compatibility" element={<Compatibility />} />
-      <Route
-        path="Mentorship/Compatibility/allocated-mentor"
-        element={<AllMentor />}
-      />
-      <Route
-        path="/api/user/reset-password/:uid/:token/"
-        element={<ResetPassword />}
-      />
-      <Route path="/mentor" element={<Mentor />} />
-    </Routes>
-  </Router>
+  <HelmetProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="email" element={<Email />} />
+        <Route path="MentorProfile" element={<MentorProfile />} />
+        <Route path="Terms&condition" element={<Terms />} />
+        <Route path="RefundPolicy" element={<Refund />} />
+        <Route path="verifynumber" element={<MobileNo />} />
+        <Route path="privacypolicy" element={<Privacy />} />
+        <Route path="highlights" element={<Highlight />} />
+        <Route path="payment" element={<Payment />} />
+        <Route path="Pay" element={<PAYMENT />} />
+        <Route path="mentorship" element={<MentorshipPage />} />
+        <Route path="session" element={<SnehaTestimonial />} />
+        <Route path="Aboutus" element={<AboutUs />} />
+        <Route path="Resource" element={<Resources />} />
+        <Route path="Login" element={<Login />} />
+        <Route path="Signup" element={<SignUp />} />
+        <Route path="/otp" element={<OTP />} />
+        <Route path="/class" element={<Class />} />
+        <Route path="ChemistryDpp" element={<ChDPP />} />
+        <Route path="MathDpp" element={<MathDPP />} />
+        <Route path="PhysicsDpp" element={<PhDPP />} />
+        <Route path="PhysicsNotes" element={<PhNotes />} />
+        <Route path="ChemistryNotes" element={<ChNotes />} />
+        <Route path="MathNotes" element={<MathNotes />} />
+        <Route path="PhysicsModules" element={<PhModules />} />
+        <Route path="ChemistryModules" element={<ChModules />} />
+        <Route path="MathModules" element={<MathModules />} />
+        <Route path="/Modules/chapter/:id/questions" element={<AllChapterQues />} />
+        <Route path="/question/:id" element={<PhQues />} />
+        <Route path="Physicspyqs" element={<PhPYQs />} />
+        <Route path="Chemistrypyqs" element={<ChPYQs />} />
+        <Route path="Mathpyqs" element={<MathPYQs />} />
+        <Route path="mocktest" element={<Mocktest />} />
+        <Route path="/pyq/chapter/:chapterId" element={<Level />} />
+        <Route path="/:chapterId/:level/questions" element={<AllPYQs />} />
+        <Route path="/pyq/question/:id" element={<MainsAdvancedQues />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="Mentorship/Compatibility" element={<Compatibility />} />
+        <Route path="Mentorship/Compatibility/allocated-mentor" element={<AllMentor />} />
+        <Route path="/api/user/reset-password/:uid/:token/" element={<ResetPassword />} />
+        <Route path="/mentor" element={<Mentor />} />
+      </Routes>
+    </Router>
+  </HelmetProvider>
 );

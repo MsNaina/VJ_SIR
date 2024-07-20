@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../refresh";
 import "./Mentorprofile.css";
@@ -40,7 +41,7 @@ export default function MentorProfile() {
             <img
               src={
                 mentorDetails.profile_photo
-                  ? `http://127.0.0.1:8000/${mentorDetails.profile_photo}`
+                  ? `http://127.0.0.1:8000/${mentorDetails.profile_photo}`//*
                   : "/media/default_profile.jpg"
               }
               alt={mentorDetails.Name}

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
@@ -27,7 +28,7 @@ const MathPYQs = () => {
         }
       } else {
         console.log("Access token not found. Unable to fetch data.");
-        // Handle case where access token is not available
+        
       }
     };
 
@@ -77,7 +78,7 @@ const MathPYQs = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}//*
                   alt=""
                 />
                 <div className="ModulesData-text">
@@ -92,4 +93,5 @@ const MathPYQs = () => {
   );
 };
 
-export default MathPYQs;
+
+export default MathPYQs

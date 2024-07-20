@@ -4,6 +4,7 @@ import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import config from "../config";
 import "./login.css";
+import { Helmet } from 'react-helmet-async';
 
 export default function ResetPassword() {
   const { uid, token } = useParams();
@@ -49,6 +50,9 @@ export default function ResetPassword() {
 
   return (
     <>
+     <Helmet>
+      <title>registration - vj nucleus</title>
+    </Helmet>
       <section id="LogIn">
         <div className="login-left">
           <NavLink to="/">

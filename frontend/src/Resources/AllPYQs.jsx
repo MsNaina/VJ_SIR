@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
@@ -49,7 +50,7 @@ const AllPYQs = () => {
                 onClick={() => handleQuestionClick(question.id)}
               >
                 <img
-                  src={`${config.BASE_URL}${question.question}`} // Construct the full URL for the image
+                  src={`${config.BASE_URL}${question.question}`} //*
                   alt={`Question ${question.id}`}
                   className="question-thumbnail"
                 />
@@ -63,5 +64,4 @@ const AllPYQs = () => {
     </>
   );
 };
-
-export default AllPYQs;
+export default AllPYQs

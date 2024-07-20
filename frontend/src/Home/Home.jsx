@@ -9,10 +9,13 @@ import Contact from "./contact";
 import WaveFooter from "./Wavefooter";
 import Footer from "./footer";
 import Testimonial from "./Testimonial";
-
+import { Helmet } from 'react-helmet-async';
 function Home() {
   return (
     <>
+    <Helmet>
+      <title>vj nucleus</title>
+    </Helmet>
       <Header />
       <Mentorship />
       <PODJEE />

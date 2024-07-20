@@ -1,9 +1,12 @@
 import "./contact.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios"
-import config from "../config"
+import axios from "axios";
+import config from "../config";
+
 export default function Contact() {
+  const location = useLocation();
+  const errorMessage = location.state?.errorMessage || "";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -74,7 +77,7 @@ export default function Contact() {
           setSuccessMessage("");
         }, 6000);
       }
-    }finally {
+    } finally {
       setIsLoading(false);
     }
   };
@@ -159,6 +162,10 @@ export default function Contact() {
             </div>
             <div className="contact-right">
               <h1>Send a Message</h1>
+
+              {errorMessage && (
+                <p className="error-message">{errorMessage}</p>
+              )}
 
               <form onSubmit={handleSubmit}>
                 <input

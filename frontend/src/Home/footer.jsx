@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-right">
-            All Right Reserved @VJ Nucleus Pvt. Ltd.com
+            All Right Reserved ©VJ Nucleus Pvt. Ltd
           </div>
         </div>
       </section>

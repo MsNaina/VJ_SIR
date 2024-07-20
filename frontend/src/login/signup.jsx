@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
-import config from "../config"
+import config from "../config";
+import { Helmet } from 'react-helmet-async';
+
 export default function SignUp() {
   const [Name, setName] = useState("");
   const [Password, setPassword] = useState("");
@@ -12,6 +14,7 @@ export default function SignUp() {
   const [Password2, setPassword2] = useState("");
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [emailExistsError, setEmailExistsError] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +26,7 @@ export default function SignUp() {
 
   const handleSignUp = async () => {
     setLoading(true);
+    setEmailExistsError(false);
 
     const mobileNumberPattern = /^[0-9]{10}$/;
     const emailPattern =
@@ -70,7 +74,12 @@ export default function SignUp() {
           navigate("/otp", {
             state: { email: Mail, mobile_no: Number },
           });
+        } else if (result.error?.email?.[0] === "user with this Email already exists.") {
+          setEmailExistsError(true);
+          setTimeout(() => setEmailExistsError(false), 4000);
+          setLoading(false);
         } else {
+          setErrors({ form: result.error?.email?.[0] || "Error during signup. Please try again later." });
           setLoading(false);
         }
       } catch (error) {
@@ -83,6 +92,10 @@ export default function SignUp() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>signup - vj nucleus</title>
+    </Helmet>
     <section id="LogIn">
       <div className="login-left">
         <NavLink to="/">
@@ -150,6 +163,9 @@ export default function SignUp() {
           >
             {loading ? "Requesting OTP..." : "Request OTP"}
           </button>
+          {emailExistsError && (
+            <p className="error">User with this Email already exists.</p>
+          )}
           {errors.form && <p className="error">{errors.form}</p>}
 
           <div className="register-link">
@@ -163,5 +179,6 @@ export default function SignUp() {
         <img src={vjsir} alt="" />
       </div>
     </section>
+    </>
   );
 }

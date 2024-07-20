@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
@@ -134,7 +135,7 @@ const MainsAdvancedQuestions = () => {
             <>
               <div className="question-image-container">
                 <img
-                  src={`${config.BASE_URL}${question.question}`}
+                  src={`${config.BASE_URL}${question.question}`}//*
                   alt="Question"
                   className="question-image"
                 />
@@ -207,7 +208,7 @@ const MainsAdvancedQuestions = () => {
                   <h3>Explanation</h3>
                   <div className="explanation-image-container">
                     <img
-                      src={`${config.BASE_URL}${question.explanation}`}
+                      src={`${config.BASE_URL}${question.explanation}`}//*
                       alt="Explanation"
                       className="explanation-image"
                     />
@@ -231,4 +232,5 @@ const MainsAdvancedQuestions = () => {
   );
 };
 
-export default MainsAdvancedQuestions;
+
+export default MainsAdvancedQuestions

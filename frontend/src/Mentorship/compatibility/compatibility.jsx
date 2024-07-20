@@ -1,9 +1,12 @@
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./compatibility.css";
 import Navbar from "../Navbar";
 import axiosInstance from "../../refresh";
 import config from "../../config"
+import { Helmet } from 'react-helmet-async';
+
 const CompatibilityStage1 = () => {
   const [formData, setFormData] = useState({
     gender: "",
@@ -121,6 +124,11 @@ const CompatibilityStage1 = () => {
   };
 
   return (
+    <>
+     <Helmet>
+    <title>compatibility - vj nucleus</title>
+  </Helmet>
+   
     <section id="Compatibility">
       <Navbar />
 
@@ -267,12 +275,9 @@ const CompatibilityStage1 = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
 
 export default CompatibilityStage1;
-
-
-
-

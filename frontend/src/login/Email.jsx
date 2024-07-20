@@ -4,6 +4,7 @@ import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import "./login.css";
 import config from "../config";
+import { Helmet } from 'react-helmet-async';
 
 const Email = () => {
   const [email, setEmail] = useState("");
@@ -56,6 +57,10 @@ const Email = () => {
   };
 
   return (
+    <>
+      <Helmet>
+      <title>registration - vj nucleus</title>
+    </Helmet>
     <section id="LogIn">
       <div className="login-left">
         <NavLink to="/">
@@ -91,6 +96,7 @@ const Email = () => {
         <img src={vjsir} alt="" />
       </div>
     </section>
+    </>
   );
 };
 

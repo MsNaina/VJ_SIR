@@ -5,6 +5,7 @@ import vjsir from "../assets/images/vjsir1.png";
 import "./login.css";
 import axios from "axios";
 import config from "../config"
+import { Helmet } from 'react-helmet-async';
 
 export default function Class() {
   const [selectedClass, setSelectedClass] = useState("");
@@ -37,6 +38,9 @@ export default function Class() {
   };
 
   return (
+    <> <Helmet>
+    <title>registration - vj nucleus</title>
+  </Helmet>
     <section id="LogIn">
       <div className="login-left">
         <NavLink to="/">
@@ -71,5 +75,6 @@ export default function Class() {
         <img src={vjsir} alt="" />
       </div>
     </section>
+    </>
   );
 }

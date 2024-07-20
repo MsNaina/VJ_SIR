@@ -1,9 +1,13 @@
 import Navbar from "../Mentorship/Navbar";
 import "./highlight.css"
+import { Helmet } from 'react-helmet-async';
 import { NavLink } from "react-router-dom";
 const Highlight = () => {
   return (
     <>
+    <Helmet>
+      <title>highlights - vj nucleus</title>
+    </Helmet>
       <section id="Highlights">
         <Navbar />
         <div className="Highlights">

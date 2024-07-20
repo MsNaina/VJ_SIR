@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
@@ -78,7 +79,7 @@ const PhDpp = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${module.icon_id.icon_url}`}
+                  src={`${config.BASE_URL}${module.icon_id.icon_url}`}//*
                   alt=""
                 />
                 <div className="ModulesData-text">
@@ -93,4 +94,4 @@ const PhDpp = () => {
   );
 };
 
-export default PhDpp;
+export default PhDpp
