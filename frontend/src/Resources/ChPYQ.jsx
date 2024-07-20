@@ -77,7 +77,7 @@ const ChPYQs = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${chapter.icon_id.icon_url}`}//*
+                  src={`${chapter.icon_id.icon_url}`}//*
                   alt=""
                 />
                 <div className="ModulesData-text">

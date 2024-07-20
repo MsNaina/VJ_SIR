@@ -135,7 +135,7 @@ const MainsAdvancedQuestions = () => {
             <>
               <div className="question-image-container">
                 <img
-                  src={`${config.BASE_URL}${question.question}`}//*
+                  src={`${question.question}`}//*
                   alt="Question"
                   className="question-image"
                 />
@@ -208,7 +208,7 @@ const MainsAdvancedQuestions = () => {
                   <h3>Explanation</h3>
                   <div className="explanation-image-container">
                     <img
-                      src={`${config.BASE_URL}${question.explanation}`}//*
+                      src={`${question.explanation}`}//*
                       alt="Explanation"
                       className="explanation-image"
                     />

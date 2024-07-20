@@ -50,7 +50,7 @@ const AllPYQs = () => {
                 onClick={() => handleQuestionClick(question.id)}
               >
                 <img
-                  src={`${config.BASE_URL}${question.question}`} //*
+                  src={`${question.question}`} //*
                   alt={`Question ${question.id}`}
                   className="question-thumbnail"
                 />
