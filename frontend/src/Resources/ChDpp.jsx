@@ -78,7 +78,7 @@ const ChDpp = () => {
                 className="ModulesData"
               >
                 <img
-                  src={`${config.BASE_URL}${module.icon_id.icon_url}`} //*
+                  src={`${module.icon_id.icon_url}`} //*
                   alt=""
                 />
                 <div className="ModulesData-text">

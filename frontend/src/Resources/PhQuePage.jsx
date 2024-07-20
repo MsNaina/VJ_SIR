@@ -222,7 +222,7 @@ const PhQues = () => {
                   <h3>Explanation</h3>
                   <div className="explanation-image-container">
                     <img
-                      src={`${config.BASE_URL}${question.explanation}`}//*
+                      src={`${question.explanation}`}//*
                       alt="Explanation"
                       className="explanation-image"
                     />
