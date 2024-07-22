@@ -8,7 +8,7 @@ export default function Testimonial() {
     {
       cardImage: Testimonialcard,
       testimonialText:
-        "I'm a dropper from RELIABLE INSTITUTE... I follow your lectures from APNI KAKSHA ...sir your explanation of every concept , even theory ...is beyond everything . you've helped a lot",
+        "I'm a dropper and I follow your lectures...sir your explanation of every concept , even theory ...is beyond everything . you've helped a lot",
 
       name: "Harshita",
     },
@@ -29,14 +29,14 @@ export default function Testimonial() {
     {
       cardImage: Testimonialcard,
       testimonialText:
-        " Sir plz aaap bass coordination chemistry ka bhi one shot lelo ...apni kaksha per chemical bonding jesa....VJ sir rocks Duniya socks #vj_army",
+        " Sir plz aaap bass coordination chemistry ka bhi one shot lelo ...VJ sir rocks Duniya socks #vj_army",
 
       name: "Aman",
     },
     {
       cardImage: Testimonialcard,
       testimonialText:
-        "I'm a dropper from RELIABLE INSTITUTE... I follow your lectures from APNI KAKSHA ...sir your explanation of every concept , even theory ...is beyond everything . you've helped a lot",
+        "I'm a dropper and I follow your lectures sir your explanation of every concept , even theory ...is beyond everything . you've helped a lot",
 
       name: "Harshita",
     },
@@ -57,14 +57,14 @@ export default function Testimonial() {
     {
       cardImage: Testimonialcard,
       testimonialText:
-        " Sir plz aaap bass coordination chemistry ka bhi one shot lelo ...apni kaksha per chemical bonding jesa....VJ sir rocks Duniya socks #vj_army",
+        " Sir plz aaap bass coordination chemistry ka bhi one shot lelo ....VJ sir rocks Duniya socks #vj_army",
 
       name: "Aman",
     },
     {
       cardImage: Testimonialcard,
       testimonialText:
-        "I'm a dropper from RELIABLE INSTITUTE... I follow your lectures from APNI KAKSHA ...sir your explanation of every concept , even theory ...is beyond everything . you've helped a lot",
+        "I'm a dropper and I follow your lectures...sir your explanation of every concept , even theory ...is beyond everything . you've helped a lot",
 
       name: "Harshita",
     },
