@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
@@ -65,7 +64,6 @@ const ChNotes = () => {
       }, 1000);
     }
   };
-
   return (
     <>
       <Navbar />

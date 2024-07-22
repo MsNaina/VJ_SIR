@@ -126,7 +126,7 @@ const CompatibilityStage1 = () => {
   return (
     <>
      <Helmet>
-    <title>compatibility - vj nucleus</title>
+    <title>Compatibility - VJ Nucleus</title>
   </Helmet>
    
     <section id="Compatibility">
@@ -150,8 +150,8 @@ const CompatibilityStage1 = () => {
                   required
                 >
                   <option value=""></option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
                 </select>
               </div>
               <div className="input-group">
@@ -176,7 +176,7 @@ const CompatibilityStage1 = () => {
 
             <div className="form-group Flex">
               <div className="input-group">
-                <label htmlFor="medium">Medium</label>
+                <label htmlFor="medium">Medium for JEE Exam</label>
                 <select
                   id="medium"
                   name="medium"
@@ -192,7 +192,7 @@ const CompatibilityStage1 = () => {
               </div>
               <div className="input-group">
                 <label htmlFor="medium_change">
-                  Are you changing your medium?
+                   Did you change medium ?
                 </label>
                 <select
                   id="medium_change"
@@ -203,8 +203,8 @@ const CompatibilityStage1 = () => {
                   required
                 >
                   <option value=""></option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
                 </select>
               </div>
             </div>

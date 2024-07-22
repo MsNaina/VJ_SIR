@@ -14,7 +14,7 @@ function Home() {
   return (
     <>
     <Helmet>
-      <title>vj nucleus</title>
+      <title>VJ Nucleus</title>
     </Helmet>
       <Header />
       <Mentorship />

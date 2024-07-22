@@ -72,7 +72,7 @@ export default function Profile() {
   return (
     <>
     <Helmet>
-      <title>profile - vj nucleus</title>
+      <title>Profile - VJ Nucleus</title>
     </Helmet>
       <section id="user-Profile">
         <div className="user-profile">

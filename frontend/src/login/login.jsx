@@ -49,7 +49,7 @@ export default function Login() {
   return (
     <>
     <Helmet>
-      <title>login - vj nucleus</title>
+      <title>Login - VJ Nucleus</title>
     </Helmet>
     <section id="LogIn">
       <div className="login-left">

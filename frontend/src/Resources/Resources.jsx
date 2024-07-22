@@ -21,7 +21,7 @@ export default function Resources() {
   };
 
   const handleResourceClick = (path) => {
-    if (path === "/mocktest" || path === "/PhysicsDpp"|| path==="/Physicspyqs") {
+    if (path === "/mocktest" || path === "/PhysicsDpp"|| path==="/Physicspyqs" || path==="/PhysicsNotes" || path==="/PhysicsModules") {
       setComingSoonMessage("Coming Soon");
       setTimeout(() => {
         setComingSoonMessage("");
@@ -40,7 +40,7 @@ export default function Resources() {
   return (
     <>
     <Helmet>
-    <title>resource - vj nucleus</title>
+    <title>Resource - VJ Nucleus</title>
   </Helmet>
       <Navbar />
 

@@ -59,7 +59,7 @@ const Email = () => {
   return (
     <>
       <Helmet>
-      <title>registration - vj nucleus</title>
+      <title>Registration - VJ Nucleus</title>
     </Helmet>
     <section id="LogIn">
       <div className="login-left">
