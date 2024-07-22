@@ -40,7 +40,7 @@ export default function Resources() {
   return (
     <>
     <Helmet>
-    <title>resource - vj nucleus</title>
+    <title>Resource - VJ Nucleus</title>
   </Helmet>
       <Navbar />
 

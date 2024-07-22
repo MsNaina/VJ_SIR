@@ -94,7 +94,7 @@ export default function SignUp() {
   return (
     <>
     <Helmet>
-      <title>signup - vj nucleus</title>
+      <title>Signup - VJ Nucleus</title>
     </Helmet>
     <section id="LogIn">
       <div className="login-left">

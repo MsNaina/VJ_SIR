@@ -74,7 +74,7 @@ export default function AllMentor() {
   return (
     <>
      <Helmet>
-    <title>compatibility - vj nucleus</title>
+    <title>Compatibility - VJ Nucleus</title>
   </Helmet>
       <section id="mentors">
         <Navbar />

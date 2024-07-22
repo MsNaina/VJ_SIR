@@ -6,7 +6,7 @@ const Highlight = () => {
   return (
     <>
     <Helmet>
-      <title>highlights - vj nucleus</title>
+      <title>Highlights - VJ Nucleus</title>
     </Helmet>
       <section id="Highlights">
         <Navbar />

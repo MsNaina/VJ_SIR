@@ -126,7 +126,7 @@ const CompatibilityStage1 = () => {
   return (
     <>
      <Helmet>
-    <title>compatibility - vj nucleus</title>
+    <title>Compatibility - VJ Nucleus</title>
   </Helmet>
    
     <section id="Compatibility">

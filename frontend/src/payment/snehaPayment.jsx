@@ -40,7 +40,7 @@ export default function Pay() {
   return (
     <>
       <Helmet>
-        <title>payment - vj nucleus</title>
+        <title>payment - VJ Nucleus</title>
       </Helmet>
       <section id="Payment">
         <Navbar />
