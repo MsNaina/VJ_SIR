@@ -6,7 +6,7 @@ function AboutUs() {
   return (
     <>
     <Helmet>
-      <title>aboutus - vj nucleus</title>
+      <title>Aboutus - VJ Nucleus</title>
     </Helmet>
       <section id="aboutus">
         <div className="aboutus-navbar">

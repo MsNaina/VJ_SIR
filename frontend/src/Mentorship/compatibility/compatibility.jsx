@@ -150,8 +150,8 @@ const CompatibilityStage1 = () => {
                   required
                 >
                   <option value=""></option>
-                  <option value="Male">male</option>
-                  <option value="Female">female</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
                 </select>
               </div>
               <div className="input-group">
