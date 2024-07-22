@@ -203,8 +203,8 @@ const CompatibilityStage1 = () => {
                   required
                 >
                   <option value=""></option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
                 </select>
               </div>
             </div>

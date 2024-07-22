@@ -13,7 +13,7 @@ function MentorshipPage() {
     return (
       <>
        <Helmet>
-      <title>mentorship - vj nucleus</title>
+      <title>Mentorship - VJ Nucleus</title>
     </Helmet>
 <Navbar/>
 <MentorshipHeader/>
