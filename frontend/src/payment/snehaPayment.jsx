@@ -2,7 +2,7 @@ import "./payment.css";
 import Navbar from "../Mentorship/Navbar";
 import { HashLink } from "react-router-hash-link";
 import React, { useState, useEffect } from "react";
-import MobileNo from "../login/mobileNo"; // Importing the MobileNo component
+// import MobileNo from "../login/mobileNo"; // Importing the MobileNo component
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 
@@ -100,7 +100,7 @@ export default function Pay() {
           </div>
         </div>
       </section>
-      {isSidebarOpen && <MobileNo onClose={handleCloseSidebar} />}
+      {/* {isSidebarOpen && <MobileNo onClose={handleCloseSidebar} />} */}
     </>
   );
 }

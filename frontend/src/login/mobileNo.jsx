@@ -2,7 +2,7 @@ import "./mobileNo.css";
 import Mobile from "../assets/images/Mobilenumber.png";
 import React, { useState } from "react";
 import axios from "axios";
-import config from "../config"
+import config from "../config";
 
 export default function MobileNo({ onClose }) {
   const [mobileNumber, setMobileNumber] = useState("");
@@ -51,15 +51,44 @@ export default function MobileNo({ onClose }) {
       );
       if (response.status === 200) {
         setVerificationMessage("Your mobile number is verified.");
-        setTimeout(() => {
-          setVerificationMessage("");
-          setOtp("");
-          setMobileNumber("");
-          setOtpRequested(false);
-        }, 1000);
+
+        // Request payment session ID from the server
+        const createOrderResponse = await axios.post(
+          `${config.BASE_URL}/api/payments/create-order/`,
+          { amount: 5000, return_url: `${config.BASE_URL}/mentorship/` },
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (createOrderResponse.status === 200) {
+          const paymentSessionId = createOrderResponse.data.session_id;
+          console.log(paymentSessionId)
+          setTimeout(() => {
+            setVerificationMessage("");
+            setOtp("");
+            setMobileNumber("");
+            setOtpRequested(false);
+
+            // Initiate Cashfree checkout
+            const cashfree = Cashfree({
+              mode:"sandbox" //or production
+            });
+            let checkoutOptions = {
+              paymentSessionId: paymentSessionId,
+              redirectTarget: "_self"
+            };
+            cashfree.checkout(checkoutOptions);
+          }, 1000);
+        } else {
+          alert("Failed to get payment session ID. Please try again.");
+        }
       }
     } catch (error) {
-      alert("Failed to verify OTP. Please try again.");
+      alert("Failed to verify OTP. Please try again."+error);
     } finally {
       setOtpLoading(false);
     }
