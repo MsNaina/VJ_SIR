@@ -12,11 +12,11 @@ export default function Pay() {
   const navigate = useNavigate(); // useNavigate hook for navigation
 
   useEffect(() => {
-    // Check for access token when component mounts
+
     const accessToken = localStorage.getItem("access_token"); // Adjust storage mechanism as needed
     if (!accessToken) {
-      // Redirect to login page if access token is not present
-      navigate("/login"); // Replace with your login page route
+     
+      navigate("/login"); 
     }
   }, [navigate]);
 
@@ -88,9 +88,9 @@ export default function Pay() {
                 <h2>
                   I agree to the
                   <HashLink to="/Terms&condition">
-                    {" "}
+                    
                     Terms & Conditions
-                  </HashLink>{" "}
+                  </HashLink>
                   and
                   <HashLink to="/privacypolicy"> Privacy Policy</HashLink>
                 </h2>

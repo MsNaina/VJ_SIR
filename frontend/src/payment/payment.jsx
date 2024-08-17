@@ -15,7 +15,7 @@ export default function Payment() {
     // Check for access token when component mounts
     const accessToken = localStorage.getItem("access_token"); // Adjust storage mechanism as needed
     if (!accessToken) {
-      // Redirect to login page if access token is not present
+     
       navigate("/login"); // Replace with your login page route
     }
   }, [navigate]);

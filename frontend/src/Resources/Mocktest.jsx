@@ -2,6 +2,7 @@ import "./Mocktest.css";
 import instruction from "../assets/images/inst.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 export default function Mocktest() {
   const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function Mocktest() {
 
   const handleStartClick = () => {
     if (isChecked) {
-      navigate("/Mocktestques");
+      navigate("/test");
     } else {
       alert("Please read and agree to the instructions before starting.");
     }
@@ -20,6 +21,9 @@ export default function Mocktest() {
 
   return (
     <>
+     <Helmet>
+    <title>MockTest - VJ Nucleus</title>
+  </Helmet>
       <section id="Mocktest-instructions">
         <div className="Mocktest-instructions">
           <div className="instruction-heading">

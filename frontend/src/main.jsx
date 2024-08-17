@@ -44,7 +44,8 @@ import Terms from "./Home/Terms.jsx";
 import Refund from "./Home/Refund.jsx";
 import ResetPassword from "./login/resetpassword.jsx";
 import MentorProfile from "./Mentorship/compatibility/MentorsProfile.jsx";
-
+import TestList from "./Resources/testlist.jsx"
+import Test from "./Resources/Test.jsx"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <HelmetProvider>
@@ -91,6 +92,8 @@ root.render(
         <Route path="Mentorship/Compatibility/allocated-mentor" element={<AllMentor />} />
         <Route path="/api/user/reset-password/:uid/:token/" element={<ResetPassword />} />
         <Route path="/mentor" element={<Mentor />} />
+        <Route path="/testlist" element={<TestList />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   </HelmetProvider>
