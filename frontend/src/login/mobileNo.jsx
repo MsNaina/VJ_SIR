@@ -53,8 +53,9 @@ export default function MobileNo({ onClose }) {
         setVerificationMessage("Your mobile number is verified.");
 
         // Request payment session ID from the server
-        const sessionIdResponse = await axios.get(
-          `${config.BASE_URL}/api/user/get-payment-session-id/`,
+        const createOrderResponse = await axios.post(
+          `${config.BASE_URL}/api/payments/create-order/`,
+          { amount: 5000, return_url: `${config.BASE_URL}/mentorship/` },
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -63,14 +64,19 @@ export default function MobileNo({ onClose }) {
           }
         );
 
-        if (sessionIdResponse.status === 200) {
-          const paymentSessionId = sessionIdResponse.data.payment_session_id;
+        if (createOrderResponse.status === 200) {
+          const paymentSessionId = createOrderResponse.data.session_id;
+          console.log(paymentSessionId)
           setTimeout(() => {
             setVerificationMessage("");
             setOtp("");
             setMobileNumber("");
             setOtpRequested(false);
+
             // Initiate Cashfree checkout
+            const cashfree = Cashfree({
+              mode:"sandbox" //or production
+            });
             let checkoutOptions = {
               paymentSessionId: paymentSessionId,
               redirectTarget: "_self"
@@ -82,7 +88,7 @@ export default function MobileNo({ onClose }) {
         }
       }
     } catch (error) {
-      alert("Failed to verify OTP. Please try again.");
+      alert("Failed to verify OTP. Please try again."+error);
     } finally {
       setOtpLoading(false);
     }
