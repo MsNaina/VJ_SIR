@@ -4,7 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import Chitrang from "../assets/images/chitrang.png";
 import Group8 from "../assets/images/Group 8.png";
 import Himanshu from "../assets/images/himanshu.png";
-import Discount from "../assets/images/discount.png";
+import Discount from "../assets/images/Discountt.png";
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -92,7 +92,7 @@ export default function Mentorship() {
                   <h3>₹5,000/-</h3>
                   <div>
                     <h4>₹8,000</h4>
-                    <h6>for 3 Months</h6>
+                    <h6>for 1 year!!</h6>
                   </div>
                 </div>
 
