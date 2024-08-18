@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cashfreepayments/cashfree-js": "^1.0.5",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "braces": "^3.0.3",
