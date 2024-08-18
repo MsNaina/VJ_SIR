@@ -20,8 +20,8 @@
 }
 .Testimonial-slide-track {
   display: flex;
-  width: calc(450px * 10);
-  animation: slide 14s linear infinite;
+  width: calc(450px * 20);
+  animation: slide 30s linear infinite;
 }
 .Testimonial-slide-track:hover {
   animation-play-state: paused;
@@ -31,7 +31,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-450px * 5));
+    transform: translateX(calc(-450px * 10));
   }
 }
 .Testimonial-slide {
@@ -53,7 +53,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-400px * 5));
+      transform: translateX(calc(-400px * 10));
     }
   }
 }
@@ -73,7 +73,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-350px * 5));
+      transform: translateX(calc(-350px * 10));
     }
   }
   .Testimonial-slider {
@@ -91,7 +91,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-320px * 5));
+      transform: translateX(calc(-320px * 10));
     }
   }
   .Testimonial-slider {

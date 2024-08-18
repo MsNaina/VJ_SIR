@@ -53,8 +53,8 @@ export default function WaveFooter() {
             <div className="part2-container">
               <div className="part2">
                 <h3>Mentorship Batches</h3>
-                <p>JEE Main & Advanced</p>
-                <p>Mentorship Batch</p>
+                <p>JEE Main, Advanced & NEET</p>
+                <p>Mentorship Batch 2025</p>
               </div>
             </div>
 

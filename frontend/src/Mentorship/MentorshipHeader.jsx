@@ -1,7 +1,7 @@
 import "./MentorshipHeader.css";
 import { NavLink } from "react-router-dom";
 import Mentorship from "../assets/images/Mentorship.png";
-import Discountt from "../assets/images/Discount (2).png";
+import Discountt from "../assets/images/Discountt.png";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import config from "../config";
@@ -65,7 +65,7 @@ export default function MentorshipHeader() {
             <div className="mentorship-header-price">
               <h3>₹5,000/-</h3>
               <h4>₹8,000</h4>
-              <h2>for 3 Months</h2>
+              <h2>for 1 year !!</h2>
             </div>
             <img src={Discountt} alt="Discount" />
           </div>

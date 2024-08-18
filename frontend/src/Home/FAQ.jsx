@@ -1,5 +1,4 @@
 import { useState } from "react"
-
 import "./FAQ.css"
 export default function FAQ(){
 
@@ -68,19 +67,19 @@ const data = [
   {
     question: "What sets VJ Sir’s mentorship apart?",
     answer:
-      "Compatible Mentor for every Mentee and On-on-one session every week with the mentor where the would be tacking their progress throughout the week. The mentors would not only be solving general academic issues but also subject doubts.",
+      "Compatible Mentor for every Mentee and One-on-one session every week with the mentor where the would be tacking their progress throughout the week. The mentors would not only be solving general academic issues but also subject doubts.",
   },
 
   {
     question: "Can I interact with VJ sir directly?",
     answer:
-      "Yes, every Sunday at 9 pm VJ Sir will be conducting a zoom session with thee students.",
+      "Yes, every Sunday at 9 pm VJ Sir will be conducting a zoom session with the students.",
   },
 
   {
     question: "What are the different batches available for mentorship?",
     answer:
-      "There's no batch available, the mentorship will run in phases. Yu can join whenever you want.",
+      "There's no batch available, the mentorship will run in phases. You can join whenever you want.",
   },
 
   {
