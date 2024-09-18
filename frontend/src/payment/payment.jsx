@@ -2,21 +2,25 @@ import "./payment.css";
 import Navbar from "../Mentorship/Navbar";
 import { HashLink } from "react-router-hash-link";
 import React, { useState, useEffect } from "react";
-import MobileNo from "../login/mobileNo"; // Importing the MobileNo component
+import MobileNo from "../login/mobileNo"; 
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { useNavigate } from "react-router-dom"; 
+import config from "../config";
 
 export default function Payment() {
   const [isChecked, setIsChecked] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [couponCode, setCouponCode] = useState(""); // State for coupon code input
+  const [orderTotal, setOrderTotal] = useState(5000);
+  const [couponMessage, setCouponMessage] = useState(""); // State for coupon response message
+  const [showCouponMessage, setShowCouponMessage] = useState(false);
+  const [isCouponApplied, setIsCouponApplied] = useState(false); // State to track if coupon is successfully applied
   const navigate = useNavigate(); // useNavigate hook for navigation
 
   useEffect(() => {
-    // Check for access token when component mounts
-    const accessToken = localStorage.getItem("access_token"); // Adjust storage mechanism as needed
+    const accessToken = localStorage.getItem("access_token"); 
     if (!accessToken) {
-     
-      navigate("/login"); // Replace with your login page route
+      navigate("/login"); 
     }
   }, [navigate]);
 
@@ -37,13 +41,48 @@ export default function Payment() {
     setIsSidebarOpen(false);
   };
 
+  const handleApplyCoupon = async () => {
+    try {
+      const response = await fetch(`${config.BASE_URL}/api/payments/apply-coupon/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: orderTotal,
+          coupon_code: couponCode,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // If the coupon is successfully applied, disable the input and button
+        setOrderTotal(data.order_total); 
+        setCouponMessage(data.message); 
+        setShowCouponMessage(true);
+        setIsCouponApplied(true); // Disable input and button after successful coupon application
+      } else {
+        // If the coupon is invalid, allow the user to try again
+        setCouponMessage(data.message); // Show error message from API response
+        setShowCouponMessage(true);
+        setIsCouponApplied(false); // Keep input and button enabled for retry
+      }
+    } catch (error) {
+      console.error("Error applying coupon:", error);
+      setCouponMessage("An error occurred while applying the coupon. Please try again.");
+      setShowCouponMessage(true);
+      setIsCouponApplied(false); // Keep input and button enabled in case of error
+    }
+  };
+
   return (
     <>
       <Helmet>
         <title>Payment - VJ Nucleus</title>
       </Helmet>
       <section id="Payment">
-        <Navbar />
+        <Navbar/>
         <div className="payment">
           <div className="payment-left"></div>
           <div className="payment-right">
@@ -67,12 +106,34 @@ export default function Payment() {
                 <div className="payment22">
                   <h2>Price</h2>
                   <h3>₹5,000</h3>
-                </div>
+                </div>  
               </div>
+
+              <div className="coupon">
+                <h2>REFERRAL CODE</h2>
+                <div className="coupon-code">
+                  <div className="coupon-code-left">
+                    <input
+                      type="text"
+                      value={couponCode}
+                      onChange={(e) => setCouponCode(e.target.value)} // Capture the coupon code
+                      disabled={isCouponApplied} // Disable input if coupon is applied successfully
+                    />
+                  </div>
+                  <div className="coupon-code-right">
+                    <button onClick={handleApplyCoupon} disabled={isCouponApplied}>
+                      {isCouponApplied ? "Coupon Applied" : "APPLY COUPON"}
+                    </button>
+                  </div>
+                </div>
+                {showCouponMessage && <p>"{couponMessage}"</p>}
+              </div>
+
             </div>
+
             <div className="payment3">
-              <h2>Order Total</h2>
-              <h3>₹5,000</h3>
+              <h2>Order Total:</h2>
+              <h3>₹{orderTotal}</h3>
             </div>
 
             <div className="payment-btn">
@@ -86,11 +147,10 @@ export default function Payment() {
                   />
                 </div>
                 <h2>
-                  I agree to the
+                  I agree to the 
                   <HashLink to="/Terms&condition">
-                    {" "}
                     Terms & Conditions
-                  </HashLink>{" "}
+                  </HashLink>
                   and
                   <HashLink to="/privacypolicy"> Privacy Policy</HashLink>
                 </h2>
@@ -103,4 +163,4 @@ export default function Payment() {
       {isSidebarOpen && <MobileNo onClose={handleCloseSidebar} />}
     </>
   );
-}
+};
