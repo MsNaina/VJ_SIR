@@ -15,6 +15,7 @@ export default function Payment() {
   const [couponMessage, setCouponMessage] = useState(""); // State for coupon response message
   const [showCouponMessage, setShowCouponMessage] = useState(false);
   const [isCouponApplied, setIsCouponApplied] = useState(false); // State to track if coupon is successfully applied
+  const [verifiedMobileNumber, setVerifiedMobileNumber] = useState(""); // To pass mobile number
   const navigate = useNavigate(); // useNavigate hook for navigation
 
   useEffect(() => {
@@ -57,22 +58,20 @@ export default function Payment() {
       const data = await response.json();
 
       if (data.success) {
-        // If the coupon is successfully applied, disable the input and button
         setOrderTotal(data.order_total); 
         setCouponMessage(data.message); 
         setShowCouponMessage(true);
-        setIsCouponApplied(true); // Disable input and button after successful coupon application
+        setIsCouponApplied(true);
       } else {
-        // If the coupon is invalid, allow the user to try again
-        setCouponMessage(data.message); // Show error message from API response
+        setCouponMessage(data.message);
         setShowCouponMessage(true);
-        setIsCouponApplied(false); // Keep input and button enabled for retry
+        setIsCouponApplied(false); 
       }
     } catch (error) {
       console.error("Error applying coupon:", error);
       setCouponMessage("An error occurred while applying the coupon. Please try again.");
       setShowCouponMessage(true);
-      setIsCouponApplied(false); // Keep input and button enabled in case of error
+      setIsCouponApplied(false);
     }
   };
 
@@ -116,8 +115,8 @@ export default function Payment() {
                     <input
                       type="text"
                       value={couponCode}
-                      onChange={(e) => setCouponCode(e.target.value)} // Capture the coupon code
-                      disabled={isCouponApplied} // Disable input if coupon is applied successfully
+                      onChange={(e) => setCouponCode(e.target.value)}
+                      disabled={isCouponApplied}
                     />
                   </div>
                   <div className="coupon-code-right">
@@ -160,7 +159,7 @@ export default function Payment() {
           </div>
         </div>
       </section>
-      {isSidebarOpen && <MobileNo onClose={handleCloseSidebar} />}
+      {isSidebarOpen && <MobileNo onClose={handleCloseSidebar} orderTotal={orderTotal} couponCode={couponCode} />} {/* Pass couponCode and orderTotal */}
     </>
   );
 };
