@@ -2,7 +2,7 @@
 const config = {
   
   BASE_URL: "https://vjnucleus.com"
- 
+  
 ,
 };
 

@@ -132,7 +132,7 @@ export default function Payment() {
 
             <div className="payment3">
               <h2>Order Total:</h2>
-              <h3>₹{orderTotal}</h3>
+              <h3>₹{orderTotal || 5000}</h3>
             </div>
 
             <div className="payment-btn">
@@ -159,7 +159,13 @@ export default function Payment() {
           </div>
         </div>
       </section>
-      {isSidebarOpen && <MobileNo onClose={handleCloseSidebar} orderTotal={orderTotal} couponCode={couponCode} />} {/* Pass couponCode and orderTotal */}
-    </>
+      {isSidebarOpen && (
+        <MobileNo 
+          onClose={handleCloseSidebar} 
+          orderTotal={orderTotal} // Pass total, can be discounted
+          couponCode={couponCode} // Pass the entered coupon code (even if empty)
+          isCouponApplied={isCouponApplied} // Pass whether coupon is valid
+        />
+      )}    </>
   );
 };
