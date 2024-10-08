@@ -54,7 +54,7 @@ export default function MobileNo({ onClose, orderTotal, couponCode, isCouponAppl
 
         const createOrderData = {
           amount: isCouponApplied ? orderTotal : 5000, // Use orderTotal if coupon applied, else default to 5000
-          return_url: `${config.BASE_URL}/api/payments/create-order/`,
+          return_url: `${config.BASE_URL}/mentorship/`,
           coupon_code: isCouponApplied ? couponCode : null // Pass coupon code if valid, else null
         };
 
