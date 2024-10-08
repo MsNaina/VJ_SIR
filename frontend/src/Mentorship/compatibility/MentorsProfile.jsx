@@ -1,11 +1,12 @@
-
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../refresh";
 import "./Mentorprofile.css";
 import Navbar from "../Navbar";
-import config from "../../config"
+import config from "../../config";
+
 export default function MentorProfile() {
   const [mentorDetails, setMentorDetails] = useState(null);
+  const [error, setError] = useState(null); // Add an error state to track issues
 
   useEffect(() => {
     const fetchMentorDetails = async () => {
@@ -20,15 +21,20 @@ export default function MentorProfile() {
         );
         setMentorDetails(response.data.data.alloted_mentor);
       } catch (error) {
-        console.error("Error fetching mentor details:", error);
+        console.error("Error fetching mentor details:", error.response || error.message);
+        setError("Error fetching mentor details."); // Update error state
       }
     };
 
     fetchMentorDetails();
   }, []);
 
+  if (error) {
+    return <div>{error}</div>; // Display error message if there's an issue
+  }
+
   if (!mentorDetails) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; // Loading state while mentor details are fetched
   }
 
   return (
@@ -41,7 +47,7 @@ export default function MentorProfile() {
             <img
               src={
                 mentorDetails.profile_photo
-                  ? `${mentorDetails.profile_photo}`//*
+                  ? `${mentorDetails.profile_photo}`
                   : "/media/default_profile.jpg"
               }
               alt={mentorDetails.Name}
@@ -51,7 +57,6 @@ export default function MentorProfile() {
           </div>
           <div className="mentorpersonalinfo">
             <h2>Personal Information</h2>
-
             <div className="mentorinfo">
               <div className="profile-label">
                 <label htmlFor="tel">Mobile No.</label>
@@ -72,7 +77,7 @@ export default function MentorProfile() {
                 />
               </div>
               <div className="profile-label">
-                <label htmlFor="Text">City</label>
+                <label htmlFor="city">City</label>
                 <input
                   id="profile-input"
                   type="text"
