@@ -32,7 +32,7 @@ import AllMentor from "./Mentorship/compatibility/Allmentors.jsx";
 import OTP from "./login/Otp.jsx";
 import Class from "./login/class.jsx";
 import SnehaTestimonial from "./Home/snehaTestimonial.jsx";
-import Mocktest from "./Resources/Mocktest.jsx";
+import Mocktest from "./Resources/mocktest/Mocktest.jsx";
 import Privacy from "./Home/privacy.jsx";
 import Mentor from "./Mentorship/compatibility/mentor.jsx";
 import Highlight from "./payment/highlight.jsx";
@@ -44,8 +44,12 @@ import Terms from "./Home/Terms.jsx";
 import Refund from "./Home/Refund.jsx";
 import ResetPassword from "./login/resetpassword.jsx";
 import MentorProfile from "./Mentorship/compatibility/MentorsProfile.jsx";
-import TestList from "./Resources/testlist.jsx"
-import Test from "./Resources/Test.jsx"
+import TestList from "./Resources/mocktest/testlist.jsx";
+import Test from "./Resources/mocktest/Test.jsx/";
+import Series from "./Resources/mocktest/Series.jsx";
+import Submit from "./Resources/mocktest/submit.jsx/"
+import Viewresult from "./Resources/mocktest/submitok.jsx/";
+import Result from "./Resources/mocktest/Result.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <HelmetProvider>
@@ -83,7 +87,7 @@ root.render(
         <Route path="Physicspyqs" element={<PhPYQs />} />
         <Route path="Chemistrypyqs" element={<ChPYQs />} />
         <Route path="Mathpyqs" element={<MathPYQs />} />
-        <Route path="mocktest" element={<Mocktest />} />
+        <Route path="/instructions/:testId" element={<Mocktest />} />
         <Route path="/pyq/chapter/:chapterId" element={<Level />} />
         <Route path="/:chapterId/:level/questions" element={<AllPYQs />} />
         <Route path="/pyq/question/:id" element={<MainsAdvancedQues />} />
@@ -92,8 +96,14 @@ root.render(
         <Route path="Mentorship/Compatibility/allocated-mentor" element={<AllMentor />} />
         <Route path="/api/user/reset-password/:uid/:token/" element={<ResetPassword />} />
         <Route path="/mentor" element={<Mentor />} />
-        <Route path="/testlist" element={<TestList />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/mocktest/:testid" element={<TestList />} />
+        <Route path="/test/:testId" element={<Test />} />
+        <Route path="/testseries" element={<Series />} />
+        <Route path="/viewresult" element={<Viewresult/>} />
+        <Route path="/result" element={<Result/>} />
+
+        <Route path="/test/:testid/testsubmit" element={<Submit />} />
+
       </Routes>
     </Router>
   </HelmetProvider>
