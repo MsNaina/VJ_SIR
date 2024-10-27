@@ -5,7 +5,7 @@
 .level-select {
   display: flex;
   flex-wrap: wrap;
-  gap: 10rem;
+  gap: 5rem;
   margin-top: 2rem;
   padding: 4vw 0vw;
   border-top: 1px solid black;
@@ -34,6 +34,16 @@
   font-size: 1.3vw;
   color: black;
   font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.level h3:hover::after{
+  content: attr(data-full-name);  /* Display the full name on hover */
+  position: absolute;
+  white-space: normal;
+ 
 }
 .level-Line {
   width: 0.6vw;
@@ -44,31 +54,42 @@
   border-top: 1px solid #000000;
   width: 100%;
   padding: 0.5vw 2vw;
-  text-align: end;
+  text-align: center;
   font-size: 1.3vw;
   color: black;
   font-weight: 500;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.level-button button{
+  background-color: white;
+}
+.level-button p{
+  color: #0c6205;
+  font-size: 1.3vw;
+  
 }
 @media (max-width: 1270px) {
   .level h3 {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
   .level-Line {
-    height: 2.5vw;
+    height: 2vw;
   }
-  .level-button {
-    font-size: 1.8vw;
+  .level-button, .level-button p{
+    font-size: 1.4vw;
   }
 }
 @media (max-width: 1020px) {
   .level h3 {
-    font-size: 2.5vw;
-  }
-  .level-button {
     font-size: 2vw;
   }
+  .level-button,.level-button p{
+    font-size: 1.8vw;
+  }
   .level-Line {
-    height: 3vw;
+    height: 2.5vw;
   }
 }
 @media (max-width: 860px) {
@@ -76,54 +97,60 @@
     gap: 3rem;
     height: 160px;
   }
-  .level-button {
-    font-size: 2.4vw;
+  .level-button,.level-button p{
+    font-size: 2vw;
   }
+  
 }
 @media (max-width: 760px) {
   .level h3 {
-    font-size: 2.8vw;
+    font-size: 2.5vw;
   }
   .level-container {
     width: 35vw;
-    height: 15vw;
+    height: 12vw;
   }
-  .level-button {
+  .level-button,.level-button p{
     font-size: 2.4vw;
+  }
+  .level-Line {
+    height: 3vw;
   }
 }
 @media(max-width:660px){
   .level-container {
     width: 300px;
-    height: 100px;
+    height: 90px;
   }
   .level h3 {
     font-size: 20px;
   }
    .level-Line {
-    height: 30px;
-    width: 10px;
+    height: 25px;
+    width: 5px;
   }
-   .level-button {
+   .level-button{
     font-size: 18px;
+  }
+  .level-button p{
+font-size: 15px;
   }
 }
 @media(max-width:410px){
   .level h3 {
-    font-size: 5vw;
+    font-size: 1.2rem;
   }
-  .level-button {
-    font-size: 5vw;
+  .level-heading h1{
+font-size: 2rem;
+  }
+  .level-button,.level-button p{
+    font-size: 1rem;
   }
   #level-select{
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
   }
-}
-@media(max-width:350px){
-.level h3 {
-    font-size: 6vw;
-  }
-  .level-button {
-    font-size: 6vw;
+  .level-container{
+    width: 18rem;
+    height: 6rem;
   }
 }

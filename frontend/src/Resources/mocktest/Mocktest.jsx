@@ -1,11 +1,34 @@
 import "./Mocktest.css";
-import instruction from "../assets/images/inst.png";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import instruction from "../../assets/images/inst.png";
+import { useState,useEffect } from "react";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import axios from 'axios';
+import config from "../../config";
 export default function Mocktest() {
   const [isChecked, setIsChecked] = useState(false);
+  const [testDetails, setTestDetails] = useState(null);
+  const { testId } = useParams();  
+  const location = useLocation(); 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchTestDetails = async () => {
+      try {
+        const testData = location.state?.test;
+        if (!testData) {
+          const response = await axios.get(`${config.BASE_URL}/api/mocktest/${testId}`);
+          setTestDetails(response.data);
+        } else {
+          setTestDetails(testData);
+        }
+      } catch (error) {
+        console.error('Error fetching test details:', error);
+      }
+    };
+
+    fetchTestDetails();
+  }, [testId, location]);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -13,11 +36,16 @@ export default function Mocktest() {
 
   const handleStartClick = () => {
     if (isChecked) {
-      navigate("/test");
+      navigate(`/test/${testId}`);
     } else {
       alert("Please read and agree to the instructions before starting.");
     }
   };
+
+  if (!testDetails) {
+    return <div>Loading...</div>;
+  }
+
 
   return (
     <>
@@ -37,7 +65,7 @@ export default function Mocktest() {
             <div className="general-instruction">
               <h2>General Instructions:</h2>
               <p>
-                1. Total duration of Paper is 180 min. <br />
+                1. Total duration of Paper is {testDetails.duration}. <br />
                 2. The clock will be set at the server. The countdown timer in
                 the top right corner of screen will display the remaining time
                 available for you to complete the examination. When the timer

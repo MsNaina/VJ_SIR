@@ -1,0 +1,274 @@
+#Test{
+    width: 100%;
+    overflow: hidden;
+}
+.test-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+}
+.test-heading-left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.test-heading-left img{
+    width: 50px;
+}
+.test-heading-left h3{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.test-heading-right{
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
+}
+.test-heading-right span{
+padding: .5rem;
+border-radius: 50px;
+color: black;
+}
+.test-candidateinfo{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.test-heading-right img{
+border: 3px solid black;
+width: 45px;
+height: 55px;
+}
+.test-bottom{
+    display: flex;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+.testtype{
+    background-color: #F2D426;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: .5rem 2rem;
+}
+.test-list h4{
+    font-size: 1.2rem;
+}
+.questions-left{
+    width: 60%;
+}
+.testquestion{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 1rem 0rem;
+    padding: 1rem 0rem;
+}
+.option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.option-item {
+    position: relative; 
+    border: 1px solid black;
+    border-radius: 40px; 
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.option-item input[type="radio"]:checked + span,
+.option-item input[type="checkbox"]:checked + span {
+    background-color: #007bff; 
+    color: white; 
+}
+[type="radio"]:not(:checked)+span, [type="radio"]:checked+span,
+.option-item input[type="checkbox"]:checked + span,.option-item input[type="checkbox"]:not(:checked) + span {
+    padding:0px 15px;
+    border-radius: 40px;
+    height: 30px;
+    line-height: 29px;
+}
+[type="radio"]+span:before, [type="radio"]+span:after ,[type="checkbox"]+span:before, [type="checkbox"]+span:after{
+    display: none;
+}
+.questions-right img{
+ width: 30vw;
+ display: flex;
+ align-self: flex-end;
+}
+.question-filter{
+    display: flex;
+    gap: 1rem;   
+}
+.question-filter select {
+    border: 2px solid #3076B1; 
+    border-radius: 20px;
+    appearance: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  background-image: url('data:image/svg+xml,%3Csvg xmlns%3D"http%3A//www.w3.org/2000/svg" viewBox%3D"0 0 10 6"%3E%3Cpath fill%3D"%23000000" d%3D"M0 0l5 6 5-6z"/%3E%3C/svg%3E'); 
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 8px;
+    appearance:none; 
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    width: 8rem;
+    appearance: default; 
+}
+.question-filter select:hover {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+.question-filter select option {
+    background-color: #ffffff; 
+    color: #333;
+}
+.testquestion img{
+    width: 70%;
+    height: 100%;
+}
+@media(max-width:1200px){   
+.question-filter select{
+    background-position: right 5px top 50%;
+    width: 8rem;
+    font-size: 1rem;
+}
+.questions-right img{
+  width: 25rem;
+}
+.test-bottom{
+    gap: 4rem;
+    padding: 3rem 2rem;
+}
+.test-heading-left h3{
+    font-size: 1.3rem;
+}
+.test-heading-right img{
+width: 2rem;
+height: 3rem;
+}
+.testtype{
+font-size: 1.2rem;
+}
+.question h4{
+font-size: 1rem;
+}
+.testquestion img{
+width: 70%;
+max-width: 150%;
+height: auto;
+margin-bottom: 2rem;
+}
+
+}
+@media(max-width:1085px){
+    .testquestion{
+        width: 100%;  
+    }
+    .question-filter select{
+        width: 6.5rem;
+        font-size: .85rem;
+    }
+    .testquestion img{
+        width: 90%;
+}
+.questions-right img{
+    width: 20rem;
+}
+.question-filter select{
+    width: 6.5rem;
+    font-size: .85rem;
+}
+}
+
+@media(max-width:750px){
+.test-bottom{
+    flex-direction: column;
+}
+.testquestion img{
+    width: 30rem;
+    max-width: 150%;
+}
+.testquestion{
+    width: 85vw;
+}
+.questions-right img{
+    width: 25rem;
+}
+.question-filter select{
+    background-position: right 5px top 50%;
+    width: 8rem;
+    font-size: 1rem;
+}
+.questions-left , .questions-right{
+    width: 100%;
+}
+}
+
+@media(max-width:615px){
+.testquestion img{
+    width: 30rem;
+}
+.testquestion{
+width: 35rem;
+}
+.questions-right img{
+    width: 20rem;
+}
+.question-filter select{
+    background-position: right 5px top 50%;
+    width: 8rem;
+    font-size: 1rem;
+    }
+
+}
+@media(max-width:545px){
+.testquestion img{
+    width: 75vw;
+}
+.testquestion{
+    width: 100%;
+}
+.question-filter select{
+    width: 6.5rem;
+    font-size: .85rem;
+}
+.test-candidateinfo{
+    font-size: .8rem;
+    font-weight: 600;
+}
+[type="radio"]:not(:checked)+span, [type="radio"]:checked+span,
+.option-item input[type="checkbox"]:checked + span,.option-item input[type="checkbox"]:not(:checked) + span {
+    padding:0px 10px;
+}
+}
+
+@media(max-width:400px){
+.test-heading{
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+.questions-right img{
+width: 20rem;
+} 
+.question-filter select{
+    font-size: .75rem;
+    width: 6rem;
+    height: 2.5rem;
+}
+}
+@media(max-width:325px){ 
+.question-filter select{
+    width: 6rem;
+    height: 2rem;
+}
+.test-bottom{
+    padding: 2rem 0.5rem;
+}
+}
+    

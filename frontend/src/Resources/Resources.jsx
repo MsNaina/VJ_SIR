@@ -21,7 +21,7 @@ export default function Resources() {
   };
 
   const handleResourceClick = (path) => {
-    if (path === "/mocktest" || path === "/PhysicsDpp"|| path==="/Physicspyqs" || path==="/PhysicsNotes" || path==="/PhysicsModules") {
+    if ( path === "/PhysicsDpp" || path==="/PhysicsNotes"|| path==="/PhysicsModules"|| path==="/Physicspyqs") {
       setComingSoonMessage("Coming Soon");
       setTimeout(() => {
         setComingSoonMessage("");
@@ -55,7 +55,7 @@ export default function Resources() {
           <div className="resource-card">
             <img src={Mocktext} alt="" />
             <div className="resource-card-bottom">
-              <button onClick={() => handleResourceClick("/mocktest")}>
+              <button onClick={() => handleResourceClick("/testseries")}>
                 Mock Test
               </button>
             </div>

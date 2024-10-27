@@ -21,9 +21,12 @@ console.log("Captured chapterId:", chapterId);
               <div className="level-Line"></div>
               <h3>JEE MAIN</h3>
             </div>
+            <div className="level-button">
+              <p></p>
             <NavLink to={`/${chapterId}/mains/questions`}>
-              <button className="level-button">Attempt</button>
+              <button >Attempt  &gt;&gt;</button>
             </NavLink>
+            </div>
           </div>
 
           <div className="level-container">
@@ -31,9 +34,12 @@ console.log("Captured chapterId:", chapterId);
               <div className="level-Line"></div>
               <h3>JEE ADVANCED</h3>
             </div>
+            <div className="level-button">
+              <p></p>
             <NavLink to={`/${chapterId}/advanced/questions`}>
-              <button className="level-button">Attempt</button>
+              <button >Attempt &gt;&gt;</button>
             </NavLink>
+            </div>
           </div>
         </div>
 

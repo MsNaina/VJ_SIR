@@ -45,7 +45,7 @@ export default function WaveFooter() {
                 Embark on a transformative journey with VJ Sir’s Mentorship
                 Sessions, where each session is not just a class but a step
                 closer to mastering Inorganic Chemistry. Enroll now
-                at VJsir.com and experience education that goes beyond
+                at vjnucleus.com and experience education that goes beyond
                 boundaries.
               </p>
             </div>
@@ -54,7 +54,9 @@ export default function WaveFooter() {
               <div className="part2">
                 <h3>Mentorship Batches</h3>
                 <p>JEE Main, Advanced & NEET</p>
-                <p>Mentorship Batch 2025</p>
+
+                <p>Mentorship Batch</p>
+
               </div>
             </div>
 

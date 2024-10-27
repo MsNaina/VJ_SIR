@@ -1,11 +1,13 @@
-import "./passionate.css";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 import axiosInstance from "../refresh";
 import Go from "../assets/images/Go.png";
-import config from "../config"
+import config from "../config";
+import "./passionate.css";
+
 export default function Passionate() {
   const [mentor, setMentor] = useState(null);
+  const [error, setError] = useState(null); // Handle any errors
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +18,8 @@ export default function Passionate() {
         );
         setMentor(response.data);
       } catch (error) {
-        console.error("Error fetching random mentor:", error);
+        console.error("Error fetching random mentor:", error.response || error.message);
+        setError("Error fetching random mentor."); // Track error in state
       }
     };
 
@@ -31,51 +34,36 @@ export default function Passionate() {
   };
 
   const getProfilePhotoUrl = (path) => {
-    if (path) {
-      return `${path}`;
-    }
-    return "/media/mentor_pfp/image.png";
+    return path ? `${path}` : "/media/mentor_pfp/image.png";
   };
 
- const checkPermissions = async () => {
-   try {
-     const response = await axiosInstance.get(
-       `${config.BASE_URL}/api/user/my-permissions/`
-     );
-     const { is_payment_done, is_mentor_alloted } = response.data;
-
-     if (!is_payment_done) {
-       navigate("/Payment", {
-         state: { message: "Please confirm your payment." },
-       });
-     } else if (is_payment_done && !is_mentor_alloted) {
-       navigate("/Mentorship/Compatibility");
-     } else {
-       navigate("/MentorProfile");
-     }
-   } catch (error) {
-     
-     navigate("/Payment", {
-       state: { message: "Please confirm your payment." },
-     });
-   }
- };
-
-  const fetchMentorDetails = async () => {
+  const checkPermissions = async () => {
     try {
       const response = await axiosInstance.get(
-        `${config.BASE_URL}/api/mentorship/get-mentor`,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-          },
-        }
+        `${config.BASE_URL}/api/user/my-permissions/`
       );
-      console.log("Mentor details:", response.data);
+      const { is_payment_done, is_mentor_alloted } = response.data;
+
+      if (!is_payment_done) {
+        navigate("/Payment", {
+          state: { message: "Please confirm your payment." },
+        });
+      } else if (is_payment_done && !is_mentor_alloted) {
+        navigate("/Mentorship/Compatibility");
+      } else {
+        navigate("/MentorProfile");
+      }
     } catch (error) {
-      console.error("Error fetching mentor details:", error);
+      console.error("Error checking permissions:", error.response || error.message);
+      navigate("/Payment", {
+        state: { message: "Please confirm your payment." },
+      });
     }
   };
+
+  if (error) {
+    return <div>{error}</div>; // Show error message if there's an issue
+  }
 
   return (
     <>

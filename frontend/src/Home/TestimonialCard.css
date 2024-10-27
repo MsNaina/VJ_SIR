@@ -4,7 +4,6 @@
   width: 450px;
   transition: transform 1s;
   padding: 1rem;
- 
 }
 .Testimonial-cards img {
   height: 550px;
@@ -40,6 +39,7 @@
 .Testimonial-cards:hover {
   transform: translateZ(10px);
 }
+
 @media (max-width: 900px) {
   .Testimonial-cards {
     height: 450px;

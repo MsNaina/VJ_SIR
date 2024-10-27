@@ -1,0 +1,134 @@
+.submit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8rem 0rem;
+    font-family: poppins;
+}
+.submit h1{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.submittest-data{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 0rem;
+    justify-content: center;
+}
+.usertestreport{
+    border: 1px solid black;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+.usertestreport h2{
+    font-weight: 600;
+}
+.submit p{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.submittestconfirmation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.submittestconfirmation button{
+border: 1px solid black;
+padding: .5rem 1rem;
+align-self: center;
+margin: 0rem .5rem;
+}
+.viewresult{
+   margin: 15rem 0rem;
+   width: 100%;
+}
+.viewresult p{
+    font-size: 2rem;
+}
+.viewresult button{
+    width: 10rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+@media(max-width:1200px){
+.viewresult button{
+    font-size: 1rem;
+}    
+}
+@media(max-width:1140px){
+.usertestreport{
+flex-direction: row;
+}
+.usertestreport h2{
+    width: 20rem;
+    font-size: 1.2rem;
+}
+.usertestreport h3{
+    font-size: 1.2rem;
+}
+.submittest-data{
+    flex-direction: column;
+}
+.submit p{
+    font-size: 1.2rem;
+ }
+.submittestconfirmation button{
+  font-size: 1.2rem;
+}
+.viewresult button{
+    font-size: 1rem;
+} 
+.viewresult p{
+    font-size: 1.5rem;
+}
+}
+@media(max-width:600px){
+.usertestreport h2 ,.usertestreport h3{
+    width: 10rem;
+    font-size: 1rem;
+}
+.submit h1{
+    font-size: 2rem;
+}
+.submit p{
+    font-size: 1rem;
+}
+.submittestconfirmation{
+    padding: 0rem 1rem;
+}
+.submittestconfirmation button{
+    font-size: 1rem;
+  }
+}
+@media(max-width:500px){
+.submit{
+    margin: 5rem 1rem;
+}
+.usertestreport h2, .usertestreport h3{
+    width: 7.5rem;
+}
+.submit p{
+    font-weight: 500;
+}
+
+}
+@media(max-width:430px){
+.viewresult p{
+    font-size: 1.2rem;
+}
+.usertestreport h2{
+    width: 6rem;
+}
+}
+@media(max-width:330px){
+.viewresult{
+   text-align: center;
+}
+.viewresult button{
+    font-size: 1rem;
+}
+}

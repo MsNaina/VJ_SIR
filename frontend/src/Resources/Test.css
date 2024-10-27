@@ -1,0 +1,53 @@
+#Test{
+    width: 100%;
+}
+.test-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+}
+.test-heading-left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.test-heading-left img{
+    width: 50px;
+}
+.test-heading-left h2{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.test-heading-left h3{
+    font-size: 1.2rem;
+}
+.test-heading-right{
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
+}
+.test-heading-right span{
+background-color: #5398E6;
+padding: .5rem;
+border-radius: 50px;
+color: white;
+}
+.test-candidateinfo{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.test-heading-right img{
+border: 3px solid black;
+width: 60px;
+height: 70px;
+}
+.testtype{
+    background-color: #F2D426;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: .5rem 2rem;
+}

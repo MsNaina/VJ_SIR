@@ -1,0 +1,93 @@
+.action-buttons{
+    display: flex;
+   justify-content: space-between;
+}
+.action-btn{
+display: flex;
+gap: 2rem;
+}
+.action-btn button{
+    border: 2px solid black;
+    padding: .5rem 1.5rem;
+    border-radius: 30px;
+}
+.submittest{
+    padding: .5rem 1.5rem;
+    border-radius: 30px;
+    background-color: #46D343;
+    color: white;
+}
+.submittest:focus{
+    background-color: #46D343;
+}
+.mocktestchoiceactionbtn{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: .5rem 0rem;   
+}
+.mocktestchoiceactionbtn button{
+    padding: .5rem;
+    border-radius: 20px;   
+}
+.save-next:focus{
+    background-color: #46D343;
+}
+.SaveMarked:focus{
+    background-color: #3076B1;
+}
+.Marked:focus{
+    background-color: #A991CC;
+}
+.clear{
+    border: 2px solid black;
+}
+.save-next,.Attempted{
+   background-color: #46D343;
+   color: white;
+}
+.SaveMarked{
+background-color: #3076B1;
+color: white;
+}
+.Marked{
+    background-color: #A991CC;
+    color: white;
+}
+.action-buttons{
+    padding: 20px 0px;
+}
+@media(max-width:1200px){
+.mocktestchoiceactionbtn , .action-buttons{
+   font-size: .8rem;
+}
+.test-heading-left img{
+width: 2.5rem;
+}
+}
+@media(max-width:750px){
+    .mocktestchoiceactionbtn , .action-buttons{
+       font-size: .9rem;
+    }
+    .action-buttons{
+        display: flex;
+        justify-content:flex-start;
+        gap: 5rem;
+    }
+}
+@media(max-width:600px){
+.action-buttons{
+    flex-direction: column;
+    gap: 0rem;
+}
+.submittest{
+    width: 8rem;
+    margin-top: 2rem;
+}
+
+}
+@media(max-width:535px){
+    .mocktestchoiceactionbtn , .action-buttons{
+       font-size: .8rem;
+    }
+}

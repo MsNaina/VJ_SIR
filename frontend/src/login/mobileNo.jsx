@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import config from "../config";
 
-export default function MobileNo({ onClose }) {
+export default function MobileNo({ onClose, orderTotal, couponCode, isCouponApplied }) {
   const [mobileNumber, setMobileNumber] = useState("");
   const [loading, setLoading] = useState(false);
   const [otpRequested, setOtpRequested] = useState(false);
@@ -52,10 +52,15 @@ export default function MobileNo({ onClose }) {
       if (response.status === 200) {
         setVerificationMessage("Your mobile number is verified.");
 
-        // Request payment session ID from the server
+        const createOrderData = {
+          amount: isCouponApplied ? orderTotal : 5000, // Use orderTotal if coupon applied, else default to 5000
+          return_url: `${config.BASE_URL}/mentorship/`,
+          coupon_code: isCouponApplied ? couponCode : null // Pass coupon code if valid, else null
+        };
+
         const createOrderResponse = await axios.post(
           `${config.BASE_URL}/api/payments/create-order/`,
-          { amount: 5000, return_url: `${config.BASE_URL}/mentorship/` },
+          createOrderData,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -66,7 +71,8 @@ export default function MobileNo({ onClose }) {
 
         if (createOrderResponse.status === 200) {
           const paymentSessionId = createOrderResponse.data.session_id;
-          console.log(paymentSessionId)
+
+          // Proceed to payment
           setTimeout(() => {
             setVerificationMessage("");
             setOtp("");
@@ -75,11 +81,11 @@ export default function MobileNo({ onClose }) {
 
             // Initiate Cashfree checkout
             const cashfree = Cashfree({
-              mode:"sandbox" //or production
+              mode: "sandbox", // or "production" in production environment
             });
             let checkoutOptions = {
               paymentSessionId: paymentSessionId,
-              redirectTarget: "_self"
+              redirectTarget: "_self",
             };
             cashfree.checkout(checkoutOptions);
           }, 1000);
@@ -88,7 +94,7 @@ export default function MobileNo({ onClose }) {
         }
       }
     } catch (error) {
-      alert("Failed to verify OTP. Please try again."+error);
+      alert("Failed to verify OTP. Please try again." + error);
     } finally {
       setOtpLoading(false);
     }
