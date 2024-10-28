@@ -21,7 +21,7 @@ export default function Resources() {
   };
 
   const handleResourceClick = (path) => {
-    if ( path === "/PhysicsDpp" || path==="/PhysicsNotes"|| path==="/PhysicsModules"|| path==="/Physicspyqs") {
+    if ( path === "/PhysicsDpp" || path==="/PhysicsModules"|| path==="/Physicspyqs") {
       setComingSoonMessage("Coming Soon");
       setTimeout(() => {
         setComingSoonMessage("");
