@@ -274,7 +274,7 @@ const handleSubmitTest =()=>{
                   <h4>Question {currentQuestionIndex + 1}:</h4>
                   <div className="testquestion">
                     <img
-                      src={`${config.BASE_URL}${currentQuestion.question.question}`}
+                      src={`${currentQuestion.question.question}`}
                       alt={`Question ${currentQuestionIndex + 1}`}
                     />
                     {renderOptions(currentQuestion)}

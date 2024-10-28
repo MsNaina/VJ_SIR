@@ -5,6 +5,7 @@ import "../level.css";
 import { Helmet } from 'react-helmet-async';
 import axios from "axios";
 import config from "../../config";
+const token =localStorage.getItem("access_token")
 
 const Series = () => {
   const [tests, setTests] = useState([]); 
@@ -32,7 +33,11 @@ const Series = () => {
 
   const handleAttemptClick = async (seriesId) => {
     try {
-      const response = await axios.get(`${config.BASE_URL}/api/mocktest/series/${seriesId}/`);
+      const response = await axios.get(`${config.BASE_URL}/api/mocktest/series/${seriesId}/`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
   
       if (response.data && response.data.data) {  
         navigate(`/mocktest/${seriesId}`, { state: { tests: response.data.data } });
