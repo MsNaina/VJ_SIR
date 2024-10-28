@@ -1,12 +1,10 @@
-
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { NavLink } from "react-router-dom";
 import Navbar from "../Mentorship/Navbar";
 import "./PhModules.css";
 import config from "../config";
+
 const MathNotes = () => {
-  const [chapters, setChapters] = useState([]);
   const [notes, setNotes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [comingSoonChapter, setComingSoonChapter] = useState(null);
@@ -16,26 +14,22 @@ const MathNotes = () => {
       const accessToken = localStorage.getItem("access_token");
       if (accessToken) {
         try {
-          const chapterResponse = await axios.get(
-            `${config.BASE_URL}/api/questions/list-chapters/MA`,
-            {
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-            }
-          );
-
-          const notesResponse = await axios.get(
+          const notesResponse = await fetch(
             `${config.BASE_URL}/api/notes/subject/MA`,
             {
+              method: "GET",
               headers: {
                 Authorization: `Bearer ${accessToken}`,
+                "Content-Type": "application/json",
               },
             }
           );
 
-          setChapters(chapterResponse.data);
-          setNotes(notesResponse.data);
+          if (notesResponse.ok) {
+            const responseData = await notesResponse.json();
+            console.log("Response Data:", responseData);
+            setNotes(responseData); // Set notes data directly from the response
+          }
         } catch (error) {
           console.error(
             "There was an error fetching the chapters and notes!",
@@ -50,8 +44,8 @@ const MathNotes = () => {
     fetchChaptersAndNotes();
   }, []);
 
-  const filteredChapters = chapters.filter((chapter) =>
-    chapter.chapter_name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredChapters = notes.filter((note) =>
+    note.chapter.chapter_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleModuleClick = (chapterId) => {
@@ -65,7 +59,6 @@ const MathNotes = () => {
       }, 1000);
     }
   };
-
   return (
     <>
       <Navbar />
@@ -98,21 +91,21 @@ const MathNotes = () => {
         </div>
 
         <div className="Modules_Container">
-          {filteredChapters.map((chapter) => (
-            <div className="Modules-container" key={chapter.id}>
-              {comingSoonChapter === chapter.id && (
+          {filteredChapters.map((note) => (
+            <div className="Modules-container" key={note.chapter.id}>
+              {comingSoonChapter === note.chapter.id && (
                 <div className="coming-soon-message">Coming soon!</div>
               )}
               <div
-                onClick={() => handleModuleClick(chapter.id)}
+                onClick={() => handleModuleClick(note.chapter.id)}
                 className="ModulesData"
               >
                 <img
-                  src={`${chapter.icon_id.icon_url}`}//*
+                  src={`${note.chapter.icon_id.icon_url}`} //*
                   alt=""
                 />
                 <div className="ModulesData-text">
-                  <h3>{chapter.chapter_name}</h3>
+                  <h3>{note.chapter.chapter_name}</h3>
                 </div>
               </div>
             </div>
@@ -122,5 +115,4 @@ const MathNotes = () => {
     </>
   );
 };
-
 export default MathNotes
