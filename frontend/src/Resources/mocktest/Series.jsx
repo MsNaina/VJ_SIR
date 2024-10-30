@@ -5,6 +5,7 @@ import "../level.css";
 import { Helmet } from 'react-helmet-async';
 import axios from "axios";
 import config from "../../config";
+const token =localStorage.getItem("access_token")
 
 const Series = () => {
   const [tests, setTests] = useState([]); 
@@ -18,7 +19,6 @@ const Series = () => {
         const response = await axios.get(`${config.BASE_URL}/api/mocktest/series/`);
         if (response.data && response.data.data) {
           setTests(response.data.data);
-          console.log(response.data.data)
         }
         setLoading(false);
       } catch (error) {
@@ -32,25 +32,22 @@ const Series = () => {
 
   const handleAttemptClick = async (seriesId) => {
     try {
-      const response = await axios.get(`${config.BASE_URL}/api/mocktest/series/${seriesId}/`);
+      const response = await axios.get(`${config.BASE_URL}/api/mocktest/series/${seriesId}/`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
   
       if (response.data && response.data.data) {  
-        navigate(`/mocktest/${seriesId}`, { state: { tests: response.data.data } });
+        navigate(`/mocktest/${seriesId}`, { state: {tests: response.data.data ,testdata:response.data } });
+        
       }
     } catch (error) {
       console.error("Error fetching tests for the series:", error);
-      
-      if (error.response) {
-        console.error("Response data:", error.response.data);
-        console.error("Response status:", error.response.status);
-      } else if (error.request) {
-        console.error("Request data:", error.request);
-      } else {
-        console.error("Error message:", error.message);
-      }
       alert("Failed to fetch tests. Please try again later.");
     }
   };
+  
   return (
     <>
       <Helmet>
@@ -76,6 +73,7 @@ const Series = () => {
                   {test.description && <p>{test.description}</p>}
                 </div>
                 <div className="level-button">
+                  <p></p>
                   <button onClick={() => handleAttemptClick(test.id)}>
                     Attempt &gt;&gt;
                   </button>

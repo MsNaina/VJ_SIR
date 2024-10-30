@@ -1,11 +1,13 @@
 import "./Test.css";
-import Testheader from "./testheader/";
 import React, { useState, useEffect } from "react";
 import config from "../../config";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import colorcoding from "../../assets/images/colourcoding.jpeg";
 import Questiongrid from "./Questiongrid";
 import TestButtons from "./testbtn";
+import profile from "../../assets/images/profile.png";
+import Logo from "../../assets/images/logo.png";
+import { NavLink } from "react-router-dom";
 
 export default function Test() {
   const { testId } = useParams();
@@ -20,7 +22,9 @@ export default function Test() {
   const [mathType, setMathType] = useState('ALL');
   const [questionTime, setQuestionTime] = useState({});
   const [startTime, setStartTime] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("access_token"));
+  const token = localStorage.getItem("access_token");
+
+  const [timeRemaining, setTimeRemaining] = useState(0);
 
 useEffect(() => {
   const fetchTestDetails = async () => {
@@ -89,6 +93,29 @@ useEffect(() => {
                     setQuestionStatus(mergedQuestionStatus);
                   });
                 });
+
+          const durationParts = data.data.test.duration.split(":").map(Number);
+            const durationInSeconds = (durationParts[0] * 3600) + (durationParts[1] * 60) + durationParts[2];
+            
+            const currentTime = new Date().getTime();
+            const savedEndTime = localStorage.getItem("endTime");
+
+            if (savedEndTime) {
+              const endTime = new Date(savedEndTime).getTime();
+              const remainingTime = Math.floor((endTime - currentTime) / 1000); 
+
+              console.log("Remaining Time After Refresh:", remainingTime);
+              if (remainingTime > 0) {
+                setTimeRemaining(remainingTime);
+              } else {
+                submitTest();
+              }
+            } else {
+             
+              const endTime = currentTime + durationInSeconds * 1000;
+              localStorage.setItem("endTime", new Date(endTime).toISOString());  // Save end time in ISO format
+              setTimeRemaining(durationInSeconds);
+            }      
         }
       }
     } catch (error) {
@@ -114,7 +141,7 @@ window.removeEventListener("popstate", handleBackButton);
 };
 }, [navigate]);
 
-const flattenQuestions = (sections) => {
+  const flattenQuestions = (sections) => {
     return sections.flatMap(section => section.questions);
   };
 
@@ -140,10 +167,16 @@ const flattenQuestions = (sections) => {
     const selectedType = e.target.value;
     if (subject === 'Physics') {
       setPhysicsType(selectedType);
+      setChemistryType("ALL");
+      setMathType("ALL");
     } else if (subject === 'Chemistry') {
       setChemistryType(selectedType);
+      setPhysicsType("ALL");
+       setMathType("ALL");
     } else if (subject === 'Mathematics') {
       setMathType(selectedType);
+      setPhysicsType("ALL");
+      setChemistryType("ALL");
     }
     const updatedFilteredQuestions = filterQuestions(selectedType, subject);
   const intCount = updatedFilteredQuestions.filter(q => q.question.type === 'INT').length;
@@ -161,10 +194,9 @@ const flattenQuestions = (sections) => {
     setCurrentQuestionIndex(0); 
   };
 
-
-const handleSubmitTest =()=>{
+  const handleSubmitTest =()=>{
  navigate("./testsubmit")
-}
+  }
   const renderOptions = (question) => {
     const questionType = question.question.type; 
     const selectedAnswer = selectedAnswers[question.id] || [];
@@ -248,6 +280,69 @@ const handleSubmitTest =()=>{
     }
   };
 
+  const submitTest = async () => {
+    try {
+      localStorage.removeItem("endTime");
+      navigate("/viewresult");
+    } catch (error) {
+      console.error("Error saving data:", error);
+    }
+  };
+  
+  useEffect(() => {
+    if (timeRemaining <= 0) return;
+  
+    const interval = setInterval(() => {
+      setTimeRemaining((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(interval);
+          submitTest();
+        }
+        return prevTime > 0 ? prevTime - 1 : 0;
+      });
+    }, 1000);
+  
+    return () => clearInterval(interval);
+  }, [timeRemaining]);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        const currentTime = new Date().getTime();
+        const savedEndTime = localStorage.getItem("endTime");
+        if (savedEndTime) {
+          const endTime = new Date(savedEndTime).getTime();
+          const remainingTime = Math.floor((endTime - currentTime) / 1000);
+          if (remainingTime <= 0) {
+            submitTest();
+          }
+        }
+      }
+    };
+  
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+  
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      if (timeRemaining <= 0) {
+        submitTest();
+      }
+    };
+  
+    window.addEventListener("beforeunload", handleBeforeUnload);
+  
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [timeRemaining]);
+
+  const formatTime = (durationInSeconds) => {
+    const h = Math.floor(durationInSeconds / 3600).toString().padStart(2, '0');
+    const m = Math.floor((durationInSeconds % 3600) / 60).toString().padStart(2, '0');
+    const s = (durationInSeconds % 60).toString().padStart(2, '0');
+    return `${h}:${m}:${s}`;
+  };
   if (!testData) {
     return <p>Loading test...</p>;
   }
@@ -265,7 +360,32 @@ const handleSubmitTest =()=>{
   return (
     <section id="Test">
       <div className="test">
-        <Testheader />
+        <div className="test-top">
+        <div className="test-heading">
+          <div className="test-heading-left">
+            <NavLink to="/">
+              <img src={Logo} alt="Logo" />
+            </NavLink>
+            <div>
+              <h3 className="mocktest-name">{testData.test.name}</h3>
+            </div>
+          </div>
+
+          <div className="test-heading-right">
+            <img src={profile} alt="Profile" />
+            <div className="test-candidateinfo">
+              <h2>Candidate Name: {testData.user.name}</h2>
+              <h3>
+                Time Remaining: <span>{formatTime(timeRemaining)}</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="testtype">
+        <h3>JEE MAINS</h3>
+      </div>
         <div className="test-bottom">
           <div className="questions-left">
             <div className="test-list">
@@ -274,7 +394,7 @@ const handleSubmitTest =()=>{
                   <h4>Question {currentQuestionIndex + 1}:</h4>
                   <div className="testquestion">
                     <img
-                      src={`${config.BASE_URL}${currentQuestion.question.question}`}
+                      src={`${currentQuestion.question.question}`}
                       alt={`Question ${currentQuestionIndex + 1}`}
                     />
                     {renderOptions(currentQuestion)}

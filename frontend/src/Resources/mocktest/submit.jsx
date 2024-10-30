@@ -17,7 +17,6 @@ export default function Submit() {
     navigate(-1); 
   };
   const handleSubmit = async () => {
-  console.log("Submitting test...");
   const structuredData = JSON.parse(localStorage.getItem("data"));
   try {
     const response = await fetch(`${config.BASE_URL}/api/mocktest/submit-test/${testId}`, {

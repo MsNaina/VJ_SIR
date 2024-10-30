@@ -21,7 +21,7 @@ export default function Resources() {
   };
 
   const handleResourceClick = (path) => {
-    if ( path === "/PhysicsDpp" || path==="/PhysicsNotes"|| path==="/PhysicsModules"|| path==="/Physicspyqs") {
+    if ( path === "/PhysicsDpp" || path==="/PhysicsModules"|| path==="/Physicspyqs") {
       setComingSoonMessage("Coming Soon");
       setTimeout(() => {
         setComingSoonMessage("");
@@ -73,7 +73,7 @@ export default function Resources() {
           <div className="resource-card">
             <img src={Notes} alt="" />
             <div className="resource-card-bottom absolute bottom-0  w-full h-20 left-0">
-              <button onClick={() => handleResourceClick("/PhysicsNotes")}>
+              <button onClick={() => handleResourceClick("/ChemistryNotes")}>
                 Notes
               </button>
             </div>

@@ -6,15 +6,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
-  margin-top: 2rem;
-  padding: 4vw 0vw;
-  border-top: 1px solid black;
+  padding: 2vw 0vw;
+
 }
 .level-heading h1 {
   font-size: 2.5rem;
   color: #0c6205;
   font-family: Poppins;
   font-weight: 600;
+  border-bottom: 1px solid black;
+  padding: 1rem 0rem;
+  margin-bottom: 1rem;
 }
 .level-container {
   border: 1px solid #000000;
@@ -34,7 +36,6 @@
   font-size: 1.3vw;
   color: black;
   font-weight: 500;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -44,6 +45,11 @@
   position: absolute;
   white-space: normal;
  
+}
+.testName{
+  color: #0c6205;
+  font-size: 1.5rem;
+  padding-top: 1rem;
 }
 .level-Line {
   width: 0.6vw;
@@ -59,16 +65,18 @@
   color: black;
   font-weight: 500;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   
 }
 .level-button button{
-  background-color: white;
+  background-color: white;  
+}
+.level-button button:focus{
+  border-bottom: none;
 }
 .level-button p{
   color: #0c6205;
-  font-size: 1.3vw;
-  
+  font-size: 1.3vw; 
 }
 @media (max-width: 1270px) {
   .level h3 {
@@ -80,6 +88,7 @@
   .level-button, .level-button p{
     font-size: 1.4vw;
   }
+  
 }
 @media (max-width: 1020px) {
   .level h3 {
@@ -95,10 +104,10 @@
 @media (max-width: 860px) {
   .level-select {
     gap: 3rem;
-    height: 160px;
+    /* height: 120px; */
   }
-  .level-button,.level-button p{
-    font-size: 2vw;
+  .level-button,.level-button p ,.level h3{
+    font-size: 2.1vw;
   }
   
 }
@@ -118,19 +127,22 @@
   }
 }
 @media(max-width:660px){
+  .level-heading h1{
+font-size: 2rem;
+  }
   .level-container {
-    width: 300px;
+    width: 280px;
     height: 90px;
   }
   .level h3 {
-    font-size: 20px;
+    font-size: 15px;
   }
    .level-Line {
     height: 25px;
     width: 5px;
   }
    .level-button{
-    font-size: 18px;
+    font-size: 15px;
   }
   .level-button p{
 font-size: 15px;
@@ -138,10 +150,10 @@ font-size: 15px;
 }
 @media(max-width:410px){
   .level h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .level-heading h1{
-font-size: 2rem;
+font-size: 1.5rem;
   }
   .level-button,.level-button p{
     font-size: 1rem;
@@ -150,7 +162,10 @@ font-size: 2rem;
     padding: 2rem 1rem;
   }
   .level-container{
-    width: 18rem;
+    width: 15rem;
     height: 6rem;
+  }
+  .alltests h2{
+    font-size: 1rem;
   }
 }
