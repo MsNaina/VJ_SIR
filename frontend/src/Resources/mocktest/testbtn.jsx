@@ -283,42 +283,30 @@ const TestButtons = ({
             section.questions.forEach(question => {
                 try {
                     const questionId = question.test_question;
-                    
-                    // Update question status if present
                     if (questionStatus[questionId]) {
                         question.status = questionStatus[questionId];
                     }
-
-                    // Update time taken if present
                     if (questionTime[questionId] !== undefined) {
                         question.time_taken = questionTime[questionId].toString(); 
                     }
-
-                    // Update selected answers if present
                     if (selectedAnswers[questionId]) {
                         const selectedAnswer = selectedAnswers[questionId]; 
-
-                        const isNumeric = Array.isArray(selectedAnswer)
+                    const isNumeric = Array.isArray(selectedAnswer)
                             ? selectedAnswer.every(answer => !isNaN(answer)) 
                             : !isNaN(selectedAnswer);
 
                         if (isNumeric) {
-                            // Handle integer type questions
                             question.marked_answer = Array.isArray(selectedAnswer) ? selectedAnswer[0] : selectedAnswer;
                             question.marked_option = null;
-                            // Reset all is_OX_marked fields to null
                             question.is_O1_marked = null;
                             question.is_O2_marked = null;
                             question.is_O3_marked = null;
                             question.is_O4_marked = null;
                         } else {
-                            // Handle single or multiple correct answers
                             question.marked_answer = null; // Reset integer answer
                             
                             if (!Array.isArray(selectedAnswer)) {
-                                // Single correct answer (e.g., "A")
                                 question.marked_option = selectedAnswer;
-                                // Set all is_OX_marked fields to false
                                 question.is_O1_marked = false;
                                 question.is_O2_marked = false;
                                 question.is_O3_marked = false;
@@ -387,22 +375,6 @@ const saveDataToLocalStorage = (data) => {
     console.error('Error saving data to localStorage:', error);
   }
 };
-// const clearTestData = () => {
-//   const testId = localStorage.getItem("test.id");
-
-//   if (testId) {
-//       localStorage.removeItem("data");
-
-//       for (const key in localStorage) {
-//           if (key.startsWith("data")) {
-//               localStorage.removeItem(key); 
-//           }
-//       }      
-//       console.log(`Data for testId ${testId} cleared from localStorage.`);
-//   } else {
-//       console.log("No testId found in localStorage.");
-//   }
-// };
 
   return (
     <div id="mocktestchoiceactionbtn">

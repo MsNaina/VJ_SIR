@@ -100,7 +100,7 @@ root.render(
         <Route path="/test/:testId" element={<Test />} />
         <Route path="/testseries" element={<Series />} />
         <Route path="/viewresult" element={<Viewresult/>} />
-        <Route path="/result" element={<Result/>} />
+        <Route path="/result/:testId" element={<Result/>} />
 
         <Route path="/test/:testid/testsubmit" element={<Submit />} />
 
