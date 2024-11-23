@@ -56,6 +56,18 @@ export default function Navbar() {
           <div className="Nav-item">
             <ul>
               <li>
+                <div className="profile">
+                  <img src={Profile} alt="Profile" />
+                  <button>
+                    {userName ? (
+                      <NavLink to="/profile">{userName}</NavLink>
+                    ) : (
+                      <NavLink to="/profile">Profile</NavLink>
+                    )}
+                  </button>
+                </div>
+              </li>
+              <li>
                 <NavLink className="links" to="/" onClick={toggleMenu}>
                   Home
                 </NavLink>
@@ -93,14 +105,9 @@ export default function Navbar() {
             </ul>
           </div>
 
-          <div className="profile">
-            <img src={Profile} alt="Profile" />
+          <div className="classroom-btn">
             <button>
-              {userName ? (
-                <NavLink to="/profile">{userName}</NavLink>
-              ) : (
-                <NavLink to="/profile">Profile</NavLink>
-              )}
+              <NavLink to="http://portal-vj-sir.vercel.app">Classroom</NavLink>
             </button>
           </div>
         </div>
