@@ -94,7 +94,7 @@ root.render(
         <Route path="profile" element={<Profile />} />
         <Route path="Mentorship/Compatibility" element={<Compatibility />} />
         <Route path="Mentorship/Compatibility/allocated-mentor" element={<AllMentor />} />
-        <Route path="/api/user/reset-password/:uid/:token/" element={<ResetPassword />} />
+        <Route path="/reset-password-form/:uid/:token/" element={<ResetPassword />} />
         <Route path="/mentor" element={<Mentor />} />
         <Route path="/mocktest/:testid" element={<TestList />} />
         <Route path="/test/:testId" element={<Test />} />
