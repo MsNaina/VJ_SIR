@@ -10,6 +10,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false); 
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -71,15 +72,22 @@ export default function Login() {
             placeholder="E-mail"
             disabled={loading}
           />
-          <input
-            type="password"
-            id="input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder="Password"
-            disabled={loading} 
-          />
+        <div className="password-container">
+  <input
+    type={showPassword ? "text" : "password"}
+    id="input"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    required
+    placeholder="Password"
+    disabled={loading}
+  />
+  <i
+    className={`password-icon ${showPassword ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"}`}
+    onClick={() => setShowPassword(!showPassword)}
+  ></i>
+</div>
+
           <button
             onClick={handleLogin}
             className="login-btn"

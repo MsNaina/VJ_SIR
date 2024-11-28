@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { useParams, useNavigate , NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
@@ -7,12 +7,14 @@ import "./login.css";
 import { Helmet } from 'react-helmet-async';
 
 export default function ResetPassword() {
-  const { uid, token } = useParams();
+  const { uid } = useParams();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const navigate = useNavigate();
+  const token = localStorage.getItem("access_token");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleResetPassword = async () => {
     if (password !== confirmPassword) {
@@ -28,18 +30,20 @@ export default function ResetPassword() {
           method: "POST",
           body: JSON.stringify({ password, password2: confirmPassword }),
           headers: {
+            Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
+           
           },
         }
       );
       const data = await response.json();
       if (response.ok) {
-        setPopupMessage("Password changed successfully!");
+        setPopupMessage(data.msg);
         setTimeout(() => {
           navigate("/login");
         }, 3000);
       } else {
-        setPopupMessage(data.detail || "Failed to change password.");
+        setPopupMessage(data.msg);
       }
     } catch (error) {
       setPopupMessage("Failed to change password.");
@@ -64,26 +68,37 @@ export default function ResetPassword() {
             Preparation Today
           </h2>
           <div className="login-bottom">
-            <input
-              type="password"
-              id="input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter Your Password"
-              disabled={loading}
-            />
+          <div className="password-container">
+  <input
+    type={showPassword ? "text" : "password"}
+    id="input"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    required
+    placeholder="Enter Your Password"
+    disabled={loading}
+  />
+  <i
+    className={`password-icon ${showPassword ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"}`}
+    onClick={() => setShowPassword(!showPassword)}
+  ></i>
+</div>
 
-            <input
-              type="password"
-              id="input"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              placeholder="Confirm Password"
-              disabled={loading}
-            />
-
+<div className="password-container">
+  <input
+    type={showPassword ? "text" : "password"}
+    id="input"
+    value={confirmPassword}
+    onChange={(e) => setPassword(e.target.value)}
+    required
+    placeholder="Confirm Password"
+    disabled={loading}
+  />
+  <i
+    className={`password-icon ${showPassword ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"}`}
+    onClick={() => setShowPassword(!showPassword)}
+  ></i>
+</div>
             <button
               onClick={handleResetPassword}
               className="login-btn"
