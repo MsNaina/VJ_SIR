@@ -16,7 +16,8 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
   const [emailExistsError, setEmailExistsError] = useState(false);
   const navigate = useNavigate();
-
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
   useEffect(() => {
     const auth = localStorage.getItem("token");
     if (auth) {
@@ -105,6 +106,7 @@ export default function SignUp() {
           Start Your <span>Perfect</span> <br /> Preparation Today
         </h2>
         <div className="login-bottom">
+
           <input
             type="text"
             id="input"
@@ -135,28 +137,41 @@ export default function SignUp() {
           />
           {errors.Mail && <p className="error">{errors.Mail}</p>}
 
-          <input
-            type="password"
-            id="input"
-            value={Password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder="Password"
-          />
+          <div className="password-container">
+  <input
+    type={showPassword ? "text" : "password"}
+    id="input"
+    value={Password}
+    onChange={(e) => setPassword(e.target.value)}
+    required
+    placeholder="Password"
+    disabled={loading}
+  />
+  <i
+    className={`password-icon ${showPassword ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"}`}
+    onClick={() => setShowPassword(!showPassword)}
+  ></i>
+          </div>
           {errors.Password && <p className="error">{errors.Password}</p>}
 
-          <input
-            type="password"
-            id="input"
-            value={Password2}
-            onChange={(e) => setPassword2(e.target.value)}
-            required
-            placeholder="Confirm Password"
-          />
-          {errors.Password2 && <p className="error">{errors.Password2}</p>}
-
+           <div className="password-container">
+  <input
+    type={showPassword2 ? "text" : "password"}
+    id="input"
+    value={Password2}
+    onChange={(e) => setPassword2(e.target.value)}
+    required
+    placeholder="Confirm Password"
+    disabled={loading}
+  />
+  <i
+    className={`password-icon ${showPassword2 ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"}`}
+    onClick={() => setShowPassword2(!showPassword2)}
+  ></i>
+           </div>
+           {errors.Password2 && <p className="error">{errors.Password2}</p>}
           <button
-            className="login-btn"
+            className="login-btn"            
             onClick={handleSignUp}
             type="button"
             disabled={loading}
