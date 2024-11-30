@@ -7,13 +7,12 @@ import "./login.css";
 import { Helmet } from 'react-helmet-async';
 
 export default function ResetPassword() {
-  const { uid } = useParams();
+  const { uid, token } = useParams();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const navigate = useNavigate();
-  const token = localStorage.getItem("access_token");
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
 
@@ -31,7 +30,6 @@ export default function ResetPassword() {
           method: "POST",
           body: JSON.stringify({ password, password2: confirmPassword }),
           headers: {
-            Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
            
           },
