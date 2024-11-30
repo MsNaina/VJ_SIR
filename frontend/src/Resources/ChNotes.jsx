@@ -47,10 +47,10 @@ const ChNotes = () => {
     note.chapter.chapter_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleModuleClick = (chapterId) => {
+  const handleModuleClick = (chapterId, pdf_url) => {
     const chapterNotes = notes.find((note) => note.chapter.id === chapterId);
     if (chapterNotes && chapterNotes.pdf_url) {
-      window.open(`${chapterNotes.pdf_url}`, "_blank");//*
+      window.open(`${pdf_url}`, "_blank");//*
     } else {
       setComingSoonChapter(chapterId);
       setTimeout(() => {
@@ -96,7 +96,7 @@ const ChNotes = () => {
                 <div className="coming-soon-message">Coming soon!</div>
               )}
               <div
-                onClick={() => handleModuleClick(note.chapter.id)}
+                onClick={() => handleModuleClick(note.chapter.id, note.pdf_url)}
                 className="ModulesData"
               >
                 <img
