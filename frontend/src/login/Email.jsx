@@ -32,12 +32,14 @@ const Email = () => {
         setMessageType("success");
         setShowForm(false); 
       } else {
-        setMessage(data.msg);
+        const errors = Object.values(data.error);
+        setMessage(errors[0]);
         setMessageType("error");
         setEmail("");
       }
     } catch (error) {
-      setMessage(data.msg);
+      const errors = Object.values(data.error);
+      setMessage(errors[0]);
       setMessageType("error");
     } finally {
       setLoading(false);
@@ -60,7 +62,7 @@ const Email = () => {
             Preparation Today
           </h2>
           <div className="login-bottom">
-            {showForm ? (
+            {showForm || messageType === "error" ? (
               <>
                 <input
                   type="email"
@@ -76,9 +78,10 @@ const Email = () => {
                   className="login-btn"
                   type="button"
                   disabled={loading}
-                >
+                  >
                   {loading ? "Sending Request..." : "Send Request"}
                 </button>
+                {messageType === "error" && <div className={`message ${messageType}`}>{message}</div>}
               </>
             ) : (
               <div className={`message ${messageType}`}>{message}</div>
