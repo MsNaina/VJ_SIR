@@ -5,7 +5,6 @@ import Logo from "../assets/images/logo.png";
 import vjsir from "../assets/images/vjsir1.png";
 import config from "../config";
 import { Helmet } from 'react-helmet-async';
-
 export default function SignUp() {
   const [Name, setName] = useState("");
   const [Password, setPassword] = useState("");
