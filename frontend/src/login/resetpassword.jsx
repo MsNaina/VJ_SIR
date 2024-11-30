@@ -15,6 +15,7 @@ export default function ResetPassword() {
   const navigate = useNavigate();
   const token = localStorage.getItem("access_token");
   const [showPassword, setShowPassword] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
 
   const handleResetPassword = async () => {
     if (password !== confirmPassword) {
@@ -86,17 +87,17 @@ export default function ResetPassword() {
 
 <div className="password-container">
   <input
-    type={showPassword ? "text" : "password"}
+    type={showPassword2 ? "text" : "password"}
     id="input"
     value={confirmPassword}
-    onChange={(e) => setPassword(e.target.value)}
+    onChange={(e) => setConfirmPassword(e.target.value)}
     required
     placeholder="Confirm Password"
     disabled={loading}
   />
   <i
-    className={`password-icon ${showPassword ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"}`}
-    onClick={() => setShowPassword(!showPassword)}
+    className={`password-icon ${showPassword2 ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"}`}
+    onClick={() => setShowPassword2(!showPassword2)}
   ></i>
 </div>
             <button
