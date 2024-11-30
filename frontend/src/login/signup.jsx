@@ -17,6 +17,7 @@ export default function SignUp() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
+  
   useEffect(() => {
     const auth = localStorage.getItem("token");
     if (auth) {
