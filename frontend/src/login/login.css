@@ -8,6 +8,7 @@
   justify-content: space-between;
   font-family: Poppins;
 }
+
 .login-right img {
   object-fit: cover;
   width: 42rem;
@@ -82,7 +83,13 @@
 .login-btn:hover {
   background-color: rgb(38, 213, 38);
 }
-
+.login-btn::after:hover, .login-btn::before:hover{
+  background: rgba(12, 98, 5, 1);
+}
+.login-bottom button:focus, input:focus {
+  border-bottom: none;
+  background-color: #0c6205;
+}
 .register-link {
   padding: 1.5vw 0vw;
   font-weight: 500;
@@ -106,6 +113,7 @@
   margin-top: 20px;
   transition: opacity 0.5s ease-in-out;
   color: #155724;
+  font-size: 20px;
 }
 .otp-line {
   width: 0.3rem;
@@ -126,6 +134,36 @@
   color: #0c6205;
   margin: 1rem 0rem;
 }
+
+/* eye */
+
+.password-container {
+  position: relative; 
+  width: 100%; 
+}
+
+.password-container input {
+  width: 100%; 
+  padding-right: 40px; 
+  font-size: 16px; 
+}
+
+.password-container .password-icon {
+  position: absolute; 
+  right: 30px; 
+  top: 40%; 
+  transform: translateY(-50%); 
+  font-size: 18px; 
+  color: #555; 
+  cursor: pointer; 
+}
+
+.password-container .password-icon:hover {
+  color: #000; 
+}
+
+
+
 @media (max-width: 1240px) {
   #LogIn {
     align-items: center;
@@ -184,6 +222,9 @@
     font-size: 5vw;
     padding-top: 1rem;
   }
+  .password-container .password-icon {
+    right: 100px; 
+  }
 }
 @media (max-width: 800px) {
   #input,
@@ -203,6 +244,9 @@
   .otp-link {
     justify-content: center;
     gap: 2rem;
+  }
+  .password-container .password-icon {
+    right: 50px; 
   }
 }
 @media (max-width: 650px) {
@@ -227,8 +271,31 @@
     width: 100%;
     padding-top: 50px;
   }
+  .password-container .password-icon {
+    left: 55vw;  
+  }
+  .message {
+    font-size: 3vw;
+  } 
 }
-
+@media (max-width: 580px) {
+  .password-container .password-icon {
+    left: 60vw; 
+  }
+}
+@media (max-width: 490px) {
+  .password-container .password-icon {
+    left: 70vw; 
+  }
+}
+@media (max-width: 450px) {
+  .password-container .password-icon {
+    left: 75vw; 
+  }
+  .message {
+    font-size: 5vw;
+  } 
+}
 @media (max-width: 405px) {
   .login-left h2 {
     font-size: 8vw;
@@ -252,6 +319,7 @@
   .popup-message {
     font-size: .9rem;
   }
+  
 }
 @media (max-width: 320px) {
   .otp-link a {

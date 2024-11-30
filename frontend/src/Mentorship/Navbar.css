@@ -17,6 +17,7 @@ body.menu.open {
   width: 100%;
   height: 70px;
   padding: 0vw 2vw;
+  
 }
 .menu {
   display: flex;
@@ -117,7 +118,6 @@ body.menu.open {
   }
   .menu {
     font-size: 1.1rem;
-     /* width: 80%; */
   }
   .profile button {
     font-size: 1.4vw;
@@ -127,15 +127,22 @@ body.menu.open {
   .logo {
     width: 45px;
   }
-  .menu {
-    font-size: 1rem;
-   
+  .menu ,  .classroom-btn button , .profile button{
+    font-size: 1.1rem;
   }
-  .profile button {
-    font-size: 1.7vw;
+  .classroom-btn button{
+    width: 100px;
+  }
+  .profile img{
+    display: none;
+   }
+  
+}
+@media (max-width: 800px) {
+  .menu ,  .classroom-btn button , .profile button{
+    font-size: 1rem;
   }
 }
-
 @media (max-width: 769px) {
   .hamburger {
     display: flex;
@@ -143,18 +150,27 @@ body.menu.open {
 .logo {
     width: 40px;
   }
+  .classroom-btn button {
+    border: none;
+  }
+  .classroom-btn button:hover {
+    background-color: white;
+    transition: none;
+    color: black;
+
+  }
   .menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 30vw;
-    height: 65vw;
+    height: 68vw;
     text-align: center;
     background-color: white;
     position: fixed;
     top: 0;
     right: 0;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #ccc;
     transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     transform: translateX(100%);
@@ -162,7 +178,6 @@ body.menu.open {
     opacity: 0;
     font-family: "Red Hat Display", sans-serif;
     font-weight: 600;
-
     z-index: 10;
   }
   .menu.open {
@@ -173,7 +188,7 @@ body.menu.open {
   .Nav-item ul li {
     border: none;
     font-size: 2.5vw;
-    padding: 10px 20px;
+    padding: 10px 0px;
     background-color: white;
     opacity: 1;
   }
@@ -202,61 +217,57 @@ body.menu.open {
 @media (max-width: 670px) {
   .menu {
     width: 30vw;
-    height: 50vw;
+    height: 70vw;
   }
-  .Nav-item ul li {
-    font-size: 2.4vw;
+  .Nav-item ul li ,.classroom-btn button ,.profile button {
+    font-size: 2.7vw;
   }
-  .profile button {
-    font-size: 2.4vw;
+}
+@media (max-width: 635px) {
+  .menu {
+    height: 75vw;
   }
 }
 
 @media (max-width: 560px) {
   .menu {
     width: 35vw;
-    height: 60vw;
+    height: 85vw;
   }
-  .Nav-item ul li {
-    font-size: 3vw;
-  }
-  .profile button {
+  .Nav-item ul li ,.classroom-btn button ,.profile button {
     font-size: 3vw;
   }
 }
 @media (max-width: 490px) {
   .menu {
-    width: 45vw;
-    height: 70vw;
+    height: 95vw;
   }
-  .Nav-item ul li {
-    font-size: 3.5vw;
-  }
-  .profile button {
+  .Nav-item ul li ,.classroom-btn button ,.profile button {
     font-size: 3.5vw;
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 435px) {
   .menu {
-    width: 45vw;
-    height: 80vw;
+    height: 100vw;
+    width: 40vw;
   }
-  .Nav-item ul li {
-    font-size: 4vw;
-  }
-  .profile button {
-    font-size: 4vw;
+  .Nav-item ul li ,.classroom-btn button ,.profile button {
+    font-size: 3.8vw;
   }
 }
-@media (max-width: 335px) {
+@media (max-width: 410px) {
   .menu {
     width: 45vw;
-    height: 85vw;
+    height: 110vw;
   }
-  .Nav-item ul li {
-    font-size: 4vw;
+  .Nav-item ul li ,.classroom-btn button ,.profile button {
+    font-size: 15px;
   }
-  .profile button {
-    font-size: 4vw;
+ 
+}
+@media (max-width: 360px) {
+  .menu {
+    width: 45vw;
+    height: 420px;
   }
 }
