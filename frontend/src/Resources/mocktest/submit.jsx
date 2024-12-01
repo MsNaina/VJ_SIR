@@ -40,7 +40,7 @@ export default function Submit() {
     localStorage.removeItem(`structuredData-${testId}`);
     // localStorage.removeItem("data");
     localStorage.removeItem("endTime");
-    navigate('/viewresult', { state: { totalQuestions } });
+    navigate('/viewresult');
 
   } catch (error) {
     console.error("Error submitting test:", error); 

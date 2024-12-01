@@ -9,7 +9,8 @@ import profile from "../../assets/images/profile.png";
 import Logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 
-export default function Test() {
+const Test=({
+})=> {
   const { testId } = useParams();
   const navigate = useNavigate();
   const [testData, setTestData] = useState(null);
@@ -25,6 +26,45 @@ export default function Test() {
   const token = localStorage.getItem("access_token");
 
   const [timeRemaining, setTimeRemaining] = useState(0);
+
+// sorry :( 
+// hmare paas aur koi choice nhi tha
+
+const handleSubmit = async () => {
+  const structuredData = JSON.parse(localStorage.getItem("data"));
+  try {
+    const response = await fetch(`${config.BASE_URL}/api/mocktest/submit-test/${testId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(structuredData), 
+    });
+
+    if (!response.ok) {
+      alert(response.message||" Test already submitted");
+      localStorage.removeItem("data");
+      localStorage.removeItem("endTime");
+      navigate("/")
+      throw new Error(`Error: ${response.message}`);
+    }else{
+      const result = await response.json();
+      localStorage.removeItem(`structuredData-${testId}`);
+      // localStorage.removeItem("data");
+      localStorage.removeItem("endTime");
+     
+
+      navigate('/viewresult');
+
+    }
+
+
+  } catch (error) {
+    console.error("Error submitting test:", error); 
+  }
+};
+
 
 useEffect(() => {
   const fetchTestDetails = async () => {
@@ -108,7 +148,7 @@ useEffect(() => {
               if (remainingTime > 0) {
                 setTimeRemaining(remainingTime);
               } else {
-                submitTest();
+                submitTest();   // dekh lenge isko bhi (not useful as such)
               }
             } else {
              
@@ -296,7 +336,9 @@ window.removeEventListener("popstate", handleBackButton);
       setTimeRemaining((prevTime) => {
         if (prevTime <= 1) {
           clearInterval(interval);
-          submitTest();
+         
+          handleSubmit();
+          // submitTest()
         }
         return prevTime > 0 ? prevTime - 1 : 0;
       });
@@ -314,7 +356,7 @@ window.removeEventListener("popstate", handleBackButton);
           const endTime = new Date(savedEndTime).getTime();
           const remainingTime = Math.floor((endTime - currentTime) / 1000);
           if (remainingTime <= 0) {
-            submitTest();
+            handleSubmit();
           }
         }
       }
@@ -325,7 +367,7 @@ window.removeEventListener("popstate", handleBackButton);
     const handleBeforeUnload = (event) => {
       event.preventDefault();
       if (timeRemaining <= 0) {
-        submitTest();
+        handleSubmit();
       }
     };
   
@@ -453,3 +495,4 @@ window.removeEventListener("popstate", handleBackButton);
     </section>
   );
 } 
+export default Test;
