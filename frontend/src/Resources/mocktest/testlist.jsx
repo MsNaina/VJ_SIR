@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom"; 
+
+import { useLocation } from "react-router-dom";
 import Navbar from "../../Mentorship/Navbar";
 import "../level.css";
 import { Helmet } from 'react-helmet-async';
+import axios from 'axios';
+import config from '../../config'; 
+const token =localStorage.getItem("access_token")
 
 const TestList = () => {
   const location = useLocation();
@@ -37,6 +42,27 @@ const TestList = () => {
 
   const closePopup = () => setShowPopup(false);
 
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const fetchPermissions = async () => {
+      try {
+        const response = await axios.get(`${config.BASE_URL}/api/user/my-permissions/`, {
+          headers: {
+            Authorization: `Bearer ${token}` 
+          }
+        });
+        if (response.data && response.data.is_admin) {
+          setIsAdmin(true);
+        }
+      } catch (error) {
+        console.error("Error fetching permissions:", error);
+      }
+    };
+    fetchPermissions();
+  }, []);
+
+
   return (
     <>
       <Helmet>
@@ -46,6 +72,13 @@ const TestList = () => {
       <section id="level-select">
         <div className="level-heading">
           <h1>Tests in Series</h1>
+          {isAdmin && (
+            <div className="classroom-btn">
+              <button style={{marginTop:'0px'}}>
+                <NavLink to="/test/admin-create">+ Create Test</NavLink>
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="alltests">

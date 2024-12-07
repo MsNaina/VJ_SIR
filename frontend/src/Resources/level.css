@@ -9,6 +9,13 @@
   padding: 2vw 0vw;
 
 }
+.level-heading{
+  width: '100%'; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 2rem;
+}
 .level-heading h1 {
   font-size: 2.5rem;
   color: #0c6205;
@@ -127,6 +134,10 @@
   }
 }
 @media(max-width:660px){
+  .level-heading{
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .level-heading h1{
 font-size: 2rem;
   }

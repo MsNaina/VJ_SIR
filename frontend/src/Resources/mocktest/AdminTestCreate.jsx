@@ -42,15 +42,20 @@ export default function AdminTestCreate() {
       formData.append('duration', duration);
       formData.append('series_id', seriesId);
 
-      axios.post(`${config.BASE_URL}/api/upload/test/`, formData)
+      const token = localStorage.getItem('access_token'); 
+      axios.post(`${config.BASE_URL}/api/upload/test/`, formData, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
         .then(response => {
           const data = response.data;
-          setStatus('File uploaded successfully!');
+          setStatus('Test created successfully!');
           console.log(data);
         })
-        .catch(error => {
-          setStatus('Failed to upload file!');
-          console.error('Error:', error);
+        .catch((error) => {
+          setStatus(`Failed to upload file! ${error.response.data.detail}`);
+          console.error('Error:', error.response.data);
         });
     });
   }, []);
@@ -70,12 +75,9 @@ export default function AdminTestCreate() {
 
   return (
     <>
-      <Helmet>
-        <title>MockTest - VJ Nucleus</title>
-      </Helmet>
       <Navbar />
       <div className="container">
-        <h1>Upload TEST File</h1>
+        <h1 style={{fontSize:24, paddingBottom:'24px'}}>Upload TEST File</h1>
 
         <form id="testForm" encType="multipart/form-data">
           <input
@@ -91,7 +93,7 @@ export default function AdminTestCreate() {
             className="input"
             id="duration"
             name="duration"
-            placeholder="Duration"
+            placeholder="Duration (in minutes)"
             required
           />
 
@@ -105,7 +107,6 @@ export default function AdminTestCreate() {
           </select>
 
           <input type="file" id="zipFile" accept=".zip" />
-          <p id="fileName">{fileName}</p>
 
           <select id="contentType" name="contentType">
             <option value="mocktest">Mock Test</option>
