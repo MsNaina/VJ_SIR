@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { NavLink, useNavigate } from "react-router-dom"; 
 import Navbar from "../../Mentorship/Navbar";
 import "../level.css";
 import { Helmet } from 'react-helmet-async';
@@ -48,6 +48,26 @@ const Series = () => {
     }
   };
   
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const fetchPermissions = async () => {
+      try {
+        const response = await axios.get(`${config.BASE_URL}/api/user/my-permissions/`, {
+          headers: {
+            Authorization: `Bearer ${token}` 
+          }
+        });
+        if (response.data && response.data.is_admin) {
+          setIsAdmin(true);
+        }
+      } catch (error) {
+        console.error("Error fetching permissions:", error);
+      }
+    };
+    fetchPermissions();
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -57,6 +77,13 @@ const Series = () => {
       <section id="level-select">
         <div className="level-heading">
           <h1>Test Series</h1>
+          {isAdmin && (
+            <div className="classroom-btn">
+              <button style={{marginTop:'0px'}}>
+                <NavLink to="/test/admin-create">+ Create Test</NavLink>
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="level-select">

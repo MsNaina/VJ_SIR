@@ -50,6 +50,7 @@ import Series from "./Resources/mocktest/Series.jsx";
 import Submit from "./Resources/mocktest/submit.jsx/"
 import Viewresult from "./Resources/mocktest/submitok.jsx/";
 import Result from "./Resources/mocktest/Result.jsx";
+import AdminTestCreate from "./Resources/mocktest/AdminTestCreate.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <HelmetProvider>
@@ -103,6 +104,7 @@ root.render(
         <Route path="/result/:testId" element={<Result/>} />
 
         <Route path="/test/:testid/testsubmit" element={<Submit />} />
+        <Route path="/test/admin-create" element={<AdminTestCreate/>} />
 
       </Routes>
     </Router>
