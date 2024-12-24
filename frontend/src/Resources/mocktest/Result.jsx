@@ -125,7 +125,7 @@ export default function Result() {
                         <td>
                           {question.question_image && (
                             <img
-                              src={"https://vjn-prod-s3.s3.amazonaws.com/media/temp_20241222191851_dbeca525a8974bf096aca11f9463d1b2/jee%20main%20test%205/Q25.JPG"}
+                              src={question.question_image}
                               alt={`Question ${index + 1}`}
                               className="question-image"
                             />
