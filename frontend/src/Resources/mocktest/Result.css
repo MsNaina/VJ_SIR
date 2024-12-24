@@ -4,7 +4,7 @@
 }
 .result{
     font-family: poppins;
-    padding: 5rem 2rem;
+    padding: 2rem 2rem;
 }
 .result h3{
 font-size: 3rem;
@@ -57,4 +57,94 @@ text-align: center;
 .result h3{
     font-size: 2rem;
 } 
+}
+
+
+.test-analysis-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.test-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.scorecard {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.score-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px;
+  flex: 1 1 30%;
+}
+
+.score-item h1 {
+  font-size: 1.2em;
+  color: #555;
+  padding-bottom: 8px;
+}
+
+.score-item h2 {
+  font-size: 2em;
+  color: #000;
+}
+
+.question-analysis {
+  margin-top: 20px;
+}
+
+.question-analysis-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table-success {
+  background-color: #d4edda;
+}
+
+.table-danger {
+  background-color: #f8d7da;
+}
+
+.question-image {
+  max-width: 400px;
+  max-height: 200px;
+}
+
+.skipped {
+  color: #999;
+}
+
+.selected-option {
+  font-weight: bold;
 }
